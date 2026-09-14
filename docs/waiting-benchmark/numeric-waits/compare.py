@@ -52,11 +52,16 @@ def acceptance(record):
         inner=[a for a in arguments if a['tool']=='exec_command']
         checks['forced_cell_path_observed']=bool(outer and inner and outer[0]['yield_time_ms']==1
             and inner[0]['yield_time_ms']==30000 and any(a['tool']=='functions.wait' for a in arguments))
-    if record.get('phase') in ('outer-integration','outer-subagent','outer-subagent-unnamed','wording') and record['scenario'] == 'subagent':
+    if record.get('phase') in ('outer-integration','outer-subagent','outer-subagent-unnamed','wording','unpatched') and record['scenario'] == 'subagent':
         spawns=[json.loads(c['arguments']) for c in record['calls'] if c.get('name') == 'spawn_agent']
         checks['requested_fork_all']=len(spawns)==1 and spawns[0].get('fork_turns')=='all'
-        if record.get('phase') in ('outer-subagent','outer-subagent-unnamed','wording'):
+        if record.get('phase') in ('outer-subagent','outer-subagent-unnamed','wording','unpatched'):
             checks['no_fork_overrides']=len(spawns)==1 and not any(k in spawns[0] for k in ['model','reasoning_effort'])
+    if record.get('phase') == 'unpatched':
+        patched = record['condition'] == 'wording-no-pragma'
+        checks['expected_patch_file_presence'] = record.get('waiting_patch_file_present') is patched
+        sections = set(record.get('waiting_instruction_sessions', []))
+        checks['expected_waiting_instruction_sessions'] = sections == (usage_sessions if patched else set())
     return checks
 
 
@@ -174,6 +179,7 @@ def main():
     for label,before,after in [
         ('complete_revision','wording-measured','wording-no-pragma'),
         ('pragma_sentence_rewrite','wording-with-pragma','wording-no-pragma'),
+        ('current_patch_vs_none','no-patch','wording-no-pragma'),
     ]:
         pairs=[]
         for scenario in ['terminal','ci','subagent']:

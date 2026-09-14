@@ -118,7 +118,7 @@ def make_wording_prompts(paths):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--phase', choices=['isolated', 'integration', 'section', 'outer', 'outer-integration', 'outer-subagent', 'outer-ci-name', 'outer-subagent-unnamed', 'wording'], default='isolated')
+    p.add_argument('--phase', choices=['isolated', 'integration', 'section', 'outer', 'outer-integration', 'outer-subagent', 'outer-ci-name', 'outer-subagent-unnamed', 'wording', 'unpatched'], default='isolated')
     p.add_argument('--selected', default='e1s1w1')
     p.add_argument('--out', type=Path, default=ROOT / 'tmp/wait-benchmark-numeric-waits')
     p.add_argument('--source-home', type=Path, default=ROOT / '.codex_home')
@@ -130,10 +130,12 @@ def main():
     args.out = args.out.resolve() / args.phase
     args.out.mkdir(parents=True, exist_ok=True)
     paths = make_prompts()
-    if args.phase in ('outer', 'outer-integration', 'outer-subagent', 'outer-ci-name', 'outer-subagent-unnamed', 'wording'):
+    if args.phase in ('outer', 'outer-integration', 'outer-subagent', 'outer-ci-name', 'outer-subagent-unnamed', 'wording', 'unpatched'):
         paths = make_outer_prompts(paths)
-    if args.phase == 'wording':
+    if args.phase in ('wording', 'unpatched'):
         paths = make_wording_prompts(paths)
+    if args.phase == 'unpatched':
+        paths['no-patch'] = None
     if args.phase == 'section':
         base = paths['e1s0w0'].read_text()
         start = base.index('### Terminal commands\n')
@@ -144,9 +146,9 @@ def main():
     version = subprocess.check_output([str(args.binary), '--version'], text=True).strip()
     assert version == 'codex-cli 0.154.0', version
     assert hashlib.sha256(args.catalog.read_bytes()).hexdigest() == 'e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40'
-    reps = 3 if args.phase in ('isolated', 'outer') else 2
+    reps = 3 if args.phase in ('isolated', 'outer', 'unpatched') else 2
     blocks = []
-    phase_seed = SEED + {'isolated':0, 'integration':1, 'section':2, 'outer':3, 'outer-integration':4, 'outer-subagent':5, 'outer-ci-name':6, 'outer-subagent-unnamed':7, 'wording':8}[args.phase]
+    phase_seed = SEED + {'isolated':0, 'integration':1, 'section':2, 'outer':3, 'outer-integration':4, 'outer-subagent':5, 'outer-ci-name':6, 'outer-subagent-unnamed':7, 'wording':8, 'unpatched':9}[args.phase]
     rng = random.Random(phase_seed)
     for rep in range(1, reps + 1):
         if args.phase == 'isolated':
@@ -163,6 +165,9 @@ def main():
         elif args.phase == 'wording':
             pairs = [(s,v) for s in ['terminal','ci','subagent']
                      for v in ['wording-measured','wording-with-pragma','wording-no-pragma']]
+        elif args.phase == 'unpatched':
+            pairs = [(s,v) for s in ['terminal','ci','subagent']
+                     for v in ['no-patch','wording-no-pragma']]
         else:
             assert args.selected != 'e1s0w0', 'Unchanged control needs no integration rerun'
             pairs = [(s,v) for s in ['terminal','ci','subagent'] for v in ['e1s0w0',args.selected]]
@@ -173,11 +178,13 @@ def main():
                 'binary':str(args.binary.resolve()), 'catalog_sha256':hashlib.sha256(args.catalog.read_bytes()).hexdigest(),
                 'model':MODEL, 'effort':'low', 'delay_seconds':75, 'workers':args.workers,
                 'seed':phase_seed, 'blocks':blocks,
-                'prompts':{v:{'path':str(path.relative_to(ROOT)), 'sha256':hashlib.sha256(path.read_bytes()).hexdigest()} for v,path in paths.items()},
+                'prompts':{v:({'path':str(path.relative_to(ROOT)), 'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+                              if path is not None else {'path':None,'sha256':None,'installation':'AGENTS.md absent'})
+                           for v,path in paths.items()},
                 'cell_prompt':CELL_PROMPT}
     if args.phase == 'outer-integration':
         manifest['subagent_fork_policy'] = 'all (explicit task instruction in both conditions)'
-    if args.phase in ('outer-subagent','outer-subagent-unnamed','wording'):
+    if args.phase in ('outer-subagent','outer-subagent-unnamed','wording','unpatched'):
         manifest['subagent_fork_policy'] = 'all; inherit parent settings; omit model/effort override arguments'
     write_once(HERE / f'{args.phase}-manifest.json', json.dumps(manifest, indent=2) + '\n')
     if args.prepare_only:
@@ -196,14 +203,15 @@ def main():
         scenario_prompt = CELL_PROMPT if task['scenario']=='cell' else prompt_for(task['scenario'],MODEL)
         if args.phase == 'outer-integration' and task['scenario'] == 'subagent':
             scenario_prompt += '\nFor this controlled comparison, set fork_turns to "all" when spawning the child.\n'
-        if args.phase in ('outer-subagent','outer-subagent-unnamed','wording') and task['scenario'] == 'subagent':
+        if args.phase in ('outer-subagent','outer-subagent-unnamed','wording','unpatched') and task['scenario'] == 'subagent':
             original = f'using model `{MODEL}` at low reasoning effort.'
             replacement = ('with `fork_turns: "all"`, inheriting the parent model and reasoning settings. '
                 'The parent is already configured as GPT-6 Astra at low reasoning effort. '
                 'Omit the model and reasoning_effort override arguments from the spawn call.')
             assert scenario_prompt.count(original) == 1
             scenario_prompt = scenario_prompt.replace(original,replacement)
-        record = Trial(args.out,task['name'],MODEL,None).execute(opts,'patch',task['scenario'],task['repetition'],
+        condition = 'new' if task['variant'] == 'no-patch' else 'patch'
+        record = Trial(args.out,task['name'],MODEL,None).execute(opts,condition,task['scenario'],task['repetition'],
                                                                scenario_prompt=scenario_prompt)
         record['condition'] = task['variant']
         record['phase'] = args.phase

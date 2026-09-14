@@ -1,5 +1,7 @@
 # Runtime and prompt waiting benchmark
 
+The **latest and final proposed patch** is [AGENTS.waiting-compatible.md](../waiting-validation/AGENTS.waiting-compatible.md). Its exact current wording was directly compared with no patch in [18 fresh Astra trials](../CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md): model responses fell 98→47, input 51.03%, and API-price equivalents 42.31%. All nine matched pairs improved on those measures; completion delays varied. See [the latest phase's reproduction instructions and evidence](numeric-waits/README.md#exact-current-wording-versus-no-patch). The sections below preserve the original study and its earlier prompt versions.
+
 This experiment uses actual Codex subscription inference and consumes normal account usage. Read [PLAN.md](PLAN.md) for the comparison design. The final report distinguishes client release changes, prompt changes, and historical server-side changes that cannot be recreated.
 
 The original three primary conditions are official CLI 0.151.0, official CLI 0.154.0, and CLI 0.154.0 with [the frozen original addition](AGENTS.initial.md). The current backend rejects Astra on 0.151.0, so that cell is unavailable, not zero-cost. A later user-requested follow-up successfully uses official 0.153.1 as Astra's earlier-client baseline. Unlike Sol's 0.151.0 baseline, it already includes PR #41243. All clients receive the same pinned current model catalog; this permits a controlled current-model comparison, not a replay of historical model behavior or bundled catalog differences.
@@ -79,7 +81,7 @@ The sleep-tool diagnostic uses `--conditions new-on,tuned-on --models gpt-5.6-so
 
 Timing definition: `result_delay_seconds` measures the final answer's recorded completion timestamp minus the authoritative job completion time. It includes status-detection and final model-response latency. `max_parent_message_gap_seconds` uses completed parent messages (including final), plus the initial turn-to-first-message gap. These are not first-streamed-token timestamps; interpret tiny cadence overages cautiously.
 
-## Final export and completed phases
+## Historical compact export and completed original phases
 
 The final compact Astra phase freezes the exported wording in [AGENTS.compact-final.md](AGENTS.compact-final.md). Its reproduction command is:
 
@@ -97,7 +99,9 @@ python3 docs/waiting-benchmark/benchmark.py \
 
 The three final-patch workloads reuse the existing clean Astra controls from `astra-1531-clean-results` (condition 1) and `clean-results` (condition 2). The requested tables compare sequential observations, not fresh interleaved pairs. Earlier initial/v3/v4 patch rows are not substituted for this compact version.
 
-The tested v4 wording is frozen in [AGENTS.tuned-v4.md](AGENTS.tuned-v4.md). The [current export](../waiting-validation/AGENTS.waiting-compatible.md) and this workspace's active `.codex_home/AGENTS.md` match [AGENTS.compact-final.md](AGENTS.compact-final.md), which completed the three new clean Astra workloads. Their [counts](compact-final-astra-results/COUNTS.md), [two comparison tables](compact-final-astra-results/COMPARISON.md), and [provenance](compact-final-astra-provenance.json) are separate from earlier v3/v4 measurements. Sol has not been tested with this compact rewrite. V4 changes only the CI watcher clause from v3; its two CI trials are in `tmp/wait-benchmark-v4`, while its unchanged terminal/subagent clauses were exercised under v3 and were not rerun as a whole v4 suite.
+The tested v4 wording is frozen in [AGENTS.tuned-v4.md](AGENTS.tuned-v4.md). The historical [AGENTS.compact-final.md](AGENTS.compact-final.md) completed the three clean Astra workloads above. Their [counts](compact-final-astra-results/COUNTS.md), [two comparison tables](compact-final-astra-results/COMPARISON.md), and [provenance](compact-final-astra-provenance.json) are separate from earlier v3/v4 measurements. Sol has not been tested with that compact rewrite. V4 changes only the CI watcher clause from v3; its two CI trials are in `tmp/wait-benchmark-v4`, while its unchanged terminal/subagent clauses were exercised under v3 and were not rerun as a whole v4 suite.
+
+Subsequent measurements revised the export. The current distribution file and this workspace's `.codex_home/AGENTS.md` now match [AGENTS.wording-no-pragma.md](numeric-waits/prompts/AGENTS.wording-no-pragma.md). The [numeric-waits follow-up documentation](numeric-waits/README.md) records those revisions and the final direct no-patch comparison. Historical frozen prompts and result directories remain unchanged.
 
 Completed original phases: 30 configured-environment trials, 21 clean comparison trials, 2 always-on diagnostics, 6 v3 validation trials, 2 v4 CI trials (61 total). The Astra 0.153.1 follow-up adds six configured and three clean trials; the compact-final phase adds three clean Astra trials, bringing the total to 73. Every workload completed correctly. See [the final report](../CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md) for limits and model-specific conclusions.
 

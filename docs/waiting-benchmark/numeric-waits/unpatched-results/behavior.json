@@ -1,0 +1,1688 @@
+[
+  {
+    "name": "gpt-6-astra-ci-no-patch-r1",
+    "condition": "no-patch",
+    "scenario": "ci",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [],
+    "ci_check_count": 5,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      26.97,
+      52.653,
+      73.667,
+      99.503
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [
+      {
+        "at": "2026-09-14T18:48:36.666Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 20000
+        }
+      },
+      {
+        "at": "2026-09-14T18:49:01.891Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 20000
+        }
+      },
+      {
+        "at": "2026-09-14T18:49:28.403Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 15000
+        }
+      },
+      {
+        "at": "2026-09-14T18:49:49.090Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 20000
+        }
+      }
+    ],
+    "parent_update_cadence_met": false,
+    "waiting_patch_file_present": false,
+    "waiting_instruction_sessions": []
+  },
+  {
+    "name": "gpt-6-astra-ci-no-patch-r2",
+    "condition": "no-patch",
+    "scenario": "ci",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [],
+    "ci_check_count": 4,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      25.884,
+      51.779,
+      79.329
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      true
+    ],
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [
+      {
+        "at": "2026-09-14T18:50:26.910Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 20000
+        }
+      },
+      {
+        "at": "2026-09-14T18:50:53.237Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 20000
+        }
+      },
+      {
+        "at": "2026-09-14T18:51:20.716Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 20000
+        }
+      }
+    ],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": false,
+    "waiting_instruction_sessions": []
+  },
+  {
+    "name": "gpt-6-astra-ci-no-patch-r3",
+    "condition": "no-patch",
+    "scenario": "ci",
+    "repetition": 3,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression"
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [],
+    "ci_check_count": 5,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      25.669,
+      52.273,
+      74.621,
+      101.053
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [
+      {
+        "at": "2026-09-14T18:55:11.401Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 20000
+        }
+      },
+      {
+        "at": "2026-09-14T18:55:37.591Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 20000
+        }
+      },
+      {
+        "at": "2026-09-14T18:56:04.879Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 15000
+        }
+      },
+      {
+        "at": "2026-09-14T18:56:26.946Z",
+        "tool": "sleep",
+        "arguments": {
+          "duration_ms": 20000
+        }
+      }
+    ],
+    "parent_update_cadence_met": false,
+    "waiting_patch_file_present": false,
+    "waiting_instruction_sessions": []
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r1",
+    "condition": "wording-no-pragma",
+    "scenario": "ci",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:46:25.361Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.001267625,
+        "seconds_before_job_completion": null
+      },
+      {
+        "at": "2026-09-14T18:46:38.237Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 5.0396715,
+        "seconds_before_job_completion": null
+      }
+    ],
+    "ci_check_count": 5,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      21.479,
+      41.52,
+      71.56,
+      101.605
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": true,
+    "waiting_instruction_sessions": [
+      "01a0a13c-5dc5-77f3-900c-d47d3b5950c8"
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r2",
+    "condition": "wording-no-pragma",
+    "scenario": "ci",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:54:52.186Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.001431417,
+        "seconds_before_job_completion": null
+      },
+      {
+        "at": "2026-09-14T18:54:58.348Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 1.625e-06,
+        "seconds_before_job_completion": null
+      }
+    ],
+    "ci_check_count": 4,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      24.966,
+      54.994,
+      85.026
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      true
+    ],
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": true,
+    "waiting_instruction_sessions": [
+      "01a0a144-3e96-74c3-80f9-4d6a02aa91e9"
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r3",
+    "condition": "wording-no-pragma",
+    "scenario": "ci",
+    "repetition": 3,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:56:32.162Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 35.609938666,
+        "seconds_before_job_completion": null
+      }
+    ],
+    "ci_check_count": 4,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      21.685,
+      41.715,
+      81.756
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      true
+    ],
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": true,
+    "waiting_instruction_sessions": [
+      "01a0a145-c992-77b3-8832-dd4f96f271c0"
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-no-patch-r1",
+    "condition": "no-patch",
+    "scenario": "subagent",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 60000
+      },
+      {
+        "tool": "functions.wait",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.wait",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 60000
+      }
+    ],
+    "running_cell_returns": 2,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:46:39.159Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.002258791,
+        "seconds_before_job_completion": 65.932809
+      },
+      {
+        "at": "2026-09-14T18:47:51.756Z",
+        "wait_ms": [
+          60000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 1.459e-06,
+        "seconds_before_job_completion": -6.664191
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 1,
+    "cell_resumption_calls": 2,
+    "short_stdin_requests": 1,
+    "native_waits": [
+      {
+        "at": "2026-09-14T18:46:28.778Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 60000
+        }
+      },
+      {
+        "at": "2026-09-14T18:47:32.044Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 60000
+        }
+      },
+      {
+        "at": "2026-09-14T18:47:50.174Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 60000
+        }
+      }
+    ],
+    "parent_update_cadence_met": false,
+    "waiting_patch_file_present": false,
+    "waiting_instruction_sessions": []
+  },
+  {
+    "name": "gpt-6-astra-subagent-no-patch-r2",
+    "condition": "no-patch",
+    "scenario": "subagent",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 60000
+      },
+      {
+        "tool": "functions.wait",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.wait",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.wait",
+        "yield_time_ms": 10000
+      },
+      {
+        "tool": "functions.wait",
+        "yield_time_ms": 10000
+      }
+    ],
+    "running_cell_returns": 4,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:50:40.879Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.001085958,
+        "seconds_before_job_completion": 65.809686
+      },
+      {
+        "at": "2026-09-14T18:50:48.758Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.001065584,
+        "seconds_before_job_completion": 57.930686
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 1,
+    "cell_resumption_calls": 4,
+    "short_stdin_requests": 2,
+    "native_waits": [
+      {
+        "at": "2026-09-14T18:50:28.789Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 60000
+        }
+      },
+      {
+        "at": "2026-09-14T18:51:32.282Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 60000
+        }
+      }
+    ],
+    "parent_update_cadence_met": false,
+    "waiting_patch_file_present": false,
+    "waiting_instruction_sessions": []
+  },
+  {
+    "name": "gpt-6-astra-subagent-no-patch-r3",
+    "condition": "no-patch",
+    "scenario": "subagent",
+    "repetition": 3,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 60000
+      },
+      {
+        "tool": "functions.wait",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.wait",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.wait",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 60000
+      }
+    ],
+    "running_cell_returns": 3,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:58:46.098Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.002034292,
+        "seconds_before_job_completion": 64.998351
+      },
+      {
+        "at": "2026-09-14T18:59:55.278Z",
+        "wait_ms": [
+          60000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 2.541e-06,
+        "seconds_before_job_completion": -4.181649
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 1,
+    "cell_resumption_calls": 3,
+    "short_stdin_requests": 1,
+    "native_waits": [
+      {
+        "at": "2026-09-14T18:58:32.807Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 60000
+        }
+      },
+      {
+        "at": "2026-09-14T18:59:35.921Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 60000
+        }
+      },
+      {
+        "at": "2026-09-14T18:59:54.227Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 60000
+        }
+      }
+    ],
+    "parent_update_cadence_met": false,
+    "waiting_patch_file_present": false,
+    "waiting_instruction_sessions": []
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r1",
+    "condition": "wording-no-pragma",
+    "scenario": "subagent",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:48:10.971Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.001669333,
+        "seconds_before_job_completion": 1.172825
+      },
+      {
+        "at": "2026-09-14T18:48:14.648Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 1.75e-06,
+        "seconds_before_job_completion": -2.504175
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [
+      {
+        "at": "2026-09-14T18:46:52.978Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 45000
+        }
+      },
+      {
+        "at": "2026-09-14T18:47:41.429Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 45000
+        }
+      }
+    ],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": true,
+    "waiting_instruction_sessions": [
+      "01a0a13e-2b82-7281-8b53-fe59af2224a2",
+      "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d"
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r2",
+    "condition": "wording-no-pragma",
+    "scenario": "subagent",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:54:43.372Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.002139375,
+        "seconds_before_job_completion": 0.036667
+      },
+      {
+        "at": "2026-09-14T18:54:47.340Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 1.166e-06,
+        "seconds_before_job_completion": -3.931333
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [
+      {
+        "at": "2026-09-14T18:53:24.874Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 45000
+        }
+      },
+      {
+        "at": "2026-09-14T18:54:13.567Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 45000
+        }
+      }
+    ],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": true,
+    "waiting_instruction_sessions": [
+      "01a0a144-1f16-7b40-b899-6f38f3a24e56",
+      "01a0a144-43a5-7c63-b69e-d98d8e437af5"
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r3",
+    "condition": "wording-no-pragma",
+    "scenario": "subagent",
+    "repetition": 3,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:58:07.298Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 39.221222958,
+        "seconds_before_job_completion": -0.013184
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [
+      {
+        "at": "2026-09-14T18:56:48.119Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 45000
+        }
+      },
+      {
+        "at": "2026-09-14T18:57:37.815Z",
+        "tool": "wait_agent",
+        "arguments": {
+          "timeout_ms": 45000
+        }
+      }
+    ],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": true,
+    "waiting_instruction_sessions": [
+      "01a0a147-3963-7bb1-ae18-18366e5d2543",
+      "01a0a147-6265-7e20-bdab-dff4c1b61eac"
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-no-patch-r1",
+    "condition": "no-patch",
+    "scenario": "terminal",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 10000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 10000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 10000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 10000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:45:07.194Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.003184042,
+        "seconds_before_job_completion": 64.582733
+      },
+      {
+        "at": "2026-09-14T18:45:15.802Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.001771292,
+        "seconds_before_job_completion": 55.974733
+      },
+      {
+        "at": "2026-09-14T18:45:24.479Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.0006115,
+        "seconds_before_job_completion": 47.297733
+      },
+      {
+        "at": "2026-09-14T18:45:37.417Z",
+        "wait_ms": [
+          10000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 10.001722209,
+        "seconds_before_job_completion": 34.359733
+      },
+      {
+        "at": "2026-09-14T18:45:50.223Z",
+        "wait_ms": [
+          10000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 10.001441375,
+        "seconds_before_job_completion": 21.553733
+      },
+      {
+        "at": "2026-09-14T18:46:03.192Z",
+        "wait_ms": [
+          10000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 10.001616125,
+        "seconds_before_job_completion": 8.584733
+      },
+      {
+        "at": "2026-09-14T18:46:11.785Z",
+        "wait_ms": [
+          10000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 4.847350333,
+        "seconds_before_job_completion": -0.008267
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 3,
+    "native_waits": [],
+    "parent_update_cadence_met": false,
+    "waiting_patch_file_present": false,
+    "waiting_instruction_sessions": []
+  },
+  {
+    "name": "gpt-6-astra-terminal-no-patch-r2",
+    "condition": "no-patch",
+    "scenario": "terminal",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:52:02.825Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.0016475,
+        "seconds_before_job_completion": 65.928036
+      },
+      {
+        "at": "2026-09-14T18:52:10.949Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.002090666,
+        "seconds_before_job_completion": 57.804036
+      },
+      {
+        "at": "2026-09-14T18:52:20.080Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.002104084,
+        "seconds_before_job_completion": 48.673036
+      },
+      {
+        "at": "2026-09-14T18:52:27.990Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.001428875,
+        "seconds_before_job_completion": 40.763036
+      },
+      {
+        "at": "2026-09-14T18:52:37.432Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.001833083,
+        "seconds_before_job_completion": 31.321036
+      },
+      {
+        "at": "2026-09-14T18:52:45.049Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.002397375,
+        "seconds_before_job_completion": 23.704036
+      },
+      {
+        "at": "2026-09-14T18:52:53.749Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.000993417,
+        "seconds_before_job_completion": 15.004036
+      },
+      {
+        "at": "2026-09-14T18:53:02.808Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.002758917,
+        "seconds_before_job_completion": 5.945036
+      },
+      {
+        "at": "2026-09-14T18:53:08.757Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 1.8598665840000002,
+        "seconds_before_job_completion": -0.003964
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 9,
+    "native_waits": [],
+    "parent_update_cadence_met": false,
+    "waiting_patch_file_present": false,
+    "waiting_instruction_sessions": []
+  },
+  {
+    "name": "gpt-6-astra-terminal-no-patch-r3",
+    "condition": "no-patch",
+    "scenario": "terminal",
+    "repetition": 3,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 1000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:57:11.966Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.002358791,
+        "seconds_before_job_completion": 64.9243
+      },
+      {
+        "at": "2026-09-14T18:57:20.411Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.003088958,
+        "seconds_before_job_completion": 56.4793
+      },
+      {
+        "at": "2026-09-14T18:57:29.451Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.000790042,
+        "seconds_before_job_completion": 47.4393
+      },
+      {
+        "at": "2026-09-14T18:57:38.398Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.002203125,
+        "seconds_before_job_completion": 38.4923
+      },
+      {
+        "at": "2026-09-14T18:57:48.559Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.003029833,
+        "seconds_before_job_completion": 28.3313
+      },
+      {
+        "at": "2026-09-14T18:57:57.777Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.003128125,
+        "seconds_before_job_completion": 19.1133
+      },
+      {
+        "at": "2026-09-14T18:58:08.150Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 5.001838208,
+        "seconds_before_job_completion": 8.7403
+      },
+      {
+        "at": "2026-09-14T18:58:16.902Z",
+        "wait_ms": [
+          1000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 4.141317292,
+        "seconds_before_job_completion": -0.0117
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 8,
+    "native_waits": [],
+    "parent_update_cadence_met": false,
+    "waiting_patch_file_present": false,
+    "waiting_instruction_sessions": []
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r1",
+    "condition": "wording-no-pragma",
+    "scenario": "terminal",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:49:26.254Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 37.740141167,
+        "seconds_before_job_completion": -0.009254
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": true,
+    "waiting_instruction_sessions": [
+      "01a0a13f-528d-7c63-a82e-ad8f43180a17"
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r2",
+    "condition": "wording-no-pragma",
+    "scenario": "terminal",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:53:16.589Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 39.947877333,
+        "seconds_before_job_completion": -0.0047
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": true,
+    "waiting_instruction_sessions": [
+      "01a0a142-e4b7-7a70-8347-f1a1f66c64a6"
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r3",
+    "condition": "wording-no-pragma",
+    "scenario": "terminal",
+    "repetition": 3,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:59:35.624Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.001990375,
+        "seconds_before_job_completion": 1.007887
+      },
+      {
+        "at": "2026-09-14T18:59:39.438Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 3.5e-06,
+        "seconds_before_job_completion": -2.806113
+      }
+    ],
+    "ci_check_count": 0,
+    "initial_cell_returns": 0,
+    "cell_resumption_calls": 0,
+    "short_stdin_requests": 0,
+    "native_waits": [],
+    "parent_update_cadence_met": true,
+    "waiting_patch_file_present": true,
+    "waiting_instruction_sessions": [
+      "01a0a148-b7e0-71f3-9e22-db57d8396803"
+    ]
+  }
+]

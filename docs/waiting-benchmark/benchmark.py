@@ -110,6 +110,7 @@ class Trial(Probe):
             shutil.copyfile(options.catalog, home / 'models.json')
             if patch:
                 shutil.copyfile(patch, home / 'AGENTS.md')
+            record['waiting_patch_file_present'] = (home / 'AGENTS.md').exists()
             config = [f'model = "{self.model}"', f'model_reasoning_effort = "{options.effort}"',
                       'approval_policy = "never"', 'sandbox_mode = "workspace-write"',
                       'model_catalog_json = "models.json"', '[features]', 'multi_agent = true']
@@ -189,6 +190,7 @@ class Trial(Probe):
             cumulative_final = {}
             prompt_loaded = False
             skills_instruction_sessions = set()
+            waiting_instruction_sessions = set()
             for rollout in sorted((home / 'sessions').rglob('*.jsonl')):
                 rows = [json.loads(line) for line in rollout.open() if line.strip()]
                 metas = [e['payload'] for e in rows if e.get('type') == 'session_meta']
@@ -224,6 +226,8 @@ class Trial(Probe):
                             message_text = '\n'.join(c.get('text', '') for c in p.get('content', []))
                             if '<skills_instructions>' in message_text or '### Available skills' in message_text:
                                 skills_instruction_sessions.add(sid)
+                            if p.get('role') == 'user' and '## Waiting for work' in message_text:
+                                waiting_instruction_sessions.add(sid)
                         if p.get('type') in ('function_call', 'custom_tool_call'):
                             calls.append({**base, **{k: p[k] for k in
                                 ['type', 'name', 'namespace', 'call_id', 'arguments', 'input'] if k in p}})
@@ -276,6 +280,7 @@ class Trial(Probe):
             gaps = [round(b-a, 3) for a,b in zip(points, points[1:])]
             record.update({'success': success, 'prompt_loaded': prompt_loaded if patch else None,
                 'skills_instruction_sessions': sorted(skills_instruction_sessions),
+                'waiting_instruction_sessions': sorted(waiting_instruction_sessions),
                 'calls': calls, 'tool_outputs': outputs, 'response_usage': usages, 'messages': messages,
                 'model_contexts': contexts, 'base_instruction_hashes': instruction_hashes,
                 'cumulative_final_by_session': cumulative_final,

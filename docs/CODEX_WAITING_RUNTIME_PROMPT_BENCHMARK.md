@@ -2,7 +2,9 @@
 
 ## TL;DR
 
-**73 actual 75-second workloads completed successfully, including nine Astra trials on CLI 0.153.1 and three tests of the final compact patch. Waiting overhead is still reproducible on 0.154.0, and neither upgrading nor enabling sleep universally eliminates it.**
+**September 15 follow-up: the exact latest patch now has a fresh no-patch control.** In [18 new Astra-only trials](CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md), responses fell 98→47 (52.04%), input 1,515,920→742,417 (51.03%), and API-price equivalents $2.618056→$1.510370 (42.31%). All nine workload/repetition pairs improved on those measures. All jobs completed; one control had extra answer formatting, and parent update cadence passed in 1/9 controls versus 9/9 patched trials. Delivery delays varied. These trials use the exact current wording and are separate from the historical results below.
+
+**The original study completed 73 actual 75-second workloads, including nine Astra trials on CLI 0.153.1 and three tests of the historical compact patch. Waiting overhead is still reproducible on 0.154.0, and neither upgrading nor enabling sleep universally eliminates it.**
 
 - **Historical comparison is limited:** Sol's 0.151.0 baseline excludes PR #41243. Astra works on the subsequently tested 0.153.1, but that release already includes #41243. Today's backend rejects Astra on 0.151.0. Neither older client reproduces the server changes described in the linked announcement.
 - **Astra now has an earlier-client comparison:** configured-environment responses were 48→48→41 for 0.153.1→0.154.0→initial patch; API-rate equivalents were $2.055734→$1.934240→$1.644686. Clean responses were 30→36→24, with dollars $0.792160→$0.988982→$0.716216. The later 0.153.1 trials reuse the original 0.154.0 controls, so these are exploratory sequential comparisons.
@@ -13,7 +15,32 @@
 - **Token categories and dollar components are separated below.** Dollars are Standard API-rate equivalents of subscription-reported counters, not account charges. Cache-write fields were normalized zero; actual writes cannot be recovered separately and may have been omitted upstream.
 - **Further measurements updated the current export.** The first [30 follow-up trials](CODEX_WAITING_NUMERIC_OVERRIDES_BENCHMARK.md) examined numeric overrides and whole-section deletion. The subsequent [32-trial outer-yield study](CODEX_WAITING_OUTER_EXEC_BENCHMARK.md) selected qualitative initial and outer waits, removing `30000` and `45000` from the Terminal commands section. Explicit `functions.exec` naming was tested and omitted at that stage. That wording passed seven trials across three phases; it is distinct from the frozen compact version measured below. On September 15, the current export named the outer/inner tools and removed pragma syntax. In a fresh [18-trial remeasurement](CODEX_WAITING_PRAGMA_REMOVAL_BENCHMARK.md), all six current-wording trials passed. Against the immediately preceding pragma-bearing wording, responses rose 29→33 and input rose 13.93%; API valuation fell 2.19% with a higher cached-input share. This does not establish unchanged efficiency.
 
-## What the three conditions mean
+## Exact latest patch: direct comparison with no patch
+
+The latest and final proposed addition is [AGENTS.waiting-compatible.md](waiting-validation/AGENTS.waiting-compatible.md), byte-identical to the frozen [AGENTS.wording-no-pragma.md](waiting-benchmark/numeric-waits/prompts/AGENTS.wording-no-pragma.md), SHA256 `882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411`. This comparison measured that exact text, without further edits.
+
+Both conditions use CLI 0.154.0 and Astra/low, with shared and bundled skill instructions disabled. Each row sums nine fresh trials: three repetitions each of terminal, subagent, and local CI workloads lasting 75 seconds. Parent and child usage is included. The no-patch condition has no AGENTS.md installed; runtime configuration is otherwise identical. Execution order was shuffled within each repetition block. These controls are separate from the older-client and earlier-prompt measurements below.
+
+| Condition | Responses | Input total | Ordinary input | Cached reads | Writes reported | Output | API-rate USD |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| No patch | 98 | 1,515,920 | 101,904 | 1,414,016 | 0 | 3,700 | $2.618056 |
+| Exact latest patch | 47 | 742,417 | 67,217 | 675,200 | 0 | 3,260 | $1.510370 |
+
+Responses fell **52.04%**, inclusive input **51.03%**, and API-price equivalents **42.31%**. All nine matched workload/repetition pairs improved on those measures. Recorded cache-write zeros can include unreported values; dollars apply the dated September 14 API rates to subscription counters and are not account charges.
+
+| Astra workload | Responses, no patch→latest | Input, no patch→latest | API-rate USD, no patch→latest | Mean result delay, no patch→latest |
+| --- | ---: | ---: | ---: | ---: |
+| CI | 28→14 | 434,130→223,672 | $0.740020→$0.499220 | 20.405→18.746 s |
+| Subagent | 40→23 | 613,954→361,640 | $1.051628→$0.744760 | 8.278→7.227 s |
+| Terminal | 30→10 | 467,836→157,105 | $0.826408→$0.266390 | 2.259→3.353 s |
+
+All 18 jobs completed and usage reconciled. One no-patch subagent trial returned the correct result with extra formatting, failing exact answer-format matching; it remains in the totals. Parent update gaps stayed within 60 seconds in 1/9 controls and 9/9 patched trials. One-second stdin requests fell 24→0, and extra Code Mode cell-resumption calls fell 9→0. CI service-status requests fell only 14→13: most savings came from reducing model-driven checks.
+
+This short comparison establishes a measured benefit for the exact current Astra prompt under these conditions. It does not establish the cheapest wording, universal savings, or an effect on Sol. Delivery became slower in five of nine pairs, including a CI pair delayed by 11.414 seconds. The earlier wording comparisons retain their own findings.
+
+[Full direct-comparison report](CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md), [per-trial token and dollar components](waiting-benchmark/numeric-waits/unpatched-results/COUNTS.md), [acceptance and integrity checks](waiting-benchmark/numeric-waits/unpatched-results/validation.json), [reproduction instructions](waiting-benchmark/numeric-waits/README.md#exact-current-wording-versus-no-patch).
+
+## What the original three conditions mean
 
 | Condition | Runtime | Waiting addition | Scope |
 | --- | --- | --- | --- |
@@ -234,7 +261,7 @@ The compact export therefore retains only: “Longer waits may not reduce usage;
 
 ## Recommended user-side addition and rollout scope
 
-The current four-rule addition is a compact rewrite of v4, exported as [AGENTS.waiting-compatible.md](waiting-validation/AGENTS.waiting-compatible.md) and synchronized with this workspace's active [global AGENTS.md](../.codex_home/AGENTS.md). The exact wording tested in the three new Astra workloads is frozen at [AGENTS.compact-final.md](waiting-benchmark/AGENTS.compact-final.md); the earlier [v4 wording](waiting-benchmark/AGENTS.tuned-v4.md) is also preserved. The compact version has now demonstrated savings in these short Astra workloads, with the CI latency tradeoff reported above. It has not been tested on Sol or directly established as behaviorally equivalent to v4. The original prompt and every tested candidate remain available for audit.
+The current addition is exported as [AGENTS.waiting-compatible.md](waiting-validation/AGENTS.waiting-compatible.md) and synchronized with this workspace's active [global AGENTS.md](../.codex_home/AGENTS.md). Its exact wording is frozen at [AGENTS.wording-no-pragma.md](waiting-benchmark/numeric-waits/prompts/AGENTS.wording-no-pragma.md). A [fresh direct comparison against no patch](CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md) demonstrated lower responses, input, and API-price equivalents in all nine matched Astra workload/repetition pairs, with mixed notification-delay effects. Sol has not been tested with this wording. The three historical compact trials above used [AGENTS.compact-final.md](waiting-benchmark/AGENTS.compact-final.md); that version and the earlier [v4 wording](waiting-benchmark/AGENTS.tuned-v4.md) remain unchanged for audit. These separate studies do not establish behavioral equivalence between prompt versions.
 
 The useful additions are concrete: retain native wait/session handles, avoid preliminary short polls, coordinate wrapper and inner durations, put required updates in existing wait responses, and turn scriptable CI polling into a bounded command. The four rules preserve verification and the distinction between an observation timeout, a failed task, and an actually paused goal. They can coexist with the built-in instructions because they explicitly defer to higher-priority limits. They cannot guarantee obedience or a response-latency bound.
 

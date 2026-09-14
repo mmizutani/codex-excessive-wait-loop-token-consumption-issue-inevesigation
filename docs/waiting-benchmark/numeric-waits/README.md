@@ -198,3 +198,46 @@ intentionally relied on that grace or that the rewrite preserves token efficienc
 - [Token and dollar categories](wording-results/COUNTS.md)
 - [Wait arguments](wording-results/COMPARISON.md), [timing evidence](wording-results/behavior.json)
 - [Release-specific source evidence](wording-runtime-evidence.json)
+
+## Exact current wording versus no patch
+
+The [predeclared direct comparison](UNPATCHED_PLAN.md) runs the exact current
+`wording-no-pragma` patch against `no-patch`, which installs no AGENTS.md file.
+Each condition receives three new trials per terminal/CI/subagent workload, for
+18 trials total. The [manifest](unpatched-manifest.json) freezes conditions and
+shuffled repetition blocks. Temporary homes and working directories isolate the
+control from repository/global waiting instructions; file presence and instruction
+loading in parent/child sessions are recorded and checked. Runtime/native sleep
+settings, Astra/low, task text, and disabled shared/bundled skills are the same.
+
+```sh
+python3 docs/waiting-benchmark/numeric-waits/run.py --phase unpatched --prepare-only
+python3 docs/waiting-benchmark/numeric-waits/run.py --phase unpatched
+python3 docs/waiting-benchmark/analyze.py \
+  tmp/wait-benchmark-numeric-waits/unpatched \
+  --out docs/waiting-benchmark/numeric-waits/unpatched-results
+python3 docs/waiting-benchmark/numeric-waits/compare.py \
+  tmp/wait-benchmark-numeric-waits/unpatched \
+  --out docs/waiting-benchmark/numeric-waits/unpatched-results
+python3 docs/waiting-benchmark/numeric-waits/wording_behavior.py --phase unpatched
+```
+
+The exact latest patch reduced responses 98→47, inclusive input 1,515,920→742,417,
+and API-price equivalents $2.618056→$1.510370. All nine matched pairs improved on
+those measures. All 18 jobs completed and their counters reconciled; one no-patch
+subagent trial failed exact answer-format matching by adding a code fence and exit
+status. Parent update cadence passed in 1/9 controls and 9/9 patched trials.
+The records and acceptance criteria retain that distinction; `Success` in COUNTS.md
+denotes completion, not passing every format/cadence requirement.
+
+All trials together used 145 unique responses and $4.128426 at the dated API rates.
+This establishes an observed direct benefit for these Astra workloads, with mixed
+notification-delay effects. It does not establish universal savings or the cheapest
+wording. The current patch and historical trial exports remain unchanged.
+
+- [Japanese report](../../CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md)
+- [Token and dollar categories](unpatched-results/COUNTS.md)
+- [Comparisons](unpatched-results/COMPARISON.md), [matched pairs and checks](unpatched-results/comparison.json)
+- [Wait behavior and instruction presence](unpatched-results/behavior.json)
+- [Recorded tool calls and usage](unpatched-results/trial-evidence.json)
+- [Final integrity checks and measured comparison](unpatched-results/validation.json)

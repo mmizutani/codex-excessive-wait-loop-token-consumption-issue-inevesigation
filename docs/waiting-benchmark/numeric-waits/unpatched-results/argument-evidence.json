@@ -1,0 +1,2227 @@
+[
+  {
+    "name": "gpt-6-astra-ci-no-patch-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:48:32.464Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:48:32.464Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:48:59.455Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:48:59.455Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:49:25.154Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:49:25.154Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:49:46.155Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:49:46.155Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:12.007Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:12.007Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:48:27.359Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13f-afc1-78e0-9722-305b599d9b10"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:48:31.711Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` using the status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:49:48.777Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll continue monitoring.\n"
+      },
+      {
+        "at": "2026-09-14T18:50:14.185Z",
+        "session_id": "01a0a13f-af93-77b1-9137-ee7d07aaa286",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-no-patch-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:50:24.449Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:24.449Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:50.350Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:50.350Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:51:16.264Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:51:16.264Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:51:43.813Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:51:43.813Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:50:18.589Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a141-6bcb-7fc1-850a-7d333ed4e6a1"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:50:23.751Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:51:20.479Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll continue checking its status.\n"
+      },
+      {
+        "at": "2026-09-14T18:51:45.830Z",
+        "session_id": "01a0a141-6b97-7070-abe5-e8db45011330",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-no-patch-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:55:08.497Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:55:08.497Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:55:34.204Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:55:34.204Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:56:00.812Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:56:00.812Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:56:23.152Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:56:23.152Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:56:49.575Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:56:49.575Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "tool": "exec_command",
+        "yield_time_ms": "omitted-or-expression",
+        "source": "{cmd:\"python3 bench_ci.py status\",max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:55:04.477Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a145-c9c5-7ea3-b267-07b5755fc9e3"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:55:08.081Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` using the status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:56:26.646Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll continue checking.\n"
+      },
+      {
+        "at": "2026-09-14T18:56:51.886Z",
+        "session_id": "01a0a145-c994-7c22-82f4-fadc398ab4e6",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:44:56.525Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:44:56.525Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:07.999Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 - <<'PY'\\nimport json, subprocess, time\\nlast = None\\nfor attempt in range(120):\\n    time.sleep(min(10 * (attempt + 1), 30))\\n    proc = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if proc.returncode:\\n        print(proc.stderr, flush=True)\\n        raise SystemExit(proc.returncode)\\n    raw = proc.stdout.strip()\\n    data = json.loads(raw)\\n    if raw != last:\\n        print(raw, flush=True)\\n        last = raw\\n    if data.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if data.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Observation limit reached', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:07.999Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 - <<'PY'\\nimport json, subprocess, time\\nlast = None\\nfor attempt in range(120):\\n    time.sleep(min(10 * (attempt + 1), 30))\\n    proc = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if proc.returncode:\\n        print(proc.stderr, flush=True)\\n        raise SystemExit(proc.returncode)\\n    raw = proc.stdout.strip()\\n    data = json.loads(raw)\\n    if raw != last:\\n        print(raw, flush=True)\\n        last = raw\\n    if data.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if data.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Observation limit reached', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:45.341Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:65340,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:45.341Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:65340,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:33.191Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:65340,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:33.191Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:65340,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:44:48.721Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13c-5e31-7422-bc19-c4ed0dabd02f"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:44:55.513Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the supplied status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:45:01.074Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll check periodically and report its result when it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:45:43.986Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "phase": "commentary",
+        "text": "The latest status is still `running`; the monitor remains active.\n"
+      },
+      {
+        "at": "2026-09-14T18:46:31.839Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "phase": "commentary",
+        "text": "No status change has been reported. I\u2019m continuing to wait for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:46:41.115Z",
+        "session_id": "01a0a13c-5dc5-77f3-900c-d47d3b5950c8",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:53:27.533Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:53:27.533Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:53:37.502Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor attempt in range(120):\\n    time.sleep(min(15 * (attempt + 1), 30))\\n    output = subprocess.check_output(['python3', 'bench_ci.py', 'status'], text=True)\\n    current = json.loads(output)\\n    if current != previous:\\n        print(output.strip(), flush=True)\\n        previous = current\\n    if current.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Monitoring interval ended without completion.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:53:37.502Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor attempt in range(120):\\n    time.sleep(min(15 * (attempt + 1), 30))\\n    output = subprocess.check_output(['python3', 'bench_ci.py', 'status'], text=True)\\n    current = json.loads(output)\\n    if current != previous:\\n        print(output.strip(), flush=True)\\n        previous = current\\n    if current.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Monitoring interval ended without completion.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:54:12.178Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:76441,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:54:12.178Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:76441,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:54:58.288Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:76441,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:54:58.288Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:76441,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:53:23.729Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a144-3ecd-7070-b019-49d574033c53"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:53:26.586Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` using the status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:53:31.188Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "phase": "commentary",
+        "text": "`job-7391` is running. I\u2019ll wait between checks and report its result when it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:54:10.798Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "phase": "commentary",
+        "text": "The monitor has observed no status change. I\u2019m continuing to wait.\n"
+      },
+      {
+        "at": "2026-09-14T18:54:56.958Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "phase": "commentary",
+        "text": "`job-7391` has not reported completion. The monitor is still waiting.\n"
+      },
+      {
+        "at": "2026-09-14T18:55:00.329Z",
+        "session_id": "01a0a144-3e96-74c3-80f9-4d6a02aa91e9",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:55:10.309Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:55:10.309Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:55:22.000Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 - <<'PY'\\nimport subprocess, json, time\\nlast = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor i in range(120):\\n    time.sleep(min(10 * (2 ** min(i, 2)), 40))\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stderr, flush=True)\\n        raise SystemExit(p.returncode)\\n    state = json.loads(p.stdout)\\n    if state != last:\\n        print(p.stdout, end='', flush=True)\\n        last = state\\n    if state.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if state.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Observation limit reached', flush=True)\\nPY\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:55:22.000Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 - <<'PY'\\nimport subprocess, json, time\\nlast = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor i in range(120):\\n    time.sleep(min(10 * (2 ** min(i, 2)), 40))\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stderr, flush=True)\\n        raise SystemExit(p.returncode)\\n    state = json.loads(p.stdout)\\n    if state != last:\\n        print(p.stdout, end='', flush=True)\\n        last = state\\n    if state.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if state.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Observation limit reached', flush=True)\\nPY\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:55:56.543Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:72568,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:55:56.543Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:72568,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:55:05.518Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a145-c9c5-7293-b1d9-4af7d8466d42"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:55:09.018Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the supplied status command and preserve the existing run.\n"
+      },
+      {
+        "at": "2026-09-14T18:55:14.635Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll continue checking with longer intervals while its status stays unchanged.\n"
+      },
+      {
+        "at": "2026-09-14T18:55:55.201Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "phase": "commentary",
+        "text": "The status remains unchanged. Monitoring continues.\n"
+      },
+      {
+        "at": "2026-09-14T18:56:34.434Z",
+        "session_id": "01a0a145-c992-77b3-8832-dd4f96f271c0",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-no-patch-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:46:29.984Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:29.984Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:34.145Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:83334,chars:\"\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:34.145Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:83334,chars:\"\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:42.710Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:83334,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:42.710Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "write_stdin",
+        "yield_time_ms": 60000,
+        "source": "{session_id:83334,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:47:17.392Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "functions.wait",
+        "yield_time_ms": 1000,
+        "source": "{\"cell_id\":\"3\",\"yield_time_ms\":1000,\"max_tokens\":10000}"
+      },
+      {
+        "at": "2026-09-14T18:47:21.526Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "functions.wait",
+        "yield_time_ms": 30000,
+        "source": "{\"cell_id\":\"3\",\"yield_time_ms\":30000,\"max_tokens\":10000}"
+      },
+      {
+        "at": "2026-09-14T18:47:51.645Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:83334,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:47:51.645Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "tool": "write_stdin",
+        "yield_time_ms": 60000,
+        "source": "{session_id:83334,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 2,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:46:18.923Z",
+        "session_id": "01a0a13d-c230-7a93-94ce-a7c02047eaa9",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13d-c260-7a32-8a67-9823b9cc0ef1"
+      },
+      {
+        "at": "2026-09-14T18:46:24.397Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13d-c260-7a32-8a67-9823b9cc0ef1"
+      },
+      {
+        "at": "2026-09-14T18:46:26.981Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13d-e998-7621-8614-f0e8192a4f70"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:46:22.695Z",
+        "session_id": "01a0a13d-c230-7a93-94ce-a7c02047eaa9",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command to one subagent and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:47:31.759Z",
+        "session_id": "01a0a13d-c230-7a93-94ce-a7c02047eaa9",
+        "phase": "commentary",
+        "text": "I\u2019m still waiting for the subagent\u2019s result.\n"
+      },
+      {
+        "at": "2026-09-14T18:47:56.574Z",
+        "session_id": "01a0a13d-c230-7a93-94ce-a7c02047eaa9",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:47:54.299Z",
+        "session_id": "01a0a13d-e98c-7110-ac7a-e6d3f7a9e35e",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-no-patch-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:50:31.602Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:31.602Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:35.869Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:25945,chars:\"\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:35.869Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:25945,chars:\"\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:43.752Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:25945,chars:\"\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:43.752Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:25945,chars:\"\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:51.818Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:25945,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:50:51.818Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "write_stdin",
+        "yield_time_ms": 60000,
+        "source": "{session_id:25945,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:51:25.216Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "functions.wait",
+        "yield_time_ms": 1000,
+        "source": "{\"cell_id\":\"4\",\"max_tokens\":10000,\"yield_time_ms\":1000}"
+      },
+      {
+        "at": "2026-09-14T18:51:29.342Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "functions.wait",
+        "yield_time_ms": 1000,
+        "source": "{\"cell_id\":\"4\",\"max_tokens\":10000,\"yield_time_ms\":1000}"
+      },
+      {
+        "at": "2026-09-14T18:51:33.085Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "functions.wait",
+        "yield_time_ms": 10000,
+        "source": "{\"cell_id\":\"4\",\"max_tokens\":10000,\"yield_time_ms\":10000}"
+      },
+      {
+        "at": "2026-09-14T18:51:46.523Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "tool": "functions.wait",
+        "yield_time_ms": 10000,
+        "source": "{\"cell_id\":\"4\",\"max_tokens\":10000,\"yield_time_ms\":10000}"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 4,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:50:18.937Z",
+        "session_id": "01a0a141-6b99-7051-a580-ccb714665377",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a141-6bcb-7cd2-86ed-1e524edecb52"
+      },
+      {
+        "at": "2026-09-14T18:50:24.764Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a141-6bcb-7cd2-86ed-1e524edecb52"
+      },
+      {
+        "at": "2026-09-14T18:50:27.795Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a141-9480-7dc1-8fca-bc8de4b02941"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:50:22.579Z",
+        "session_id": "01a0a141-6b99-7051-a580-ccb714665377",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command once and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:51:32.003Z",
+        "session_id": "01a0a141-6b99-7051-a580-ccb714665377",
+        "phase": "commentary",
+        "text": "The child is still waiting for the command to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:51:50.732Z",
+        "session_id": "01a0a141-6b99-7051-a580-ccb714665377",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:51:48.673Z",
+        "session_id": "01a0a141-947c-7250-bff0-28e6c95e8613",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-no-patch-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:58:35.990Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "const r = await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:10000});text(r);\n"
+      },
+      {
+        "at": "2026-09-14T18:58:35.990Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:10000});text(r);\n"
+      },
+      {
+        "at": "2026-09-14T18:58:41.089Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:55463,chars:\"\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:41.089Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:55463,chars:\"\",yield_time_ms:1000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:49.002Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:55463,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:49.002Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "write_stdin",
+        "yield_time_ms": 60000,
+        "source": "{session_id:55463,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:59:23.130Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "functions.wait",
+        "yield_time_ms": 1000,
+        "source": "{\"cell_id\":\"3\",\"yield_time_ms\":1000,\"max_tokens\":10000}"
+      },
+      {
+        "at": "2026-09-14T18:59:27.156Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "functions.wait",
+        "yield_time_ms": 1000,
+        "source": "{\"cell_id\":\"3\",\"yield_time_ms\":1000,\"max_tokens\":10000}"
+      },
+      {
+        "at": "2026-09-14T18:59:31.974Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "functions.wait",
+        "yield_time_ms": 30000,
+        "source": "{\"cell_id\":\"3\",\"yield_time_ms\":30000,\"max_tokens\":10000}"
+      },
+      {
+        "at": "2026-09-14T18:59:55.148Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:55463,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:59:55.148Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "tool": "write_stdin",
+        "yield_time_ms": 60000,
+        "source": "{session_id:55463,chars:\"\",yield_time_ms:60000,max_output_tokens:10000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": false,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 3,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:58:23.814Z",
+        "session_id": "01a0a148-d188-72c1-b910-ac7aea4213c9",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a148-d1b6-7ef0-955b-27e6e0a2aa68"
+      },
+      {
+        "at": "2026-09-14T18:58:30.243Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a148-d1b6-7ef0-955b-27e6e0a2aa68"
+      },
+      {
+        "at": "2026-09-14T18:58:32.801Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a148-fcea-74c3-a013-bef67820402e"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:58:28.017Z",
+        "session_id": "01a0a148-d188-72c1-b910-ac7aea4213c9",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command to one subagent and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:59:35.680Z",
+        "session_id": "01a0a148-d188-72c1-b910-ac7aea4213c9",
+        "phase": "commentary",
+        "text": "I\u2019m still waiting for the subagent to return the command\u2019s result.\n"
+      },
+      {
+        "at": "2026-09-14T19:00:00.406Z",
+        "session_id": "01a0a148-d188-72c1-b910-ac7aea4213c9",
+        "phase": "final_answer",
+        "text": "```text\nBENCH_RESULT_7391\n```\nExit status: 0"
+      },
+      {
+        "at": "2026-09-14T18:59:57.963Z",
+        "session_id": "01a0a148-fce1-7373-9951-fece8ba4fa26",
+        "phase": "final_answer",
+        "text": "Output:\n```text\nBENCH_RESULT_7391\n```\nExit status: 0"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:46:57.040Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:57.040Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:47:30.954Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:85843,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:47:30.954Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:85843,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:48:14.640Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:85843,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:48:14.640Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:85843,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:46:45.322Z",
+        "session_id": "01a0a13e-2b82-7281-8b53-fe59af2224a2",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13e-2bb1-7ce3-a8fa-ed1e9653fa0d"
+      },
+      {
+        "at": "2026-09-14T18:46:50.078Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13e-2bb1-7ce3-a8fa-ed1e9653fa0d"
+      },
+      {
+        "at": "2026-09-14T18:46:52.776Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13e-4de5-7a63-9396-811d6bca0fa8"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:46:48.036Z",
+        "session_id": "01a0a13e-2b82-7281-8b53-fe59af2224a2",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command once and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:46:52.703Z",
+        "session_id": "01a0a13e-2b82-7281-8b53-fe59af2224a2",
+        "phase": "commentary",
+        "text": "I\u2019m waiting for the delegated command to complete.\n"
+      },
+      {
+        "at": "2026-09-14T18:47:41.132Z",
+        "session_id": "01a0a13e-2b82-7281-8b53-fe59af2224a2",
+        "phase": "commentary",
+        "text": "The delegated command is still running; I\u2019m waiting for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:48:20.187Z",
+        "session_id": "01a0a13e-2b82-7281-8b53-fe59af2224a2",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:46:55.954Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:47:29.760Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "phase": "commentary",
+        "text": "The benchmark is still running. I\u2019ll keep waiting on the same session.\n"
+      },
+      {
+        "at": "2026-09-14T18:48:13.414Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "phase": "commentary",
+        "text": "The benchmark has not produced output yet. I\u2019ll continue waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:48:17.943Z",
+        "session_id": "01a0a13e-4ddb-7ad2-a9aa-9ae30448787d",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:53:28.322Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:53:28.322Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:54:03.366Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:63759,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:54:03.366Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:63759,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:54:47.302Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:63759,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:54:47.302Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:63759,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:53:15.092Z",
+        "session_id": "01a0a144-1f16-7b40-b899-6f38f3a24e56",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a144-1f48-7f62-8439-0d56135dc339"
+      },
+      {
+        "at": "2026-09-14T18:53:20.677Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a144-1f48-7f62-8439-0d56135dc339"
+      },
+      {
+        "at": "2026-09-14T18:53:23.155Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a144-43aa-72c2-8a53-1e722c1f6469"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:53:18.237Z",
+        "session_id": "01a0a144-1f16-7b40-b899-6f38f3a24e56",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command once and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:53:24.561Z",
+        "session_id": "01a0a144-1f16-7b40-b899-6f38f3a24e56",
+        "phase": "commentary",
+        "text": "I\u2019m waiting for the delegated command to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:54:13.267Z",
+        "session_id": "01a0a144-1f16-7b40-b899-6f38f3a24e56",
+        "phase": "commentary",
+        "text": "I\u2019m still waiting for the command\u2019s result.\n"
+      },
+      {
+        "at": "2026-09-14T18:54:51.901Z",
+        "session_id": "01a0a144-1f16-7b40-b899-6f38f3a24e56",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:53:27.208Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to complete.\n"
+      },
+      {
+        "at": "2026-09-14T18:54:02.073Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "phase": "commentary",
+        "text": "The benchmark is still running without output; I\u2019m waiting on the existing job.\n"
+      },
+      {
+        "at": "2026-09-14T18:54:45.952Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "phase": "commentary",
+        "text": "The benchmark remains active with no output. I\u2019ll continue waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:54:49.924Z",
+        "session_id": "01a0a144-43a5-7c63-b69e-d98d8e437af5",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:56:52.193Z",
+        "session_id": "01a0a147-6265-7e20-bdab-dff4c1b61eac",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:56:52.193Z",
+        "session_id": "01a0a147-6265-7e20-bdab-dff4c1b61eac",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:28.063Z",
+        "session_id": "01a0a147-6265-7e20-bdab-dff4c1b61eac",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:89438,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:28.063Z",
+        "session_id": "01a0a147-6265-7e20-bdab-dff4c1b61eac",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:89438,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:56:39.073Z",
+        "session_id": "01a0a147-3963-7bb1-ae18-18366e5d2543",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a147-3993-7fa0-8380-c58c927abfb5"
+      },
+      {
+        "at": "2026-09-14T18:56:45.159Z",
+        "session_id": "01a0a147-6265-7e20-bdab-dff4c1b61eac",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a147-3993-7fa0-8380-c58c927abfb5"
+      },
+      {
+        "at": "2026-09-14T18:56:47.517Z",
+        "session_id": "01a0a147-6265-7e20-bdab-dff4c1b61eac",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a147-626a-7602-90b5-652a97f22755"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:56:42.918Z",
+        "session_id": "01a0a147-3963-7bb1-ae18-18366e5d2543",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command to one subagent and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:56:47.872Z",
+        "session_id": "01a0a147-3963-7bb1-ae18-18366e5d2543",
+        "phase": "commentary",
+        "text": "I\u2019m waiting for the subagent to complete the command.\n"
+      },
+      {
+        "at": "2026-09-14T18:57:37.519Z",
+        "session_id": "01a0a147-3963-7bb1-ae18-18366e5d2543",
+        "phase": "commentary",
+        "text": "The subagent has not returned a result yet; I\u2019m continuing to wait.\n"
+      },
+      {
+        "at": "2026-09-14T18:58:12.432Z",
+        "session_id": "01a0a147-3963-7bb1-ae18-18366e5d2543",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:56:51.094Z",
+        "session_id": "01a0a147-6265-7e20-bdab-dff4c1b61eac",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:57:26.908Z",
+        "session_id": "01a0a147-6265-7e20-bdab-dff4c1b61eac",
+        "phase": "commentary",
+        "text": "The benchmark is still running and has produced no output yet. I\u2019ll keep waiting on the same session.\n"
+      },
+      {
+        "at": "2026-09-14T18:58:09.509Z",
+        "session_id": "01a0a147-6265-7e20-bdab-dff4c1b61eac",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-no-patch-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:44:56.693Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:44:56.693Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:02.180Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:15071,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:02.180Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:15071,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:10.783Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:15071,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:10.783Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:15071,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:19.471Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:15071,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:19.471Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:15071,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:27.409Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:15071,chars:\"\",yield_time_ms:10000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:27.409Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "write_stdin",
+        "yield_time_ms": 10000,
+        "source": "{session_id:15071,chars:\"\",yield_time_ms:10000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:40.213Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:15071,chars:\"\",yield_time_ms:10000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:40.213Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "write_stdin",
+        "yield_time_ms": 10000,
+        "source": "{session_id:15071,chars:\"\",yield_time_ms:10000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:53.184Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:15071,chars:\"\",yield_time_ms:10000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:45:53.184Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "write_stdin",
+        "yield_time_ms": 10000,
+        "source": "{session_id:15071,chars:\"\",yield_time_ms:10000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:06.929Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:15071,chars:\"\",yield_time_ms:10000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:46:06.929Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "tool": "write_stdin",
+        "yield_time_ms": 10000,
+        "source": "{session_id:15071,chars:\"\",yield_time_ms:10000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:44:48.714Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13c-5e31-76c0-b4ff-19c14771a377"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:44:55.974Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "phase": "commentary",
+        "text": "I\u2019ll run `python3 bench_job.py` once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:46:05.979Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019m waiting for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:46:14.193Z",
+        "session_id": "01a0a13c-5dc5-7bf2-898c-71fa7d77fbd7",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-no-patch-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:51:53.668Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:51:53.668Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:51:57.819Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:51:57.819Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:05.939Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:05.939Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:15.071Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:15.071Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:22.985Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:22.985Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:32.426Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:32.426Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:40.043Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:40.043Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:48.744Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:48.744Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:57.802Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:57.802Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:53:06.893Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:53:06.893Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:72960,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:51:49.817Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a142-d1d0-71e0-862a-de3895cd99ca"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:51:52.657Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "phase": "commentary",
+        "text": "I\u2019ll run the job once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:53:05.448Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019m waiting for it to complete.\n"
+      },
+      {
+        "at": "2026-09-14T18:53:10.988Z",
+        "session_id": "01a0a142-d1a3-7851-99de-702fdf9f1f71",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-no-patch-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:57:01.775Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:01.775Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:06.952Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:06.952Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:15.390Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:15.390Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:24.438Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:24.438Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:33.386Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:33.386Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:43.542Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:43.542Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:52.763Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:57:52.763Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:03.137Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:03.137Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:12.754Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.write_stdin({session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:12.754Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "tool": "write_stdin",
+        "yield_time_ms": 1000,
+        "source": "{session_id:26401,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:56:56.594Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a147-7d73-76e0-adf0-bae1d6649051"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:57:00.889Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "phase": "commentary",
+        "text": "I\u2019ll run the job once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:58:19.017Z",
+        "session_id": "01a0a147-7d44-77c0-b150-a612b659868e",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:48:11.153Z",
+        "session_id": "01a0a13f-528d-7c63-a82e-ad8f43180a17",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:48:11.153Z",
+        "session_id": "01a0a13f-528d-7c63-a82e-ad8f43180a17",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:48:48.488Z",
+        "session_id": "01a0a13f-528d-7c63-a82e-ad8f43180a17",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:60859,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:48:48.488Z",
+        "session_id": "01a0a13f-528d-7c63-a82e-ad8f43180a17",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:60859,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:48:02.697Z",
+        "session_id": "01a0a13f-528d-7c63-a82e-ad8f43180a17",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a13f-52bc-79e3-a48d-734ebd37bdef"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:48:10.070Z",
+        "session_id": "01a0a13f-528d-7c63-a82e-ad8f43180a17",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:48:47.320Z",
+        "session_id": "01a0a13f-528d-7c63-a82e-ad8f43180a17",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll keep waiting.\n"
+      },
+      {
+        "at": "2026-09-14T18:49:28.399Z",
+        "session_id": "01a0a13f-528d-7c63-a82e-ad8f43180a17",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:52:01.495Z",
+        "session_id": "01a0a142-e4b7-7a70-8347-f1a1f66c64a6",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:01.495Z",
+        "session_id": "01a0a142-e4b7-7a70-8347-f1a1f66c64a6",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:36.633Z",
+        "session_id": "01a0a142-e4b7-7a70-8347-f1a1f66c64a6",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:99441,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:52:36.633Z",
+        "session_id": "01a0a142-e4b7-7a70-8347-f1a1f66c64a6",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:99441,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:51:56.198Z",
+        "session_id": "01a0a142-e4b7-7a70-8347-f1a1f66c64a6",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a142-e4e6-75e0-9a00-32bd207ad963"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:51:59.720Z",
+        "session_id": "01a0a142-e4b7-7a70-8347-f1a1f66c64a6",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:52:36.622Z",
+        "session_id": "01a0a142-e4b7-7a70-8347-f1a1f66c64a6",
+        "phase": "commentary",
+        "text": "The command is still running. I\u2019ll continue waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:53:19.285Z",
+        "session_id": "01a0a142-e4b7-7a70-8347-f1a1f66c64a6",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:58:21.547Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:21.547Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:55.605Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:27101,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:58:55.605Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:27101,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:59:39.391Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:27101,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:59:39.391Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:27101,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "expected_patch_file_presence": true,
+      "expected_waiting_instruction_sessions": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:58:16.610Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a148-b814-7e81-a66f-ce7345005f54"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:58:20.215Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:58:54.470Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll keep waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:59:38.256Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "phase": "commentary",
+        "text": "The job is still running with no output yet. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T18:59:41.836Z",
+        "session_id": "01a0a148-b7e0-71f3-9e22-db57d8396803",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  }
+]

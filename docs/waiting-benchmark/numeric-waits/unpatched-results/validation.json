@@ -1,0 +1,198 @@
+{
+  "phase": "unpatched",
+  "selected_prompt": "wording-no-pragma",
+  "sha256": "882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411",
+  "trial_count": 18,
+  "jobs_completed": 18,
+  "unique_responses": 145,
+  "accounting_reconciled": 18,
+  "raw_matches_export": true,
+  "response_ids_disjoint_from_prior_exports": true,
+  "patch_unchanged_and_synced": true,
+  "conditions_verified": true,
+  "exact_format_failures_retained": {
+    "gpt-6-astra-subagent-no-patch-r3": [
+      "exact_final_result"
+    ]
+  },
+  "parent_cadence_passes": {
+    "no-patch": 1,
+    "wording-no-pragma": 9
+  },
+  "matched_pairs_with_fewer_responses_input_and_usd": 9,
+  "comparison": {
+    "comparison": "current_patch_vs_none",
+    "pairs": 9,
+    "before": {
+      "n": 9,
+      "responses": 98,
+      "successes": 9,
+      "tokens": {
+        "input": 1515920,
+        "cached": 1414016,
+        "write": 0,
+        "output": 3700,
+        "uncached": 101904,
+        "reasoning_in_output": 214
+      },
+      "usd": {
+        "uncached": 1.0190400000000002,
+        "cached": 1.414016,
+        "write": 0.0,
+        "output": 0.185,
+        "total": 2.6180559999999997
+      },
+      "delay_mean": 10.314111111111112,
+      "max_update_gap": 78.565,
+      "over_60": 8
+    },
+    "after": {
+      "n": 9,
+      "responses": 47,
+      "successes": 9,
+      "tokens": {
+        "input": 742417,
+        "cached": 675200,
+        "write": 0,
+        "output": 3260,
+        "uncached": 67217,
+        "reasoning_in_output": 157
+      },
+      "usd": {
+        "uncached": 0.67217,
+        "cached": 0.6752,
+        "write": 0.0,
+        "output": 0.163,
+        "total": 1.5103699999999998
+      },
+      "delay_mean": 9.775555555555556,
+      "max_update_gap": 49.647,
+      "over_60": 0
+    },
+    "pair_details": [
+      {
+        "scenario": "terminal",
+        "before": "gpt-6-astra-terminal-no-patch-r1",
+        "after": "gpt-6-astra-terminal-wording-no-pragma-r1",
+        "response_delta": -6,
+        "parent_response_delta": -6,
+        "child_response_delta": 0,
+        "input_delta": -92868,
+        "usd_delta": -0.18226199999999998,
+        "delay_delta": -0.262
+      },
+      {
+        "scenario": "terminal",
+        "before": "gpt-6-astra-terminal-no-patch-r2",
+        "after": "gpt-6-astra-terminal-wording-no-pragma-r2",
+        "response_delta": -8,
+        "parent_response_delta": -8,
+        "child_response_delta": 0,
+        "input_delta": -124952,
+        "usd_delta": -0.15689399999999998,
+        "delay_delta": 0.4660000000000002
+      },
+      {
+        "scenario": "terminal",
+        "before": "gpt-6-astra-terminal-no-patch-r3",
+        "after": "gpt-6-astra-terminal-wording-no-pragma-r3",
+        "response_delta": -6,
+        "parent_response_delta": -6,
+        "child_response_delta": 0,
+        "input_delta": -92911,
+        "usd_delta": -0.22086200000000003,
+        "delay_delta": 3.077
+      },
+      {
+        "scenario": "ci",
+        "before": "gpt-6-astra-ci-no-patch-r1",
+        "after": "gpt-6-astra-ci-wording-no-pragma-r1",
+        "response_delta": -5,
+        "parent_response_delta": -5,
+        "child_response_delta": 0,
+        "input_delta": -75222,
+        "usd_delta": -0.128408,
+        "delay_delta": 2.870000000000001
+      },
+      {
+        "scenario": "ci",
+        "before": "gpt-6-astra-ci-no-patch-r2",
+        "after": "gpt-6-astra-ci-wording-no-pragma-r2",
+        "response_delta": -3,
+        "parent_response_delta": -3,
+        "child_response_delta": 0,
+        "input_delta": -43809,
+        "usd_delta": -0.028698,
+        "delay_delta": 11.414
+      },
+      {
+        "scenario": "ci",
+        "before": "gpt-6-astra-ci-no-patch-r3",
+        "after": "gpt-6-astra-ci-wording-no-pragma-r3",
+        "response_delta": -6,
+        "parent_response_delta": -6,
+        "child_response_delta": 0,
+        "input_delta": -91427,
+        "usd_delta": -0.08369399999999996,
+        "delay_delta": -19.259
+      },
+      {
+        "scenario": "subagent",
+        "before": "gpt-6-astra-subagent-no-patch-r1",
+        "after": "gpt-6-astra-subagent-wording-no-pragma-r1",
+        "response_delta": -5,
+        "parent_response_delta": -1,
+        "child_response_delta": -4,
+        "input_delta": -73413,
+        "usd_delta": -0.07778600000000008,
+        "delay_delta": -3.439
+      },
+      {
+        "scenario": "subagent",
+        "before": "gpt-6-astra-subagent-no-patch-r2",
+        "after": "gpt-6-astra-subagent-wording-no-pragma-r2",
+        "response_delta": -5,
+        "parent_response_delta": 0,
+        "child_response_delta": -5,
+        "input_delta": -73740,
+        "usd_delta": -0.07790000000000002,
+        "delay_delta": 4.449000000000001
+      },
+      {
+        "scenario": "subagent",
+        "before": "gpt-6-astra-subagent-no-patch-r3",
+        "after": "gpt-6-astra-subagent-wording-no-pragma-r3",
+        "response_delta": -7,
+        "parent_response_delta": -1,
+        "child_response_delta": -6,
+        "input_delta": -105161,
+        "usd_delta": -0.15118199999999993,
+        "delay_delta": -4.163
+      }
+    ]
+  },
+  "all_trials": {
+    "n": 18,
+    "responses": 145,
+    "successes": 18,
+    "tokens": {
+      "input": 2258337,
+      "cached": 2089216,
+      "write": 0,
+      "output": 6960,
+      "uncached": 169121,
+      "reasoning_in_output": 371
+    },
+    "usd": {
+      "uncached": 1.6912100000000003,
+      "cached": 2.089216,
+      "write": 0.0,
+      "output": 0.34800000000000003,
+      "total": 4.128426
+    },
+    "delay_mean": 10.044833333333333,
+    "max_update_gap": 78.565,
+    "over_60": 8
+  },
+  "scope": "Astra/low, CLI 0.154.0, disabled shared/bundled skills, 75-second workloads, local CI simulator; USD uses dated API rates, not subscription charges."
+}
