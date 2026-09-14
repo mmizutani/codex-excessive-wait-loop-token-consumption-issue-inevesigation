@@ -1,0 +1,61 @@
+{
+  "scope": "Separate reviewer runs; excluded from workload totals and excludes the authoring conversation.",
+  "runs": [
+    {
+      "review": "Original review",
+      "source": "discovery-judge.json",
+      "usage": {
+        "input_tokens": 29285,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3399,
+        "reasoning_output_tokens": 88
+      },
+      "valuation": {
+        "counts": {
+          "input": 29285,
+          "cached": 0,
+          "write": 0,
+          "output": 3399,
+          "uncached": 29285
+        },
+        "usd": {
+          "uncached": 0.29285,
+          "cached": 0.0,
+          "write": 0.0,
+          "output": 0.16995
+        },
+        "total_usd": 0.4628,
+        "long_context": false
+      }
+    },
+    {
+      "review": "Final review",
+      "source": "final-judge.json",
+      "usage": {
+        "input_tokens": 30960,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3639,
+        "reasoning_output_tokens": 42
+      },
+      "valuation": {
+        "counts": {
+          "input": 30960,
+          "cached": 0,
+          "write": 0,
+          "output": 3639,
+          "uncached": 30960
+        },
+        "usd": {
+          "uncached": 0.3096,
+          "cached": 0.0,
+          "write": 0.0,
+          "output": 0.18195
+        },
+        "total_usd": 0.49155,
+        "long_context": false
+      }
+    }
+  ]
+}

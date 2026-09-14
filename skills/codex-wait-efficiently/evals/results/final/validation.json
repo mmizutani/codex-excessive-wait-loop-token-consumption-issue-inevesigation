@@ -1,0 +1,45 @@
+{
+  "trials": 66,
+  "unique_responses": 360,
+  "phases": {
+    "discovery": 12,
+    "revised": 12,
+    "sharpened": 12,
+    "confirmation": 16,
+    "handoff": 2,
+    "final-suite": 12
+  },
+  "all_outcomes_correct": true,
+  "all_accounting_reconciled": true,
+  "frozen_inputs_match": true,
+  "agents_patch_unchanged": true,
+  "final_skill_version": "v4",
+  "final_skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+  "retained_deterministic_failures": [
+    {
+      "phase": "sharpened",
+      "name": "v3-contextual-ci-r1",
+      "checks": [
+        "parent_update_cadence"
+      ]
+    },
+    {
+      "phase": "confirmation",
+      "name": "v2-implicit-subagent-r1",
+      "checks": [
+        "no_short_stdin_polls",
+        "no_short_cell_polls"
+      ]
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-contextual-ci-r1",
+      "checks": [
+        "no_short_cell_polls"
+      ]
+    }
+  ],
+  "unused_manifests": [
+    "confirmation-final"
+  ]
+}

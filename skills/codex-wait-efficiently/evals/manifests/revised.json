@@ -1,0 +1,166 @@
+{
+  "phase": "revised",
+  "model": "gpt-6-astra",
+  "effort": "low",
+  "workers": 2,
+  "versions": {
+    "v2": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5"
+  },
+  "cases_sha256": "4d9c54d571d62c14fc818ccb3c5a55d8d16e7f79e03b8c2eeb5ed68dbaf7fa9e",
+  "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+  "tasks": [
+    {
+      "version": "v2",
+      "case": {
+        "id": "explicit-observation-limit",
+        "scenario": "ci",
+        "delay": 999,
+        "should_trigger": true,
+        "explicit": true,
+        "fixture": "pending",
+        "deadline_seconds": 110,
+        "prompt": "Use $codex-wait-efficiently to observe existing CI run job-7391 via `python3 bench_ci.py status`. Make at most three status requests total, then stop and report the last observed state even if it remains pending. Do not cancel, restart, or modify the job or scripts, and do not delegate. There are no notifications or watch mode."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "explicit-cell",
+        "scenario": "terminal",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": true,
+        "prompt": "Use $codex-wait-efficiently. For this diagnostic, start `python3 bench_job.py` exactly once in Code Mode with exec_command yield_time_ms 30000 and an initial outer functions.exec yield of 1 ms. This initial early yield is intentional. After that, wait for the existing command normally and return its exact result. No independent work remains. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "explicit-independent-work",
+        "scenario": "terminal",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": true,
+        "fixture": "independent",
+        "prompt": "Use $codex-wait-efficiently. Start `python3 bench_job.py` exactly once. While it is running, independently read numbers.json and write summary.json containing the sum as {\"sum\": number}. Complete that file before waiting for the job's final result, then return its result. Do not delegate or inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "negative-quick-command",
+        "scenario": "terminal",
+        "delay": 0,
+        "should_trigger": false,
+        "explicit": false,
+        "fixture": "quick",
+        "prompt": "Run `python3 -c 'print(6 * 7)'` and return the number. No other work is needed."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "explicit-terminal",
+        "scenario": "terminal",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": true,
+        "prompt": "Use $codex-wait-efficiently. Run `python3 bench_job.py` exactly once yourself and return its result after it finishes. There is no independent work. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "explicit-failure",
+        "scenario": "terminal",
+        "delay": 8,
+        "should_trigger": true,
+        "explicit": true,
+        "fixture": "failure",
+        "prompt": "Use $codex-wait-efficiently. Run `python3 bench_job.py` exactly once and wait for its result. This is a diagnostic: if it fails, report the error and exit status without retrying or changing anything. Do not inspect the supplied script or delegate."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "contextual-ci",
+        "scenario": "ci",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "The release team is waiting for CI run job-7391. The authoritative status command is `python3 bench_ci.py status`; it has no watch mode or completion notifications. Monitor that run until it completes and return the result. Do not delegate, inspect, or modify the supplied benchmark scripts. No other work is needed."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "negative-doc-edit",
+        "scenario": "terminal",
+        "delay": 0,
+        "should_trigger": false,
+        "explicit": false,
+        "fixture": "edit",
+        "prompt": "Fix only the typo 'sttaus' to 'status' in README.md. Do not execute CI or monitor any job."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "implicit-subagent",
+        "scenario": "subagent",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Delegate `python3 bench_job.py` exactly once to exactly one subagent with fork_turns all, inheriting the parent model and reasoning settings. The parent is already Astra/low; omit model and reasoning_effort overrides. The child should wait for completion and return the result. No independent work remains for the parent. Return the child's result after success. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "implicit-terminal",
+        "scenario": "terminal",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Run `python3 bench_job.py` exactly once yourself. It is a long-running command; wait for completion and return its exact result. No other work is needed. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "negative-one-status",
+        "scenario": "ci",
+        "delay": 999,
+        "should_trigger": false,
+        "explicit": false,
+        "fixture": "pending",
+        "prompt": "Take a single status snapshot of CI run job-7391 using `python3 bench_ci.py status` and report it. Do not keep watching or wait for completion. Do not inspect or change the script."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "negative-explanation",
+        "scenario": "terminal",
+        "delay": 0,
+        "should_trigger": false,
+        "explicit": false,
+        "fixture": "explanation",
+        "prompt": "Explain in two sentences the difference between the shell built-ins wait and sleep. This is a conceptual question; do not execute commands or inspect files."
+      },
+      "repetition": 1
+    }
+  ],
+  "seed": 20260915
+}

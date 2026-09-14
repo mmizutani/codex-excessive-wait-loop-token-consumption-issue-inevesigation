@@ -1,0 +1,242 @@
+{
+  "scope": "Derived summary of the manually reviewed CI traces; full calls remain authoritative. Watchers identified from these fixtures, not a general source-code classifier.",
+  "trials": [
+    {
+      "phase": "discovery",
+      "version": "v1",
+      "name": "v1-contextual-ci-r1",
+      "case": "contextual-ci",
+      "watcher_call_ids": [
+        "call_CnAoqPBdmHMd3q461axGnUtO"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 4,
+      "query_span_seconds": 114.87018895149231
+    },
+    {
+      "phase": "discovery",
+      "version": "v1",
+      "name": "v1-explicit-observation-limit-r1",
+      "case": "explicit-observation-limit",
+      "watcher_call_ids": [],
+      "watcher_start_yield_ms": [],
+      "model_timer_calls": [
+        "call_rPKQplAuOCUT3jcp5wwB0EjH",
+        "call_v3v7QTl8Ebtl15wb1PZnnHAT"
+      ],
+      "ci_query_count": 3,
+      "query_span_seconds": 71.89054417610168
+    },
+    {
+      "phase": "revised",
+      "version": "v2",
+      "name": "v2-contextual-ci-r1",
+      "case": "contextual-ci",
+      "watcher_call_ids": [
+        "call_982EdEMzjL6WgyHv1CHuqMZt"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 4,
+      "query_span_seconds": 114.45643210411072
+    },
+    {
+      "phase": "revised",
+      "version": "v2",
+      "name": "v2-explicit-observation-limit-r1",
+      "case": "explicit-observation-limit",
+      "watcher_call_ids": [
+        "call_mM5B7epSBgcqVeeqM6c8GqSU"
+      ],
+      "watcher_start_yield_ms": [
+        30000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 3,
+      "query_span_seconds": 40.43328309059143
+    },
+    {
+      "phase": "sharpened",
+      "version": "v3",
+      "name": "v3-contextual-ci-r1",
+      "case": "contextual-ci",
+      "watcher_call_ids": [
+        "call_jRqtz6vSxeZqrf9Pn4RLxz3M"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 4,
+      "query_span_seconds": 100.95348906517029
+    },
+    {
+      "phase": "sharpened",
+      "version": "v3",
+      "name": "v3-explicit-observation-limit-r1",
+      "case": "explicit-observation-limit",
+      "watcher_call_ids": [
+        "call_p278rZoZtlngttRTG5qbVMOF"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 3,
+      "query_span_seconds": 38.53158712387085
+    },
+    {
+      "phase": "confirmation",
+      "version": "v1",
+      "name": "v1-contextual-ci-r1",
+      "case": "contextual-ci",
+      "watcher_call_ids": [
+        "call_wkSUPzqyCuKapQ2V1GsMXeCH"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 5,
+      "query_span_seconds": 113.50152826309204
+    },
+    {
+      "phase": "confirmation",
+      "version": "v1",
+      "name": "v1-contextual-ci-r2",
+      "case": "contextual-ci",
+      "watcher_call_ids": [
+        "call_zLdHjGKlnK8Mla7tt2l7UpSo"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 5,
+      "query_span_seconds": 100.76679682731628
+    },
+    {
+      "phase": "confirmation",
+      "version": "v1",
+      "name": "v1-explicit-observation-limit-r1",
+      "case": "explicit-observation-limit",
+      "watcher_call_ids": [],
+      "watcher_start_yield_ms": [],
+      "model_timer_calls": [
+        "call_vO1QEtQPTlb4PPLsUTvvdil9",
+        "call_B854XhZPyZ7WaWngrXcQFf2K"
+      ],
+      "ci_query_count": 3,
+      "query_span_seconds": 70.8803460597992
+    },
+    {
+      "phase": "confirmation",
+      "version": "v1",
+      "name": "v1-explicit-observation-limit-r2",
+      "case": "explicit-observation-limit",
+      "watcher_call_ids": [],
+      "watcher_start_yield_ms": [],
+      "model_timer_calls": [
+        "call_7gjA2wT17uZqpwPV3hLkLb5m",
+        "call_ByKK0qCu2Xc80exkhdY5refE"
+      ],
+      "ci_query_count": 3,
+      "query_span_seconds": 74.2705557346344
+    },
+    {
+      "phase": "confirmation",
+      "version": "v2",
+      "name": "v2-contextual-ci-r1",
+      "case": "contextual-ci",
+      "watcher_call_ids": [
+        "call_qlrsn40dmylm7uDN6YHS2h1y"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 5,
+      "query_span_seconds": 102.5029067993164
+    },
+    {
+      "phase": "confirmation",
+      "version": "v2",
+      "name": "v2-contextual-ci-r2",
+      "case": "contextual-ci",
+      "watcher_call_ids": [
+        "call_RZW1sRxTvmkQicfnJHNrLglX"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 4,
+      "query_span_seconds": 100.65143084526062
+    },
+    {
+      "phase": "confirmation",
+      "version": "v2",
+      "name": "v2-explicit-observation-limit-r1",
+      "case": "explicit-observation-limit",
+      "watcher_call_ids": [
+        "call_JWwTPNyiU5noDLGf7dTkAmpq"
+      ],
+      "watcher_start_yield_ms": [
+        30000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 3,
+      "query_span_seconds": 40.709203004837036
+    },
+    {
+      "phase": "confirmation",
+      "version": "v2",
+      "name": "v2-explicit-observation-limit-r2",
+      "case": "explicit-observation-limit",
+      "watcher_call_ids": [
+        "call_3Hj4We31hQNBGnVfqoCyz84X"
+      ],
+      "watcher_start_yield_ms": [
+        30000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 3,
+      "query_span_seconds": 36.34930896759033
+    },
+    {
+      "phase": "final-suite",
+      "version": "v4",
+      "name": "v4-contextual-ci-r1",
+      "case": "contextual-ci",
+      "watcher_call_ids": [
+        "call_YqOyGiVrFouES5CpUoWSZ9Mg"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 5,
+      "query_span_seconds": 100.94322991371155
+    },
+    {
+      "phase": "final-suite",
+      "version": "v4",
+      "name": "v4-explicit-observation-limit-r1",
+      "case": "explicit-observation-limit",
+      "watcher_call_ids": [
+        "call_tkbhLol8e3EqxbfxrTTvQDsh"
+      ],
+      "watcher_start_yield_ms": [
+        1000
+      ],
+      "model_timer_calls": [],
+      "ci_query_count": 3,
+      "query_span_seconds": 53.17375707626343
+    }
+  ]
+}

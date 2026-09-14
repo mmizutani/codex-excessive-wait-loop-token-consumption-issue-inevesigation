@@ -18,6 +18,20 @@ The patch directs Codex to retain existing jobs and sessions, use suitable tool 
 
 See the [self-contained Japanese explanation](docs/waiting-validation/AGENTS.waiting-explanation.ja.md) for the purpose of each rule, its relationship to Codex's built-in instructions, and the measured tradeoffs.
 
+### Skill alternative
+
+For skill-based use, install **[codex-wait-efficiently](skills/codex-wait-efficiently/SKILL.md)**. The evaluated v4 skill follows the final patch, clarifies bounded CI watchers, and explicitly requests skill use in delegated work that includes waiting. The package is self-contained: `SKILL.md` holds all the rules, and `agents/openai.yaml` supplies the Codex UI name and description. Normal waiting requires no helper scripts, external references, or other skills. The bundled `evals/` directory contains optional evaluation tools and evidence.
+
+1. Copy the entire `skills/codex-wait-efficiently/` directory into `${CODEX_HOME:-$HOME/.codex}/skills/codex-wait-efficiently/`.
+2. Start a new Codex session. Automatic selection is allowed by default; to request it explicitly, include `Use $codex-wait-efficiently while waiting for this job.` in your prompt.
+3. When switching from the AGENTS.md method, remove the corresponding `## Waiting for work` section from your global AGENTS.md to avoid loading duplicate instructions. Preserve your other global instructions.
+
+The skill has a separate [runtime evaluation report](docs/CODEX_WAITING_SKILL_EVALUATION.md), covering activation, negative controls, command failure, bounded observations, child sessions, and measured usage. The [evaluation suite and evidence](skills/codex-wait-efficiently/evals/README.md) follow OpenAI's skill-evaluation workflow. Structural validation and a [CLI 0.154.0 discovery check](docs/waiting-validation/skill-package-validation.json) also passed.
+
+Across 66 skill trials, all requested outcomes were correct. The final version passed 13/14 trials' deterministic checks, with one remaining short CI cell wait. Its three child trials read the skill and avoided short polls. **General skill-specific savings remain unproven:** the original and final 12-case suites used 57 and 58 responses respectively, with API equivalents of $1.856236 and $1.945212.
+
+**The savings below belong to the AGENTS.md experiment.** The skill evaluation compares its original and revised versions; it does not establish the same savings against no skill or compare the two installation formats directly.
+
 ## Measured effects of the exact final patch
 
 **18 fresh trials:** GPT-6 Astra at low reasoning effort, Codex CLI 0.154.0, with shared and bundled skill instructions disabled. Each condition contains three repetitions each of a 75-second terminal command, a real subagent running that command, and a local CI status simulator. Both conditions use the same runtime configuration; only the waiting patch is added. Totals include parent and child inference.
@@ -41,6 +55,8 @@ Dollar amounts apply the study's September 14, 2026 Standard API rates to subscr
 | File | Purpose |
 | --- | --- |
 | [Final patch](docs/waiting-validation/AGENTS.waiting-compatible.md) | The proposed addition to install in global AGENTS.md. |
+| [Skill alternative](skills/codex-wait-efficiently/SKILL.md) | Evaluated v4 skill, with bounded-watcher clarification and explicit skill invocation in delegated waiting work. |
+| [Skill evaluation](docs/CODEX_WAITING_SKILL_EVALUATION.md) | Activation, process review, failure handling, token/cost measurements, and reproducible fixtures for the original and revised skills. |
 | [Japanese explanation](docs/waiting-validation/AGENTS.waiting-explanation.ja.md) | Why each instruction is needed and how to apply it. |
 | [Latest direct-comparison report](docs/CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md) | TL;DR, methods, token and dollar breakdowns, paired results, wait behavior, and limitations. |
 | [Runtime and prompt benchmark](docs/CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md) | Current results plus historical CLI, Astra/Sol, and prompt-version comparisons. |

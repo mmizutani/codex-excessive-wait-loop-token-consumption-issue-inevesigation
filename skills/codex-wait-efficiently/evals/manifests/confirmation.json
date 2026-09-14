@@ -1,0 +1,215 @@
+{
+  "phase": "confirmation",
+  "model": "gpt-6-astra",
+  "effort": "low",
+  "workers": 2,
+  "versions": {
+    "v1": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+    "v2": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5"
+  },
+  "cases_sha256": "4d9c54d571d62c14fc818ccb3c5a55d8d16e7f79e03b8c2eeb5ed68dbaf7fa9e",
+  "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+  "tasks": [
+    {
+      "version": "v2",
+      "case": {
+        "id": "implicit-terminal",
+        "scenario": "terminal",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Run `python3 bench_job.py` exactly once yourself. It is a long-running command; wait for completion and return its exact result. No other work is needed. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 2
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "explicit-observation-limit",
+        "scenario": "ci",
+        "delay": 999,
+        "should_trigger": true,
+        "explicit": true,
+        "fixture": "pending",
+        "deadline_seconds": 110,
+        "prompt": "Use $codex-wait-efficiently to observe existing CI run job-7391 via `python3 bench_ci.py status`. Make at most three status requests total, then stop and report the last observed state even if it remains pending. Do not cancel, restart, or modify the job or scripts, and do not delegate. There are no notifications or watch mode."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v1",
+      "case": {
+        "id": "explicit-observation-limit",
+        "scenario": "ci",
+        "delay": 999,
+        "should_trigger": true,
+        "explicit": true,
+        "fixture": "pending",
+        "deadline_seconds": 110,
+        "prompt": "Use $codex-wait-efficiently to observe existing CI run job-7391 via `python3 bench_ci.py status`. Make at most three status requests total, then stop and report the last observed state even if it remains pending. Do not cancel, restart, or modify the job or scripts, and do not delegate. There are no notifications or watch mode."
+      },
+      "repetition": 2
+    },
+    {
+      "version": "v1",
+      "case": {
+        "id": "contextual-ci",
+        "scenario": "ci",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "The release team is waiting for CI run job-7391. The authoritative status command is `python3 bench_ci.py status`; it has no watch mode or completion notifications. Monitor that run until it completes and return the result. Do not delegate, inspect, or modify the supplied benchmark scripts. No other work is needed."
+      },
+      "repetition": 2
+    },
+    {
+      "version": "v1",
+      "case": {
+        "id": "implicit-subagent",
+        "scenario": "subagent",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Delegate `python3 bench_job.py` exactly once to exactly one subagent with fork_turns all, inheriting the parent model and reasoning settings. The parent is already Astra/low; omit model and reasoning_effort overrides. The child should wait for completion and return the result. No independent work remains for the parent. Return the child's result after success. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 2
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "implicit-subagent",
+        "scenario": "subagent",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Delegate `python3 bench_job.py` exactly once to exactly one subagent with fork_turns all, inheriting the parent model and reasoning settings. The parent is already Astra/low; omit model and reasoning_effort overrides. The child should wait for completion and return the result. No independent work remains for the parent. Return the child's result after success. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 2
+    },
+    {
+      "version": "v1",
+      "case": {
+        "id": "implicit-terminal",
+        "scenario": "terminal",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Run `python3 bench_job.py` exactly once yourself. It is a long-running command; wait for completion and return its exact result. No other work is needed. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 2
+    },
+    {
+      "version": "v1",
+      "case": {
+        "id": "contextual-ci",
+        "scenario": "ci",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "The release team is waiting for CI run job-7391. The authoritative status command is `python3 bench_ci.py status`; it has no watch mode or completion notifications. Monitor that run until it completes and return the result. Do not delegate, inspect, or modify the supplied benchmark scripts. No other work is needed."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v1",
+      "case": {
+        "id": "implicit-subagent",
+        "scenario": "subagent",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Delegate `python3 bench_job.py` exactly once to exactly one subagent with fork_turns all, inheriting the parent model and reasoning settings. The parent is already Astra/low; omit model and reasoning_effort overrides. The child should wait for completion and return the result. No independent work remains for the parent. Return the child's result after success. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v1",
+      "case": {
+        "id": "explicit-observation-limit",
+        "scenario": "ci",
+        "delay": 999,
+        "should_trigger": true,
+        "explicit": true,
+        "fixture": "pending",
+        "deadline_seconds": 110,
+        "prompt": "Use $codex-wait-efficiently to observe existing CI run job-7391 via `python3 bench_ci.py status`. Make at most three status requests total, then stop and report the last observed state even if it remains pending. Do not cancel, restart, or modify the job or scripts, and do not delegate. There are no notifications or watch mode."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v1",
+      "case": {
+        "id": "implicit-terminal",
+        "scenario": "terminal",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Run `python3 bench_job.py` exactly once yourself. It is a long-running command; wait for completion and return its exact result. No other work is needed. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "implicit-subagent",
+        "scenario": "subagent",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Delegate `python3 bench_job.py` exactly once to exactly one subagent with fork_turns all, inheriting the parent model and reasoning settings. The parent is already Astra/low; omit model and reasoning_effort overrides. The child should wait for completion and return the result. No independent work remains for the parent. Return the child's result after success. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "implicit-terminal",
+        "scenario": "terminal",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "Run `python3 bench_job.py` exactly once yourself. It is a long-running command; wait for completion and return its exact result. No other work is needed. Do not inspect or change the supplied benchmark scripts."
+      },
+      "repetition": 1
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "explicit-observation-limit",
+        "scenario": "ci",
+        "delay": 999,
+        "should_trigger": true,
+        "explicit": true,
+        "fixture": "pending",
+        "deadline_seconds": 110,
+        "prompt": "Use $codex-wait-efficiently to observe existing CI run job-7391 via `python3 bench_ci.py status`. Make at most three status requests total, then stop and report the last observed state even if it remains pending. Do not cancel, restart, or modify the job or scripts, and do not delegate. There are no notifications or watch mode."
+      },
+      "repetition": 2
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "contextual-ci",
+        "scenario": "ci",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "The release team is waiting for CI run job-7391. The authoritative status command is `python3 bench_ci.py status`; it has no watch mode or completion notifications. Monitor that run until it completes and return the result. Do not delegate, inspect, or modify the supplied benchmark scripts. No other work is needed."
+      },
+      "repetition": 2
+    },
+    {
+      "version": "v2",
+      "case": {
+        "id": "contextual-ci",
+        "scenario": "ci",
+        "delay": 75,
+        "should_trigger": true,
+        "explicit": false,
+        "prompt": "The release team is waiting for CI run job-7391. The authoritative status command is `python3 bench_ci.py status`; it has no watch mode or completion notifications. Monitor that run until it completes and return the result. Do not delegate, inspect, or modify the supplied benchmark scripts. No other work is needed."
+      },
+      "repetition": 1
+    }
+  ],
+  "seed": 20260915
+}

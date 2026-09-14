@@ -1,0 +1,26 @@
+{
+  "type":"object",
+  "properties":{
+    "trials":{"type":"array","items":{
+      "type":"object",
+      "properties":{
+        "id":{"type":"string"},
+        "checks":{"type":"array","items":{
+          "type":"object",
+          "properties":{
+            "criterion":{"type":"string","enum":["wait_identity","watcher_choice","watcher_bound","state_reporting","scope"]},
+            "judgment":{"type":"string","enum":["pass","fail","not_applicable","uncertain"]},
+            "evidence_call_ids":{"type":"array","items":{"type":"string"}},
+            "reason":{"type":"string"}
+          },
+          "required":["criterion","judgment","evidence_call_ids","reason"],
+          "additionalProperties":false
+        }}
+      },
+      "required":["id","checks"],
+      "additionalProperties":false
+    }}
+  },
+  "required":["trials"],
+  "additionalProperties":false
+}

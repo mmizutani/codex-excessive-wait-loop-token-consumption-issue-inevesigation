@@ -1,0 +1,52 @@
+{
+  "validation": "Codex skills/list discovery only; no thread or model turn started",
+  "cli_version": "codex-cli 0.154.0",
+  "skill": "codex-wait-efficiently",
+  "skill_version": "v4",
+  "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+  "discovered": true,
+  "metadata": {
+    "name": "codex-wait-efficiently",
+    "description": "Reduce unnecessary model calls in Codex when awaiting subagent results, starting long terminal commands, or monitoring CI and external jobs that remain in progress.",
+    "interface": {
+      "displayName": "Codex Efficient Waiting",
+      "shortDescription": "Reduce model calls while waiting for Codex work",
+      "iconSmall": null,
+      "iconLarge": null,
+      "iconSmallUrl": null,
+      "iconLargeUrl": null,
+      "brandColor": null,
+      "defaultPrompt": null
+    },
+    "scope": "user",
+    "enabled": true,
+    "pluginId": null
+  },
+  "packaged_path": "skills/codex-wait-efficiently",
+  "temporary_home_installation": "skills/codex-wait-efficiently symlink to package",
+  "model_inference_started": false,
+  "structural_validator": "skill-creator/scripts/quick_validate.py",
+  "structural_validation_passed": true,
+  "source_patch": "docs/waiting-validation/AGENTS.waiting-compatible.md",
+  "source_patch_sha256": "882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411",
+  "operational_instructions_unchanged": false,
+  "changes_from_patch": "Explicit child skill invocation when delegating waiting work; clarified repeated scriptable CI checks, total observation budget, and terminal waits for a watcher. See skills/codex-wait-efficiently/evals/REVISIONS.md.",
+  "implicit_invocation_allowed": true,
+  "separate_behavior_evaluation": "docs/CODEX_WAITING_SKILL_EVALUATION.md",
+  "bundled_evals_discovery_checks": [
+    {
+      "installation": "symlink",
+      "matching_entries": 1,
+      "selected_current_skill": true,
+      "frozen_versions_discovered": false,
+      "model_inference_started": false
+    },
+    {
+      "installation": "copy",
+      "matching_entries": 1,
+      "selected_current_skill": true,
+      "frozen_versions_discovered": false,
+      "model_inference_started": false
+    }
+  ]
+}

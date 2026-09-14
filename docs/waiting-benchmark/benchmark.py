@@ -75,7 +75,8 @@ def prompt_for(scenario, model):
             'or watch mode. Monitor it until it completes; do not delegate. ' + common)
 
 class Trial(Probe):
-    def execute(self, options, condition, scenario, repetition, *, scenario_prompt=None):
+    def execute(self, options, condition, scenario, repetition, *, scenario_prompt=None,
+                prepare=None, extra_input=None, inspect=None):
         self.start = time.monotonic()
         wall_start = time.time()
         name = self.name
@@ -119,9 +120,11 @@ class Trial(Probe):
             if options.no_skill_instructions:
                 config.extend(['[skills]', 'include_instructions = false',
                                '[skills.bundled]', 'enabled = false'])
-            (home / 'config.toml').write_text('\n'.join(config) + '\n')
             (work / 'bench_job.py').write_text(JOB.replace('{delay}', str(options.delay)))
             (work / 'bench_ci.py').write_text(CI.format(delay=options.delay))
+            if prepare:
+                prepare(home, work, config, record)
+            (home / 'config.toml').write_text('\n'.join(config) + '\n')
             env = os.environ.copy()
             env['CODEX_HOME'] = str(home)
             for key in ['OPENAI_API_KEY', 'CODEX_API_KEY']:
@@ -140,10 +143,13 @@ class Trial(Probe):
             self.thread_id = thread['thread']['id']
             record['thread_id'] = self.thread_id
             record['turn_start_epoch'] = time.time()
+            inputs = [{'type': 'text', 'text': record['scenario_prompt']}]
+            if extra_input:
+                inputs.extend(extra_input(home, work))
             turn = self.rpc('turn/start', {'threadId': self.thread_id,
-                'input': [{'type': 'text', 'text': record['scenario_prompt']}], 'effort': options.effort})
+                'input': inputs, 'effort': options.effort})
             turn_id = turn['turn']['id']
-            deadline = time.monotonic() + options.delay + 150
+            deadline = time.monotonic() + getattr(options, 'timeout_seconds', options.delay + 150)
             announced = False
             while time.monotonic() < deadline:
                 self.pump(0.2)
@@ -290,8 +296,12 @@ class Trial(Probe):
                 'result_delay_seconds': round(timestamp(result_messages[-1]['at'])-completed_at,3)
                     if result_messages and completed_at else None,
                 'parent_message_gaps_seconds': gaps, 'max_parent_message_gap_seconds': max(gaps, default=0)})
-            record_path.write_text(json.dumps(record, indent=2) + '\n')
-            private_home.cleanup()
+            try:
+                if inspect:
+                    inspect(home, work, record)
+                record_path.write_text(json.dumps(record, indent=2) + '\n')
+            finally:
+                private_home.cleanup()
         print(json.dumps({k: record[k] for k in ['name', 'status', 'success', 'parent_usage',
             'child_usage', 'job_launches', 'result_delay_seconds', 'max_parent_message_gap_seconds']}), flush=True)
         return record

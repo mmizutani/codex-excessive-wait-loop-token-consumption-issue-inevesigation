@@ -1,0 +1,3 @@
+interface:
+  display_name: "Codex Efficient Waiting"
+  short_description: "Reduce model calls while waiting for Codex work"

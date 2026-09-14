@@ -1,0 +1,5387 @@
+{
+  "source_phases": [
+    "discovery",
+    "revised",
+    "sharpened",
+    "confirmation",
+    "handoff",
+    "final-suite"
+  ],
+  "unique_response_ids": 360,
+  "groups": [
+    {
+      "phase": "discovery",
+      "version": "v1",
+      "trials": 12,
+      "overall_passes": 12,
+      "check_passes": {
+        "accounting": 12,
+        "activation": 12,
+        "child_count": 12,
+        "fixtures_preserved": 12,
+        "forced_cell_exercised": 1,
+        "independent_work": 1,
+        "isolated_skill": 12,
+        "model_and_effort": 12,
+        "no_extra_job": 12,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 12,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 12
+      },
+      "check_totals": {
+        "accounting": 12,
+        "activation": 12,
+        "child_count": 12,
+        "fixtures_preserved": 12,
+        "forced_cell_exercised": 1,
+        "independent_work": 1,
+        "isolated_skill": 12,
+        "model_and_effort": 12,
+        "no_extra_job": 12,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 12,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 12
+      },
+      "responses": 57,
+      "tokens": {
+        "input": 920336,
+        "uncached": 83600,
+        "cached": 836736,
+        "write": 0,
+        "output": 3670,
+        "reasoning_in_output": 56
+      },
+      "usd": {
+        "uncached": 0.836,
+        "cached": 0.836736,
+        "write": 0.0,
+        "output": 0.1835,
+        "total": 1.856236
+      }
+    },
+    {
+      "phase": "revised",
+      "version": "v2",
+      "trials": 12,
+      "overall_passes": 12,
+      "check_passes": {
+        "accounting": 12,
+        "activation": 12,
+        "child_count": 12,
+        "fixtures_preserved": 12,
+        "forced_cell_exercised": 1,
+        "independent_work": 1,
+        "isolated_skill": 12,
+        "model_and_effort": 12,
+        "no_extra_job": 12,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 12,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 12
+      },
+      "check_totals": {
+        "accounting": 12,
+        "activation": 12,
+        "child_count": 12,
+        "fixtures_preserved": 12,
+        "forced_cell_exercised": 1,
+        "independent_work": 1,
+        "isolated_skill": 12,
+        "model_and_effort": 12,
+        "no_extra_job": 12,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 12,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 12
+      },
+      "responses": 56,
+      "tokens": {
+        "input": 902895,
+        "uncached": 72431,
+        "cached": 830464,
+        "write": 0,
+        "output": 3729,
+        "reasoning_in_output": 68
+      },
+      "usd": {
+        "uncached": 0.72431,
+        "cached": 0.830464,
+        "write": 0.0,
+        "output": 0.18645,
+        "total": 1.741224
+      }
+    },
+    {
+      "phase": "sharpened",
+      "version": "v3",
+      "trials": 12,
+      "overall_passes": 11,
+      "check_passes": {
+        "accounting": 12,
+        "activation": 12,
+        "child_count": 12,
+        "fixtures_preserved": 12,
+        "forced_cell_exercised": 1,
+        "independent_work": 1,
+        "isolated_skill": 12,
+        "model_and_effort": 12,
+        "no_extra_job": 12,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 12,
+        "parent_update_cadence": 7,
+        "status_query_bound": 2,
+        "turn_completed": 12
+      },
+      "check_totals": {
+        "accounting": 12,
+        "activation": 12,
+        "child_count": 12,
+        "fixtures_preserved": 12,
+        "forced_cell_exercised": 1,
+        "independent_work": 1,
+        "isolated_skill": 12,
+        "model_and_effort": 12,
+        "no_extra_job": 12,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 12,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 12
+      },
+      "responses": 56,
+      "tokens": {
+        "input": 907181,
+        "uncached": 88365,
+        "cached": 818816,
+        "write": 0,
+        "output": 3695,
+        "reasoning_in_output": 69
+      },
+      "usd": {
+        "uncached": 0.88365,
+        "cached": 0.818816,
+        "write": 0.0,
+        "output": 0.18475,
+        "total": 1.887216
+      }
+    },
+    {
+      "phase": "confirmation",
+      "version": "v1",
+      "trials": 8,
+      "overall_passes": 8,
+      "check_passes": {
+        "accounting": 8,
+        "activation": 8,
+        "child_count": 8,
+        "fixtures_preserved": 8,
+        "isolated_skill": 8,
+        "model_and_effort": 8,
+        "no_extra_job": 8,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 8,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 8
+      },
+      "check_totals": {
+        "accounting": 8,
+        "activation": 8,
+        "child_count": 8,
+        "fixtures_preserved": 8,
+        "isolated_skill": 8,
+        "model_and_effort": 8,
+        "no_extra_job": 8,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 8,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 8
+      },
+      "responses": 57,
+      "tokens": {
+        "input": 944778,
+        "uncached": 80138,
+        "cached": 864640,
+        "write": 0,
+        "output": 3834,
+        "reasoning_in_output": 133
+      },
+      "usd": {
+        "uncached": 0.8013800000000001,
+        "cached": 0.8646400000000001,
+        "write": 0.0,
+        "output": 0.1917,
+        "total": 1.85772
+      }
+    },
+    {
+      "phase": "confirmation",
+      "version": "v2",
+      "trials": 8,
+      "overall_passes": 7,
+      "check_passes": {
+        "accounting": 8,
+        "activation": 8,
+        "child_count": 8,
+        "fixtures_preserved": 8,
+        "isolated_skill": 8,
+        "model_and_effort": 8,
+        "no_extra_job": 8,
+        "no_short_cell_polls": 7,
+        "no_short_stdin_polls": 7,
+        "outcome": 8,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 8
+      },
+      "check_totals": {
+        "accounting": 8,
+        "activation": 8,
+        "child_count": 8,
+        "fixtures_preserved": 8,
+        "isolated_skill": 8,
+        "model_and_effort": 8,
+        "no_extra_job": 8,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 8,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 8
+      },
+      "responses": 56,
+      "tokens": {
+        "input": 934510,
+        "uncached": 64878,
+        "cached": 869632,
+        "write": 0,
+        "output": 3976,
+        "reasoning_in_output": 148
+      },
+      "usd": {
+        "uncached": 0.64878,
+        "cached": 0.8696320000000001,
+        "write": 0.0,
+        "output": 0.1988,
+        "total": 1.7172120000000002
+      }
+    },
+    {
+      "phase": "handoff",
+      "version": "v4",
+      "trials": 2,
+      "overall_passes": 2,
+      "check_passes": {
+        "accounting": 2,
+        "activation": 2,
+        "child_count": 2,
+        "fixtures_preserved": 2,
+        "isolated_skill": 2,
+        "model_and_effort": 2,
+        "no_extra_job": 2,
+        "no_short_cell_polls": 2,
+        "no_short_stdin_polls": 2,
+        "outcome": 2,
+        "parent_update_cadence": 2,
+        "turn_completed": 2
+      },
+      "check_totals": {
+        "accounting": 2,
+        "activation": 2,
+        "child_count": 2,
+        "fixtures_preserved": 2,
+        "isolated_skill": 2,
+        "model_and_effort": 2,
+        "no_extra_job": 2,
+        "no_short_cell_polls": 2,
+        "no_short_stdin_polls": 2,
+        "outcome": 2,
+        "parent_update_cadence": 2,
+        "turn_completed": 2
+      },
+      "responses": 20,
+      "tokens": {
+        "input": 318836,
+        "uncached": 19700,
+        "cached": 299136,
+        "write": 0,
+        "output": 1192,
+        "reasoning_in_output": 0
+      },
+      "usd": {
+        "uncached": 0.197,
+        "cached": 0.299136,
+        "write": 0.0,
+        "output": 0.0596,
+        "total": 0.555736
+      }
+    },
+    {
+      "phase": "final-suite",
+      "version": "v4",
+      "trials": 12,
+      "overall_passes": 11,
+      "check_passes": {
+        "accounting": 12,
+        "activation": 12,
+        "child_count": 12,
+        "fixtures_preserved": 12,
+        "forced_cell_exercised": 1,
+        "independent_work": 1,
+        "isolated_skill": 12,
+        "model_and_effort": 12,
+        "no_extra_job": 12,
+        "no_short_cell_polls": 7,
+        "no_short_stdin_polls": 8,
+        "outcome": 12,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 12
+      },
+      "check_totals": {
+        "accounting": 12,
+        "activation": 12,
+        "child_count": 12,
+        "fixtures_preserved": 12,
+        "forced_cell_exercised": 1,
+        "independent_work": 1,
+        "isolated_skill": 12,
+        "model_and_effort": 12,
+        "no_extra_job": 12,
+        "no_short_cell_polls": 8,
+        "no_short_stdin_polls": 8,
+        "outcome": 12,
+        "parent_update_cadence": 8,
+        "status_query_bound": 2,
+        "turn_completed": 12
+      },
+      "responses": 58,
+      "tokens": {
+        "input": 941366,
+        "uncached": 90294,
+        "cached": 851072,
+        "write": 0,
+        "output": 3824,
+        "reasoning_in_output": 92
+      },
+      "usd": {
+        "uncached": 0.90294,
+        "cached": 0.851072,
+        "write": 0.0,
+        "output": 0.1912,
+        "total": 1.945212
+      }
+    }
+  ],
+  "trials": [
+    {
+      "phase": "discovery",
+      "name": "v1-contextual-ci-r1",
+      "version": "v1",
+      "case": "contextual-ci",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 7,
+          "tokens": {
+            "input": 114449,
+            "cached": 108544,
+            "write": 0,
+            "output": 679,
+            "uncached": 5905,
+            "reasoning_in_output": 14
+          },
+          "usd": {
+            "uncached": 0.05904999999999999,
+            "cached": 0.10854399999999999,
+            "write": 0.0,
+            "output": 0.03395,
+            "total": 0.201544
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 7,
+          "tokens": {
+            "input": 114449,
+            "cached": 108544,
+            "write": 0,
+            "output": 679,
+            "uncached": 5905,
+            "reasoning_in_output": 14
+          },
+          "usd": {
+            "uncached": 0.05904999999999999,
+            "cached": 0.10854399999999999,
+            "write": 0.0,
+            "output": 0.03395,
+            "total": 0.201544
+          }
+        }
+      },
+      "parent_max_gap_seconds": 48.595,
+      "result_delay_seconds": 42.449
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-explicit-cell-r1",
+      "version": "v1",
+      "case": "explicit-cell",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "forced_cell_exercised": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79938,
+            "cached": 71296,
+            "write": 0,
+            "output": 307,
+            "uncached": 8642,
+            "reasoning_in_output": 10
+          },
+          "usd": {
+            "uncached": 0.08642000000000001,
+            "cached": 0.071296,
+            "write": 0.0,
+            "output": 0.01535,
+            "total": 0.17306600000000003
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79938,
+            "cached": 71296,
+            "write": 0,
+            "output": 307,
+            "uncached": 8642,
+            "reasoning_in_output": 10
+          },
+          "usd": {
+            "uncached": 0.08642000000000001,
+            "cached": 0.071296,
+            "write": 0.0,
+            "output": 0.01535,
+            "total": 0.17306600000000003
+          }
+        }
+      },
+      "parent_max_gap_seconds": 42.334,
+      "result_delay_seconds": 1.979
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-explicit-failure-r1",
+      "version": "v1",
+      "case": "explicit-failure",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 3,
+          "tokens": {
+            "input": 47423,
+            "cached": 43136,
+            "write": 0,
+            "output": 213,
+            "uncached": 4287,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04287,
+            "cached": 0.043136,
+            "write": 0.0,
+            "output": 0.01065,
+            "total": 0.09665599999999999
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 3,
+          "tokens": {
+            "input": 47423,
+            "cached": 43136,
+            "write": 0,
+            "output": 213,
+            "uncached": 4287,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04287,
+            "cached": 0.043136,
+            "write": 0.0,
+            "output": 0.01065,
+            "total": 0.09665599999999999
+          }
+        }
+      },
+      "parent_max_gap_seconds": 16.454,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-explicit-independent-work-r1",
+      "version": "v1",
+      "case": "explicit-independent-work",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "independent_work": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 96603,
+            "cached": 87424,
+            "write": 0,
+            "output": 422,
+            "uncached": 9179,
+            "reasoning_in_output": 7
+          },
+          "usd": {
+            "uncached": 0.09179,
+            "cached": 0.087424,
+            "write": 0.0,
+            "output": 0.0211,
+            "total": 0.20031400000000002
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 6,
+          "tokens": {
+            "input": 96603,
+            "cached": 87424,
+            "write": 0,
+            "output": 422,
+            "uncached": 9179,
+            "reasoning_in_output": 7
+          },
+          "usd": {
+            "uncached": 0.09179,
+            "cached": 0.087424,
+            "write": 0.0,
+            "output": 0.0211,
+            "total": 0.20031400000000002
+          }
+        }
+      },
+      "parent_max_gap_seconds": 44.531,
+      "result_delay_seconds": 2.067
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-explicit-observation-limit-r1",
+      "version": "v1",
+      "case": "explicit-observation-limit",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 7,
+          "tokens": {
+            "input": 112850,
+            "cached": 107520,
+            "write": 0,
+            "output": 382,
+            "uncached": 5330,
+            "reasoning_in_output": 11
+          },
+          "usd": {
+            "uncached": 0.05330000000000001,
+            "cached": 0.10752,
+            "write": 0.0,
+            "output": 0.019100000000000002,
+            "total": 0.17992
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 7,
+          "tokens": {
+            "input": 112850,
+            "cached": 107520,
+            "write": 0,
+            "output": 382,
+            "uncached": 5330,
+            "reasoning_in_output": 11
+          },
+          "usd": {
+            "uncached": 0.05330000000000001,
+            "cached": 0.10752,
+            "write": 0.0,
+            "output": 0.019100000000000002,
+            "total": 0.17992
+          }
+        }
+      },
+      "parent_max_gap_seconds": 45.904,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-explicit-terminal-r1",
+      "version": "v1",
+      "case": "explicit-terminal",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79753,
+            "cached": 71936,
+            "write": 0,
+            "output": 328,
+            "uncached": 7817,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.07817,
+            "cached": 0.071936,
+            "write": 0.0,
+            "output": 0.016399999999999998,
+            "total": 0.16650600000000002
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79753,
+            "cached": 71936,
+            "write": 0,
+            "output": 328,
+            "uncached": 7817,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.07817,
+            "cached": 0.071936,
+            "write": 0.0,
+            "output": 0.016399999999999998,
+            "total": 0.16650600000000002
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.953,
+      "result_delay_seconds": 5.009
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-implicit-subagent-r1",
+      "version": "v1",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 1,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79867,
+            "cached": 67584,
+            "write": 0,
+            "output": 280,
+            "uncached": 12283,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.12283,
+            "cached": 0.067584,
+            "write": 0.0,
+            "output": 0.014000000000000002,
+            "total": 0.204414
+          }
+        },
+        "child": {
+          "responses": 4,
+          "tokens": {
+            "input": 75283,
+            "cached": 67456,
+            "write": 0,
+            "output": 253,
+            "uncached": 7827,
+            "reasoning_in_output": 8
+          },
+          "usd": {
+            "uncached": 0.07826999999999999,
+            "cached": 0.067456,
+            "write": 0.0,
+            "output": 0.012650000000000002,
+            "total": 0.158376
+          }
+        },
+        "combined": {
+          "responses": 9,
+          "tokens": {
+            "input": 155150,
+            "cached": 135040,
+            "write": 0,
+            "output": 533,
+            "uncached": 20110,
+            "reasoning_in_output": 8
+          },
+          "usd": {
+            "uncached": 0.2011,
+            "cached": 0.13504,
+            "write": 0.0,
+            "output": 0.02665,
+            "total": 0.36279
+          }
+        }
+      },
+      "parent_max_gap_seconds": 57.929,
+      "result_delay_seconds": 5.608
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-implicit-terminal-r1",
+      "version": "v1",
+      "case": "implicit-terminal",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79877,
+            "cached": 74880,
+            "write": 0,
+            "output": 330,
+            "uncached": 4997,
+            "reasoning_in_output": 6
+          },
+          "usd": {
+            "uncached": 0.04997,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.0165,
+            "total": 0.14134999999999998
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79877,
+            "cached": 74880,
+            "write": 0,
+            "output": 330,
+            "uncached": 4997,
+            "reasoning_in_output": 6
+          },
+          "usd": {
+            "uncached": 0.04997,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.0165,
+            "total": 0.14134999999999998
+          }
+        }
+      },
+      "parent_max_gap_seconds": 44.552,
+      "result_delay_seconds": 5.156
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-negative-doc-edit-r1",
+      "version": "v1",
+      "case": "negative-doc-edit",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 77692,
+            "cached": 70272,
+            "write": 0,
+            "output": 291,
+            "uncached": 7420,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.0742,
+            "cached": 0.070272,
+            "write": 0.0,
+            "output": 0.01455,
+            "total": 0.159022
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 77692,
+            "cached": 70272,
+            "write": 0,
+            "output": 291,
+            "uncached": 7420,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.0742,
+            "cached": 0.070272,
+            "write": 0.0,
+            "output": 0.01455,
+            "total": 0.159022
+          }
+        }
+      },
+      "parent_max_gap_seconds": 14.304,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-negative-explanation-r1",
+      "version": "v1",
+      "case": "negative-explanation",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 1,
+          "tokens": {
+            "input": 15266,
+            "cached": 12160,
+            "write": 0,
+            "output": 57,
+            "uncached": 3106,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03106,
+            "cached": 0.01216,
+            "write": 0.0,
+            "output": 0.00285,
+            "total": 0.04607
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 1,
+          "tokens": {
+            "input": 15266,
+            "cached": 12160,
+            "write": 0,
+            "output": 57,
+            "uncached": 3106,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03106,
+            "cached": 0.01216,
+            "write": 0.0,
+            "output": 0.00285,
+            "total": 0.04607
+          }
+        }
+      },
+      "parent_max_gap_seconds": 12.756,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-negative-one-status-r1",
+      "version": "v1",
+      "case": "negative-one-status",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 2,
+          "tokens": {
+            "input": 30701,
+            "cached": 27264,
+            "write": 0,
+            "output": 73,
+            "uncached": 3437,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03437,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00365,
+            "total": 0.065284
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 2,
+          "tokens": {
+            "input": 30701,
+            "cached": 27264,
+            "write": 0,
+            "output": 73,
+            "uncached": 3437,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03437,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00365,
+            "total": 0.065284
+          }
+        }
+      },
+      "parent_max_gap_seconds": 7.794,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "discovery",
+      "name": "v1-negative-quick-command-r1",
+      "version": "v1",
+      "case": "negative-quick-command",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 2,
+          "tokens": {
+            "input": 30634,
+            "cached": 27264,
+            "write": 0,
+            "output": 55,
+            "uncached": 3370,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.0337,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00275,
+            "total": 0.06371399999999999
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 2,
+          "tokens": {
+            "input": 30634,
+            "cached": 27264,
+            "write": 0,
+            "output": 55,
+            "uncached": 3370,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.0337,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00275,
+            "total": 0.06371399999999999
+          }
+        }
+      },
+      "parent_max_gap_seconds": 6.519,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "revised",
+      "name": "v2-contextual-ci-r1",
+      "version": "v2",
+      "case": "contextual-ci",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 8,
+          "tokens": {
+            "input": 130766,
+            "cached": 124928,
+            "write": 0,
+            "output": 713,
+            "uncached": 5838,
+            "reasoning_in_output": 33
+          },
+          "usd": {
+            "uncached": 0.05838,
+            "cached": 0.124928,
+            "write": 0.0,
+            "output": 0.03565,
+            "total": 0.218958
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 8,
+          "tokens": {
+            "input": 130766,
+            "cached": 124928,
+            "write": 0,
+            "output": 713,
+            "uncached": 5838,
+            "reasoning_in_output": 33
+          },
+          "usd": {
+            "uncached": 0.05838,
+            "cached": 0.124928,
+            "write": 0.0,
+            "output": 0.03565,
+            "total": 0.218958
+          }
+        }
+      },
+      "parent_max_gap_seconds": 48.53,
+      "result_delay_seconds": 41.986
+    },
+    {
+      "phase": "revised",
+      "name": "v2-explicit-cell-r1",
+      "version": "v2",
+      "case": "explicit-cell",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "forced_cell_exercised": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 96459,
+            "cached": 87296,
+            "write": 0,
+            "output": 356,
+            "uncached": 9163,
+            "reasoning_in_output": 7
+          },
+          "usd": {
+            "uncached": 0.09163,
+            "cached": 0.087296,
+            "write": 0.0,
+            "output": 0.017799999999999996,
+            "total": 0.196726
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 6,
+          "tokens": {
+            "input": 96459,
+            "cached": 87296,
+            "write": 0,
+            "output": 356,
+            "uncached": 9163,
+            "reasoning_in_output": 7
+          },
+          "usd": {
+            "uncached": 0.09163,
+            "cached": 0.087296,
+            "write": 0.0,
+            "output": 0.017799999999999996,
+            "total": 0.196726
+          }
+        }
+      },
+      "parent_max_gap_seconds": 45.082,
+      "result_delay_seconds": 6.422
+    },
+    {
+      "phase": "revised",
+      "name": "v2-explicit-failure-r1",
+      "version": "v2",
+      "case": "explicit-failure",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 3,
+          "tokens": {
+            "input": 47394,
+            "cached": 40192,
+            "write": 0,
+            "output": 196,
+            "uncached": 7202,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.07202,
+            "cached": 0.040192000000000005,
+            "write": 0.0,
+            "output": 0.0098,
+            "total": 0.122012
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 3,
+          "tokens": {
+            "input": 47394,
+            "cached": 40192,
+            "write": 0,
+            "output": 196,
+            "uncached": 7202,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.07202,
+            "cached": 0.040192000000000005,
+            "write": 0.0,
+            "output": 0.0098,
+            "total": 0.122012
+          }
+        }
+      },
+      "parent_max_gap_seconds": 16.155,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "revised",
+      "name": "v2-explicit-independent-work-r1",
+      "version": "v2",
+      "case": "explicit-independent-work",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "independent_work": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 96615,
+            "cached": 91392,
+            "write": 0,
+            "output": 408,
+            "uncached": 5223,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.052230000000000006,
+            "cached": 0.091392,
+            "write": 0.0,
+            "output": 0.0204,
+            "total": 0.164022
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 6,
+          "tokens": {
+            "input": 96615,
+            "cached": 91392,
+            "write": 0,
+            "output": 408,
+            "uncached": 5223,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.052230000000000006,
+            "cached": 0.091392,
+            "write": 0.0,
+            "output": 0.0204,
+            "total": 0.164022
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.451,
+      "result_delay_seconds": 2.125
+    },
+    {
+      "phase": "revised",
+      "name": "v2-explicit-observation-limit-r1",
+      "version": "v2",
+      "case": "explicit-observation-limit",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 4,
+          "tokens": {
+            "input": 63910,
+            "cached": 59136,
+            "write": 0,
+            "output": 494,
+            "uncached": 4774,
+            "reasoning_in_output": 19
+          },
+          "usd": {
+            "uncached": 0.04773999999999999,
+            "cached": 0.059136,
+            "write": 0.0,
+            "output": 0.0247,
+            "total": 0.131576
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 4,
+          "tokens": {
+            "input": 63910,
+            "cached": 59136,
+            "write": 0,
+            "output": 494,
+            "uncached": 4774,
+            "reasoning_in_output": 19
+          },
+          "usd": {
+            "uncached": 0.04773999999999999,
+            "cached": 0.059136,
+            "write": 0.0,
+            "output": 0.0247,
+            "total": 0.131576
+          }
+        }
+      },
+      "parent_max_gap_seconds": 39.558,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "revised",
+      "name": "v2-explicit-terminal-r1",
+      "version": "v2",
+      "case": "explicit-terminal",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79961,
+            "cached": 74880,
+            "write": 0,
+            "output": 344,
+            "uncached": 5081,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.05081,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.0172,
+            "total": 0.14289000000000002
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79961,
+            "cached": 74880,
+            "write": 0,
+            "output": 344,
+            "uncached": 5081,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.05081,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.0172,
+            "total": 0.14289000000000002
+          }
+        }
+      },
+      "parent_max_gap_seconds": 44.077,
+      "result_delay_seconds": 5.765
+    },
+    {
+      "phase": "revised",
+      "name": "v2-implicit-subagent-r1",
+      "version": "v2",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 80000,
+            "cached": 75136,
+            "write": 0,
+            "output": 300,
+            "uncached": 4864,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04863999999999999,
+            "cached": 0.07513600000000001,
+            "write": 0.0,
+            "output": 0.015000000000000003,
+            "total": 0.13877599999999998
+          }
+        },
+        "child": {
+          "responses": 4,
+          "tokens": {
+            "input": 73513,
+            "cached": 66304,
+            "write": 0,
+            "output": 117,
+            "uncached": 7209,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.07209,
+            "cached": 0.066304,
+            "write": 0.0,
+            "output": 0.005849999999999999,
+            "total": 0.14424399999999998
+          }
+        },
+        "combined": {
+          "responses": 9,
+          "tokens": {
+            "input": 153513,
+            "cached": 141440,
+            "write": 0,
+            "output": 417,
+            "uncached": 12073,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.12072999999999999,
+            "cached": 0.14144,
+            "write": 0.0,
+            "output": 0.02085,
+            "total": 0.28302
+          }
+        }
+      },
+      "parent_max_gap_seconds": 58.16,
+      "result_delay_seconds": 5.599
+    },
+    {
+      "phase": "revised",
+      "name": "v2-implicit-terminal-r1",
+      "version": "v2",
+      "case": "implicit-terminal",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79942,
+            "cached": 71168,
+            "write": 0,
+            "output": 340,
+            "uncached": 8774,
+            "reasoning_in_output": 9
+          },
+          "usd": {
+            "uncached": 0.08774000000000001,
+            "cached": 0.07116800000000001,
+            "write": 0.0,
+            "output": 0.017,
+            "total": 0.17590799999999998
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79942,
+            "cached": 71168,
+            "write": 0,
+            "output": 340,
+            "uncached": 8774,
+            "reasoning_in_output": 9
+          },
+          "usd": {
+            "uncached": 0.08774000000000001,
+            "cached": 0.07116800000000001,
+            "write": 0.0,
+            "output": 0.017,
+            "total": 0.17590799999999998
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.946,
+      "result_delay_seconds": 5.617
+    },
+    {
+      "phase": "revised",
+      "name": "v2-negative-doc-edit-r1",
+      "version": "v2",
+      "case": "negative-doc-edit",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 77710,
+            "cached": 73344,
+            "write": 0,
+            "output": 272,
+            "uncached": 4366,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04365999999999999,
+            "cached": 0.07334399999999999,
+            "write": 0.0,
+            "output": 0.013600000000000001,
+            "total": 0.130604
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 77710,
+            "cached": 73344,
+            "write": 0,
+            "output": 272,
+            "uncached": 4366,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04365999999999999,
+            "cached": 0.07334399999999999,
+            "write": 0.0,
+            "output": 0.013600000000000001,
+            "total": 0.130604
+          }
+        }
+      },
+      "parent_max_gap_seconds": 13.181,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "revised",
+      "name": "v2-negative-explanation-r1",
+      "version": "v2",
+      "case": "negative-explanation",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 1,
+          "tokens": {
+            "input": 15274,
+            "cached": 12160,
+            "write": 0,
+            "output": 57,
+            "uncached": 3114,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03114,
+            "cached": 0.01216,
+            "write": 0.0,
+            "output": 0.00285,
+            "total": 0.04615
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 1,
+          "tokens": {
+            "input": 15274,
+            "cached": 12160,
+            "write": 0,
+            "output": 57,
+            "uncached": 3114,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03114,
+            "cached": 0.01216,
+            "write": 0.0,
+            "output": 0.00285,
+            "total": 0.04615
+          }
+        }
+      },
+      "parent_max_gap_seconds": 7.322,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "revised",
+      "name": "v2-negative-one-status-r1",
+      "version": "v2",
+      "case": "negative-one-status",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 2,
+          "tokens": {
+            "input": 30686,
+            "cached": 27264,
+            "write": 0,
+            "output": 77,
+            "uncached": 3422,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03422,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00385,
+            "total": 0.065334
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 2,
+          "tokens": {
+            "input": 30686,
+            "cached": 27264,
+            "write": 0,
+            "output": 77,
+            "uncached": 3422,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03422,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00385,
+            "total": 0.065334
+          }
+        }
+      },
+      "parent_max_gap_seconds": 7.796,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "revised",
+      "name": "v2-negative-quick-command-r1",
+      "version": "v2",
+      "case": "negative-quick-command",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 2,
+          "tokens": {
+            "input": 30665,
+            "cached": 27264,
+            "write": 0,
+            "output": 55,
+            "uncached": 3401,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03401,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00275,
+            "total": 0.064024
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 2,
+          "tokens": {
+            "input": 30665,
+            "cached": 27264,
+            "write": 0,
+            "output": 55,
+            "uncached": 3401,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03401,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00275,
+            "total": 0.064024
+          }
+        }
+      },
+      "parent_max_gap_seconds": 6.41,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-contextual-ci-r1",
+      "version": "v3",
+      "case": "contextual-ci",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": false,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": false,
+        "accounting": true
+      },
+      "failed_checks": [
+        "parent_update_cadence"
+      ],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 7,
+          "tokens": {
+            "input": 114006,
+            "cached": 104064,
+            "write": 0,
+            "output": 617,
+            "uncached": 9942,
+            "reasoning_in_output": 20
+          },
+          "usd": {
+            "uncached": 0.09942000000000001,
+            "cached": 0.10406399999999999,
+            "write": 0.0,
+            "output": 0.03085,
+            "total": 0.234334
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 7,
+          "tokens": {
+            "input": 114006,
+            "cached": 104064,
+            "write": 0,
+            "output": 617,
+            "uncached": 9942,
+            "reasoning_in_output": 20
+          },
+          "usd": {
+            "uncached": 0.09942000000000001,
+            "cached": 0.10406399999999999,
+            "write": 0.0,
+            "output": 0.03085,
+            "total": 0.234334
+          }
+        }
+      },
+      "parent_max_gap_seconds": 68.464,
+      "result_delay_seconds": 28.274
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-explicit-cell-r1",
+      "version": "v3",
+      "case": "explicit-cell",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "forced_cell_exercised": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 96568,
+            "cached": 91136,
+            "write": 0,
+            "output": 377,
+            "uncached": 5432,
+            "reasoning_in_output": 8
+          },
+          "usd": {
+            "uncached": 0.05432,
+            "cached": 0.09113600000000001,
+            "write": 0.0,
+            "output": 0.01885,
+            "total": 0.164306
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 6,
+          "tokens": {
+            "input": 96568,
+            "cached": 91136,
+            "write": 0,
+            "output": 377,
+            "uncached": 5432,
+            "reasoning_in_output": 8
+          },
+          "usd": {
+            "uncached": 0.05432,
+            "cached": 0.09113600000000001,
+            "write": 0.0,
+            "output": 0.01885,
+            "total": 0.164306
+          }
+        }
+      },
+      "parent_max_gap_seconds": 45.022,
+      "result_delay_seconds": 5.915
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-explicit-failure-r1",
+      "version": "v3",
+      "case": "explicit-failure",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 3,
+          "tokens": {
+            "input": 47423,
+            "cached": 43136,
+            "write": 0,
+            "output": 207,
+            "uncached": 4287,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04287,
+            "cached": 0.043136,
+            "write": 0.0,
+            "output": 0.01035,
+            "total": 0.096356
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 3,
+          "tokens": {
+            "input": 47423,
+            "cached": 43136,
+            "write": 0,
+            "output": 207,
+            "uncached": 4287,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04287,
+            "cached": 0.043136,
+            "write": 0.0,
+            "output": 0.01035,
+            "total": 0.096356
+          }
+        }
+      },
+      "parent_max_gap_seconds": 15.676,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-explicit-independent-work-r1",
+      "version": "v3",
+      "case": "explicit-independent-work",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "independent_work": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 96785,
+            "cached": 87552,
+            "write": 0,
+            "output": 417,
+            "uncached": 9233,
+            "reasoning_in_output": 6
+          },
+          "usd": {
+            "uncached": 0.09232999999999998,
+            "cached": 0.08755199999999999,
+            "write": 0.0,
+            "output": 0.02085,
+            "total": 0.20073200000000002
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 6,
+          "tokens": {
+            "input": 96785,
+            "cached": 87552,
+            "write": 0,
+            "output": 417,
+            "uncached": 9233,
+            "reasoning_in_output": 6
+          },
+          "usd": {
+            "uncached": 0.09232999999999998,
+            "cached": 0.08755199999999999,
+            "write": 0.0,
+            "output": 0.02085,
+            "total": 0.20073200000000002
+          }
+        }
+      },
+      "parent_max_gap_seconds": 44.055,
+      "result_delay_seconds": 2.044
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-explicit-observation-limit-r1",
+      "version": "v3",
+      "case": "explicit-observation-limit",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 80551,
+            "cached": 72448,
+            "write": 0,
+            "output": 482,
+            "uncached": 8103,
+            "reasoning_in_output": 35
+          },
+          "usd": {
+            "uncached": 0.08102999999999999,
+            "cached": 0.07244800000000001,
+            "write": 0.0,
+            "output": 0.0241,
+            "total": 0.177578
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 80551,
+            "cached": 72448,
+            "write": 0,
+            "output": 482,
+            "uncached": 8103,
+            "reasoning_in_output": 35
+          },
+          "usd": {
+            "uncached": 0.08102999999999999,
+            "cached": 0.07244800000000001,
+            "write": 0.0,
+            "output": 0.0241,
+            "total": 0.177578
+          }
+        }
+      },
+      "parent_max_gap_seconds": 38.955,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-explicit-terminal-r1",
+      "version": "v3",
+      "case": "explicit-terminal",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 4,
+          "tokens": {
+            "input": 63639,
+            "cached": 59008,
+            "write": 0,
+            "output": 251,
+            "uncached": 4631,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04631,
+            "cached": 0.059008000000000005,
+            "write": 0.0,
+            "output": 0.012549999999999999,
+            "total": 0.117868
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 4,
+          "tokens": {
+            "input": 63639,
+            "cached": 59008,
+            "write": 0,
+            "output": 251,
+            "uncached": 4631,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04631,
+            "cached": 0.059008000000000005,
+            "write": 0.0,
+            "output": 0.012549999999999999,
+            "total": 0.117868
+          }
+        }
+      },
+      "parent_max_gap_seconds": 42.539,
+      "result_delay_seconds": 1.757
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-implicit-subagent-r1",
+      "version": "v3",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 1,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79986,
+            "cached": 72192,
+            "write": 0,
+            "output": 265,
+            "uncached": 7794,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.07794,
+            "cached": 0.072192,
+            "write": 0.0,
+            "output": 0.013250000000000001,
+            "total": 0.163382
+          }
+        },
+        "child": {
+          "responses": 5,
+          "tokens": {
+            "input": 93914,
+            "cached": 73984,
+            "write": 0,
+            "output": 277,
+            "uncached": 19930,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.19929999999999998,
+            "cached": 0.07398400000000001,
+            "write": 0.0,
+            "output": 0.013850000000000001,
+            "total": 0.287134
+          }
+        },
+        "combined": {
+          "responses": 10,
+          "tokens": {
+            "input": 173900,
+            "cached": 146176,
+            "write": 0,
+            "output": 542,
+            "uncached": 27724,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.27724000000000004,
+            "cached": 0.14617600000000003,
+            "write": 0.0,
+            "output": 0.027100000000000003,
+            "total": 0.45051599999999997
+          }
+        }
+      },
+      "parent_max_gap_seconds": 56.634,
+      "result_delay_seconds": 3.605
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-implicit-terminal-r1",
+      "version": "v3",
+      "case": "implicit-terminal",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 80076,
+            "cached": 75264,
+            "write": 0,
+            "output": 332,
+            "uncached": 4812,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04812000000000001,
+            "cached": 0.075264,
+            "write": 0.0,
+            "output": 0.0166,
+            "total": 0.139984
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 80076,
+            "cached": 75264,
+            "write": 0,
+            "output": 332,
+            "uncached": 4812,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04812000000000001,
+            "cached": 0.075264,
+            "write": 0.0,
+            "output": 0.0166,
+            "total": 0.139984
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.774,
+      "result_delay_seconds": 4.966
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-negative-doc-edit-r1",
+      "version": "v3",
+      "case": "negative-doc-edit",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 77658,
+            "cached": 73344,
+            "write": 0,
+            "output": 282,
+            "uncached": 4314,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.043140000000000005,
+            "cached": 0.07334399999999999,
+            "write": 0.0,
+            "output": 0.014099999999999998,
+            "total": 0.130584
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 77658,
+            "cached": 73344,
+            "write": 0,
+            "output": 282,
+            "uncached": 4314,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.043140000000000005,
+            "cached": 0.07334399999999999,
+            "write": 0.0,
+            "output": 0.014099999999999998,
+            "total": 0.130584
+          }
+        }
+      },
+      "parent_max_gap_seconds": 13.691,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-negative-explanation-r1",
+      "version": "v3",
+      "case": "negative-explanation",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 1,
+          "tokens": {
+            "input": 15266,
+            "cached": 12160,
+            "write": 0,
+            "output": 54,
+            "uncached": 3106,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03106,
+            "cached": 0.01216,
+            "write": 0.0,
+            "output": 0.0027,
+            "total": 0.04592
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 1,
+          "tokens": {
+            "input": 15266,
+            "cached": 12160,
+            "write": 0,
+            "output": 54,
+            "uncached": 3106,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03106,
+            "cached": 0.01216,
+            "write": 0.0,
+            "output": 0.0027,
+            "total": 0.04592
+          }
+        }
+      },
+      "parent_max_gap_seconds": 7.847,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-negative-one-status-r1",
+      "version": "v3",
+      "case": "negative-one-status",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 2,
+          "tokens": {
+            "input": 30702,
+            "cached": 27264,
+            "write": 0,
+            "output": 73,
+            "uncached": 3438,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03438,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00365,
+            "total": 0.06529399999999999
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 2,
+          "tokens": {
+            "input": 30702,
+            "cached": 27264,
+            "write": 0,
+            "output": 73,
+            "uncached": 3438,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03438,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00365,
+            "total": 0.06529399999999999
+          }
+        }
+      },
+      "parent_max_gap_seconds": 7.806,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "sharpened",
+      "name": "v3-negative-quick-command-r1",
+      "version": "v3",
+      "case": "negative-quick-command",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "c4c3b3a2c8ec50a833607f22fe0621d557e57438d95fe68c92b9d43cc348765a",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 2,
+          "tokens": {
+            "input": 30607,
+            "cached": 27264,
+            "write": 0,
+            "output": 61,
+            "uncached": 3343,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03343,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.0030499999999999998,
+            "total": 0.063744
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 2,
+          "tokens": {
+            "input": 30607,
+            "cached": 27264,
+            "write": 0,
+            "output": 61,
+            "uncached": 3343,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03343,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.0030499999999999998,
+            "total": 0.063744
+          }
+        }
+      },
+      "parent_max_gap_seconds": 6.729,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "confirmation",
+      "name": "v1-contextual-ci-r1",
+      "version": "v1",
+      "case": "contextual-ci",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 7,
+          "tokens": {
+            "input": 114368,
+            "cached": 104064,
+            "write": 0,
+            "output": 674,
+            "uncached": 10304,
+            "reasoning_in_output": 24
+          },
+          "usd": {
+            "uncached": 0.10304,
+            "cached": 0.104064,
+            "write": 0.0,
+            "output": 0.0337,
+            "total": 0.24080400000000002
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 7,
+          "tokens": {
+            "input": 114368,
+            "cached": 104064,
+            "write": 0,
+            "output": 674,
+            "uncached": 10304,
+            "reasoning_in_output": 24
+          },
+          "usd": {
+            "uncached": 0.10304,
+            "cached": 0.104064,
+            "write": 0.0,
+            "output": 0.0337,
+            "total": 0.24080400000000002
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.975,
+      "result_delay_seconds": 40.653
+    },
+    {
+      "phase": "confirmation",
+      "name": "v1-contextual-ci-r2",
+      "version": "v1",
+      "case": "contextual-ci",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 7,
+          "tokens": {
+            "input": 114409,
+            "cached": 104320,
+            "write": 0,
+            "output": 703,
+            "uncached": 10089,
+            "reasoning_in_output": 56
+          },
+          "usd": {
+            "uncached": 0.10089,
+            "cached": 0.10432,
+            "write": 0.0,
+            "output": 0.03515,
+            "total": 0.24036000000000002
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 7,
+          "tokens": {
+            "input": 114409,
+            "cached": 104320,
+            "write": 0,
+            "output": 703,
+            "uncached": 10089,
+            "reasoning_in_output": 56
+          },
+          "usd": {
+            "uncached": 0.10089,
+            "cached": 0.10432,
+            "write": 0.0,
+            "output": 0.03515,
+            "total": 0.24036000000000002
+          }
+        }
+      },
+      "parent_max_gap_seconds": 54.222,
+      "result_delay_seconds": 31.498
+    },
+    {
+      "phase": "confirmation",
+      "name": "v1-explicit-observation-limit-r1",
+      "version": "v1",
+      "case": "explicit-observation-limit",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 7,
+          "tokens": {
+            "input": 112798,
+            "cached": 107392,
+            "write": 0,
+            "output": 389,
+            "uncached": 5406,
+            "reasoning_in_output": 12
+          },
+          "usd": {
+            "uncached": 0.05406000000000001,
+            "cached": 0.10739200000000002,
+            "write": 0.0,
+            "output": 0.01945,
+            "total": 0.180902
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 7,
+          "tokens": {
+            "input": 112798,
+            "cached": 107392,
+            "write": 0,
+            "output": 389,
+            "uncached": 5406,
+            "reasoning_in_output": 12
+          },
+          "usd": {
+            "uncached": 0.05406000000000001,
+            "cached": 0.10739200000000002,
+            "write": 0.0,
+            "output": 0.01945,
+            "total": 0.180902
+          }
+        }
+      },
+      "parent_max_gap_seconds": 45.543,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "confirmation",
+      "name": "v1-explicit-observation-limit-r2",
+      "version": "v1",
+      "case": "explicit-observation-limit",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 7,
+          "tokens": {
+            "input": 112717,
+            "cached": 107136,
+            "write": 0,
+            "output": 381,
+            "uncached": 5581,
+            "reasoning_in_output": 12
+          },
+          "usd": {
+            "uncached": 0.05580999999999999,
+            "cached": 0.10713600000000001,
+            "write": 0.0,
+            "output": 0.01905,
+            "total": 0.181996
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 7,
+          "tokens": {
+            "input": 112717,
+            "cached": 107136,
+            "write": 0,
+            "output": 381,
+            "uncached": 5581,
+            "reasoning_in_output": 12
+          },
+          "usd": {
+            "uncached": 0.05580999999999999,
+            "cached": 0.10713600000000001,
+            "write": 0.0,
+            "output": 0.01905,
+            "total": 0.181996
+          }
+        }
+      },
+      "parent_max_gap_seconds": 46.027,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "confirmation",
+      "name": "v1-implicit-subagent-r1",
+      "version": "v1",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 1,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79863,
+            "cached": 71168,
+            "write": 0,
+            "output": 274,
+            "uncached": 8695,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.08695,
+            "cached": 0.07116800000000001,
+            "write": 0.0,
+            "output": 0.0137,
+            "total": 0.171818
+          }
+        },
+        "child": {
+          "responses": 5,
+          "tokens": {
+            "input": 93873,
+            "cached": 85888,
+            "write": 0,
+            "output": 294,
+            "uncached": 7985,
+            "reasoning_in_output": 12
+          },
+          "usd": {
+            "uncached": 0.07985,
+            "cached": 0.085888,
+            "write": 0.0,
+            "output": 0.014700000000000001,
+            "total": 0.18043800000000002
+          }
+        },
+        "combined": {
+          "responses": 10,
+          "tokens": {
+            "input": 173736,
+            "cached": 157056,
+            "write": 0,
+            "output": 568,
+            "uncached": 16680,
+            "reasoning_in_output": 12
+          },
+          "usd": {
+            "uncached": 0.1668,
+            "cached": 0.157056,
+            "write": 0.0,
+            "output": 0.0284,
+            "total": 0.352256
+          }
+        }
+      },
+      "parent_max_gap_seconds": 56.425,
+      "result_delay_seconds": 5.377
+    },
+    {
+      "phase": "confirmation",
+      "name": "v1-implicit-subagent-r2",
+      "version": "v1",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 1,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79749,
+            "cached": 71296,
+            "write": 0,
+            "output": 265,
+            "uncached": 8453,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.08453000000000001,
+            "cached": 0.071296,
+            "write": 0.0,
+            "output": 0.013250000000000001,
+            "total": 0.169076
+          }
+        },
+        "child": {
+          "responses": 5,
+          "tokens": {
+            "input": 93713,
+            "cached": 79616,
+            "write": 0,
+            "output": 294,
+            "uncached": 14097,
+            "reasoning_in_output": 17
+          },
+          "usd": {
+            "uncached": 0.14097000000000004,
+            "cached": 0.07961599999999999,
+            "write": 0.0,
+            "output": 0.014700000000000001,
+            "total": 0.235286
+          }
+        },
+        "combined": {
+          "responses": 10,
+          "tokens": {
+            "input": 173462,
+            "cached": 150912,
+            "write": 0,
+            "output": 559,
+            "uncached": 22550,
+            "reasoning_in_output": 17
+          },
+          "usd": {
+            "uncached": 0.22550000000000006,
+            "cached": 0.150912,
+            "write": 0.0,
+            "output": 0.027950000000000003,
+            "total": 0.404362
+          }
+        }
+      },
+      "parent_max_gap_seconds": 55.949,
+      "result_delay_seconds": 4.112
+    },
+    {
+      "phase": "confirmation",
+      "name": "v1-implicit-terminal-r1",
+      "version": "v1",
+      "case": "implicit-terminal",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79758,
+            "cached": 74880,
+            "write": 0,
+            "output": 313,
+            "uncached": 4878,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.048780000000000004,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.01565,
+            "total": 0.13931000000000002
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79758,
+            "cached": 74880,
+            "write": 0,
+            "output": 313,
+            "uncached": 4878,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.048780000000000004,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.01565,
+            "total": 0.13931000000000002
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.606,
+      "result_delay_seconds": 4.364
+    },
+    {
+      "phase": "confirmation",
+      "name": "v1-implicit-terminal-r2",
+      "version": "v1",
+      "case": "implicit-terminal",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "cb112f932b367b30f7460b5fa04eef5f5799a7effe0d59be521269f341dfe988",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 4,
+          "tokens": {
+            "input": 63530,
+            "cached": 58880,
+            "write": 0,
+            "output": 247,
+            "uncached": 4650,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04649999999999999,
+            "cached": 0.05888,
+            "write": 0.0,
+            "output": 0.01235,
+            "total": 0.11773
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 4,
+          "tokens": {
+            "input": 63530,
+            "cached": 58880,
+            "write": 0,
+            "output": 247,
+            "uncached": 4650,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04649999999999999,
+            "cached": 0.05888,
+            "write": 0.0,
+            "output": 0.01235,
+            "total": 0.11773
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.091,
+      "result_delay_seconds": 1.95
+    },
+    {
+      "phase": "confirmation",
+      "name": "v2-contextual-ci-r1",
+      "version": "v2",
+      "case": "contextual-ci",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 97771,
+            "cached": 92160,
+            "write": 0,
+            "output": 646,
+            "uncached": 5611,
+            "reasoning_in_output": 46
+          },
+          "usd": {
+            "uncached": 0.05611,
+            "cached": 0.09215999999999999,
+            "write": 0.0,
+            "output": 0.0323,
+            "total": 0.18057
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 6,
+          "tokens": {
+            "input": 97771,
+            "cached": 92160,
+            "write": 0,
+            "output": 646,
+            "uncached": 5611,
+            "reasoning_in_output": 46
+          },
+          "usd": {
+            "uncached": 0.05611,
+            "cached": 0.09215999999999999,
+            "write": 0.0,
+            "output": 0.0323,
+            "total": 0.18057
+          }
+        }
+      },
+      "parent_max_gap_seconds": 58.195,
+      "result_delay_seconds": 31.336
+    },
+    {
+      "phase": "confirmation",
+      "name": "v2-contextual-ci-r2",
+      "version": "v2",
+      "case": "contextual-ci",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 8,
+          "tokens": {
+            "input": 130803,
+            "cached": 124928,
+            "write": 0,
+            "output": 699,
+            "uncached": 5875,
+            "reasoning_in_output": 18
+          },
+          "usd": {
+            "uncached": 0.05875,
+            "cached": 0.124928,
+            "write": 0.0,
+            "output": 0.034949999999999995,
+            "total": 0.21862800000000004
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 8,
+          "tokens": {
+            "input": 130803,
+            "cached": 124928,
+            "write": 0,
+            "output": 699,
+            "uncached": 5875,
+            "reasoning_in_output": 18
+          },
+          "usd": {
+            "uncached": 0.05875,
+            "cached": 0.124928,
+            "write": 0.0,
+            "output": 0.034949999999999995,
+            "total": 0.21862800000000004
+          }
+        }
+      },
+      "parent_max_gap_seconds": 44.254,
+      "result_delay_seconds": 30.429
+    },
+    {
+      "phase": "confirmation",
+      "name": "v2-explicit-observation-limit-r1",
+      "version": "v2",
+      "case": "explicit-observation-limit",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 4,
+          "tokens": {
+            "input": 63947,
+            "cached": 59136,
+            "write": 0,
+            "output": 458,
+            "uncached": 4811,
+            "reasoning_in_output": 33
+          },
+          "usd": {
+            "uncached": 0.04811,
+            "cached": 0.059136,
+            "write": 0.0,
+            "output": 0.0229,
+            "total": 0.13014599999999998
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 4,
+          "tokens": {
+            "input": 63947,
+            "cached": 59136,
+            "write": 0,
+            "output": 458,
+            "uncached": 4811,
+            "reasoning_in_output": 33
+          },
+          "usd": {
+            "uncached": 0.04811,
+            "cached": 0.059136,
+            "write": 0.0,
+            "output": 0.0229,
+            "total": 0.13014599999999998
+          }
+        }
+      },
+      "parent_max_gap_seconds": 38.594,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "confirmation",
+      "name": "v2-explicit-observation-limit-r2",
+      "version": "v2",
+      "case": "explicit-observation-limit",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 4,
+          "tokens": {
+            "input": 63928,
+            "cached": 59136,
+            "write": 0,
+            "output": 355,
+            "uncached": 4792,
+            "reasoning_in_output": 19
+          },
+          "usd": {
+            "uncached": 0.04792,
+            "cached": 0.059136,
+            "write": 0.0,
+            "output": 0.01775,
+            "total": 0.124806
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 4,
+          "tokens": {
+            "input": 63928,
+            "cached": 59136,
+            "write": 0,
+            "output": 355,
+            "uncached": 4792,
+            "reasoning_in_output": 19
+          },
+          "usd": {
+            "uncached": 0.04792,
+            "cached": 0.059136,
+            "write": 0.0,
+            "output": 0.01775,
+            "total": 0.124806
+          }
+        }
+      },
+      "parent_max_gap_seconds": 35.489,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "confirmation",
+      "name": "v2-implicit-subagent-r1",
+      "version": "v2",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": false,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": false,
+        "no_short_cell_polls": false,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [
+        "no_short_stdin_polls",
+        "no_short_cell_polls"
+      ],
+      "short_stdin_requests": 1,
+      "cell_resumptions": 2,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 96251,
+            "cached": 87424,
+            "write": 0,
+            "output": 293,
+            "uncached": 8827,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.08827,
+            "cached": 0.087424,
+            "write": 0.0,
+            "output": 0.014650000000000002,
+            "total": 0.190344
+          }
+        },
+        "child": {
+          "responses": 8,
+          "tokens": {
+            "input": 148076,
+            "cached": 139904,
+            "write": 0,
+            "output": 292,
+            "uncached": 8172,
+            "reasoning_in_output": 20
+          },
+          "usd": {
+            "uncached": 0.08171999999999999,
+            "cached": 0.139904,
+            "write": 0.0,
+            "output": 0.014599999999999998,
+            "total": 0.236224
+          }
+        },
+        "combined": {
+          "responses": 14,
+          "tokens": {
+            "input": 244327,
+            "cached": 227328,
+            "write": 0,
+            "output": 585,
+            "uncached": 16999,
+            "reasoning_in_output": 20
+          },
+          "usd": {
+            "uncached": 0.16999,
+            "cached": 0.22732800000000003,
+            "write": 0.0,
+            "output": 0.029250000000000005,
+            "total": 0.42656800000000006
+          }
+        }
+      },
+      "parent_max_gap_seconds": 58.684,
+      "result_delay_seconds": 7.667
+    },
+    {
+      "phase": "confirmation",
+      "name": "v2-implicit-subagent-r2",
+      "version": "v2",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 1,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79907,
+            "cached": 75136,
+            "write": 0,
+            "output": 281,
+            "uncached": 4771,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04771,
+            "cached": 0.07513600000000001,
+            "write": 0.0,
+            "output": 0.01405,
+            "total": 0.136896
+          }
+        },
+        "child": {
+          "responses": 5,
+          "tokens": {
+            "input": 93958,
+            "cached": 85888,
+            "write": 0,
+            "output": 314,
+            "uncached": 8070,
+            "reasoning_in_output": 12
+          },
+          "usd": {
+            "uncached": 0.0807,
+            "cached": 0.085888,
+            "write": 0.0,
+            "output": 0.0157,
+            "total": 0.18228800000000003
+          }
+        },
+        "combined": {
+          "responses": 10,
+          "tokens": {
+            "input": 173865,
+            "cached": 161024,
+            "write": 0,
+            "output": 595,
+            "uncached": 12841,
+            "reasoning_in_output": 12
+          },
+          "usd": {
+            "uncached": 0.12841,
+            "cached": 0.161024,
+            "write": 0.0,
+            "output": 0.029750000000000002,
+            "total": 0.319184
+          }
+        }
+      },
+      "parent_max_gap_seconds": 56.022,
+      "result_delay_seconds": 3.602
+    },
+    {
+      "phase": "confirmation",
+      "name": "v2-implicit-terminal-r1",
+      "version": "v2",
+      "case": "implicit-terminal",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79938,
+            "cached": 71040,
+            "write": 0,
+            "output": 320,
+            "uncached": 8898,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.08898,
+            "cached": 0.07104,
+            "write": 0.0,
+            "output": 0.016,
+            "total": 0.17601999999999998
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79938,
+            "cached": 71040,
+            "write": 0,
+            "output": 320,
+            "uncached": 8898,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.08898,
+            "cached": 0.07104,
+            "write": 0.0,
+            "output": 0.016,
+            "total": 0.17601999999999998
+          }
+        }
+      },
+      "parent_max_gap_seconds": 44.813,
+      "result_delay_seconds": 6.535
+    },
+    {
+      "phase": "confirmation",
+      "name": "v2-implicit-terminal-r2",
+      "version": "v2",
+      "case": "implicit-terminal",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "0cce0b6d819b412f499453bb9d12fa18bc665090652c496896ab1a3b2f31d4a5",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79931,
+            "cached": 74880,
+            "write": 0,
+            "output": 318,
+            "uncached": 5051,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.050510000000000006,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.0159,
+            "total": 0.14129
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79931,
+            "cached": 74880,
+            "write": 0,
+            "output": 318,
+            "uncached": 5051,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.050510000000000006,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.0159,
+            "total": 0.14129
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.64,
+      "result_delay_seconds": 5.661
+    },
+    {
+      "phase": "handoff",
+      "name": "v4-implicit-subagent-r1",
+      "version": "v4",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 1,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 80028,
+            "cached": 75136,
+            "write": 0,
+            "output": 281,
+            "uncached": 4892,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04892,
+            "cached": 0.07513600000000001,
+            "write": 0.0,
+            "output": 0.01405,
+            "total": 0.138106
+          }
+        },
+        "child": {
+          "responses": 5,
+          "tokens": {
+            "input": 79461,
+            "cached": 74496,
+            "write": 0,
+            "output": 331,
+            "uncached": 4965,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04964999999999999,
+            "cached": 0.074496,
+            "write": 0.0,
+            "output": 0.016550000000000002,
+            "total": 0.140696
+          }
+        },
+        "combined": {
+          "responses": 10,
+          "tokens": {
+            "input": 159489,
+            "cached": 149632,
+            "write": 0,
+            "output": 612,
+            "uncached": 9857,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.09856999999999999,
+            "cached": 0.149632,
+            "write": 0.0,
+            "output": 0.0306,
+            "total": 0.27880200000000005
+          }
+        }
+      },
+      "parent_max_gap_seconds": 56.523,
+      "result_delay_seconds": 7.319
+    },
+    {
+      "phase": "handoff",
+      "name": "v4-implicit-subagent-r2",
+      "version": "v4",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 1,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79967,
+            "cached": 75136,
+            "write": 0,
+            "output": 264,
+            "uncached": 4831,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04831,
+            "cached": 0.07513600000000001,
+            "write": 0.0,
+            "output": 0.013200000000000002,
+            "total": 0.136646
+          }
+        },
+        "child": {
+          "responses": 5,
+          "tokens": {
+            "input": 79380,
+            "cached": 74368,
+            "write": 0,
+            "output": 316,
+            "uncached": 5012,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.05012,
+            "cached": 0.074368,
+            "write": 0.0,
+            "output": 0.015799999999999998,
+            "total": 0.140288
+          }
+        },
+        "combined": {
+          "responses": 10,
+          "tokens": {
+            "input": 159347,
+            "cached": 149504,
+            "write": 0,
+            "output": 580,
+            "uncached": 9843,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.09843,
+            "cached": 0.14950400000000003,
+            "write": 0.0,
+            "output": 0.029000000000000005,
+            "total": 0.276934
+          }
+        }
+      },
+      "parent_max_gap_seconds": 57.859,
+      "result_delay_seconds": 5.907
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-contextual-ci-r1",
+      "version": "v4",
+      "case": "contextual-ci",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": false,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": false,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [
+        "no_short_cell_polls"
+      ],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 2,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 7,
+          "tokens": {
+            "input": 114492,
+            "cached": 108672,
+            "write": 0,
+            "output": 639,
+            "uncached": 5820,
+            "reasoning_in_output": 37
+          },
+          "usd": {
+            "uncached": 0.0582,
+            "cached": 0.10867199999999999,
+            "write": 0.0,
+            "output": 0.03195,
+            "total": 0.198822
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 7,
+          "tokens": {
+            "input": 114492,
+            "cached": 108672,
+            "write": 0,
+            "output": 639,
+            "uncached": 5820,
+            "reasoning_in_output": 37
+          },
+          "usd": {
+            "uncached": 0.0582,
+            "cached": 0.10867199999999999,
+            "write": 0.0,
+            "output": 0.03195,
+            "total": 0.198822
+          }
+        }
+      },
+      "parent_max_gap_seconds": 58.489,
+      "result_delay_seconds": 27.97
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-explicit-cell-r1",
+      "version": "v4",
+      "case": "explicit-cell",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "forced_cell_exercised": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 96603,
+            "cached": 91264,
+            "write": 0,
+            "output": 382,
+            "uncached": 5339,
+            "reasoning_in_output": 6
+          },
+          "usd": {
+            "uncached": 0.05339000000000001,
+            "cached": 0.09126400000000001,
+            "write": 0.0,
+            "output": 0.019100000000000002,
+            "total": 0.16375399999999998
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 6,
+          "tokens": {
+            "input": 96603,
+            "cached": 91264,
+            "write": 0,
+            "output": 382,
+            "uncached": 5339,
+            "reasoning_in_output": 6
+          },
+          "usd": {
+            "uncached": 0.05339000000000001,
+            "cached": 0.09126400000000001,
+            "write": 0.0,
+            "output": 0.019100000000000002,
+            "total": 0.16375399999999998
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.594,
+      "result_delay_seconds": 4.623
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-explicit-failure-r1",
+      "version": "v4",
+      "case": "explicit-failure",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 3,
+          "tokens": {
+            "input": 47434,
+            "cached": 43136,
+            "write": 0,
+            "output": 207,
+            "uncached": 4298,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04297999999999999,
+            "cached": 0.043136,
+            "write": 0.0,
+            "output": 0.01035,
+            "total": 0.096466
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 3,
+          "tokens": {
+            "input": 47434,
+            "cached": 43136,
+            "write": 0,
+            "output": 207,
+            "uncached": 4298,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04297999999999999,
+            "cached": 0.043136,
+            "write": 0.0,
+            "output": 0.01035,
+            "total": 0.096466
+          }
+        }
+      },
+      "parent_max_gap_seconds": 15.882,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-explicit-independent-work-r1",
+      "version": "v4",
+      "case": "explicit-independent-work",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "independent_work": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 96812,
+            "cached": 91520,
+            "write": 0,
+            "output": 418,
+            "uncached": 5292,
+            "reasoning_in_output": 7
+          },
+          "usd": {
+            "uncached": 0.05292,
+            "cached": 0.09151999999999999,
+            "write": 0.0,
+            "output": 0.020900000000000002,
+            "total": 0.16534
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 6,
+          "tokens": {
+            "input": 96812,
+            "cached": 91520,
+            "write": 0,
+            "output": 418,
+            "uncached": 5292,
+            "reasoning_in_output": 7
+          },
+          "usd": {
+            "uncached": 0.05292,
+            "cached": 0.09151999999999999,
+            "write": 0.0,
+            "output": 0.020900000000000002,
+            "total": 0.16534
+          }
+        }
+      },
+      "parent_max_gap_seconds": 44.043,
+      "result_delay_seconds": 2.908
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-explicit-observation-limit-r1",
+      "version": "v4",
+      "case": "explicit-observation-limit",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 1,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 6,
+          "tokens": {
+            "input": 96949,
+            "cached": 91648,
+            "write": 0,
+            "output": 437,
+            "uncached": 5301,
+            "reasoning_in_output": 24
+          },
+          "usd": {
+            "uncached": 0.053009999999999995,
+            "cached": 0.09164800000000001,
+            "write": 0.0,
+            "output": 0.021850000000000005,
+            "total": 0.166508
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 6,
+          "tokens": {
+            "input": 96949,
+            "cached": 91648,
+            "write": 0,
+            "output": 437,
+            "uncached": 5301,
+            "reasoning_in_output": 24
+          },
+          "usd": {
+            "uncached": 0.053009999999999995,
+            "cached": 0.09164800000000001,
+            "write": 0.0,
+            "output": 0.021850000000000005,
+            "total": 0.166508
+          }
+        }
+      },
+      "parent_max_gap_seconds": 51.789,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-explicit-terminal-r1",
+      "version": "v4",
+      "case": "explicit-terminal",
+      "should_trigger": true,
+      "explicit": true,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 80022,
+            "cached": 75136,
+            "write": 0,
+            "output": 329,
+            "uncached": 4886,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04886,
+            "cached": 0.07513600000000001,
+            "write": 0.0,
+            "output": 0.01645,
+            "total": 0.140446
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 80022,
+            "cached": 75136,
+            "write": 0,
+            "output": 329,
+            "uncached": 4886,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04886,
+            "cached": 0.07513600000000001,
+            "write": 0.0,
+            "output": 0.01645,
+            "total": 0.140446
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.441,
+      "result_delay_seconds": 3.984
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-implicit-subagent-r1",
+      "version": "v4",
+      "case": "implicit-subagent",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 1,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 80048,
+            "cached": 75136,
+            "write": 0,
+            "output": 281,
+            "uncached": 4912,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.04912,
+            "cached": 0.07513600000000001,
+            "write": 0.0,
+            "output": 0.01405,
+            "total": 0.138306
+          }
+        },
+        "child": {
+          "responses": 5,
+          "tokens": {
+            "input": 94743,
+            "cached": 74752,
+            "write": 0,
+            "output": 327,
+            "uncached": 19991,
+            "reasoning_in_output": 8
+          },
+          "usd": {
+            "uncached": 0.19991,
+            "cached": 0.07475200000000001,
+            "write": 0.0,
+            "output": 0.016350000000000003,
+            "total": 0.291012
+          }
+        },
+        "combined": {
+          "responses": 10,
+          "tokens": {
+            "input": 174791,
+            "cached": 149888,
+            "write": 0,
+            "output": 608,
+            "uncached": 24903,
+            "reasoning_in_output": 8
+          },
+          "usd": {
+            "uncached": 0.24903,
+            "cached": 0.14988800000000002,
+            "write": 0.0,
+            "output": 0.030400000000000003,
+            "total": 0.42931800000000003
+          }
+        }
+      },
+      "parent_max_gap_seconds": 56.037,
+      "result_delay_seconds": 5.287
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-implicit-terminal-r1",
+      "version": "v4",
+      "case": "implicit-terminal",
+      "should_trigger": true,
+      "explicit": false,
+      "parent_loaded": true,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "no_short_stdin_polls": true,
+        "no_short_cell_polls": true,
+        "parent_update_cadence": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 80019,
+            "cached": 75136,
+            "write": 0,
+            "output": 332,
+            "uncached": 4883,
+            "reasoning_in_output": 10
+          },
+          "usd": {
+            "uncached": 0.04883,
+            "cached": 0.07513600000000001,
+            "write": 0.0,
+            "output": 0.0166,
+            "total": 0.14056600000000002
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 80019,
+            "cached": 75136,
+            "write": 0,
+            "output": 332,
+            "uncached": 4883,
+            "reasoning_in_output": 10
+          },
+          "usd": {
+            "uncached": 0.04883,
+            "cached": 0.07513600000000001,
+            "write": 0.0,
+            "output": 0.0166,
+            "total": 0.14056600000000002
+          }
+        }
+      },
+      "parent_max_gap_seconds": 43.596,
+      "result_delay_seconds": 4.368
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-negative-doc-edit-r1",
+      "version": "v4",
+      "case": "negative-doc-edit",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 77620,
+            "cached": 57984,
+            "write": 0,
+            "output": 290,
+            "uncached": 19636,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.19636,
+            "cached": 0.057984,
+            "write": 0.0,
+            "output": 0.014500000000000002,
+            "total": 0.268844
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 77620,
+            "cached": 57984,
+            "write": 0,
+            "output": 290,
+            "uncached": 19636,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.19636,
+            "cached": 0.057984,
+            "write": 0.0,
+            "output": 0.014500000000000002,
+            "total": 0.268844
+          }
+        }
+      },
+      "parent_max_gap_seconds": 16.592,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-negative-explanation-r1",
+      "version": "v4",
+      "case": "negative-explanation",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 1,
+          "tokens": {
+            "input": 15274,
+            "cached": 12160,
+            "write": 0,
+            "output": 54,
+            "uncached": 3114,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03114,
+            "cached": 0.01216,
+            "write": 0.0,
+            "output": 0.0027,
+            "total": 0.046
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 1,
+          "tokens": {
+            "input": 15274,
+            "cached": 12160,
+            "write": 0,
+            "output": 54,
+            "uncached": 3114,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03114,
+            "cached": 0.01216,
+            "write": 0.0,
+            "output": 0.0027,
+            "total": 0.046
+          }
+        }
+      },
+      "parent_max_gap_seconds": 7.164,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-negative-one-status-r1",
+      "version": "v4",
+      "case": "negative-one-status",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "status_query_bound": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 2,
+          "tokens": {
+            "input": 30701,
+            "cached": 27264,
+            "write": 0,
+            "output": 73,
+            "uncached": 3437,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03437,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00365,
+            "total": 0.065284
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 2,
+          "tokens": {
+            "input": 30701,
+            "cached": 27264,
+            "write": 0,
+            "output": 73,
+            "uncached": 3437,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03437,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00365,
+            "total": 0.065284
+          }
+        }
+      },
+      "parent_max_gap_seconds": 6.907,
+      "result_delay_seconds": null
+    },
+    {
+      "phase": "final-suite",
+      "name": "v4-negative-quick-command-r1",
+      "version": "v4",
+      "case": "negative-quick-command",
+      "should_trigger": false,
+      "explicit": false,
+      "parent_loaded": false,
+      "skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+      "overall_pass": true,
+      "checks": {
+        "turn_completed": true,
+        "activation": true,
+        "isolated_skill": true,
+        "fixtures_preserved": true,
+        "child_count": true,
+        "model_and_effort": true,
+        "no_extra_job": true,
+        "outcome": true,
+        "accounting": true
+      },
+      "failed_checks": [],
+      "short_stdin_requests": 0,
+      "cell_resumptions": 0,
+      "loaded_child_sessions": 0,
+      "usage": {
+        "parent": {
+          "responses": 2,
+          "tokens": {
+            "input": 30649,
+            "cached": 27264,
+            "write": 0,
+            "output": 55,
+            "uncached": 3385,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03385,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00275,
+            "total": 0.063864
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 2,
+          "tokens": {
+            "input": 30649,
+            "cached": 27264,
+            "write": 0,
+            "output": 55,
+            "uncached": 3385,
+            "reasoning_in_output": 0
+          },
+          "usd": {
+            "uncached": 0.03385,
+            "cached": 0.027264,
+            "write": 0.0,
+            "output": 0.00275,
+            "total": 0.063864
+          }
+        }
+      },
+      "parent_max_gap_seconds": 7.926,
+      "result_delay_seconds": null
+    }
+  ],
+  "pricing": "September 14, 2026 Standard API valuation of subscription counters; not subscription charges. Recorded write zeros may be unreported."
+}
