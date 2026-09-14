@@ -7,7 +7,7 @@ September 15, 2026. Codex CLI 0.154.0, GPT-6 Astra, low reasoning effort.
 - **Evaluated 66 real Astra/low trials** following OpenAI's skill-evaluation workflow. All requested outcomes were correct; all response counters reconciled. Failures and rejected candidates are retained.
 - **Use [the final v4 skill](../skills/codex-wait-efficiently/SKILL.md)** for the skill alternative. It adds 31 words to the original: clearer bounded CI watchers and explicit skill invocation in delegated waiting work. All three final child trials read the skill and avoided short polls.
 - **Waiting inefficiency remains.** Across its 12-case suite and two handoff trials, the final skill passed 13/14 trials' deterministic checks; one CI run still used a one-second cell wait. Watcher startup and outer waits were not consistently followed.
-- **A general token/cost benefit is unproven.** Across the same 12-case suite, the original used **57 responses / $1.856236**, and the final skill used **58 / $1.945212**. These are API-price equivalents of subscription counters. The final skill has not been directly compared with no skill or the AGENTS.md method. The earlier AGENTS.md savings remain a separate result.
+- **Revising the skill did not demonstrate general savings.** Across the same 12-case suite, the original used **57 responses / $1.856236**, and the final skill used **58 / $1.945212**. These are API-price equivalents of subscription counters. A subsequent [18-trial comparison against no skill](CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) measured 36.00% fewer responses and 27.93% lower API valuation overall, with higher CI cost and latency. There is still no direct skill-versus-AGENTS comparison.
 
 ## What was evaluated
 
@@ -15,7 +15,7 @@ The original skill packaged the final AGENTS.md patch as a discoverable skill. T
 
 The installable package is [skills/codex-wait-efficiently](../skills/codex-wait-efficiently/SKILL.md). The [fixtures, frozen versions, graders, and results](../skills/codex-wait-efficiently/evals/README.md) are bundled in its `evals/` directory. Normal use loads the self-contained `SKILL.md`; it does not instruct Codex to read the evaluation suite. Optional Codex UI metadata lives in `agents/openai.yaml`. Waiting requires no helper scripts or external instruction dependencies. The evaluation tools use collectors and fixtures elsewhere in this repository. Implicit invocation remains enabled by default.
 
-This compares the original and revised skill. It is separate from the earlier [AGENTS.md versus no-patch experiment](CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md). No no-skill control or skill-versus-AGENTS comparison was run here.
+This 66-trial evaluation compares the original and revised skill. It is separate from the earlier [AGENTS.md versus no-patch experiment](CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md) and the subsequent [final-skill versus no-skill experiment](CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md). The latter adds a no-skill control without changing the evidence below. No skill-versus-AGENTS comparison has been run.
 
 ## Cases and controls
 

@@ -22,15 +22,19 @@ See the [self-contained Japanese explanation](docs/waiting-validation/AGENTS.wai
 
 For skill-based use, install **[codex-wait-efficiently](skills/codex-wait-efficiently/SKILL.md)**. The evaluated v4 skill follows the final patch, clarifies bounded CI watchers, and explicitly requests skill use in delegated work that includes waiting. The package is self-contained: `SKILL.md` holds all the rules, and `agents/openai.yaml` supplies the Codex UI name and description. Normal waiting requires no helper scripts, external references, or other skills. The bundled `evals/` directory contains optional evaluation tools and evidence.
 
+Read the [English skill README](skills/codex-wait-efficiently/README.md) or [日本語 README](skills/codex-wait-efficiently/README.ja.md) for its purpose, expected benefits, installation, and measured limitations.
+
 1. Copy the entire `skills/codex-wait-efficiently/` directory into `${CODEX_HOME:-$HOME/.codex}/skills/codex-wait-efficiently/`.
 2. Start a new Codex session. Automatic selection is allowed by default; to request it explicitly, include `Use $codex-wait-efficiently while waiting for this job.` in your prompt.
 3. When switching from the AGENTS.md method, remove the corresponding `## Waiting for work` section from your global AGENTS.md to avoid loading duplicate instructions. Preserve your other global instructions.
 
 The skill has a separate [runtime evaluation report](docs/CODEX_WAITING_SKILL_EVALUATION.md), covering activation, negative controls, command failure, bounded observations, child sessions, and measured usage. The [evaluation suite and evidence](skills/codex-wait-efficiently/evals/README.md) follow OpenAI's skill-evaluation workflow. Structural validation and a [CLI 0.154.0 discovery check](docs/waiting-validation/skill-package-validation.json) also passed.
 
-Across 66 skill trials, all requested outcomes were correct. The final version passed 13/14 trials' deterministic checks, with one remaining short CI cell wait. Its three child trials read the skill and avoided short polls. **General skill-specific savings remain unproven:** the original and final 12-case suites used 57 and 58 responses respectively, with API equivalents of $1.856236 and $1.945212.
+Across the earlier 66 skill trials, all requested outcomes were correct. The final version passed 13/14 trials' deterministic checks, with one remaining short CI cell wait. Its three child trials read the skill and avoided short polls. Revising the skill did not demonstrate general savings: the original and final 12-case suites used 57 and 58 responses respectively, with API equivalents of $1.856236 and $1.945212.
 
-**The savings below belong to the AGENTS.md experiment.** The skill evaluation compares its original and revised versions; it does not establish the same savings against no skill or compare the two installation formats directly.
+A subsequent [18-trial final-skill-versus-no-skill comparison](docs/CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) directly measured installation with automatic selection. All tasks completed correctly. Responses fell **100 → 64 (36.00%)**, input tokens **1,547,548 → 1,028,592 (33.53%)**, and API-price equivalent **$2.705112 → $1.949598 (27.93%)** overall. Terminal and subagent work drove the savings; CI cost **12.87% more** and delivered results about **25.27 seconds later** on average. These are observed effects for the tested Astra workloads.
+
+**The savings below belong to the AGENTS.md experiment.** Neither skill study directly compares the skill against AGENTS.md; percentages from the separate experiments do not establish which installation format is cheaper.
 
 ## Measured effects of the exact final patch
 
@@ -57,6 +61,7 @@ Dollar amounts apply the study's September 14, 2026 Standard API rates to subscr
 | [Final patch](docs/waiting-validation/AGENTS.waiting-compatible.md) | The proposed addition to install in global AGENTS.md. |
 | [Skill alternative](skills/codex-wait-efficiently/SKILL.md) | Evaluated v4 skill, with bounded-watcher clarification and explicit skill invocation in delegated waiting work. |
 | [Skill evaluation](docs/CODEX_WAITING_SKILL_EVALUATION.md) | Activation, process review, failure handling, token/cost measurements, and reproducible fixtures for the original and revised skills. |
+| [Skill versus no skill](docs/CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) | Direct 18-trial comparison of final-skill installation, including parent/child usage, CI cost increases, and latency. |
 | [Japanese explanation](docs/waiting-validation/AGENTS.waiting-explanation.ja.md) | Why each instruction is needed and how to apply it. |
 | [Latest direct-comparison report](docs/CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md) | TL;DR, methods, token and dollar breakdowns, paired results, wait behavior, and limitations. |
 | [Runtime and prompt benchmark](docs/CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md) | Current results plus historical CLI, Astra/Sol, and prompt-version comparisons. |

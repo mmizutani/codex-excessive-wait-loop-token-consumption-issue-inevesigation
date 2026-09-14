@@ -1,0 +1,807 @@
+{
+  "trials": 18,
+  "pairs": 9,
+  "unique_responses": 164,
+  "final_skill_sha256": "14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173",
+  "totals": {
+    "none": {
+      "trials": 9,
+      "scopes": {
+        "parent": {
+          "responses": 65,
+          "tokens": {
+            "input": 1004527,
+            "uncached": 57583,
+            "cached": 946944,
+            "write": 0,
+            "output": 2597,
+            "reasoning_in_output": 197
+          },
+          "usd": {
+            "uncached": 0.57583,
+            "cached": 0.946944,
+            "write": 0.0,
+            "output": 0.12985,
+            "total": 1.652624
+          }
+        },
+        "child": {
+          "responses": 35,
+          "tokens": {
+            "input": 543021,
+            "uncached": 48813,
+            "cached": 494208,
+            "write": 0,
+            "output": 1403,
+            "reasoning_in_output": 103
+          },
+          "usd": {
+            "uncached": 0.48813,
+            "cached": 0.494208,
+            "write": 0.0,
+            "output": 0.07015,
+            "total": 1.0524879999999999
+          }
+        },
+        "combined": {
+          "responses": 100,
+          "tokens": {
+            "input": 1547548,
+            "uncached": 106396,
+            "cached": 1441152,
+            "write": 0,
+            "output": 4000,
+            "reasoning_in_output": 300
+          },
+          "usd": {
+            "uncached": 1.06396,
+            "cached": 1.441152,
+            "write": 0.0,
+            "output": 0.2,
+            "total": 2.705112
+          }
+        }
+      },
+      "correct_outcomes": 9,
+      "deterministic_passes": 3,
+      "parent_skill_loaded": 0,
+      "children_skill_loaded": 0,
+      "short_stdin_requests": 39,
+      "cell_resumptions": 3,
+      "short_cell_requests": 2,
+      "running_cell_returns": 3,
+      "ci_status_requests": 12,
+      "mean_result_delay_seconds": 4.604444444444445,
+      "delay_observations": 9,
+      "parent_gaps_over_60_seconds": 6,
+      "max_parent_gap_seconds": 75.948
+    },
+    "v4": {
+      "trials": 9,
+      "scopes": {
+        "parent": {
+          "responses": 49,
+          "tokens": {
+            "input": 790100,
+            "uncached": 61780,
+            "cached": 728320,
+            "write": 0,
+            "output": 3599,
+            "reasoning_in_output": 88
+          },
+          "usd": {
+            "uncached": 0.6178,
+            "cached": 0.72832,
+            "write": 0.0,
+            "output": 0.17995,
+            "total": 1.52607
+          }
+        },
+        "child": {
+          "responses": 15,
+          "tokens": {
+            "input": 238492,
+            "uncached": 15004,
+            "cached": 223488,
+            "write": 0,
+            "output": 1000,
+            "reasoning_in_output": 34
+          },
+          "usd": {
+            "uncached": 0.15004,
+            "cached": 0.22348800000000002,
+            "write": 0.0,
+            "output": 0.05,
+            "total": 0.423528
+          }
+        },
+        "combined": {
+          "responses": 64,
+          "tokens": {
+            "input": 1028592,
+            "uncached": 76784,
+            "cached": 951808,
+            "write": 0,
+            "output": 4599,
+            "reasoning_in_output": 122
+          },
+          "usd": {
+            "uncached": 0.7678400000000001,
+            "cached": 0.951808,
+            "write": 0.0,
+            "output": 0.22995000000000002,
+            "total": 1.949598
+          }
+        }
+      },
+      "correct_outcomes": 9,
+      "deterministic_passes": 9,
+      "parent_skill_loaded": 9,
+      "children_skill_loaded": 3,
+      "short_stdin_requests": 0,
+      "cell_resumptions": 2,
+      "short_cell_requests": 0,
+      "running_cell_returns": 2,
+      "ci_status_requests": 12,
+      "mean_result_delay_seconds": 15.717,
+      "delay_observations": 9,
+      "parent_gaps_over_60_seconds": 0,
+      "max_parent_gap_seconds": 58.063
+    }
+  },
+  "by_scenario": {
+    "terminal": {
+      "none": {
+        "trials": 3,
+        "scopes": {
+          "parent": {
+            "responses": 27,
+            "tokens": {
+              "input": 419569,
+              "uncached": 22129,
+              "cached": 397440,
+              "write": 0,
+              "output": 1232,
+              "reasoning_in_output": 144
+            },
+            "usd": {
+              "uncached": 0.22129000000000004,
+              "cached": 0.39744,
+              "write": 0.0,
+              "output": 0.0616,
+              "total": 0.6803300000000001
+            }
+          },
+          "child": {
+            "responses": 0,
+            "tokens": {
+              "input": 0,
+              "uncached": 0,
+              "cached": 0,
+              "write": 0,
+              "output": 0,
+              "reasoning_in_output": 0
+            },
+            "usd": {
+              "uncached": 0,
+              "cached": 0,
+              "write": 0,
+              "output": 0,
+              "total": 0
+            }
+          },
+          "combined": {
+            "responses": 27,
+            "tokens": {
+              "input": 419569,
+              "uncached": 22129,
+              "cached": 397440,
+              "write": 0,
+              "output": 1232,
+              "reasoning_in_output": 144
+            },
+            "usd": {
+              "uncached": 0.22129000000000004,
+              "cached": 0.39744,
+              "write": 0.0,
+              "output": 0.0616,
+              "total": 0.6803300000000001
+            }
+          }
+        },
+        "correct_outcomes": 3,
+        "deterministic_passes": 0,
+        "parent_skill_loaded": 0,
+        "children_skill_loaded": 0,
+        "short_stdin_requests": 13,
+        "cell_resumptions": 3,
+        "short_cell_requests": 2,
+        "running_cell_returns": 3,
+        "ci_status_requests": 0,
+        "mean_result_delay_seconds": 3.589,
+        "delay_observations": 3,
+        "parent_gaps_over_60_seconds": 3,
+        "max_parent_gap_seconds": 75.948
+      },
+      "v4": {
+        "trials": 3,
+        "scopes": {
+          "parent": {
+            "responses": 13,
+            "tokens": {
+              "input": 207391,
+              "uncached": 17695,
+              "cached": 189696,
+              "write": 0,
+              "output": 841,
+              "reasoning_in_output": 20
+            },
+            "usd": {
+              "uncached": 0.17695,
+              "cached": 0.189696,
+              "write": 0.0,
+              "output": 0.042050000000000004,
+              "total": 0.40869599999999995
+            }
+          },
+          "child": {
+            "responses": 0,
+            "tokens": {
+              "input": 0,
+              "uncached": 0,
+              "cached": 0,
+              "write": 0,
+              "output": 0,
+              "reasoning_in_output": 0
+            },
+            "usd": {
+              "uncached": 0,
+              "cached": 0,
+              "write": 0,
+              "output": 0,
+              "total": 0
+            }
+          },
+          "combined": {
+            "responses": 13,
+            "tokens": {
+              "input": 207391,
+              "uncached": 17695,
+              "cached": 189696,
+              "write": 0,
+              "output": 841,
+              "reasoning_in_output": 20
+            },
+            "usd": {
+              "uncached": 0.17695,
+              "cached": 0.189696,
+              "write": 0.0,
+              "output": 0.042050000000000004,
+              "total": 0.40869599999999995
+            }
+          }
+        },
+        "correct_outcomes": 3,
+        "deterministic_passes": 3,
+        "parent_skill_loaded": 3,
+        "children_skill_loaded": 0,
+        "short_stdin_requests": 0,
+        "cell_resumptions": 0,
+        "short_cell_requests": 0,
+        "running_cell_returns": 0,
+        "ci_status_requests": 0,
+        "mean_result_delay_seconds": 3.8393333333333333,
+        "delay_observations": 3,
+        "parent_gaps_over_60_seconds": 0,
+        "max_parent_gap_seconds": 43.746
+      }
+    },
+    "subagent": {
+      "none": {
+        "trials": 3,
+        "scopes": {
+          "parent": {
+            "responses": 14,
+            "tokens": {
+              "input": 214350,
+              "uncached": 14798,
+              "cached": 199552,
+              "write": 0,
+              "output": 563,
+              "reasoning_in_output": 19
+            },
+            "usd": {
+              "uncached": 0.14798,
+              "cached": 0.199552,
+              "write": 0.0,
+              "output": 0.02815,
+              "total": 0.375682
+            }
+          },
+          "child": {
+            "responses": 35,
+            "tokens": {
+              "input": 543021,
+              "uncached": 48813,
+              "cached": 494208,
+              "write": 0,
+              "output": 1403,
+              "reasoning_in_output": 103
+            },
+            "usd": {
+              "uncached": 0.48813,
+              "cached": 0.494208,
+              "write": 0.0,
+              "output": 0.07015,
+              "total": 1.0524879999999999
+            }
+          },
+          "combined": {
+            "responses": 49,
+            "tokens": {
+              "input": 757371,
+              "uncached": 63611,
+              "cached": 693760,
+              "write": 0,
+              "output": 1966,
+              "reasoning_in_output": 122
+            },
+            "usd": {
+              "uncached": 0.63611,
+              "cached": 0.69376,
+              "write": 0.0,
+              "output": 0.0983,
+              "total": 1.4281700000000002
+            }
+          }
+        },
+        "correct_outcomes": 3,
+        "deterministic_passes": 0,
+        "parent_skill_loaded": 0,
+        "children_skill_loaded": 0,
+        "short_stdin_requests": 26,
+        "cell_resumptions": 0,
+        "short_cell_requests": 0,
+        "running_cell_returns": 0,
+        "ci_status_requests": 0,
+        "mean_result_delay_seconds": 4.419666666666666,
+        "delay_observations": 3,
+        "parent_gaps_over_60_seconds": 3,
+        "max_parent_gap_seconds": 67.301
+      },
+      "v4": {
+        "trials": 3,
+        "scopes": {
+          "parent": {
+            "responses": 15,
+            "tokens": {
+              "input": 240031,
+              "uncached": 18207,
+              "cached": 221824,
+              "write": 0,
+              "output": 802,
+              "reasoning_in_output": 0
+            },
+            "usd": {
+              "uncached": 0.18207,
+              "cached": 0.22182400000000002,
+              "write": 0.0,
+              "output": 0.040100000000000004,
+              "total": 0.443994
+            }
+          },
+          "child": {
+            "responses": 15,
+            "tokens": {
+              "input": 238492,
+              "uncached": 15004,
+              "cached": 223488,
+              "write": 0,
+              "output": 1000,
+              "reasoning_in_output": 34
+            },
+            "usd": {
+              "uncached": 0.15004,
+              "cached": 0.22348800000000002,
+              "write": 0.0,
+              "output": 0.05,
+              "total": 0.423528
+            }
+          },
+          "combined": {
+            "responses": 30,
+            "tokens": {
+              "input": 478523,
+              "uncached": 33211,
+              "cached": 445312,
+              "write": 0,
+              "output": 1802,
+              "reasoning_in_output": 34
+            },
+            "usd": {
+              "uncached": 0.33211,
+              "cached": 0.44531200000000004,
+              "write": 0.0,
+              "output": 0.09010000000000001,
+              "total": 0.867522
+            }
+          }
+        },
+        "correct_outcomes": 3,
+        "deterministic_passes": 3,
+        "parent_skill_loaded": 3,
+        "children_skill_loaded": 3,
+        "short_stdin_requests": 0,
+        "cell_resumptions": 0,
+        "short_cell_requests": 0,
+        "running_cell_returns": 0,
+        "ci_status_requests": 0,
+        "mean_result_delay_seconds": 12.238666666666667,
+        "delay_observations": 3,
+        "parent_gaps_over_60_seconds": 0,
+        "max_parent_gap_seconds": 58.063
+      }
+    },
+    "ci": {
+      "none": {
+        "trials": 3,
+        "scopes": {
+          "parent": {
+            "responses": 24,
+            "tokens": {
+              "input": 370608,
+              "uncached": 20656,
+              "cached": 349952,
+              "write": 0,
+              "output": 802,
+              "reasoning_in_output": 34
+            },
+            "usd": {
+              "uncached": 0.20656,
+              "cached": 0.349952,
+              "write": 0.0,
+              "output": 0.0401,
+              "total": 0.596612
+            }
+          },
+          "child": {
+            "responses": 0,
+            "tokens": {
+              "input": 0,
+              "uncached": 0,
+              "cached": 0,
+              "write": 0,
+              "output": 0,
+              "reasoning_in_output": 0
+            },
+            "usd": {
+              "uncached": 0,
+              "cached": 0,
+              "write": 0,
+              "output": 0,
+              "total": 0
+            }
+          },
+          "combined": {
+            "responses": 24,
+            "tokens": {
+              "input": 370608,
+              "uncached": 20656,
+              "cached": 349952,
+              "write": 0,
+              "output": 802,
+              "reasoning_in_output": 34
+            },
+            "usd": {
+              "uncached": 0.20656,
+              "cached": 0.349952,
+              "write": 0.0,
+              "output": 0.0401,
+              "total": 0.596612
+            }
+          }
+        },
+        "correct_outcomes": 3,
+        "deterministic_passes": 3,
+        "parent_skill_loaded": 0,
+        "children_skill_loaded": 0,
+        "short_stdin_requests": 0,
+        "cell_resumptions": 0,
+        "short_cell_requests": 0,
+        "running_cell_returns": 0,
+        "ci_status_requests": 12,
+        "mean_result_delay_seconds": 5.804666666666667,
+        "delay_observations": 3,
+        "parent_gaps_over_60_seconds": 0,
+        "max_parent_gap_seconds": 56.685
+      },
+      "v4": {
+        "trials": 3,
+        "scopes": {
+          "parent": {
+            "responses": 21,
+            "tokens": {
+              "input": 342678,
+              "uncached": 25878,
+              "cached": 316800,
+              "write": 0,
+              "output": 1956,
+              "reasoning_in_output": 68
+            },
+            "usd": {
+              "uncached": 0.25878,
+              "cached": 0.31679999999999997,
+              "write": 0.0,
+              "output": 0.0978,
+              "total": 0.67338
+            }
+          },
+          "child": {
+            "responses": 0,
+            "tokens": {
+              "input": 0,
+              "uncached": 0,
+              "cached": 0,
+              "write": 0,
+              "output": 0,
+              "reasoning_in_output": 0
+            },
+            "usd": {
+              "uncached": 0,
+              "cached": 0,
+              "write": 0,
+              "output": 0,
+              "total": 0
+            }
+          },
+          "combined": {
+            "responses": 21,
+            "tokens": {
+              "input": 342678,
+              "uncached": 25878,
+              "cached": 316800,
+              "write": 0,
+              "output": 1956,
+              "reasoning_in_output": 68
+            },
+            "usd": {
+              "uncached": 0.25878,
+              "cached": 0.31679999999999997,
+              "write": 0.0,
+              "output": 0.0978,
+              "total": 0.67338
+            }
+          }
+        },
+        "correct_outcomes": 3,
+        "deterministic_passes": 3,
+        "parent_skill_loaded": 3,
+        "children_skill_loaded": 0,
+        "short_stdin_requests": 0,
+        "cell_resumptions": 2,
+        "short_cell_requests": 0,
+        "running_cell_returns": 2,
+        "ci_status_requests": 12,
+        "mean_result_delay_seconds": 31.073,
+        "delay_observations": 3,
+        "parent_gaps_over_60_seconds": 0,
+        "max_parent_gap_seconds": 49.023
+      }
+    }
+  },
+  "reductions": {
+    "responses_percent": 36.0,
+    "input_percent": 33.5340810107344,
+    "usd_percent": 27.92912086449656
+  },
+  "paired_deltas": [
+    {
+      "case": "contextual-ci",
+      "repetition": 1,
+      "none": "none-contextual-ci-r1",
+      "v4": "v4-contextual-ci-r1",
+      "response_delta": -2,
+      "token_deltas": {
+        "input": -25857,
+        "uncached": 767,
+        "cached": -26624,
+        "write": 0,
+        "output": 316,
+        "reasoning_in_output": 10
+      },
+      "usd_delta": -0.00315399999999999,
+      "result_delay_delta_seconds": 0.13700000000000045
+    },
+    {
+      "case": "contextual-ci",
+      "repetition": 2,
+      "none": "none-contextual-ci-r2",
+      "v4": "v4-contextual-ci-r2",
+      "response_delta": -1,
+      "token_deltas": {
+        "input": -9523,
+        "uncached": 1997,
+        "cached": -11520,
+        "write": 0,
+        "output": 401,
+        "reasoning_in_output": 18
+      },
+      "usd_delta": 0.02849999999999997,
+      "result_delay_delta_seconds": 36.658
+    },
+    {
+      "case": "contextual-ci",
+      "repetition": 3,
+      "none": "none-contextual-ci-r3",
+      "v4": "v4-contextual-ci-r3",
+      "response_delta": 0,
+      "token_deltas": {
+        "input": 7450,
+        "uncached": 2458,
+        "cached": 4992,
+        "write": 0,
+        "output": 437,
+        "reasoning_in_output": 6
+      },
+      "usd_delta": 0.051421999999999995,
+      "result_delay_delta_seconds": 39.01
+    },
+    {
+      "case": "implicit-subagent",
+      "repetition": 1,
+      "none": "none-implicit-subagent-r1",
+      "v4": "v4-implicit-subagent-r1",
+      "response_delta": -5,
+      "token_deltas": {
+        "input": -72053,
+        "uncached": -15605,
+        "cached": -56448,
+        "write": 0,
+        "output": -36,
+        "reasoning_in_output": -37
+      },
+      "usd_delta": -0.21429800000000004,
+      "result_delay_delta_seconds": 7.571
+    },
+    {
+      "case": "implicit-subagent",
+      "repetition": 2,
+      "none": "none-implicit-subagent-r2",
+      "v4": "v4-implicit-subagent-r2",
+      "response_delta": -7,
+      "token_deltas": {
+        "input": -103299,
+        "uncached": 509,
+        "cached": -103808,
+        "write": 0,
+        "output": -69,
+        "reasoning_in_output": -28
+      },
+      "usd_delta": -0.10216799999999998,
+      "result_delay_delta_seconds": 7.977000000000001
+    },
+    {
+      "case": "implicit-subagent",
+      "repetition": 3,
+      "none": "none-implicit-subagent-r3",
+      "v4": "v4-implicit-subagent-r3",
+      "response_delta": -7,
+      "token_deltas": {
+        "input": -103496,
+        "uncached": -15304,
+        "cached": -88192,
+        "write": 0,
+        "output": -59,
+        "reasoning_in_output": -23
+      },
+      "usd_delta": -0.24418200000000007,
+      "result_delay_delta_seconds": 7.909000000000001
+    },
+    {
+      "case": "implicit-terminal",
+      "repetition": 1,
+      "none": "none-implicit-terminal-r1",
+      "v4": "v4-implicit-terminal-r1",
+      "response_delta": -4,
+      "token_deltas": {
+        "input": -59720,
+        "uncached": 440,
+        "cached": -60160,
+        "write": 0,
+        "output": -72,
+        "reasoning_in_output": -15
+      },
+      "usd_delta": -0.059360000000000024,
+      "result_delay_delta_seconds": -4.2989999999999995
+    },
+    {
+      "case": "implicit-terminal",
+      "repetition": 2,
+      "none": "none-implicit-terminal-r2",
+      "v4": "v4-implicit-terminal-r2",
+      "response_delta": -6,
+      "token_deltas": {
+        "input": -92195,
+        "uncached": -4515,
+        "cached": -87680,
+        "write": 0,
+        "output": -186,
+        "reasoning_in_output": -60
+      },
+      "usd_delta": -0.14213000000000003,
+      "result_delay_delta_seconds": 5.01
+    },
+    {
+      "case": "implicit-terminal",
+      "repetition": 3,
+      "none": "none-implicit-terminal-r3",
+      "v4": "v4-implicit-terminal-r3",
+      "response_delta": -4,
+      "token_deltas": {
+        "input": -60263,
+        "uncached": -359,
+        "cached": -59904,
+        "write": 0,
+        "output": -133,
+        "reasoning_in_output": -49
+      },
+      "usd_delta": -0.07014400000000001,
+      "result_delay_delta_seconds": 0.040000000000000036
+    }
+  ],
+  "fewer_responses_pairs": 8,
+  "lower_input_pairs": 8,
+  "lower_usd_pairs": 7,
+  "slower_delivery_pairs": 8,
+  "retained_failures": [
+    {
+      "name": "none-implicit-subagent-r1",
+      "checks": [
+        "no_short_stdin_polls",
+        "parent_update_cadence"
+      ]
+    },
+    {
+      "name": "none-implicit-subagent-r2",
+      "checks": [
+        "no_short_stdin_polls",
+        "parent_update_cadence"
+      ]
+    },
+    {
+      "name": "none-implicit-subagent-r3",
+      "checks": [
+        "no_short_stdin_polls",
+        "parent_update_cadence"
+      ]
+    },
+    {
+      "name": "none-implicit-terminal-r1",
+      "checks": [
+        "no_short_stdin_polls",
+        "no_short_cell_polls",
+        "parent_update_cadence"
+      ]
+    },
+    {
+      "name": "none-implicit-terminal-r2",
+      "checks": [
+        "no_short_stdin_polls",
+        "parent_update_cadence"
+      ]
+    },
+    {
+      "name": "none-implicit-terminal-r3",
+      "checks": [
+        "no_short_stdin_polls",
+        "parent_update_cadence"
+      ]
+    }
+  ],
+  "all_accounting_reconciled": true,
+  "condition_isolation_verified": true,
+  "base_instruction_sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065",
+  "frozen_inputs_match": true,
+  "agents_patch_unchanged": true,
+  "pricing": "September 14, 2026 Standard API valuation of subscription counters; not subscription charges. Recorded write zeros can represent unreported fields."
+}

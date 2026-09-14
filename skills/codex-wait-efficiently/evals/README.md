@@ -8,7 +8,7 @@ Frozen versions use `versions/v*/SKILL.md.fixture`: Codex CLI 0.154.0 recursivel
 
 The [predeclared plan](PLAN.md) separates activation, outcomes, process, and efficiency. The [12 cases](cases.json) include explicit invocation, automatic discovery, CI, a real child agent, forced Code Mode cell resumption, command failure, independent work, a limited observation, and four negative controls.
 
-`run.py` runs actual Codex app-server turns in isolated temporary homes. It verifies that only this skill is enabled and that no AGENTS.md is installed. It includes skill reads and child responses in accounting. `grade.py` checks captured facts; `judge.py` provides an independent, read-only review of selected traces using the [structured rubric](rubric.schema.json). Its usage is separate from the workload measurements. Qualitative review requires checking its conclusions against the complete evidence.
+`run.py` runs actual Codex app-server turns in isolated temporary homes. It verifies that only this skill is enabled, or that no skills are enabled for a `none` control, and that no AGENTS.md is installed. It includes skill reads and child responses in accounting. `grade.py` checks captured facts; `judge.py` provides an independent, read-only review of selected traces using the [structured rubric](rubric.schema.json). Its usage is separate from the workload measurements. Qualitative review requires checking its conclusions against the complete evidence.
 
 ## Run from the repository root
 
@@ -50,3 +50,40 @@ The `confirmation-final` manifest for v1/v3 was prepared but never executed. The
 The inherited collector's `success` field means that it saw the original benchmark completion marker. Expected command failure, pending observations, and negative controls can therefore have `success: false`. Use the new `evaluation.checks.outcome` and individual checks to assess these cases. `overall_pass` covers the deterministic checks only; watcher choice and other qualitative process rules are reviewed separately.
 
 The dollar figures apply the original study's dated API rate card to reported subscription tokens. They are not subscription charges or a measurement of quota percentages. Recorded cache-write zeros may represent missing upstream fields. Repeating with a different account, cache state, model catalog, or runtime can change both behavior and usage.
+
+## Final skill versus no skill
+
+The separate [comparison plan](comparisons/skill-vs-none/PLAN.md) freezes 18 fresh trials: three repetitions each of implicit terminal, subagent, and CI tasks under `none` and `v4`. The same unnamed task prompts are used in both conditions. The `none` control also disables any shared copy of the target skill. Explicit skill-mention cases are rejected for this control. A final-skill activation miss remains part of the comparison.
+
+Reproduce the scheduled comparison with the live prerequisites above. `--prepare-only` checks or writes the manifest without inference; remove it to execute the trials. The checked-in phase name reuses any completed local trial files. For an independent repetition, choose a new phase name and a separate manifest directory.
+
+```sh
+python3 skills/codex-wait-efficiently/evals/run.py \
+  --phase skill-vs-none --versions none,v4 \
+  --cases implicit-terminal,implicit-subagent,contextual-ci --repetitions 3 \
+  --manifest-dir skills/codex-wait-efficiently/evals/comparisons/skill-vs-none \
+  --prepare-only
+```
+
+Execute the live trials, then export and verify their results:
+
+```sh
+python3 skills/codex-wait-efficiently/evals/run.py \
+  --phase skill-vs-none --versions none,v4 \
+  --cases implicit-terminal,implicit-subagent,contextual-ci --repetitions 3 \
+  --manifest-dir skills/codex-wait-efficiently/evals/comparisons/skill-vs-none
+python3 skills/codex-wait-efficiently/evals/summarize.py skill-vs-none \
+  --out skills/codex-wait-efficiently/evals/comparisons/skill-vs-none
+python3 skills/codex-wait-efficiently/evals/compare_controls.py
+```
+
+To regrade the published comparison without model calls or credentials:
+
+```sh
+python3 skills/codex-wait-efficiently/evals/summarize.py \
+  --evidence skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/trial-evidence.json \
+  --out tmp/wait-skill-control-rechecked
+python3 skills/codex-wait-efficiently/evals/compare_controls.py
+```
+
+`compare_controls.py` verifies the complete 18-trial manifest, frozen skill and case hashes, unchanged AGENTS.md patch, identical paired task prompts, common base instructions, actual condition isolation, unique responses, and reconciled parent/child accounting. It writes aggregate and paired token/cost/latency results to `comparison.json` and `COUNTS.md`. The earlier 66-trial evidence remains under `results/final/`.

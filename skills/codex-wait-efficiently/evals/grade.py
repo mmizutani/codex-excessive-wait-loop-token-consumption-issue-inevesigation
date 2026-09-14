@@ -16,10 +16,14 @@ def grade(record):
     final = finals[-1] if finals else ''
     processes = [p for o in record['tool_outputs'] for p in returned_process_results(o['output'])]
     fixture = case.get('fixture')
+    installed = record.get('skill_installed', True)
+    expected_skills = ['codex-wait-efficiently'] if installed else []
+    activation = ((record.get('thread_id') in record['skill_loaded_sessions']) == case['should_trigger']
+                  if installed else not record['skill_loaded_sessions'])
     completed_turn = record.get('status') == 'completed' and bool(finals)
     checks = {'turn_completed':completed_turn,
-        'activation':(record.get('thread_id') in record['skill_loaded_sessions']) == case['should_trigger'],
-        'isolated_skill':record['enabled_skills']==['codex-wait-efficiently'] and not record['global_agents_present'],
+        'activation':activation,
+        'isolated_skill':record['enabled_skills']==expected_skills and not record['global_agents_present'],
         'fixtures_preserved':not record['fixture_changes'],
         'child_count':record['child_session_count']==(1 if case['scenario']=='subagent' else 0),
         'model_and_effort':bool(record['model_contexts']) and all(c['model']=='gpt-6-astra' and c['effort']=='low' for c in record['model_contexts'])}

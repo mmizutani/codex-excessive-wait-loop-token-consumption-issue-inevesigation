@@ -34,6 +34,20 @@ class GradingTests(unittest.TestCase):
         r['skill_loaded_sessions'] = []
         self.assertFalse(grade(r)['checks']['activation'])
 
+    def test_no_skill_control_requires_no_loading_in_any_session(self):
+        r = self.record()
+        r.update(skill_installed=False, skill_loaded_sessions=[], enabled_skills=[])
+        self.assertTrue(grade(r)['overall_pass'])
+        r['skill_loaded_sessions'] = ['child-session']
+        self.assertFalse(grade(r)['checks']['activation'])
+
+    def test_no_skill_control_rejects_enabled_skill_or_agents_patch(self):
+        r = self.record()
+        r.update(skill_installed=False, skill_loaded_sessions=[])
+        self.assertFalse(grade(r)['checks']['isolated_skill'])
+        r.update(enabled_skills=[], global_agents_present=True)
+        self.assertFalse(grade(r)['checks']['isolated_skill'])
+
     def test_extra_status_query_fails_bound(self):
         r = self.record()
         r['eval_case'].update(id='negative-one-status',fixture='pending',scenario='ci',should_trigger=False)

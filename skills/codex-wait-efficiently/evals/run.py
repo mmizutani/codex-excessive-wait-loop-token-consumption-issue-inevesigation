@@ -69,7 +69,9 @@ def other_skill_names(binary):
 
 def run_case(args, task, disabled):
     case = task['case']
-    version = HERE/'versions'/task['version']
+    installed = task['version'] != 'none'
+    version = HERE/'versions'/task['version'] if installed else None
+    assert installed or not case['explicit'], 'No-skill controls must use unnamed task prompts'
     name = f"{task['version']}-{case['id']}-r{task['repetition']}"
     target = args.out/(name+'.json')
     if target.exists():
@@ -82,10 +84,11 @@ def run_case(args, task, disabled):
     trial = Trial(args.out, name, 'gpt-6-astra', None)
 
     def prepare(home, work, config, record):
-        shutil.copytree(version, home/'skills'/NAME)
-        (home/'skills'/NAME/'SKILL.md.fixture').rename(home/'skills'/NAME/'SKILL.md')
+        if installed:
+            shutil.copytree(version, home/'skills'/NAME)
+            (home/'skills'/NAME/'SKILL.md.fixture').rename(home/'skills'/NAME/'SKILL.md')
         config.extend(['[skills.bundled]', 'enabled = false'])
-        for skill_name in disabled:
+        for skill_name in disabled + ([] if installed else [NAME]):
             config.extend(['[[skills.config]]', f'name = {json.dumps(skill_name)}', 'enabled = false'])
         fixture = case.get('fixture')
         if fixture == 'failure':
@@ -102,7 +105,8 @@ def run_case(args, task, disabled):
     def inputs(home, work):
         reply = trial.rpc('skills/list', {'cwds':[str(work)], 'forceReload':True})
         enabled = [s for d in reply['data'] for s in d['skills'] if s.get('enabled')]
-        assert [s['name'] for s in enabled] == [NAME], f'Unexpected enabled skills: {[s["name"] for s in enabled]}'
+        expected = [NAME] if installed else []
+        assert [s['name'] for s in enabled] == expected, f'Unexpected enabled skills: {[s["name"] for s in enabled]}'
         evidence['enabled_skills'] = [s['name'] for s in enabled]
         if case['explicit']:
             return [{'type':'skill', 'name':NAME, 'path':str(home/'skills'/NAME/'SKILL.md')}]
@@ -132,7 +136,8 @@ def run_case(args, task, disabled):
         immutable = set(record['fixture_hashes_before']) - ({'README.md'} if case.get('fixture') == 'edit' else set())
         changed = [p for p in immutable if p not in artifacts or artifacts[p]['sha256'] != record['fixture_hashes_before'][p]]
         record.update({'eval_case':case, 'skill_version':task['version'],
-            'skill_sha256':digest(version/'SKILL.md.fixture'), 'enabled_skills':evidence.get('enabled_skills',[]),
+            'skill_sha256':digest(version/'SKILL.md.fixture') if installed else None,
+            'skill_installed':installed, 'enabled_skills':evidence.get('enabled_skills',[]),
             'skill_injected_sessions':sorted(injected), 'skill_read_sessions':sorted(read_sessions),
             'skill_loaded_sessions':sorted(injected | read_sessions), 'skill_catalog_sessions':catalogs,
             'fixture_changes':changed, 'artifacts':artifacts,
@@ -156,6 +161,7 @@ def main():
     parser.add_argument('--cases',default='all')
     parser.add_argument('--repetitions',type=int,default=1)
     parser.add_argument('--phase',required=True)
+    parser.add_argument('--manifest-dir',type=Path,default=HERE/'manifests')
     parser.add_argument('--workers',type=int,default=2)
     parser.add_argument('--prepare-only',action='store_true')
     parser.add_argument('--binary',type=Path,default=Path('/opt/homebrew/bin/codex'))
@@ -171,15 +177,16 @@ def main():
         selected = args.cases.split(',')
         cases = [c for c in cases if c['id'] in selected]
         assert len(cases) == len(selected)
+    assert 'none' not in versions or not any(c['explicit'] for c in cases)
     args.out = ROOT/'tmp/wait-skill-evals'/args.phase
     args.out.mkdir(parents=True,exist_ok=True)
     tasks = [{'version':v,'case':c,'repetition':r} for r in range(1,args.repetitions+1) for c in cases for v in versions]
     random.Random(20260915).shuffle(tasks)
     manifest = {'phase':args.phase,'model':'gpt-6-astra','effort':'low','workers':args.workers,
-        'versions':{v:digest(HERE/'versions'/v/'SKILL.md.fixture') for v in versions},
+        'versions':{v:digest(HERE/'versions'/v/'SKILL.md.fixture') if v != 'none' else None for v in versions},
         'cases_sha256':digest(HERE/'cases.json'),'catalog_sha256':digest(args.catalog),
         'tasks':tasks, 'seed':20260915}
-    write_once(HERE/'manifests'/(args.phase+'.json'),manifest)
+    write_once(args.manifest_dir/(args.phase+'.json'),manifest)
     if args.prepare_only:
         print(json.dumps({'prepared':args.phase,'trials':len(tasks)}))
         return
