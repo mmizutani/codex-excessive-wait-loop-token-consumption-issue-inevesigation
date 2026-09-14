@@ -130,9 +130,14 @@ in [the interruption ledger](interrupted-attempt.json) and is not reused.
 
 ## Final selection after outer-yield measurements
 
-The selected current export is [outer-o0n0](prompts/AGENTS.outer-o0n0.md): qualitative
+The selection from this study was [outer-o0n0](prompts/AGENTS.outer-o0n0.md): qualitative
 initial and outer waits, no added explicit functions.exec name, common 45-second cap
 retained. [Final selection and hash](final-selection.json), [Japanese report](../../CODEX_WAITING_OUTER_EXEC_BENCHMARK.md).
+
+On September 15, the [current export](../../waiting-validation/AGENTS.waiting-compatible.md)
+was revised to name the outer and inner tools and clarify `functions.wait`'s role.
+That wording revision has since been remeasured in the separate phase below. The
+frozen selection and results from the outer study remain unchanged.
 
 The outer study executed 32 trials (12 factorial + 12 first confirmation + 4 CI naming
 checks + 4 corrected subagent checks), with 140 unique responses and $5.063908 API valuation.
@@ -158,3 +163,38 @@ Use each phase name in the input/output paths for analyze.py and compare.py, as 
 the examples above. The named-candidate `outer-subagent` manifest was prepared but
 not executed; final subagent confirmation used its separately named unnamed phase.
 Historical prompts/manifests and measurements remain unchanged.
+
+## September 15 wording remeasurement
+
+The [predeclared wording plan](WORDING_PLAN.md) compares the measured `outer-o0n0`
+text, the clarified version with pragma syntax, and the current version without
+pragma syntax. Each receives two fresh terminal/CI/subagent trials (18 total).
+The latter pair changes only the Code Mode paragraph's first sentence; it tests
+that practical rewrite, not the pragma token alone. Exact prompts, hashes and
+order are in [the manifest](wording-manifest.json).
+
+```sh
+python3 docs/waiting-benchmark/numeric-waits/run.py --phase wording --prepare-only
+python3 docs/waiting-benchmark/numeric-waits/run.py --phase wording
+python3 docs/waiting-benchmark/analyze.py \
+  tmp/wait-benchmark-numeric-waits/wording \
+  --out docs/waiting-benchmark/numeric-waits/wording-results
+python3 docs/waiting-benchmark/numeric-waits/compare.py \
+  tmp/wait-benchmark-numeric-waits/wording \
+  --out docs/waiting-benchmark/numeric-waits/wording-results
+python3 docs/waiting-benchmark/numeric-waits/wording_behavior.py
+```
+
+All 18 trials passed the recorded checks: 93 unique responses and $3.238964 at the
+same dated API rates. The current prompt's six trials passed, but responses rose
+29→33 against the preceding clarified pragma version. Input rose 13.93%, while API
+valuation fell 2.19% because of cache mix. No outer running-cell return occurred.
+One current CI trial omitted its initial outer setting; v0.154.0's yield grace is
+consistent with the observed 30.2-second completion. Do not infer that the model
+intentionally relied on that grace or that the rewrite preserves token efficiency.
+
+- [Japanese results and decision](../../CODEX_WAITING_PRAGMA_REMOVAL_BENCHMARK.md)
+- [Current measured wording and decision](wording-selection.json)
+- [Token and dollar categories](wording-results/COUNTS.md)
+- [Wait arguments](wording-results/COMPARISON.md), [timing evidence](wording-results/behavior.json)
+- [Release-specific source evidence](wording-runtime-evidence.json)

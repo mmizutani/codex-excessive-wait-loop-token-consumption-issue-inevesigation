@@ -52,10 +52,10 @@ def acceptance(record):
         inner=[a for a in arguments if a['tool']=='exec_command']
         checks['forced_cell_path_observed']=bool(outer and inner and outer[0]['yield_time_ms']==1
             and inner[0]['yield_time_ms']==30000 and any(a['tool']=='functions.wait' for a in arguments))
-    if record.get('phase') in ('outer-integration','outer-subagent','outer-subagent-unnamed') and record['scenario'] == 'subagent':
+    if record.get('phase') in ('outer-integration','outer-subagent','outer-subagent-unnamed','wording') and record['scenario'] == 'subagent':
         spawns=[json.loads(c['arguments']) for c in record['calls'] if c.get('name') == 'spawn_agent']
         checks['requested_fork_all']=len(spawns)==1 and spawns[0].get('fork_turns')=='all'
-        if record.get('phase') in ('outer-subagent','outer-subagent-unnamed'):
+        if record.get('phase') in ('outer-subagent','outer-subagent-unnamed','wording'):
             checks['no_fork_overrides']=len(spawns)==1 and not any(k in spawns[0] for k in ['model','reasoning_effort'])
     return checks
 
@@ -170,7 +170,29 @@ def main():
                'model_contexts':r['model_contexts'],'messages':r['messages']} for r in records]
     response_ids=[u['response_id'] for r in records for u in r['response_usage']]
     assert len(response_ids)==len(set(response_ids)), 'Cross-trial response duplication'
-    result={'groups':groups,'effects':effects,'outer_effects':outer_effects,'all_trials':aggregate(rows),
+    wording_effects=[]
+    for label,before,after in [
+        ('complete_revision','wording-measured','wording-no-pragma'),
+        ('pragma_sentence_rewrite','wording-with-pragma','wording-no-pragma'),
+    ]:
+        pairs=[]
+        for scenario in ['terminal','ci','subagent']:
+            for rep in sorted({r['repetition'] for r in rows}):
+                a,b=by_key.get((scenario,before,rep)),by_key.get((scenario,after,rep))
+                if a and b: pairs.append((a,b))
+        if pairs:
+            wording_effects.append({'comparison':label,'pairs':len(pairs),
+                'before':aggregate([a for a,b in pairs]),'after':aggregate([b for a,b in pairs]),
+                'pair_details':[{'scenario':a['scenario'],'before':a['name'],'after':b['name'],
+                    'response_delta':b['scopes']['combined']['responses']-a['scopes']['combined']['responses'],
+                    'parent_response_delta':b['scopes']['parent']['responses']-a['scopes']['parent']['responses'],
+                    'child_response_delta':b['scopes']['child']['responses']-a['scopes']['child']['responses'],
+                    'input_delta':b['scopes']['combined']['tokens']['input']-a['scopes']['combined']['tokens']['input'],
+                    'usd_delta':b['scopes']['combined']['usd']['total']-a['scopes']['combined']['usd']['total'],
+                    'delay_delta':b['result_delay_seconds']-a['result_delay_seconds']
+                        if b['result_delay_seconds'] is not None and a['result_delay_seconds'] is not None else None}
+                    for a,b in pairs]})
+    result={'groups':groups,'effects':effects,'outer_effects':outer_effects,'wording_effects':wording_effects,'all_trials':aggregate(rows),
             'acceptance':{r['name']:r['acceptance'] for r in evidence},
             'unique_response_ids':len(response_ids),'trials':rows}
     args.out.mkdir(parents=True,exist_ok=True)

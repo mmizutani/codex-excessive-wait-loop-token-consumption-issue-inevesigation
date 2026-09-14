@@ -1,0 +1,256 @@
+{
+  "selected": "wording-no-pragma",
+  "status": "retained_after_remeasurement",
+  "sha256": "882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411",
+  "frozen_prompt": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.wording-no-pragma.md",
+  "phase": "wording",
+  "trials": 18,
+  "selected_trials": 6,
+  "all_selected_acceptance": true,
+  "outer_running_cell_returns": 0,
+  "decision": "Retain user-requested syntax-free wording; successful operation is verified, unchanged token efficiency is not.",
+  "comparisons": [
+    {
+      "comparison": "complete_revision",
+      "pairs": 6,
+      "before": {
+        "n": 6,
+        "responses": 31,
+        "successes": 6,
+        "tokens": {
+          "input": 489469,
+          "cached": 440704,
+          "write": 0,
+          "output": 2282,
+          "uncached": 48765,
+          "reasoning_in_output": 109
+        },
+        "usd": {
+          "uncached": 0.48765000000000003,
+          "cached": 0.440704,
+          "write": 0.0,
+          "output": 0.1141,
+          "total": 1.042454
+        },
+        "delay_mean": 12.913333333333334,
+        "max_update_gap": 53.847,
+        "over_60": 0
+      },
+      "after": {
+        "n": 6,
+        "responses": 33,
+        "successes": 6,
+        "tokens": {
+          "input": 522123,
+          "cached": 472704,
+          "write": 0,
+          "output": 2384,
+          "uncached": 49419,
+          "reasoning_in_output": 118
+        },
+        "usd": {
+          "uncached": 0.49419,
+          "cached": 0.47270400000000007,
+          "write": 0.0,
+          "output": 0.1192,
+          "total": 1.0860940000000001
+        },
+        "delay_mean": 11.416666666666666,
+        "max_update_gap": 49.012,
+        "over_60": 0
+      },
+      "pair_details": [
+        {
+          "scenario": "terminal",
+          "before": "gpt-6-astra-terminal-wording-measured-r1",
+          "after": "gpt-6-astra-terminal-wording-no-pragma-r1",
+          "response_delta": 1,
+          "parent_response_delta": 1,
+          "child_response_delta": 0,
+          "input_delta": 16038,
+          "usd_delta": 0.02288599999999999,
+          "delay_delta": 2.321
+        },
+        {
+          "scenario": "terminal",
+          "before": "gpt-6-astra-terminal-wording-measured-r2",
+          "after": "gpt-6-astra-terminal-wording-no-pragma-r2",
+          "response_delta": 0,
+          "parent_response_delta": 0,
+          "child_response_delta": 0,
+          "input_delta": 113,
+          "usd_delta": 0.003031999999999993,
+          "delay_delta": 1.646
+        },
+        {
+          "scenario": "ci",
+          "before": "gpt-6-astra-ci-wording-measured-r1",
+          "after": "gpt-6-astra-ci-wording-no-pragma-r1",
+          "response_delta": 0,
+          "parent_response_delta": 0,
+          "child_response_delta": 0,
+          "input_delta": 78,
+          "usd_delta": 0.025426000000000004,
+          "delay_delta": -12.405000000000001
+        },
+        {
+          "scenario": "ci",
+          "before": "gpt-6-astra-ci-wording-measured-r2",
+          "after": "gpt-6-astra-ci-wording-no-pragma-r2",
+          "response_delta": 0,
+          "parent_response_delta": 0,
+          "child_response_delta": 0,
+          "input_delta": 52,
+          "usd_delta": 0.034481999999999985,
+          "delay_delta": -1.408999999999999
+        },
+        {
+          "scenario": "subagent",
+          "before": "gpt-6-astra-subagent-wording-measured-r1",
+          "after": "gpt-6-astra-subagent-wording-no-pragma-r1",
+          "response_delta": 0,
+          "parent_response_delta": 0,
+          "child_response_delta": 0,
+          "input_delta": 141,
+          "usd_delta": -0.0028459999999999874,
+          "delay_delta": -2.3
+        },
+        {
+          "scenario": "subagent",
+          "before": "gpt-6-astra-subagent-wording-measured-r2",
+          "after": "gpt-6-astra-subagent-wording-no-pragma-r2",
+          "response_delta": 1,
+          "parent_response_delta": 0,
+          "child_response_delta": 1,
+          "input_delta": 16232,
+          "usd_delta": -0.03934000000000004,
+          "delay_delta": 3.1670000000000007
+        }
+      ]
+    },
+    {
+      "comparison": "pragma_sentence_rewrite",
+      "pairs": 6,
+      "before": {
+        "n": 6,
+        "responses": 29,
+        "successes": 6,
+        "tokens": {
+          "input": 458288,
+          "cached": 397696,
+          "write": 0,
+          "output": 2136,
+          "uncached": 60592,
+          "reasoning_in_output": 109
+        },
+        "usd": {
+          "uncached": 0.60592,
+          "cached": 0.39769600000000005,
+          "write": 0.0,
+          "output": 0.1068,
+          "total": 1.110416
+        },
+        "delay_mean": 9.576,
+        "max_update_gap": 48.916,
+        "over_60": 0
+      },
+      "after": {
+        "n": 6,
+        "responses": 33,
+        "successes": 6,
+        "tokens": {
+          "input": 522123,
+          "cached": 472704,
+          "write": 0,
+          "output": 2384,
+          "uncached": 49419,
+          "reasoning_in_output": 118
+        },
+        "usd": {
+          "uncached": 0.49419,
+          "cached": 0.47270400000000007,
+          "write": 0.0,
+          "output": 0.1192,
+          "total": 1.0860940000000001
+        },
+        "delay_mean": 11.416666666666666,
+        "max_update_gap": 49.012,
+        "over_60": 0
+      },
+      "pair_details": [
+        {
+          "scenario": "terminal",
+          "before": "gpt-6-astra-terminal-wording-with-pragma-r1",
+          "after": "gpt-6-astra-terminal-wording-no-pragma-r1",
+          "response_delta": 1,
+          "parent_response_delta": 1,
+          "child_response_delta": 0,
+          "input_delta": 15964,
+          "usd_delta": 0.052398,
+          "delay_delta": 0.617
+        },
+        {
+          "scenario": "terminal",
+          "before": "gpt-6-astra-terminal-wording-with-pragma-r2",
+          "after": "gpt-6-astra-terminal-wording-no-pragma-r2",
+          "response_delta": 0,
+          "parent_response_delta": 0,
+          "child_response_delta": 0,
+          "input_delta": -7,
+          "usd_delta": 0.0005299999999999888,
+          "delay_delta": 1.451
+        },
+        {
+          "scenario": "ci",
+          "before": "gpt-6-astra-ci-wording-with-pragma-r1",
+          "after": "gpt-6-astra-ci-wording-no-pragma-r1",
+          "response_delta": 0,
+          "parent_response_delta": 0,
+          "child_response_delta": 0,
+          "input_delta": -149,
+          "usd_delta": -0.011851999999999974,
+          "delay_delta": -14.189
+        },
+        {
+          "scenario": "ci",
+          "before": "gpt-6-astra-ci-wording-with-pragma-r2",
+          "after": "gpt-6-astra-ci-wording-no-pragma-r2",
+          "response_delta": 1,
+          "parent_response_delta": 1,
+          "child_response_delta": 0,
+          "input_delta": 16400,
+          "usd_delta": 0.05951200000000004,
+          "delay_delta": 16.508000000000003
+        },
+        {
+          "scenario": "subagent",
+          "before": "gpt-6-astra-subagent-wording-with-pragma-r1",
+          "after": "gpt-6-astra-subagent-wording-no-pragma-r1",
+          "response_delta": 1,
+          "parent_response_delta": 0,
+          "child_response_delta": 1,
+          "input_delta": 15795,
+          "usd_delta": -0.010445999999999983,
+          "delay_delta": 2.224
+        },
+        {
+          "scenario": "subagent",
+          "before": "gpt-6-astra-subagent-wording-with-pragma-r2",
+          "after": "gpt-6-astra-subagent-wording-no-pragma-r2",
+          "response_delta": 1,
+          "parent_response_delta": 0,
+          "child_response_delta": 1,
+          "input_delta": 15832,
+          "usd_delta": -0.11446400000000001,
+          "delay_delta": 4.433000000000001
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Two repetitions per workload; no statistical equivalence.",
+    "No running cell occurred; functions.wait fallback was not exercised.",
+    "One selected CI trial omitted the initial outer setting; release grace is consistent with its successful 30.2-second completion.",
+    "API valuation varies with cache mix; reported writes may omit upstream writes."
+  ]
+}

@@ -1,0 +1,949 @@
+[
+  {
+    "name": "gpt-6-astra-ci-wording-measured-r1",
+    "condition": "wording-measured",
+    "scenario": "ci",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 31000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:01:24.853Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 44.001840917,
+        "seconds_before_job_completion": null
+      },
+      {
+        "at": "2026-09-14T18:01:36.262Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 7.208121125,
+        "seconds_before_job_completion": null
+      }
+    ],
+    "ci_check_count": 5,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      21.347,
+      41.381,
+      71.417,
+      101.446
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-measured-r2",
+    "condition": "wording-measured",
+    "scenario": "ci",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 31000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 31000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:12:52.617Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 44.001400666,
+        "seconds_before_job_completion": null
+      },
+      {
+        "at": "2026-09-14T18:13:04.671Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 7.184381333,
+        "seconds_before_job_completion": null
+      }
+    ],
+    "ci_check_count": 5,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      27.931,
+      47.979,
+      73.019,
+      103.07
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r1",
+    "condition": "wording-no-pragma",
+    "scenario": "ci",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted"
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:07:44.420Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.003035583,
+        "seconds_before_job_completion": null
+      },
+      {
+        "at": "2026-09-14T18:07:47.927Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 1.833e-06,
+        "seconds_before_job_completion": null
+      }
+    ],
+    "ci_check_count": 4,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      26.31,
+      56.344,
+      86.381
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r2",
+    "condition": "wording-no-pragma",
+    "scenario": "ci",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:13:57.307Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.002123542,
+        "seconds_before_job_completion": null
+      },
+      {
+        "at": "2026-09-14T18:14:12.112Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 10.605189583,
+        "seconds_before_job_completion": null
+      }
+    ],
+    "ci_check_count": 6,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      11.737,
+      26.786,
+      46.823,
+      71.86,
+      101.913
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-with-pragma-r1",
+    "condition": "wording-with-pragma",
+    "scenario": "ci",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:06:09.270Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.001885042,
+        "seconds_before_job_completion": null
+      },
+      {
+        "at": "2026-09-14T18:06:22.943Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 8.945171125,
+        "seconds_before_job_completion": null
+      }
+    ],
+    "ci_check_count": 4,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      28.279,
+      58.326,
+      103.364
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-with-pragma-r2",
+    "condition": "wording-with-pragma",
+    "scenario": "ci",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 1000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:10:48.818Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 35.407000833,
+        "seconds_before_job_completion": null
+      }
+    ],
+    "ci_check_count": 4,
+    "ci_checks_elapsed_seconds": [
+      0.0,
+      21.912,
+      41.956,
+      82.004
+    ],
+    "ci_status_at_checks": [
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-measured-r1",
+    "condition": "wording-measured",
+    "scenario": "subagent",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:04:19.626Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.001184417,
+        "seconds_before_job_completion": 0.908889
+      },
+      {
+        "at": "2026-09-14T18:04:25.218Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 1.459e-06,
+        "seconds_before_job_completion": -4.683111
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-measured-r2",
+    "condition": "wording-measured",
+    "scenario": "subagent",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 31000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:09:23.008Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 40.419454958,
+        "seconds_before_job_completion": -0.007131
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r1",
+    "condition": "wording-no-pragma",
+    "scenario": "subagent",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:03:08.388Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.000654166,
+        "seconds_before_job_completion": 1.493891
+      },
+      {
+        "at": "2026-09-14T18:03:12.261Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 1.834e-06,
+        "seconds_before_job_completion": -2.379109
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r2",
+    "condition": "wording-no-pragma",
+    "scenario": "subagent",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:11:02.705Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.001671333,
+        "seconds_before_job_completion": 0.408482
+      },
+      {
+        "at": "2026-09-14T18:11:07.081Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 3e-06,
+        "seconds_before_job_completion": -3.967518
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-with-pragma-r1",
+    "condition": "wording-with-pragma",
+    "scenario": "subagent",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 31000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:01:17.653Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 39.057641917,
+        "seconds_before_job_completion": -0.005986
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-with-pragma-r2",
+    "condition": "wording-with-pragma",
+    "scenario": "subagent",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:14:40.249Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 39.716063625,
+        "seconds_before_job_completion": -0.014336
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-measured-r1",
+    "condition": "wording-measured",
+    "scenario": "terminal",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 31000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:04:40.529Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 40.1541155,
+        "seconds_before_job_completion": -0.005646
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-measured-r2",
+    "condition": "wording-measured",
+    "scenario": "terminal",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 31000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:12:18.178Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 40.657280875,
+        "seconds_before_job_completion": -0.012161
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r1",
+    "condition": "wording-no-pragma",
+    "scenario": "terminal",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:02:43.464Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": null,
+        "actual_wall_seconds": 40.002000792,
+        "seconds_before_job_completion": 1.185053
+      },
+      {
+        "at": "2026-09-14T18:02:47.363Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 1.417e-06,
+        "seconds_before_job_completion": -2.713947
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r2",
+    "condition": "wording-no-pragma",
+    "scenario": "terminal",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 35000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 40000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:09:14.261Z",
+        "wait_ms": [
+          40000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 39.875032208,
+        "seconds_before_job_completion": -0.006949
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-with-pragma-r1",
+    "condition": "wording-with-pragma",
+    "scenario": "terminal",
+    "repetition": 1,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 31000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:06:06.239Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 39.815675542,
+        "seconds_before_job_completion": -0.014283
+      }
+    ],
+    "ci_check_count": 0
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-with-pragma-r2",
+    "condition": "wording-with-pragma",
+    "scenario": "terminal",
+    "repetition": 2,
+    "arguments": [
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 31000
+      },
+      {
+        "tool": "exec_command",
+        "yield_time_ms": 30000
+      },
+      {
+        "tool": "functions.exec",
+        "yield_time_ms": 45000
+      },
+      {
+        "tool": "write_stdin",
+        "yield_time_ms": 44000
+      }
+    ],
+    "running_cell_returns": 0,
+    "stdin_results": [
+      {
+        "at": "2026-09-14T18:15:39.065Z",
+        "wait_ms": [
+          44000
+        ],
+        "exit_code": 0,
+        "actual_wall_seconds": 40.954800875,
+        "seconds_before_job_completion": -0.008064
+      }
+    ],
+    "ci_check_count": 0
+  }
+]

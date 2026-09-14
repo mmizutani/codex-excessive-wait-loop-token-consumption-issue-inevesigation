@@ -1,0 +1,1832 @@
+[
+  {
+    "name": "gpt-6-astra-ci-wording-measured-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T17:59:54.716Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "tool": "functions.exec",
+        "yield_time_ms": 1000,
+        "source": "// @exec: {\"yield_time_ms\": 1000, \"max_output_tokens\": 2000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T17:59:54.716Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:00:06.077Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000, \"max_output_tokens\": 2000}\ntext(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport subprocess, json, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor interval in [10, 20] + [30] * 19:\\n    time.sleep(interval)\\n    check = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if check.returncode:\\n        print(check.stdout, end='')\\n        print(check.stderr, end='')\\n        raise SystemExit(check.returncode)\\n    current = json.loads(check.stdout)\\n    if current != previous:\\n        print(check.stdout, end='', flush=True)\\n        previous = current\\n    if current.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Monitoring interval ended; job has not completed.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:00:06.077Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 -u - <<'PY'\\nimport subprocess, json, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor interval in [10, 20] + [30] * 19:\\n    time.sleep(interval)\\n    check = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if check.returncode:\\n        print(check.stdout, end='')\\n        print(check.stderr, end='')\\n        raise SystemExit(check.returncode)\\n    current = json.loads(check.stdout)\\n    if current != previous:\\n        print(check.stdout, end='', flush=True)\\n        previous = current\\n    if current.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Monitoring interval ended; job has not completed.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:00:40.843Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000, \"max_output_tokens\": 2000}\ntext(await tools.write_stdin({session_id:43005,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:00:40.843Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:43005,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:01:29.050Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000, \"max_output_tokens\": 2000}\ntext(await tools.write_stdin({session_id:43005,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:01:29.050Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:43005,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T17:59:50.262Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a113-2ce9-7c63-beef-4530d5d39fd6"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T17:59:53.442Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` using the status command and wait for successful completion before reporting its result.\n"
+      },
+      {
+        "at": "2026-09-14T17:59:59.042Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll check periodically and report when it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:00:39.226Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "phase": "commentary",
+        "text": "The status is unchanged. I\u2019m continuing to wait for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:01:27.518Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "phase": "commentary",
+        "text": "The monitor has reported no status change. I\u2019ll keep waiting.\n"
+      },
+      {
+        "at": "2026-09-14T18:01:38.437Z",
+        "session_id": "01a0a113-2cb6-73a3-90e9-d41b2ca9105f",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-measured-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:11:21.517Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:11:21.517Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:11:34.404Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport subprocess, json, time\\nprevious = 'running'\\ndeadline = time.monotonic() + 600\\ninterval = 15\\nwhile time.monotonic() < deadline:\\n    time.sleep(interval)\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stdout + p.stderr, flush=True)\\n        raise SystemExit(p.returncode)\\n    data = json.loads(p.stdout)\\n    if data.get('run_id') != 'job-7391':\\n        print(p.stdout, flush=True)\\n        raise SystemExit('Unexpected run identity')\\n    status = data.get('status')\\n    if status != previous or data.get('result') is not None:\\n        print(p.stdout, end='', flush=True)\\n    if status not in ('pending', 'queued', 'running', 'in_progress') or data.get('result') is not None:\\n        break\\n    previous = status\\n    interval = min(30, interval + 5)\\nelse:\\n    print('Observation window ended; monitoring can resume.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:11:34.404Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 -u - <<'PY'\\nimport subprocess, json, time\\nprevious = 'running'\\ndeadline = time.monotonic() + 600\\ninterval = 15\\nwhile time.monotonic() < deadline:\\n    time.sleep(interval)\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stdout + p.stderr, flush=True)\\n        raise SystemExit(p.returncode)\\n    data = json.loads(p.stdout)\\n    if data.get('run_id') != 'job-7391':\\n        print(p.stdout, flush=True)\\n        raise SystemExit('Unexpected run identity')\\n    status = data.get('status')\\n    if status != previous or data.get('result') is not None:\\n        print(p.stdout, end='', flush=True)\\n    if status not in ('pending', 'queued', 'running', 'in_progress') or data.get('result') is not None:\\n        break\\n    previous = status\\n    interval = min(30, interval + 5)\\nelse:\\n    print('Observation window ended; monitoring can resume.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:12:08.598Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:30124,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:12:08.598Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:30124,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:12:57.480Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:30124,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:12:57.480Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:30124,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:11:16.876Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11d-ad79-7621-8d4b-88076a4452ad"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:11:20.521Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the supplied status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:11:25.680Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "phase": "commentary",
+        "text": "`job-7391` is running. I\u2019ll keep checking and report its result after successful completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:12:07.114Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "phase": "commentary",
+        "text": "The monitor is still waiting for a status change from `job-7391`.\n"
+      },
+      {
+        "at": "2026-09-14T18:12:55.415Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "phase": "commentary",
+        "text": "`job-7391` has reported no status change. Monitoring continues.\n"
+      },
+      {
+        "at": "2026-09-14T18:13:07.041Z",
+        "session_id": "01a0a11d-ad47-7fb3-a8e0-643dad759b4a",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:06:18.541Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:06:18.541Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:06:29.854Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "tool": "functions.exec",
+        "yield_time_ms": "omitted",
+        "source": "text(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor attempt in range(120):\\n    time.sleep(min(15 * (attempt + 1), 30))\\n    check = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if check.returncode:\\n        print(check.stdout, end='')\\n        print(check.stderr, end='')\\n        raise SystemExit(check.returncode)\\n    status = json.loads(check.stdout)\\n    if status != previous:\\n        print(check.stdout, end='', flush=True)\\n        previous = status\\n    if status.get('status') not in ('running', 'pending', 'queued', 'in_progress'):\\n        break\\nelse:\\n    print('Monitoring interval ended; run has not completed.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:06:29.854Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor attempt in range(120):\\n    time.sleep(min(15 * (attempt + 1), 30))\\n    check = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if check.returncode:\\n        print(check.stdout, end='')\\n        print(check.stderr, end='')\\n        raise SystemExit(check.returncode)\\n    status = json.loads(check.stdout)\\n    if status != previous:\\n        print(check.stdout, end='', flush=True)\\n        previous = status\\n    if status.get('status') not in ('running', 'pending', 'queued', 'in_progress'):\\n        break\\nelse:\\n    print('Monitoring interval ended; run has not completed.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:07:04.403Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:82003,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:07:04.403Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:82003,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:07:47.921Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:82003,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:07:47.921Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:82003,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:06:14.826Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a119-1325-7d20-9819-79b370bbe806"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:06:17.654Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` using the supplied status command and preserve the existing run.\n"
+      },
+      {
+        "at": "2026-09-14T18:06:23.077Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll check periodically and report its result once it completes successfully.\n"
+      },
+      {
+        "at": "2026-09-14T18:07:03.063Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "phase": "commentary",
+        "text": "The status has not changed. I\u2019m continuing to monitor the same run.\n"
+      },
+      {
+        "at": "2026-09-14T18:07:46.559Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "phase": "commentary",
+        "text": "`job-7391` remains running. Monitoring continues.\n"
+      },
+      {
+        "at": "2026-09-14T18:07:49.865Z",
+        "session_id": "01a0a119-12f7-7921-b593-1be51583a834",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-no-pragma-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:12:30.104Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:12:30.104Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:12:41.843Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport subprocess, json, time\\nend = time.monotonic() + 3600\\nprevious = None\\ninterval = 15\\nwhile time.monotonic() < end:\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode != 0:\\n        print(p.stdout + p.stderr, flush=True)\\n        raise SystemExit(p.returncode)\\n    data = json.loads(p.stdout)\\n    if data.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if p.stdout != previous:\\n        print(p.stdout, end='', flush=True)\\n        previous = p.stdout\\n    if data.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\n    time.sleep(interval)\\n    interval = min(30, interval + 5)\\nelse:\\n    print('Observation window elapsed', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:12:41.843Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 -u - <<'PY'\\nimport subprocess, json, time\\nend = time.monotonic() + 3600\\nprevious = None\\ninterval = 15\\nwhile time.monotonic() < end:\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode != 0:\\n        print(p.stdout + p.stderr, flush=True)\\n        raise SystemExit(p.returncode)\\n    data = json.loads(p.stdout)\\n    if data.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if p.stdout != previous:\\n        print(p.stdout, end='', flush=True)\\n        previous = p.stdout\\n    if data.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\n    time.sleep(interval)\\n    interval = min(30, interval + 5)\\nelse:\\n    print('Observation window elapsed', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:13:17.291Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:95587,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:13:17.291Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:95587,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:14:01.494Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:95587,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:14:01.494Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:95587,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:12:25.462Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11e-b98b-7c02-81ce-3c86fe3de654"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:12:28.798Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the supplied status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:12:33.852Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "phase": "commentary",
+        "text": "`job-7391` is running. I\u2019ll keep checking for a status change.\n"
+      },
+      {
+        "at": "2026-09-14T18:13:15.783Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "phase": "commentary",
+        "text": "The latest status remains `running`; monitoring continues.\n"
+      },
+      {
+        "at": "2026-09-14T18:14:00.061Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "phase": "commentary",
+        "text": "No status change has been reported. I\u2019m continuing to wait for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:14:14.231Z",
+        "session_id": "01a0a11e-b959-76d2-9817-30b5dc79db3b",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-with-pragma-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:04:39.478Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:04:39.478Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:04:52.745Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\ndeadline = time.monotonic() + 900\\ninterval = 15\\nwhile time.monotonic() < deadline:\\n    time.sleep(interval)\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stdout + p.stderr, end='', flush=True)\\n        raise SystemExit(p.returncode)\\n    state = json.loads(p.stdout)\\n    if state != previous:\\n        print(p.stdout, end='', flush=True)\\n    if state.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if state.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        if state == previous:\\n            print(p.stdout, end='', flush=True)\\n        break\\n    interval = min(interval * 2, 45) if state == previous else 15\\n    previous = state\\nelse:\\n    print('Observation window ended; monitoring may continue.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:04:52.745Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\ndeadline = time.monotonic() + 900\\ninterval = 15\\nwhile time.monotonic() < deadline:\\n    time.sleep(interval)\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stdout + p.stderr, end='', flush=True)\\n        raise SystemExit(p.returncode)\\n    state = json.loads(p.stdout)\\n    if state != previous:\\n        print(p.stdout, end='', flush=True)\\n    if state.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if state.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        if state == previous:\\n            print(p.stdout, end='', flush=True)\\n        break\\n    interval = min(interval * 2, 45) if state == previous else 15\\n    previous = state\\nelse:\\n    print('Observation window ended; monitoring may continue.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:05:29.250Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:95238,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:05:29.250Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:95238,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:06:13.992Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:95238,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:06:13.992Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:95238,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:04:35.530Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a117-8ac7-7ef0-b5c5-ab6b979568ad"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:04:38.753Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` using the supplied status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T18:04:43.381Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll continue checking, with longer intervals while its status stays unchanged.\n"
+      },
+      {
+        "at": "2026-09-14T18:05:27.902Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "phase": "commentary",
+        "text": "No status change has been reported. I\u2019m continuing to monitor `job-7391`.\n"
+      },
+      {
+        "at": "2026-09-14T18:06:12.584Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "phase": "commentary",
+        "text": "`job-7391` has not reported completion yet. Monitoring continues.\n"
+      },
+      {
+        "at": "2026-09-14T18:06:24.983Z",
+        "session_id": "01a0a117-8a99-73b3-9b5a-65a906b79deb",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-wording-with-pragma-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:09:26.711Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:09:26.711Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:09:38.621Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor attempt in range(30):\\n    time.sleep(min(10 * 2 ** attempt, 40))\\n    check = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if check.returncode:\\n        print(check.stdout, end='')\\n        print(check.stderr, end='')\\n        raise SystemExit(check.returncode)\\n    status = json.loads(check.stdout)\\n    if status != previous:\\n        print(check.stdout, end='', flush=True)\\n        previous = status\\n    if status.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Watcher observation limit reached.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:09:38.621Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor attempt in range(30):\\n    time.sleep(min(10 * 2 ** attempt, 40))\\n    check = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if check.returncode:\\n        print(check.stdout, end='')\\n        print(check.stderr, end='')\\n        raise SystemExit(check.returncode)\\n    status = json.loads(check.stdout)\\n    if status != previous:\\n        print(check.stdout, end='', flush=True)\\n        previous = status\\n    if status.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Watcher observation limit reached.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:10:13.400Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:60971,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:10:13.400Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:60971,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:09:22.370Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11b-f115-7093-97e8-5d20834b71d4"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:09:25.453Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the supplied status command and report its result after successful completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:09:31.275Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "phase": "commentary",
+        "text": "`job-7391` is running. I\u2019ll keep checking with a bounded watcher that backs off while the status stays unchanged.\n"
+      },
+      {
+        "at": "2026-09-14T18:10:12.050Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "phase": "commentary",
+        "text": "The status has not changed. I\u2019m continuing to wait for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:10:54.338Z",
+        "session_id": "01a0a11b-f0e7-7a63-bac3-d7ace5a31d80",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-measured-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:03:05.428Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:03:05.428Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:03:39.616Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:77944,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:03:39.616Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:77944,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:04:25.102Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:77944,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:04:25.102Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:77944,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:02:52.981Z",
+        "session_id": "01a0a116-01ef-7240-89fc-201049529c71",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a116-0220-72d3-a867-f994f9b12711"
+      },
+      {
+        "at": "2026-09-14T18:02:58.688Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a116-0220-72d3-a867-f994f9b12711"
+      },
+      {
+        "at": "2026-09-14T18:03:01.552Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a116-2708-7f02-89cf-f3433ef3ea7c"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:02:55.699Z",
+        "session_id": "01a0a116-01ef-7240-89fc-201049529c71",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command once and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:03:49.546Z",
+        "session_id": "01a0a116-01ef-7240-89fc-201049529c71",
+        "phase": "commentary",
+        "text": "I\u2019m waiting for the delegated command to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:04:29.484Z",
+        "session_id": "01a0a116-01ef-7240-89fc-201049529c71",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:03:04.341Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:03:38.476Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "phase": "commentary",
+        "text": "The benchmark is still running; I\u2019m waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:04:24.049Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "phase": "commentary",
+        "text": "The benchmark is still running with no output yet. I\u2019m continuing to wait.\n"
+      },
+      {
+        "at": "2026-09-14T18:04:27.046Z",
+        "session_id": "01a0a116-26ff-74d3-9fc7-d1f9d8815386",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-measured-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:08:07.909Z",
+        "session_id": "01a0a11a-c137-7291-8740-4888ac213832",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:08:07.909Z",
+        "session_id": "01a0a11a-c137-7291-8740-4888ac213832",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:08:42.580Z",
+        "session_id": "01a0a11a-c137-7291-8740-4888ac213832",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:44563,chars:\"\",yield_time_ms:44000,max_output_tokens:10000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:08:42.580Z",
+        "session_id": "01a0a11a-c137-7291-8740-4888ac213832",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:44563,chars:\"\",yield_time_ms:44000,max_output_tokens:10000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:07:55.315Z",
+        "session_id": "01a0a11a-99a2-7a32-a3a9-010d0aff36c1",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11a-99d2-7f83-b473-cb05a3f35307"
+      },
+      {
+        "at": "2026-09-14T18:08:00.311Z",
+        "session_id": "01a0a11a-c137-7291-8740-4888ac213832",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11a-99d2-7f83-b473-cb05a3f35307"
+      },
+      {
+        "at": "2026-09-14T18:08:03.522Z",
+        "session_id": "01a0a11a-c137-7291-8740-4888ac213832",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11a-c13d-7d90-b75d-30a389c301a1"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:07:58.118Z",
+        "session_id": "01a0a11a-99a2-7a32-a3a9-010d0aff36c1",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command to one subagent and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:08:03.300Z",
+        "session_id": "01a0a11a-99a2-7a32-a3a9-010d0aff36c1",
+        "phase": "commentary",
+        "text": "I\u2019m waiting for the subagent to complete the command.\n"
+      },
+      {
+        "at": "2026-09-14T18:08:51.423Z",
+        "session_id": "01a0a11a-99a2-7a32-a3a9-010d0aff36c1",
+        "phase": "commentary",
+        "text": "I\u2019m still waiting for the command\u2019s completion result.\n"
+      },
+      {
+        "at": "2026-09-14T18:09:28.419Z",
+        "session_id": "01a0a11a-99a2-7a32-a3a9-010d0aff36c1",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:08:06.561Z",
+        "session_id": "01a0a11a-c137-7291-8740-4888ac213832",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:08:41.325Z",
+        "session_id": "01a0a11a-c137-7291-8740-4888ac213832",
+        "phase": "commentary",
+        "text": "The benchmark is still running. I\u2019m waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:09:25.808Z",
+        "session_id": "01a0a11a-c137-7291-8740-4888ac213832",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:01:54.787Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:01:54.787Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:02:28.380Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:61424,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:02:28.380Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:61424,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:03:12.220Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:61424,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:03:12.220Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:61424,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:01:42.689Z",
+        "session_id": "01a0a114-ee8d-7d81-8172-be6e0e74651d",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a114-eebe-72e0-8a2d-d670aff749eb"
+      },
+      {
+        "at": "2026-09-14T18:01:48.135Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a114-eebe-72e0-8a2d-d670aff749eb"
+      },
+      {
+        "at": "2026-09-14T18:01:50.987Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a115-136b-7370-a070-0e5c53d9f80c"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:01:45.958Z",
+        "session_id": "01a0a114-ee8d-7d81-8172-be6e0e74651d",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command once and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:01:51.572Z",
+        "session_id": "01a0a114-ee8d-7d81-8172-be6e0e74651d",
+        "phase": "commentary",
+        "text": "I\u2019m waiting for the delegated command to complete.\n"
+      },
+      {
+        "at": "2026-09-14T18:02:40.211Z",
+        "session_id": "01a0a114-ee8d-7d81-8172-be6e0e74651d",
+        "phase": "commentary",
+        "text": "The delegated command is still running; I\u2019m waiting for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:03:16.531Z",
+        "session_id": "01a0a114-ee8d-7d81-8172-be6e0e74651d",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:01:53.665Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:02:27.280Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "phase": "commentary",
+        "text": "The benchmark is still running. I\u2019ll wait for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:03:11.096Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "phase": "commentary",
+        "text": "The benchmark is still running without output. I\u2019ll continue waiting on the same job.\n"
+      },
+      {
+        "at": "2026-09-14T18:03:14.417Z",
+        "session_id": "01a0a115-1366-7d01-850c-a7cbf3cf5a9c",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-no-pragma-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:09:48.011Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000, \"max_output_tokens\": 2000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:09:48.011Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:10:22.696Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000, \"max_output_tokens\": 2000}\ntext(await tools.write_stdin({session_id:73355,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:10:22.696Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:73355,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:11:07.058Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000, \"max_output_tokens\": 2000}\ntext(await tools.write_stdin({session_id:73355,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:11:07.058Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:73355,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:09:34.075Z",
+        "session_id": "01a0a11c-1b18-76d3-a12d-b8ff529255aa",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11c-1b47-7271-81c2-649fdc566cbc"
+      },
+      {
+        "at": "2026-09-14T18:09:40.636Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11c-1b47-7271-81c2-649fdc566cbc"
+      },
+      {
+        "at": "2026-09-14T18:09:43.187Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11c-4932-76d0-858f-a5d7c8e235fd"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:09:37.676Z",
+        "session_id": "01a0a11c-1b18-76d3-a12d-b8ff529255aa",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command once and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:09:43.690Z",
+        "session_id": "01a0a11c-1b18-76d3-a12d-b8ff529255aa",
+        "phase": "commentary",
+        "text": "The delegated command is running; I\u2019m waiting for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:10:32.702Z",
+        "session_id": "01a0a11c-1b18-76d3-a12d-b8ff529255aa",
+        "phase": "commentary",
+        "text": "I\u2019m still waiting for the delegated command to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:11:11.698Z",
+        "session_id": "01a0a11c-1b18-76d3-a12d-b8ff529255aa",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:09:46.549Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:10:21.009Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "phase": "commentary",
+        "text": "The benchmark is still running. I\u2019m waiting for the same job to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:11:05.391Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "phase": "commentary",
+        "text": "The job has produced no output yet. I\u2019ll continue waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:11:09.418Z",
+        "session_id": "01a0a11c-491a-7782-a227-aebf6111c39a",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-with-pragma-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:00:02.550Z",
+        "session_id": "01a0a113-5d2c-7100-8077-16370eb22d1c",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:00:02.550Z",
+        "session_id": "01a0a113-5d2c-7100-8077-16370eb22d1c",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:00:38.586Z",
+        "session_id": "01a0a113-5d2c-7100-8077-16370eb22d1c",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:7422,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:00:38.586Z",
+        "session_id": "01a0a113-5d2c-7100-8077-16370eb22d1c",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:7422,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T17:59:50.261Z",
+        "session_id": "01a0a113-2cb4-7472-97c8-19d14db310f0",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a113-2ce9-7423-90aa-26ea0291d817"
+      },
+      {
+        "at": "2026-09-14T17:59:55.948Z",
+        "session_id": "01a0a113-5d2c-7100-8077-16370eb22d1c",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a113-2ce9-7423-90aa-26ea0291d817"
+      },
+      {
+        "at": "2026-09-14T17:59:58.557Z",
+        "session_id": "01a0a113-5d2c-7100-8077-16370eb22d1c",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a113-5d31-7f50-8044-1649a45448e6"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T17:59:53.677Z",
+        "session_id": "01a0a113-2cb4-7472-97c8-19d14db310f0",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command to one subagent and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T17:59:59.582Z",
+        "session_id": "01a0a113-2cb4-7472-97c8-19d14db310f0",
+        "phase": "commentary",
+        "text": "The subagent is running the benchmark. I\u2019m waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:00:48.498Z",
+        "session_id": "01a0a113-2cb4-7472-97c8-19d14db310f0",
+        "phase": "commentary",
+        "text": "I\u2019m still waiting for the subagent\u2019s completion result.\n"
+      },
+      {
+        "at": "2026-09-14T18:01:22.072Z",
+        "session_id": "01a0a113-2cb4-7472-97c8-19d14db310f0",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:00:01.435Z",
+        "session_id": "01a0a113-5d2c-7100-8077-16370eb22d1c",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:00:37.436Z",
+        "session_id": "01a0a113-5d2c-7100-8077-16370eb22d1c",
+        "phase": "commentary",
+        "text": "The benchmark is still running. I\u2019m waiting for the existing command to complete.\n"
+      },
+      {
+        "at": "2026-09-14T18:01:20.316Z",
+        "session_id": "01a0a113-5d2c-7100-8077-16370eb22d1c",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-subagent-wording-with-pragma-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:13:25.134Z",
+        "session_id": "01a0a11f-9bce-7990-b0e5-11bce9a6da7f",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:13:25.134Z",
+        "session_id": "01a0a11f-9bce-7990-b0e5-11bce9a6da7f",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:14:00.522Z",
+        "session_id": "01a0a11f-9bce-7990-b0e5-11bce9a6da7f",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:15119,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:14:00.522Z",
+        "session_id": "01a0a11f-9bce-7990-b0e5-11bce9a6da7f",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:15119,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true,
+      "requested_fork_all": true,
+      "no_fork_overrides": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:13:12.388Z",
+        "session_id": "01a0a11f-6fdb-7191-a558-f5f3f596680f",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11f-7008-7361-89b7-846734676b06"
+      },
+      {
+        "at": "2026-09-14T18:13:18.416Z",
+        "session_id": "01a0a11f-9bce-7990-b0e5-11bce9a6da7f",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11f-7008-7361-89b7-846734676b06"
+      },
+      {
+        "at": "2026-09-14T18:13:21.411Z",
+        "session_id": "01a0a11f-9bce-7990-b0e5-11bce9a6da7f",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11f-9bd6-7f71-968f-66325012f253"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:13:15.663Z",
+        "session_id": "01a0a11f-6fdb-7191-a558-f5f3f596680f",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command to one subagent and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T18:13:21.758Z",
+        "session_id": "01a0a11f-6fdb-7191-a558-f5f3f596680f",
+        "phase": "commentary",
+        "text": "The subagent is running the benchmark. I\u2019m waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:14:09.775Z",
+        "session_id": "01a0a11f-6fdb-7191-a558-f5f3f596680f",
+        "phase": "commentary",
+        "text": "I\u2019m still waiting for the benchmark result.\n"
+      },
+      {
+        "at": "2026-09-14T18:14:44.387Z",
+        "session_id": "01a0a11f-6fdb-7191-a558-f5f3f596680f",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T18:13:23.944Z",
+        "session_id": "01a0a11f-9bce-7990-b0e5-11bce9a6da7f",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:13:59.427Z",
+        "session_id": "01a0a11f-9bce-7990-b0e5-11bce9a6da7f",
+        "phase": "commentary",
+        "text": "The benchmark is still running. I\u2019m waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:14:42.461Z",
+        "session_id": "01a0a11f-9bce-7990-b0e5-11bce9a6da7f",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-measured-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:03:25.426Z",
+        "session_id": "01a0a116-6db0-7a00-9b24-0f18f91835f6",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:03:25.426Z",
+        "session_id": "01a0a116-6db0-7a00-9b24-0f18f91835f6",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:04:00.363Z",
+        "session_id": "01a0a116-6db0-7a00-9b24-0f18f91835f6",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:26075,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:04:00.363Z",
+        "session_id": "01a0a116-6db0-7a00-9b24-0f18f91835f6",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:26075,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:03:21.388Z",
+        "session_id": "01a0a116-6db0-7a00-9b24-0f18f91835f6",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a116-6ddd-7043-acd6-ad8ba8062f4d"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:03:24.505Z",
+        "session_id": "01a0a116-6db0-7a00-9b24-0f18f91835f6",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:03:59.191Z",
+        "session_id": "01a0a116-6db0-7a00-9b24-0f18f91835f6",
+        "phase": "commentary",
+        "text": "The command is still running. I\u2019ll keep waiting on the same process.\n"
+      },
+      {
+        "at": "2026-09-14T18:04:42.617Z",
+        "session_id": "01a0a116-6db0-7a00-9b24-0f18f91835f6",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-measured-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:11:03.055Z",
+        "session_id": "01a0a11d-6a06-7c33-b2f0-233cce7f9d7a",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:11:03.055Z",
+        "session_id": "01a0a11d-6a06-7c33-b2f0-233cce7f9d7a",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:11:37.497Z",
+        "session_id": "01a0a11d-6a06-7c33-b2f0-233cce7f9d7a",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:6372,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:11:37.497Z",
+        "session_id": "01a0a11d-6a06-7c33-b2f0-233cce7f9d7a",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:6372,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:10:59.005Z",
+        "session_id": "01a0a11d-6a06-7c33-b2f0-233cce7f9d7a",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11d-6a36-7030-bc76-b0fcfe9680e0"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:11:01.770Z",
+        "session_id": "01a0a11d-6a06-7c33-b2f0-233cce7f9d7a",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:11:36.328Z",
+        "session_id": "01a0a11d-6a06-7c33-b2f0-233cce7f9d7a",
+        "phase": "commentary",
+        "text": "The command is still running. I\u2019ll keep waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:12:20.109Z",
+        "session_id": "01a0a11d-6a06-7c33-b2f0-233cce7f9d7a",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:01:29.554Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:01:29.554Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:02:03.453Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:82739,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:02:03.453Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:82739,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:02:47.323Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:82739,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:02:47.323Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:82739,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:01:25.907Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a114-ae4d-7871-a298-27d6c8dae332"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:01:28.436Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "phase": "commentary",
+        "text": "I\u2019ll run the job once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:02:02.314Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "phase": "commentary",
+        "text": "The job is still running; I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T18:02:46.161Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "phase": "commentary",
+        "text": "The job is still running with no output yet. I\u2019ll keep waiting.\n"
+      },
+      {
+        "at": "2026-09-14T18:02:49.064Z",
+        "session_id": "01a0a114-ae1e-7882-8007-78fe681ab800",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-no-pragma-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:07:59.159Z",
+        "session_id": "01a0a11a-99a0-7630-8fb7-512788f34335",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:07:59.159Z",
+        "session_id": "01a0a11a-99a0-7630-8fb7-512788f34335",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:08:34.377Z",
+        "session_id": "01a0a11a-99a0-7630-8fb7-512788f34335",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:55080,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:08:34.377Z",
+        "session_id": "01a0a11a-99a0-7630-8fb7-512788f34335",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:55080,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:07:54.696Z",
+        "session_id": "01a0a11a-99a0-7630-8fb7-512788f34335",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a11a-99d2-7971-b4cc-15b4a1c9477c"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:07:57.863Z",
+        "session_id": "01a0a11a-99a0-7630-8fb7-512788f34335",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:08:33.026Z",
+        "session_id": "01a0a11a-99a0-7630-8fb7-512788f34335",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll keep waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T18:09:17.843Z",
+        "session_id": "01a0a11a-99a0-7630-8fb7-512788f34335",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-with-pragma-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:04:51.119Z",
+        "session_id": "01a0a117-bd6a-7682-b6f2-6941b9651372",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:04:51.119Z",
+        "session_id": "01a0a117-bd6a-7682-b6f2-6941b9651372",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:05:26.400Z",
+        "session_id": "01a0a117-bd6a-7682-b6f2-6941b9651372",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:4309,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:05:26.400Z",
+        "session_id": "01a0a117-bd6a-7682-b6f2-6941b9651372",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:4309,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:04:46.818Z",
+        "session_id": "01a0a117-bd6a-7682-b6f2-6941b9651372",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a117-bd97-75a1-96e1-8dcd71b7d5f0"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:04:50.093Z",
+        "session_id": "01a0a117-bd6a-7682-b6f2-6941b9651372",
+        "phase": "commentary",
+        "text": "I\u2019ll run the job once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:05:25.270Z",
+        "session_id": "01a0a117-bd6a-7682-b6f2-6941b9651372",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T18:06:10.023Z",
+        "session_id": "01a0a117-bd6a-7682-b6f2-6941b9651372",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-wording-with-pragma-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T18:14:23.975Z",
+        "session_id": "01a0a120-7679-7d62-82a5-7888d38eeafa",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:14:23.975Z",
+        "session_id": "01a0a120-7679-7d62-82a5-7888d38eeafa",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:14:58.088Z",
+        "session_id": "01a0a120-7679-7d62-82a5-7888d38eeafa",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:73047,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T18:14:58.088Z",
+        "session_id": "01a0a120-7679-7d62-82a5-7888d38eeafa",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:73047,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T18:14:19.447Z",
+        "session_id": "01a0a120-7679-7d62-82a5-7888d38eeafa",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a120-76a6-7270-87fb-224ee13227f1"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T18:14:22.881Z",
+        "session_id": "01a0a120-7679-7d62-82a5-7888d38eeafa",
+        "phase": "commentary",
+        "text": "I\u2019ll run `python3 bench_job.py` once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T18:14:56.975Z",
+        "session_id": "01a0a120-7679-7d62-82a5-7888d38eeafa",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T18:15:41.195Z",
+        "session_id": "01a0a120-7679-7d62-82a5-7888d38eeafa",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  }
+]

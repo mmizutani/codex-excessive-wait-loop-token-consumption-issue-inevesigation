@@ -1,0 +1,72 @@
+{
+  "release_tag": "rust-v0.154.0",
+  "release_commit": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+  "sources": [
+    {
+      "path": "codex-rs/code-mode-runtime/src/service.rs",
+      "git_blob": "8b8d71082a111b80c6e38dd53607c1e69618d9af",
+      "url": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/code-mode-runtime/src/service.rs",
+      "excerpts": [
+        {
+          "start_line": 29,
+          "end_line": 30,
+          "text": "\nconst YIELD_GRACE_PERIOD: Duration = Duration::from_secs(1);"
+        },
+        {
+          "start_line": 192,
+          "end_line": 207,
+          "text": "        self.runtime\n            .shutdown()\n            .await\n            .map_err(|error| error.to_string())\n    }\n\n    fn resolve_yield_timeout(&self, yield_time_ms: u64) -> Duration {\n        let yield_time = Duration::from_millis(yield_time_ms);\n        let timeout = if yield_time >= MIN_YIELD_TIME_FOR_GRACE {\n            yield_time.saturating_add(YIELD_GRACE_PERIOD)\n        } else {\n            yield_time\n        };\n\n        self.cell_execution_limits\n            .max_yield_time_ms"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/core/src/tools/code_mode/mod.rs",
+      "git_blob": "142312c99e1f61b6f494cb71394d794d815276cd",
+      "url": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/core/src/tools/code_mode/mod.rs",
+      "excerpts": [
+        {
+          "start_line": 124,
+          "end_line": 137,
+          "text": "        mut request: codex_code_mode::ExecuteRequest,\n    ) -> Result<codex_code_mode::StartedCell, String> {\n        request\n            .yield_time_ms\n            .get_or_insert(self.default_exec_yield_time_ms);\n        self.session().await?.execute(request).await\n    }\n\n    pub(crate) async fn wait(\n        &self,\n        request: codex_code_mode::WaitRequest,\n    ) -> Result<codex_code_mode::WaitOutcome, String> {\n        self.session().await?.wait(request).await\n    }"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/core/src/config/mod.rs",
+      "git_blob": "ebda9778b17bf8df3670039d9d018493e2cb449b",
+      "url": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/core/src/config/mod.rs",
+      "excerpts": [
+        {
+          "start_line": 1110,
+          "end_line": 1129,
+          "text": "    pub turn_metadata_includes_tool_info: bool,\n}\n\nconst DEFAULT_CODE_MODE_EXEC_YIELD_TIME_MS: u64 = 30_000;\n\n#[derive(Debug, Clone, PartialEq, Eq, Serialize)]\npub struct CodeModeConfig {\n    pub default_exec_yield_time_ms: u64,\n    pub excluded_tool_namespaces: Vec<String>,\n    pub direct_only_tool_namespaces: Vec<String>,\n    /// Keep code mode fail-closed when the standalone host is unavailable.\n    pub disable_in_process_fallback: bool,\n}\n\nimpl Default for CodeModeConfig {\n    fn default() -> Self {\n        Self {\n            default_exec_yield_time_ms: DEFAULT_CODE_MODE_EXEC_YIELD_TIME_MS,\n            excluded_tool_namespaces: Vec::new(),\n            direct_only_tool_namespaces: Vec::new(),"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/code-mode-runtime/src/service_tests.rs",
+      "git_blob": "2ce272efe4de487a70968cc646dae63d7a62dfcd",
+      "url": "https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/code-mode-runtime/src/service_tests.rs",
+      "excerpts": [
+        {
+          "start_line": 30,
+          "end_line": 46,
+          "text": "fn resolve_yield_timeout_applies_grace_before_session_limits() {\n    for (max_yield_time_ms, requested_yield_time_ms, expected_timeout) in [\n        (None, 0, Duration::ZERO),\n        (None, 9_999, Duration::from_millis(9_999)),\n        (None, 10_000, Duration::from_secs(11)),\n        (None, 10_001, Duration::from_millis(11_001)),\n        (Some(0), 0, Duration::ZERO),\n        (Some(0), 10_000, Duration::ZERO),\n        (Some(5_000), 9_999, Duration::from_secs(5)),\n        (Some(10_000), 10_000, Duration::from_secs(10)),\n        (Some(10_500), 10_000, Duration::from_millis(10_500)),\n        (Some(11_000), 10_000, Duration::from_secs(11)),\n        (Some(12_000), 10_000, Duration::from_secs(11)),\n        (Some(10_500), 5_000, Duration::from_secs(5)),\n        (Some(u64::MAX), u64::MAX, Duration::from_millis(u64::MAX)),\n    ] {\n        let session = InProcessCodeModeSession::with_delegate_and_limits("
+        },
+        {
+          "start_line": 61,
+          "end_line": 78,
+          "text": "\n#[tokio::test(start_paused = true)]\nasync fn execute_waits_for_nested_tool_during_yield_grace() {\n    let delegate = Arc::new(ReleasableToolDelegate::default());\n    let service = InProcessCodeModeSession::with_delegate(delegate.clone());\n    let request = ExecuteRequest {\n        enabled_tools: vec![echo_tool()],\n        source: r#\"await tools.echo({}); text(\"done\");\"#.to_string(),\n        yield_time_ms: Some(10_000),\n        ..execute_request(\"\")\n    };\n    let started = service.execute(request).await.unwrap();\n    let response = tokio::spawn(started.initial_response());\n    wait_until_tool_started(&delegate).await;\n    tokio::time::advance(Duration::from_millis(10_500)).await;\n    delegate.release_tool();\n    wait_until_finished(&response).await;\n    let response = response.await.unwrap().unwrap();"
+        }
+      ]
+    }
+  ],
+  "observation": {
+    "trial": "gpt-6-astra-ci-wording-no-pragma-r1",
+    "inner_ms": 30000,
+    "outer_ms": "omitted",
+    "reported_wall_seconds": 30.2,
+    "running_cell_returns": 0
+  },
+  "interpretation": "The observed 30.2-second completion with a default 30-second outer yield is consistent with the release runtime adding 1 second of grace for yields >=10 seconds, subject to session limits. This does not establish that the model accounted for that grace."
+}

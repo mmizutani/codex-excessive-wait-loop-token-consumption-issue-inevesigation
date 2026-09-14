@@ -2,6 +2,8 @@
 
 ## TL;DR
 
+**2026年9月15日追記：** [現在の配布版](waiting-validation/AGENTS.waiting-compatible.md)は、利用者の指摘を受け、外側の `functions.exec`、内側の `exec_command`／`write_stdin`、実行中セルを待つ `functions.wait` の関係を明記しました。また、先頭行の `@exec` という設定構文への言及を省きました。この修正文は[別の18試験で再測定](CODEX_WAITING_PRAGMA_REMOVAL_BENCHMARK.md)しました。現在の文面の6件はすべて受入条件を満たしましたが、直前の構文あり版より応答数と入力が増えています。以下の「最終版」と測定値は、修正前の凍結済み `outer-o0n0` を指します。
+
 - **`exec_command: 30000` と、外側の `functions.exec: 45000` の固定値を配布用パッチから削除しました。** 共通の45秒上限、長く待つ条件、内側の待機と余裕を外側に収める条件は残します。
 - 外側の数値指定×ツール名の明示を比較した12試験では、秒数を省いても外側の早期復帰は0回でした。数値を重ねて書く利点は反復して確認できませんでした。
 - **`functions.exec` の名指し追加は見送りました。** 数値なし版の通常コマンドでは名指しなし9応答・あり10応答、追加CI比較でも9・10応答でした。名指しの利点が得られず、少ない指示の文面を選びました。ツール名が一般に悪化を招くと証明した結果ではありません。
@@ -150,7 +152,7 @@ CIの悪化が反復したため、数値なしの名指しあり・なしを2�
 
 ## 最終的に配布する文面
 
-採用したのは、測定済みの `outer-o0n0` と完全一致する[配布用パッチ](waiting-validation/AGENTS.waiting-compatible.md)です。`Terminal commands` 節を次のように更新しました。
+この測定で採用したのは、凍結済みの [`outer-o0n0`](waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n0.md) です。以下は当時の `Terminal commands` 節です。現在の配布版には、冒頭の追記に記した文面修正があります。
 
 ```text
 When only command completion remains, start `exec_command` with a long `yield_time_ms` within tool limits and the budget. Retain its session; use empty `write_stdin` waits within budget, without preliminary short polls.

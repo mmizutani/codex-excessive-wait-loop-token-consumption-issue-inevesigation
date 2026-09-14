@@ -14,7 +14,7 @@ When only subagent results remain, prefer direct `wait_agent` with `timeout_ms` 
 
 When only command completion remains, start `exec_command` with a long `yield_time_ms` within tool limits and the budget. Retain its session; use empty `write_stdin` waits within budget, without preliminary short polls.
 
-In Code Mode, set the outer `functions.exec` wait long enough to cover the inner `exec_command` or `write_stdin` wait plus a small margin, while staying within budget. If `functions.exec` returns a running cell, wait for that same cell with `functions.wait` using `yield_time_ms` within budget instead of 1-second/default checks; finish the cell before calling `write_stdin` again.
+In code mode, set first-line `@exec` `yield_time_ms` within budget, covering the inner wait plus a small margin. Resume running cells with `functions.wait` within budget instead of 1-second/default checks; finish the cell before polling the process again.
 
 ### CI and external work
 
