@@ -12,7 +12,7 @@ Add wait/wake support for goals without spending tokens · Issue #28144 · opena
 
 wake model when background exec commands complete · tekacs/codex\\\\@9ffcf8d: https://github.com/tekacs/codex/commit/9ffcf8db9078eae43d4111ff94259795c1e962c9
 
-
+Ivan Oparin on X: "the fix already exists inside codex. clock.sleep: interruptible sleep, up to 12 hours. the model catalog hands it to one model: gpt-6-astra. 5.6 sol, 5.5, 5.4 and every custom-provider model get goal mode without the brake. goal for everyone, brake for one." / X: https://x.com/ivanopcode/status/2098380946781135199
 
  Tibo on X: "Hi Astra users. A reset and a quick update on quality issues that have been posted around. Working with some of you, we have found and fixed the following issues: - Some skills written for previous models were triggering too often or preventing the model from checking its work." / X: [[https://x.com/thsottiaux/status/2098612714704891959\](https://x.com/thsottiaux/status/2098612714704891959)](https://x.com/thsottiaux/status/2098612714704891959]\(https://x.com/thsottiaux/status/2098612714704891959\))
 
