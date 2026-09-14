@@ -34,7 +34,7 @@ Across the earlier 66 skill trials, all requested outcomes were correct. The fin
 
 A subsequent [18-trial final-skill-versus-no-skill comparison](docs/CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) directly measured installation with automatic selection. All tasks completed correctly. Responses fell **100 → 64 (36.00%)**, input tokens **1,547,548 → 1,028,592 (33.53%)**, and API-price equivalent **$2.705112 → $1.949598 (27.93%)** overall. Terminal and subagent work drove the savings; CI cost **12.87% more** and delivered results about **25.27 seconds later** on average. These are observed effects for the tested Astra workloads.
 
-**The savings below belong to the AGENTS.md experiment.** Neither skill study directly compares the skill against AGENTS.md; percentages from the separate experiments do not establish which installation format is cheaper.
+**The next section reports the AGENTS.md experiment.** Neither skill study directly compares the skill against AGENTS.md; percentages from the separate experiments do not establish which installation format is cheaper.
 
 ## Measured effects of the exact final patch
 
@@ -53,6 +53,18 @@ These are **observed savings for these Astra workloads**. The latest wording has
 Result delivery became slower in five of nine matched pairs. Terminal delivery was about 1.1 seconds slower on average; one CI pair was about 11.4 seconds slower. Actual CI status requests fell only 14→13, while model responses fell 28→14. Reducing model calls, reducing service requests, and delivering results promptly are separate outcomes.
 
 Dollar amounts apply the study's September 14, 2026 Standard API rates to subscription-reported counters; they are **not subscription charges**. Input includes cached reads. Recorded cache writes were zero, but missing upstream fields may have been normalized to zero. The [full counts](docs/waiting-benchmark/numeric-waits/unpatched-results/COUNTS.md) separate ordinary input, cached reads, recorded writes, output, and dollar components. These 75-second trials do not measure 30-minute cache expiration, prolonged `/goal` waits, or production CI failure handling.
+
+## AGENTS.md patch and skill: observed reductions
+
+The skill's observed reductions were smaller. These are reductions against each study's own untreated control, from two separate 18-trial Astra/low experiments on CLI 0.154.0.
+
+| Metric reduced | AGENTS.md patch | Final v4 skill |
+| --- | ---: | ---: |
+| Model responses | 52.04% | 36.00% |
+| Input tokens, including cached input | 51.03% | 33.53% |
+| API-price equivalent | 42.31% | 27.93% |
+
+Within the skill study, terminal and subagent API valuations fell about 40%, while CI's rose 12.87%, reducing its overall saving. The studies used different task prompts and instruction-loading conditions, with uncontrolled cache state and scheduling. These results do not establish that the skill format itself is less effective. See the [comparison and its limits](docs/CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md#comparison-with-agentsmd-measurements) for both source studies.
 
 ## Reports and evidence
 

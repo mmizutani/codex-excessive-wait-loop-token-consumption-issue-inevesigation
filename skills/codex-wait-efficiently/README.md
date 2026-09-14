@@ -86,7 +86,17 @@ The original and final 12-case suites used **57 versus 58 responses**, with API 
 
 ## Relationship to the AGENTS.md patch
 
-The skill started from the [final AGENTS.md patch](../../docs/waiting-validation/AGENTS.waiting-compatible.md). In a separate 18-trial Astra experiment, that patch reduced model responses from 98 to 47 and API-price equivalents from $2.618056 to $1.510370, a 42.31% reduction. These figures belong to the AGENTS.md experiment. There has been no direct skill-versus-AGENTS comparison; do not infer which installation format is cheaper by comparing percentages across studies.
+The skill started from the [final AGENTS.md patch](../../docs/waiting-validation/AGENTS.waiting-compatible.md). The observed reductions were smaller for the skill. Each column below shows the reduction against that experiment's own untreated control; both studies used 18 Astra/low trials on CLI 0.154.0.
+
+| Metric reduced | AGENTS.md patch | Final v4 skill |
+| --- | ---: | ---: |
+| Model responses | 52.04% | 36.00% |
+| Input tokens, including cached input | 51.03% | 33.53% |
+| API-price equivalent | 42.31% | 27.93% |
+
+Within the skill experiment, terminal and subagent API valuations fell 39.93% and 39.26%, while CI's increased 12.87%, reducing the overall saving. These workload effects do not isolate the reason for the difference between the two studies.
+
+The [AGENTS.md experiment](../../docs/CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md) and [skill experiment](../../docs/CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) used different task prompts and instruction-loading conditions, with uncontrolled cache state and backend scheduling. This supports smaller observed savings in the skill study. A direct controlled comparison is still needed to establish whether the installation format itself changes efficiency.
 
 ## Package and evidence
 

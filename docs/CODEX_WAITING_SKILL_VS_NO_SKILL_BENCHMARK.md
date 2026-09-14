@@ -112,7 +112,23 @@ For these Astra waiting workloads, installing the final skill with automatic sel
 
 This is a small sample of idle waits lasting 75 seconds, with the target skill isolated from competing skills and no global AGENTS.md patch. It does not measure Sol, mixed active work, production CI behavior, long cache-retention intervals, `/goal` pause transitions, or reliable activation among many competing skills. A fresh repetition or a different runtime, account, catalog, or task can change the result.
 
-The [AGENTS.md experiment](CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md) remains separate. The current comparison does not test the skill against AGENTS.md and cannot establish which format is cheaper. It also leaves the earlier conclusion intact that the v1-to-v4 revisions themselves did not demonstrate general savings. The new result answers the different question of final-skill installation versus no skill.
+The earlier conclusion that the v1-to-v4 revisions themselves did not demonstrate general savings remains intact. This experiment answers the separate question of final-skill installation versus no skill.
+
+## Comparison with AGENTS.md measurements
+
+The observed reduction was smaller for the skill than for the [AGENTS.md patch](CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md). Each column below measures improvement against that experiment's own untreated control. Both studies ran 18 trials with Astra/low on CLI 0.154.0, covering terminal, subagent, and CI waiting.
+
+| Metric reduced | AGENTS.md patch | Final v4 skill |
+| --- | ---: | ---: |
+| Model responses | 52.04% | 36.00% |
+| Input tokens, including cached input | 51.03% | 33.53% |
+| API-price equivalent | 42.31% | 27.93% |
+
+The AGENTS.md experiment's totals were 98 → 47 responses, 1,515,920 → 742,417 input tokens, and $2.618056 → $1.510370 API equivalent. This skill experiment's totals were 100 → 64 responses, 1,547,548 → 1,028,592 input tokens, and $2.705112 → $1.949598. Both valuations use the same dated API rate card and include parent and child inference.
+
+Within the skill experiment, terminal and subagent API valuations fell 39.93% and 39.26%; CI's increased 12.87%, reducing the overall saving. That explains the contribution of each workload to the skill result. It does not establish why the two experiments differ.
+
+The task prompts and instruction-loading conditions differ between studies, and v4 contains clarifications beyond the AGENTS.md patch. Cache state and backend scheduling were uncontrolled. Consequently, these measurements support **smaller observed savings in the skill study**, but do not isolate an efficiency difference caused by the installation format. A direct comparison with aligned conditions would be needed to assess that effect. The current data do not justify treating either format as universally cheaper.
 
 ## Files and reproduction
 
