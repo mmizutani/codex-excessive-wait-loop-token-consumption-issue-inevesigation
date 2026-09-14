@@ -1,0 +1,2312 @@
+[
+  {
+    "name": "gpt-6-astra-ci-old-r1",
+    "condition": "old",
+    "scenario": "ci",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/tmp/codex-versions/0.153.1/codex-aarch64-apple-darwin",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "The CI run `job-7391` is pending. Its authoritative status command is `python3 bench_ci.py status`. It provides no completion notifications or watch mode. Monitor it until it completes; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": null,
+    "patch_file": null,
+    "skills_mode": "ambient",
+    "cli_version": "codex-cli 0.153.1",
+    "thread_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+    "turn_start_epoch": 1789375052.616467,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789375199.6632252,
+    "status": "completed",
+    "elapsed_seconds": 147.1654,
+    "success": true,
+    "prompt_loaded": null,
+    "skills_instruction_sessions": [
+      "01a09f10-7b11-78b3-b7d5-39bfb439895c"
+    ],
+    "calls": [
+      {
+        "at": "2026-09-14T08:37:44.241Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_Lsr1oRBQ0p1ryvgvg1E9qHCw",
+        "input": "text(await tools.exec_command({cmd:\"cat /Users/mmizutani/dev/coding-agents/skills/monitor-long-running-jobs/SKILL.md\",max_output_tokens:5000}));\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:37:47.144Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_OzgJ7oRk5JjYzgjhWHz5V7TB",
+        "arguments": "{\"duration_ms\":60000}"
+      },
+      {
+        "at": "2026-09-14T08:38:51.437Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_VHvA69NgQ8Qz3CkdOBRiOPua",
+        "arguments": "{\"duration_ms\":60000}"
+      },
+      {
+        "at": "2026-09-14T08:39:56.359Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_l7YRpGqvND0GKfOSF9yiV20y",
+        "input": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:2000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:37:44.644Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "call_id": "call_Lsr1oRBQ0p1ryvgvg1E9qHCw",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"512993\",\"wall_time_seconds\":0.000002541,\"exit_code\":0,\"original_token_count\":1165,\"output\":\"---\\nname: monitor-long-running-jobs\\ndescription: \\\"Monitor asynchronous work with adaptive polling, reliable job identity, and scheduled follow-ups while avoiding unnecessary checks. Use when commands, CI, subagents, or scheduled jobs enter a sustained wait or repeated status-check phase.\\\"\\n---\\n\\n# Monitor long-running jobs\\n\\nChoose the next observation for its expected value: detecting a result or failure soon enough to act, while avoiding unnecessary model turns. A cache hit makes a check cheaper; it does not make an unnecessary check free.\\n\\n## Choose the interval\\n\\nEstablish the job identity, last authoritative observation, expected next transition, acceptable detection delay and next action. Prefer completion events or existing process/session wait tools when available. Otherwise use adaptive polling or an authorized scheduled wake-up.\\n\\nThese are starting ranges, not fixed requirements:\\n\\n| Situation | Starting interval | Adjustment |\\n| --- | --- | --- |\\n| Confirmed imminent result or intervention | 15\u201360 seconds | Only while a near-term result changes the next action; startup alone is insufficient |\\n| Running command, pending CI or subagent without completion events | 2\u20135 minutes | Back off unchanged status; check earlier for an actionable event or deadline |\\n| Active short stage with measurable progress | 2\u20135 minutes | Increase after repeated unchanged observations |\\n| Healthy multi-hour training or slow inference | 10\u201325 minutes | Use about 20 minutes initially; shorten near a credible completion estimate |\\n| External dependency with no useful near-term action | Deadline/event driven or longer backoff | Cache warmth alone need not justify frequent checks |\\n| New failure or terminal result | Handle now | Diagnose, validate artifacts and advance the authorized next phase |\\n\\nEstimate from observed step durations and stage type. Tool-turn count alone is a weak ETA: compaction and generation can take much longer than other turns. Back off unchanged healthy work, for example 2 \u2192 5 \u2192 10 \u2192 20 minutes. Do not spend repeated full-context turns confirming the same live process every minute for hours.\\n\\n## Observe real jobs safely\\n\\n- Record stable job identity: host, PID plus start time/command or scheduler job ID, output directory, endpoint/container and current stage. Keep volatile identities in run records, not this skill.\\n- Check the authoritative host or scheduler. A sandbox missing GPU devices or host PIDs does not prove a host failure. A log or lock file alone does not prove liveness.\\n- Reuse the same process/session handle. An observation timeout or lost desktop handle calls for a host check, not a duplicate launch. Confirm terminal state before recovery; preserve original attempts and experiment identity.\\n- Batch independent reads into one compact snapshot. Inspect a new terminal result once, validate its provenance, then advance work.\\n- Distinguish a live verified wait from progress and from a genuine blocker. Slow work is not a blocker, and a live worker is not proof of successful completion.\\n\\n## Pick the waiting mechanism\\n\\n**Active waits:** do useful independent work first. For event-driven subagent waits, explicitly request about twice the estimated remaining duration, or 120 seconds when unknown, within the live tool bounds and higher-priority responsiveness limits. Completion events can return early; a timeout alone does not call for a separate progress query. Re-estimate and back off after unchanged timeouts. Intervene for a blocker, requested decision or missed checkpoint; quiet output alone is insufficient.\\n\\nFor command/session waits, use the supported duration closest to the next useful observation. A tool's short default or maximum wait is not a status-polling cadence: retain the next-check time across early returns and use supported waiting/yield controls. Batch CI status reads into one compact snapshot when due. Keep user updates separate from status queries; an update deadline does not make another query useful.\\n\\n## Conditional references\\n\\n- For scheduled wake-ups, automatic goal continuations, or cross-session monitoring, read [scheduled monitoring](references/scheduled-monitoring.md). Keep one authoritative monitoring record and preserve the next-check time.\\n- When measured cache usage affects a monitoring decision, read [cache cost](references/cache-cost.md). Verify runtime-specific retention rather than assuming a subscription cache window.\\n\\nFinish monitoring when the actual job state and required artifacts establish the requested outcome, or report a concrete blocker or agreed budget limit. A timeout alone means the wait ended, not the job.\\n\"}"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"5c1449\",\"wall_time_seconds\":0.000002917,\"exit_code\":0,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:38:47.157Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "call_id": "call_OzgJ7oRk5JjYzgjhWHz5V7TB",
+        "output": "Wall time: 60.0070 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:39:51.448Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "call_id": "call_VHvA69NgQ8Qz3CkdOBRiOPua",
+        "output": "Wall time: 60.0048 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:39:56.435Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "call_id": "call_l7YRpGqvND0GKfOSF9yiV20y",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"6ba6e5\",\"wall_time_seconds\":0.000002667,\"exit_code\":0,\"original_token_count\":20,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"completed\\\", \\\"result\\\": \\\"BENCH_RESULT_7391\\\"}\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:37:44.644138+00:00",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "response_id": "resp_077c027d55816afb016aa7b251737c87d08b7c3234f84fcde3",
+        "usage": {
+          "total_tokens": 18326,
+          "input_tokens": 18223,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 103,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:37:47.331738+00:00",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "response_id": "resp_077c027d55816afb016aa7b259364c87d0bef662dfdfb3a1ae",
+        "usage": {
+          "total_tokens": 19371,
+          "input_tokens": 19352,
+          "cached_input_tokens": 18048,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:38:51.563238+00:00",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "response_id": "resp_077c027d55816afb016aa7b297da4487d0a341bac8eebaedfa",
+        "usage": {
+          "total_tokens": 19452,
+          "input_tokens": 19394,
+          "cached_input_tokens": 19200,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 58,
+          "reasoning_output_tokens": 11
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:39:56.384738+00:00",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "response_id": "resp_077c027d55816afb016aa7b2d8704087d096492cc1456d5f66",
+        "usage": {
+          "total_tokens": 19507,
+          "input_tokens": 19475,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 32,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:39:59.654138+00:00",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "response_id": "resp_077c027d55816afb016aa7b2dd063487d08f568a06d987596d",
+        "usage": {
+          "total_tokens": 19603,
+          "input_tokens": 19593,
+          "cached_input_tokens": 19328,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:37:42.643Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "phase": "commentary",
+        "text": "I\u2019ll use the monitor-long-running-jobs skill to monitor `job-7391` with the supplied status command.\n"
+      },
+      {
+        "at": "2026-09-14T08:38:50.995Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "phase": "commentary",
+        "text": "`job-7391` is running. I\u2019ll check again at the two-minute mark.\n"
+      },
+      {
+        "at": "2026-09-14T08:39:59.531Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:37:36.958Z",
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f10-7b48-7e71-8b75-e5584397c92d"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f10-7b11-78b3-b7d5-39bfb439895c",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f10-7b11-78b3-b7d5-39bfb439895c": {
+        "input_tokens": 96037,
+        "cached_input_tokens": 80896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 222,
+        "reasoning_output_tokens": 11,
+        "total_tokens": 96259
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 96037,
+      "cached_input_tokens": 80896,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 222,
+      "reasoning_output_tokens": 11,
+      "total_tokens": 96259,
+      "responses": 5,
+      "input_minus_cached": 15141
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 96037,
+      "cached_input_tokens": 80896,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 222,
+      "reasoning_output_tokens": 11,
+      "total_tokens": 96259,
+      "responses": 5,
+      "input_minus_cached": 15141
+    },
+    "child_session_count": 0,
+    "job_events": [],
+    "job_launches": 0,
+    "ci_checks": [
+      {
+        "at": 1789375064.378019,
+        "done": false
+      },
+      {
+        "at": 1789375196.4110239,
+        "done": true
+      }
+    ],
+    "result_delay_seconds": 60.153,
+    "parent_message_gaps_seconds": [
+      10.027,
+      68.352,
+      68.536
+    ],
+    "max_parent_message_gap_seconds": 68.536
+  },
+  {
+    "name": "gpt-6-astra-ci-old-r2",
+    "condition": "old",
+    "scenario": "ci",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 2,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/tmp/codex-versions/0.153.1/codex-aarch64-apple-darwin",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "The CI run `job-7391` is pending. Its authoritative status command is `python3 bench_ci.py status`. It provides no completion notifications or watch mode. Monitor it until it completes; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": null,
+    "patch_file": null,
+    "skills_mode": "ambient",
+    "cli_version": "codex-cli 0.153.1",
+    "thread_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+    "turn_start_epoch": 1789375199.81993,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789375343.1177669,
+    "status": "completed",
+    "elapsed_seconds": 143.3983,
+    "success": true,
+    "prompt_loaded": null,
+    "skills_instruction_sessions": [
+      "01a09f12-ba1e-75d0-a1ad-834156fcc00c"
+    ],
+    "calls": [
+      {
+        "at": "2026-09-14T08:40:10.326Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_ZD8hEO0o5HVn9je0gx8fcHtF",
+        "input": "text(await tools.exec_command({cmd:\"cat /Users/mmizutani/dev/coding-agents/skills/monitor-long-running-jobs/SKILL.md\",max_output_tokens:5000}));\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:40:14.298Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_CqY4df8h2Z81TGm0RJWuA04U",
+        "arguments": "{\"duration_ms\":60000}"
+      },
+      {
+        "at": "2026-09-14T08:41:17.806Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_2ocdxsT1jeI2txipKazCmTvu",
+        "arguments": "{\"duration_ms\":60000}"
+      },
+      {
+        "at": "2026-09-14T08:42:20.904Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_qbc38lCZkEMmzRyYUXh3TFX6",
+        "input": "text(await tools.exec_command({cmd:\"python3 bench_ci.py status\",max_output_tokens:2000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:40:10.481Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "call_id": "call_ZD8hEO0o5HVn9je0gx8fcHtF",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"9211ad\",\"wall_time_seconds\":0.00000275,\"exit_code\":0,\"original_token_count\":1165,\"output\":\"---\\nname: monitor-long-running-jobs\\ndescription: \\\"Monitor asynchronous work with adaptive polling, reliable job identity, and scheduled follow-ups while avoiding unnecessary checks. Use when commands, CI, subagents, or scheduled jobs enter a sustained wait or repeated status-check phase.\\\"\\n---\\n\\n# Monitor long-running jobs\\n\\nChoose the next observation for its expected value: detecting a result or failure soon enough to act, while avoiding unnecessary model turns. A cache hit makes a check cheaper; it does not make an unnecessary check free.\\n\\n## Choose the interval\\n\\nEstablish the job identity, last authoritative observation, expected next transition, acceptable detection delay and next action. Prefer completion events or existing process/session wait tools when available. Otherwise use adaptive polling or an authorized scheduled wake-up.\\n\\nThese are starting ranges, not fixed requirements:\\n\\n| Situation | Starting interval | Adjustment |\\n| --- | --- | --- |\\n| Confirmed imminent result or intervention | 15\u201360 seconds | Only while a near-term result changes the next action; startup alone is insufficient |\\n| Running command, pending CI or subagent without completion events | 2\u20135 minutes | Back off unchanged status; check earlier for an actionable event or deadline |\\n| Active short stage with measurable progress | 2\u20135 minutes | Increase after repeated unchanged observations |\\n| Healthy multi-hour training or slow inference | 10\u201325 minutes | Use about 20 minutes initially; shorten near a credible completion estimate |\\n| External dependency with no useful near-term action | Deadline/event driven or longer backoff | Cache warmth alone need not justify frequent checks |\\n| New failure or terminal result | Handle now | Diagnose, validate artifacts and advance the authorized next phase |\\n\\nEstimate from observed step durations and stage type. Tool-turn count alone is a weak ETA: compaction and generation can take much longer than other turns. Back off unchanged healthy work, for example 2 \u2192 5 \u2192 10 \u2192 20 minutes. Do not spend repeated full-context turns confirming the same live process every minute for hours.\\n\\n## Observe real jobs safely\\n\\n- Record stable job identity: host, PID plus start time/command or scheduler job ID, output directory, endpoint/container and current stage. Keep volatile identities in run records, not this skill.\\n- Check the authoritative host or scheduler. A sandbox missing GPU devices or host PIDs does not prove a host failure. A log or lock file alone does not prove liveness.\\n- Reuse the same process/session handle. An observation timeout or lost desktop handle calls for a host check, not a duplicate launch. Confirm terminal state before recovery; preserve original attempts and experiment identity.\\n- Batch independent reads into one compact snapshot. Inspect a new terminal result once, validate its provenance, then advance work.\\n- Distinguish a live verified wait from progress and from a genuine blocker. Slow work is not a blocker, and a live worker is not proof of successful completion.\\n\\n## Pick the waiting mechanism\\n\\n**Active waits:** do useful independent work first. For event-driven subagent waits, explicitly request about twice the estimated remaining duration, or 120 seconds when unknown, within the live tool bounds and higher-priority responsiveness limits. Completion events can return early; a timeout alone does not call for a separate progress query. Re-estimate and back off after unchanged timeouts. Intervene for a blocker, requested decision or missed checkpoint; quiet output alone is insufficient.\\n\\nFor command/session waits, use the supported duration closest to the next useful observation. A tool's short default or maximum wait is not a status-polling cadence: retain the next-check time across early returns and use supported waiting/yield controls. Batch CI status reads into one compact snapshot when due. Keep user updates separate from status queries; an update deadline does not make another query useful.\\n\\n## Conditional references\\n\\n- For scheduled wake-ups, automatic goal continuations, or cross-session monitoring, read [scheduled monitoring](references/scheduled-monitoring.md). Keep one authoritative monitoring record and preserve the next-check time.\\n- When measured cache usage affects a monitoring decision, read [cache cost](references/cache-cost.md). Verify runtime-specific retention rather than assuming a subscription cache window.\\n\\nFinish monitoring when the actual job state and required artifacts establish the requested outcome, or report a concrete blocker or agreed budget limit. A timeout alone means the wait ended, not the job.\\n\"}"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"f6ff4c\",\"wall_time_seconds\":0.000002583,\"exit_code\":0,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:41:14.307Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "call_id": "call_CqY4df8h2Z81TGm0RJWuA04U",
+        "output": "Wall time: 60.0036 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:42:17.815Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "call_id": "call_2ocdxsT1jeI2txipKazCmTvu",
+        "output": "Wall time: 60.0053 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:42:20.994Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "call_id": "call_qbc38lCZkEMmzRyYUXh3TFX6",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"142ea5\",\"wall_time_seconds\":0.000002291,\"exit_code\":0,\"original_token_count\":20,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"completed\\\", \\\"result\\\": \\\"BENCH_RESULT_7391\\\"}\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:40:10.466876+00:00",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "response_id": "resp_03b10e9801c6e802016aa7b2e5770487d0b4feb58a4e548c68",
+        "usage": {
+          "total_tokens": 18317,
+          "input_tokens": 18215,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 102,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:40:14.437176+00:00",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "response_id": "resp_03b10e9801c6e802016aa7b2eaf06887d0ba2615e0ed7d9464",
+        "usage": {
+          "total_tokens": 19364,
+          "input_tokens": 19345,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:41:17.849976+00:00",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "response_id": "resp_03b10e9801c6e802016aa7b32ac33c87d0ac9df2fe04276ed9",
+        "usage": {
+          "total_tokens": 19437,
+          "input_tokens": 19387,
+          "cached_input_tokens": 19200,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 50,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:42:20.989476+00:00",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "response_id": "resp_03b10e9801c6e802016aa7b36a392487d087358971b2eb511f",
+        "usage": {
+          "total_tokens": 19492,
+          "input_tokens": 19460,
+          "cached_input_tokens": 19200,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 32,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:42:23.107676+00:00",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "response_id": "resp_03b10e9801c6e802016aa7b36d8e8087d09b422bdd46677f5d",
+        "usage": {
+          "total_tokens": 19586,
+          "input_tokens": 19576,
+          "cached_input_tokens": 19328,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:40:08.366Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "phase": "commentary",
+        "text": "I\u2019ll use the monitoring skill to check `job-7391` until it completes, preserving the existing job.\n"
+      },
+      {
+        "at": "2026-09-14T08:41:17.525Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "phase": "commentary",
+        "text": "The last status for `job-7391` was `running`. I\u2019ll check again at the two-minute mark.\n"
+      },
+      {
+        "at": "2026-09-14T08:42:23.002Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:40:05.040Z",
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f12-ba4c-7b93-8ba5-a5e162497f35"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f12-ba1e-75d0-a1ad-834156fcc00c",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f12-ba1e-75d0-a1ad-834156fcc00c": {
+        "input_tokens": 95983,
+        "cached_input_tokens": 82048,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 213,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 96196
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 95983,
+      "cached_input_tokens": 82048,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 213,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 96196,
+      "responses": 5,
+      "input_minus_cached": 13935
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 95983,
+      "cached_input_tokens": 82048,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 213,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 96196,
+      "responses": 5,
+      "input_minus_cached": 13935
+    },
+    "child_session_count": 0,
+    "job_events": [],
+    "job_launches": 0,
+    "ci_checks": [
+      {
+        "at": 1789375210.453859,
+        "done": false
+      },
+      {
+        "at": 1789375340.959889,
+        "done": true
+      }
+    ],
+    "result_delay_seconds": 57.548,
+    "parent_message_gaps_seconds": [
+      8.546,
+      69.159,
+      65.477
+    ],
+    "max_parent_message_gap_seconds": 69.159
+  },
+  {
+    "name": "gpt-6-astra-subagent-old-r1",
+    "condition": "old",
+    "scenario": "subagent",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/tmp/codex-versions/0.153.1/codex-aarch64-apple-darwin",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "Delegate running `python3 bench_job.py` exactly once to exactly one subagent, using model `gpt-6-astra` at low reasoning effort. The child should wait for command completion and return its result. You have no independent work while that child runs. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": null,
+    "patch_file": null,
+    "skills_mode": "ambient",
+    "cli_version": "codex-cli 0.153.1",
+    "thread_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+    "turn_start_epoch": 1789374955.0431879,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789375060.640011,
+    "status": "completed",
+    "elapsed_seconds": 105.9057,
+    "success": true,
+    "prompt_loaded": null,
+    "skills_instruction_sessions": [
+      "01a09f0e-fdaa-72d1-9621-153168645c35",
+      "01a09f0f-360f-7232-9d97-a6de6dbe1b9e"
+    ],
+    "calls": [
+      {
+        "at": "2026-09-14T08:36:09.353Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "type": "function_call",
+        "name": "spawn_agent",
+        "namespace": "collaboration",
+        "call_id": "call_s13ZZsZqRs5fozsme5pUCti2",
+        "arguments": "{\"task_name\":\"benchmark\",\"model\":\"gpt-6-astra\",\"reasoning_effort\":\"low\",\"fork_turns\":\"none\",\"message\":\"gAAAAABqp7H5ouW4w4NpIcKLEHXPpho78oKDS7oKtVJHzCG7ba9wz7zhxjnI8Tv-7EyxySc5CjA8zU_SXxX1qZ-stzvMzxF_hZGQnCFC-b8r5rrQ2pDwLTBglF8Kbg-FJfUBoYodzq_qz5xHAA4ENnvIn9GiYT_UIER8QQO6j_5-FGg_mNo5pQBqlonQnDJSWKiH9KmgkSNJbhkpwgFSn4RiT2h4wOCTEMeITEkXZ09mi9srAS6JDcg9hxCQaeqmB0hCspU24s_bXBTUYXwre22TlFaDvtJQRLd59rsSr2bFVLUulOe5YJIghADx_UgACcJuiL4PtkAl0jUq3ZMgtyyeJM0iYzyH4NbzwJO4E_N05vsdTCQaaM5rxkyusd1578QoggEBBycdgbTDoDmjyfBV7leAKrrV2xrc9foW8HijGB-YetmwZuKnFWx2jhBwWz7qITfLHtI0uMK20tSwlxn6-NNEzouTq7UPwwbyeEZdp3VUQegq8fpkK7Xglii2xB1zrDaYpoOPIE2hUga9jb8DoUWlrb6qs4lw4lWo5Smd90lRX1TIG_Qq41EZh2ebrNoB_nTqDDsm\"}"
+      },
+      {
+        "at": "2026-09-14T08:36:12.130Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "type": "function_call",
+        "name": "wait_agent",
+        "namespace": "collaboration",
+        "call_id": "call_YSS37XbIYNC0A92ytqyxTdGM",
+        "arguments": "{\"timeout_ms\":60000}"
+      },
+      {
+        "at": "2026-09-14T08:37:15.871Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "type": "function_call",
+        "name": "wait_agent",
+        "namespace": "collaboration",
+        "call_id": "call_vpiGFqB9YXLLDoaEtcSu7GV8",
+        "arguments": "{\"timeout_ms\":60000}"
+      },
+      {
+        "at": "2026-09-14T08:36:16.796Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_S27frxQv8CO7rAWtca05quQL",
+        "input": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:36:21.835Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_GUkdPJDLejyqAIcSfgNIihuj",
+        "input": "text(await tools.write_stdin({session_id:28753,chars:\"\",yield_time_ms:60000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:36:55.990Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "type": "function_call",
+        "name": "wait",
+        "call_id": "call_HXH9YKx99QWjIceb4ookv9V6",
+        "arguments": "{\"cell_id\":\"2\",\"yield_time_ms\":1000,\"max_tokens\":2000}"
+      },
+      {
+        "at": "2026-09-14T08:37:00.973Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "type": "function_call",
+        "name": "wait",
+        "call_id": "call_miOpofYrO2OWQRo6XS12CpHo",
+        "arguments": "{\"cell_id\":\"2\",\"yield_time_ms\":1000,\"max_tokens\":2000}"
+      },
+      {
+        "at": "2026-09-14T08:37:04.930Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "type": "function_call",
+        "name": "wait",
+        "call_id": "call_fW9fOUNQB4ULPCYYwxGFmTgl",
+        "arguments": "{\"cell_id\":\"2\",\"yield_time_ms\":25000,\"max_tokens\":2000}"
+      },
+      {
+        "at": "2026-09-14T08:37:27.572Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_CWZboOGFknHVe8vwYjOcoH1b",
+        "input": "text(await tools.write_stdin({session_id:28753,chars:\"\",yield_time_ms:60000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:36:09.399Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "call_id": "call_s13ZZsZqRs5fozsme5pUCti2",
+        "output": "{\"task_name\":\"/root/benchmark\"}"
+      },
+      {
+        "at": "2026-09-14T08:37:12.139Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "call_id": "call_YSS37XbIYNC0A92ytqyxTdGM",
+        "output": "{\"message\":\"Wait timed out.\",\"timed_out\":true}"
+      },
+      {
+        "at": "2026-09-14T08:37:36.136Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "call_id": "call_vpiGFqB9YXLLDoaEtcSu7GV8",
+        "output": "{\"message\":\"Wait completed.\",\"timed_out\":false}"
+      },
+      {
+        "at": "2026-09-14T08:36:18.010Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "call_id": "call_S27frxQv8CO7rAWtca05quQL",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 1.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"19e9b5\",\"wall_time_seconds\":1.001848167,\"session_id\":28753,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:36:52.846Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "call_id": "call_GUkdPJDLejyqAIcSfgNIihuj",
+        "output": "Script running with cell ID 2\nWall time 31.0 seconds\nOutput:\n"
+      },
+      {
+        "at": "2026-09-14T08:36:56.995Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "call_id": "call_HXH9YKx99QWjIceb4ookv9V6",
+        "output": "Script running with cell ID 2\nWall time 1.0 seconds\nOutput:\n"
+      },
+      {
+        "at": "2026-09-14T08:37:01.977Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "call_id": "call_miOpofYrO2OWQRo6XS12CpHo",
+        "output": "Script running with cell ID 2\nWall time 1.0 seconds\nOutput:\n"
+      },
+      {
+        "at": "2026-09-14T08:37:21.847Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "call_id": "call_fW9fOUNQB4ULPCYYwxGFmTgl",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 16.9 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"23549c\",\"wall_time_seconds\":60.001888708,\"session_id\":28753,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:37:31.905Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "call_id": "call_CWZboOGFknHVe8vwYjOcoH1b",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 4.3 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"109f2f\",\"wall_time_seconds\":4.326471708,\"exit_code\":0,\"original_token_count\":5,\"output\":\"BENCH_RESULT_7391\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:36:09.355667+00:00",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "response_id": "resp_07f22b13a990e835016aa7b1f314e887d0a51bcdfefa596318",
+        "usage": {
+          "total_tokens": 18373,
+          "input_tokens": 18241,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 132,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:36:12.581867+00:00",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "response_id": "resp_07f22b13a990e835016aa7b1f9d0c887d08077b4944c81ccb0",
+        "usage": {
+          "total_tokens": 18415,
+          "input_tokens": 18394,
+          "cached_input_tokens": 18048,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 21,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:36:16.867Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "response_id": "resp_0ef58f0b36f728ee016aa7b1fce99487d0b96f91af4a569d96",
+        "usage": {
+          "input_tokens": 18019,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 57,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18076
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:36:22.039Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "response_id": "resp_0ef58f0b36f728ee016aa7b20273e087d099a99ca7e40208c3",
+        "usage": {
+          "input_tokens": 18135,
+          "cached_input_tokens": 17792,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18174
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:36:56.024Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "response_id": "resp_0ef58f0b36f728ee016aa7b225555c87d091d5a3c6eb658048",
+        "usage": {
+          "input_tokens": 18202,
+          "cached_input_tokens": 17920,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 31,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18233
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:37:01.102Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "response_id": "resp_0ef58f0b36f728ee016aa7b229960887d09c1870952e02c3a1",
+        "usage": {
+          "input_tokens": 18261,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 53,
+          "reasoning_output_tokens": 20,
+          "total_tokens": 18314
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:37:05.060Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "response_id": "resp_0ef58f0b36f728ee016aa7b22e72fc87d0b1e7ec8d6a4f917f",
+        "usage": {
+          "input_tokens": 18342,
+          "cached_input_tokens": 18048,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 46,
+          "reasoning_output_tokens": 13,
+          "total_tokens": 18388
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:37:16.001267+00:00",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "response_id": "resp_07f22b13a990e835016aa7b238bd3887d09dd978d6d2202584",
+        "usage": {
+          "total_tokens": 18494,
+          "input_tokens": 18440,
+          "cached_input_tokens": 18176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 54,
+          "reasoning_output_tokens": 9
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:37:27.698Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "response_id": "resp_0ef58f0b36f728ee016aa7b2428a6c87d0b342bd364d248a08",
+        "usage": {
+          "input_tokens": 18445,
+          "cached_input_tokens": 18176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 57,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18502
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:37:36.131Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "response_id": "resp_0ef58f0b36f728ee016aa7b24c664487d09ddb8f4483c3cea0",
+        "usage": {
+          "input_tokens": 18565,
+          "cached_input_tokens": 18048,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18575
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:37:40.634467+00:00",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "response_id": "resp_07f22b13a990e835016aa7b250935087d093356f8fd0235ef2",
+        "usage": {
+          "total_tokens": 18569,
+          "input_tokens": 18559,
+          "cached_input_tokens": 18304,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:36:06.210Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command once to one subagent and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T08:37:15.559Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "phase": "commentary",
+        "text": "I\u2019m still waiting for the subagent to return the command\u2019s result.\n"
+      },
+      {
+        "at": "2026-09-14T08:37:40.637Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T08:36:15.777Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T08:37:26.274Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "phase": "commentary",
+        "text": "The benchmark is still running and has not produced output.\n"
+      },
+      {
+        "at": "2026-09-14T08:37:35.742Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:36:02.533Z",
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f0e-fe25-77c1-b222-663d381537f3"
+      },
+      {
+        "at": "2026-09-14T08:36:12.183Z",
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f0f-362f-7710-9b61-151298c8d92b"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f0e-fdaa-72d1-9621-153168645c35",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      },
+      {
+        "session_id": "01a09f0f-360f-7232-9d97-a6de6dbe1b9e",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f0e-fdaa-72d1-9621-153168645c35": {
+        "input_tokens": 73634,
+        "cached_input_tokens": 66688,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 217,
+        "reasoning_output_tokens": 9,
+        "total_tokens": 73851
+      },
+      "01a09f0f-360f-7232-9d97-a6de6dbe1b9e": {
+        "input_tokens": 127969,
+        "cached_input_tokens": 101888,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 293,
+        "reasoning_output_tokens": 33,
+        "total_tokens": 128262
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 73634,
+      "cached_input_tokens": 66688,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 217,
+      "reasoning_output_tokens": 9,
+      "total_tokens": 73851,
+      "responses": 4,
+      "input_minus_cached": 6946
+    },
+    "child_usage": {
+      "input_tokens": 127969,
+      "cached_input_tokens": 101888,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 293,
+      "reasoning_output_tokens": 33,
+      "total_tokens": 128262,
+      "responses": 7,
+      "input_minus_cached": 26081
+    },
+    "combined_usage": {
+      "input_tokens": 201603,
+      "cached_input_tokens": 168576,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 510,
+      "reasoning_output_tokens": 42,
+      "total_tokens": 202113,
+      "responses": 11,
+      "input_minus_cached": 33027
+    },
+    "child_session_count": 1,
+    "job_events": [
+      {
+        "event": "start",
+        "at": 1789374976.891149
+      },
+      {
+        "event": "complete",
+        "at": 1789375051.899173
+      }
+    ],
+    "job_launches": 1,
+    "ci_checks": [],
+    "result_delay_seconds": 8.738,
+    "parent_message_gaps_seconds": [
+      11.167,
+      69.349,
+      25.078
+    ],
+    "max_parent_message_gap_seconds": 69.349
+  },
+  {
+    "name": "gpt-6-astra-subagent-old-r2",
+    "condition": "old",
+    "scenario": "subagent",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 2,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/tmp/codex-versions/0.153.1/codex-aarch64-apple-darwin",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "Delegate running `python3 bench_job.py` exactly once to exactly one subagent, using model `gpt-6-astra` at low reasoning effort. The child should wait for command completion and return its result. You have no independent work while that child runs. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": null,
+    "patch_file": null,
+    "skills_mode": "ambient",
+    "cli_version": "codex-cli 0.153.1",
+    "thread_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+    "turn_start_epoch": 1789375154.418876,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789375254.188384,
+    "status": "completed",
+    "elapsed_seconds": 99.8916,
+    "success": true,
+    "prompt_loaded": null,
+    "skills_instruction_sessions": [
+      "01a09f12-08bd-7e62-8460-b492a36d6c84",
+      "01a09f12-326e-7a23-95af-98831ca7b196"
+    ],
+    "calls": [
+      {
+        "at": "2026-09-14T08:39:25.036Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "type": "function_call",
+        "name": "spawn_agent",
+        "namespace": "collaboration",
+        "call_id": "call_q5UCsGnQyIGurhQPvRtpi928",
+        "arguments": "{\"task_name\":\"benchmark\",\"fork_turns\":\"none\",\"model\":\"gpt-6-astra\",\"reasoning_effort\":\"low\",\"message\":\"gAAAAABqp7K8cJM-D7ji5VesFWBmNQCqswTC7ZsI9Rj96PhB2p9JnP-GuC4biQ91-YA3LYoYFCZHKSHowuiWEFWlKanORvlB0xlwVI0pOF_gitKjnaEL1CzlkemyDbNC7vdd7s4QbDVuinEl8Qkrsc3FDXi9_2kibz5gz-Lvo3GpXxepyZY1RMcDU1Q0PdbSSTBfPcgu2sqUTUWGJa-wpx1lG1-XtITv7WpgbhGukHdT9P5vKL-tfmMQ7Nu2vqchqDE_ZkWtoOiqy9_Z0ByBiejg6at2kPp4IbS75TdaePrygber1VnqE9gbr8_LOmfugkLBRNaG8BvFC23aulgcAcQefL5OLoFFzJuJ3678RNpwSVwf8ari3xdbHtmmr1vhq9hl4b5o6DoOWA04t94iP_gHBjsb50csgjzNfYSWns0jY2kHW_N5T74_FzeALjnj5ShbBgjbkL-apklkHrY2yL3N3aZwIOVI8wbqaz8HMZhcvRefkRzGHS_5rD9Ngy9YVcP265C_e3Wd0k-qTKm4Tfx0bgHS8CWPZYuZ7uGW_Yp6YxjwgkwhbOZ_YO78G5IpQ9COSCK7c8_yqXt4Vk6CZnVvYW1m4_ybrO3rtW-5sW2YrQQpdcPo-28=\"}"
+      },
+      {
+        "at": "2026-09-14T08:39:28.982Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "type": "function_call",
+        "name": "wait_agent",
+        "namespace": "collaboration",
+        "call_id": "call_BIrzGOy63iBEQweo5QyxZD89",
+        "arguments": "{\"timeout_ms\":60000}"
+      },
+      {
+        "at": "2026-09-14T08:40:34.623Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "type": "function_call",
+        "name": "wait_agent",
+        "namespace": "collaboration",
+        "call_id": "call_3zSJfXblveNJbDWnMNrNaW63",
+        "arguments": "{\"timeout_ms\":60000}"
+      },
+      {
+        "at": "2026-09-14T08:39:33.698Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_pLzNOZ5lYySplYsLnnVOtMr2",
+        "input": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:39:38.828Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_r8HktN736IlazEQZnHAvpASK",
+        "input": "text(await tools.write_stdin({session_id:53012,chars:\"\",yield_time_ms:1000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:39:47.892Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_6OU1J1FY7NABvX8mdNWhwmHX",
+        "input": "text(await tools.write_stdin({session_id:53012,chars:\"\",yield_time_ms:1000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:39:56.520Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_MpnO9AAIcx4XiX5Aw9jVOYnc",
+        "input": "text(await tools.write_stdin({session_id:53012,chars:\"\",yield_time_ms:10000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:40:09.663Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_vSCZv6ez3QHbd8vmpLGDkdUZ",
+        "input": "text(await tools.write_stdin({session_id:53012,chars:\"\",yield_time_ms:20000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:40:34.387Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_ddzBhML73Ep4nZr4f8MLB09j",
+        "input": "text(await tools.write_stdin({session_id:53012,chars:\"\",yield_time_ms:10000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:40:48.485Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_06swEZpU7dGh8i0NmW6775Wa",
+        "input": "text(await tools.write_stdin({session_id:53012,chars:\"\",yield_time_ms:20000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:39:25.197Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "call_id": "call_q5UCsGnQyIGurhQPvRtpi928",
+        "output": "{\"task_name\":\"/root/benchmark\"}"
+      },
+      {
+        "at": "2026-09-14T08:40:28.990Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "call_id": "call_BIrzGOy63iBEQweo5QyxZD89",
+        "output": "{\"message\":\"Wait timed out.\",\"timed_out\":true}"
+      },
+      {
+        "at": "2026-09-14T08:40:51.316Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "call_id": "call_3zSJfXblveNJbDWnMNrNaW63",
+        "output": "{\"message\":\"Wait completed.\",\"timed_out\":false}"
+      },
+      {
+        "at": "2026-09-14T08:39:34.897Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "call_id": "call_pLzNOZ5lYySplYsLnnVOtMr2",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 1.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"2b5fd3\",\"wall_time_seconds\":1.001850084,\"session_id\":53012,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:39:43.837Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "call_id": "call_r8HktN736IlazEQZnHAvpASK",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 5.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"2fbab3\",\"wall_time_seconds\":5.001866541,\"session_id\":53012,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:39:52.899Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "call_id": "call_6OU1J1FY7NABvX8mdNWhwmHX",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 5.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"abc94f\",\"wall_time_seconds\":5.002323417,\"session_id\":53012,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:40:06.526Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "call_id": "call_MpnO9AAIcx4XiX5Aw9jVOYnc",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 10.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"af32a3\",\"wall_time_seconds\":10.002041875,\"session_id\":53012,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:40:29.671Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "call_id": "call_vSCZv6ez3QHbd8vmpLGDkdUZ",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 20.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"d83a28\",\"wall_time_seconds\":20.00243,\"session_id\":53012,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:40:44.393Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "call_id": "call_ddzBhML73Ep4nZr4f8MLB09j",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 10.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"1f1d40\",\"wall_time_seconds\":10.002259542,\"session_id\":53012,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:40:48.797Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "call_id": "call_06swEZpU7dGh8i0NmW6775Wa",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.3 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"42220e\",\"wall_time_seconds\":0.30756775,\"exit_code\":0,\"original_token_count\":5,\"output\":\"BENCH_RESULT_7391\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:39:25.197181+00:00",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "response_id": "resp_04b4918f895b2517016aa7b2b72c8887d09960e1abbce7c23d",
+        "usage": {
+          "total_tokens": 18361,
+          "input_tokens": 18225,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 136,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:39:28.984381+00:00",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "response_id": "resp_04b4918f895b2517016aa7b2bdc91487d08fe7d7f5d0200d9b",
+        "usage": {
+          "total_tokens": 18403,
+          "input_tokens": 18382,
+          "cached_input_tokens": 18048,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 21,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:39:33.834Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "response_id": "resp_04ce9090c938194c016aa7b2c0715487d0a4fbd12b18bff2e7",
+        "usage": {
+          "input_tokens": 17995,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 57,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18052
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:39:38.985Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "response_id": "resp_04ce9090c938194c016aa7b2c7674487d0a58c7cfae19de252",
+        "usage": {
+          "input_tokens": 18111,
+          "cached_input_tokens": 17792,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18150
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:39:48.037Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "response_id": "resp_04ce9090c938194c016aa7b2d03afc87d0b7c76ee0ff32a61f",
+        "usage": {
+          "input_tokens": 18208,
+          "cached_input_tokens": 17920,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18247
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:39:56.596Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "response_id": "resp_04ce9090c938194c016aa7b2d9471087d09cbc9d8dea2e391f",
+        "usage": {
+          "input_tokens": 18304,
+          "cached_input_tokens": 18048,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 64,
+          "reasoning_output_tokens": 23,
+          "total_tokens": 18368
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:40:09.935Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "response_id": "resp_04ce9090c938194c016aa7b2e6f2f487d0b747e307feb7d1a6",
+        "usage": {
+          "input_tokens": 18426,
+          "cached_input_tokens": 18176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18465
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:40:34.547Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "response_id": "resp_04ce9090c938194c016aa7b2fe966087d0b89a036892b8b1b8",
+        "usage": {
+          "input_tokens": 18522,
+          "cached_input_tokens": 18304,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18561
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:40:34.794281+00:00",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "response_id": "resp_04b4918f895b2517016aa7b2fe70e487d0a13668057eb67ccd",
+        "usage": {
+          "total_tokens": 18470,
+          "input_tokens": 18428,
+          "cached_input_tokens": 18176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 42,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:40:48.646Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "response_id": "resp_04ce9090c938194c016aa7b30ce88087d0a31daf7aae432c31",
+        "usage": {
+          "input_tokens": 18620,
+          "cached_input_tokens": 18304,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 58,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18678
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:40:51.311Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "response_id": "resp_04ce9090c938194c016aa7b31125ac87d0b368f355743c2e0e",
+        "usage": {
+          "input_tokens": 18740,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18750
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T08:40:54.182481+00:00",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "response_id": "resp_04b4918f895b2517016aa7b313bb4887d0b3ba6e2ca2f6103c",
+        "usage": {
+          "total_tokens": 18545,
+          "input_tokens": 18535,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:39:21.916Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command to one subagent and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T08:40:34.012Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "phase": "commentary",
+        "text": "I\u2019m waiting for the subagent to return the command\u2019s result.\n"
+      },
+      {
+        "at": "2026-09-14T08:40:54.059Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T08:39:33.697Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "phase": "commentary",
+        "text": "I\u2019ll run the benchmark once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T08:40:47.540Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "phase": "commentary",
+        "text": "The benchmark is still running and has not produced output yet.\n"
+      },
+      {
+        "at": "2026-09-14T08:40:51.181Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:39:18.690Z",
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f12-08f3-73a1-8f37-a4c84e9bdb22"
+      },
+      {
+        "at": "2026-09-14T08:39:28.098Z",
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f12-3289-7821-a698-ec5e3efd12a3"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f12-08bd-7e62-8460-b492a36d6c84",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      },
+      {
+        "session_id": "01a09f12-326e-7a23-95af-98831ca7b196",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f12-08bd-7e62-8460-b492a36d6c84": {
+        "input_tokens": 73570,
+        "cached_input_tokens": 60544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 209,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 73779
+      },
+      "01a09f12-326e-7a23-95af-98831ca7b196": {
+        "input_tokens": 146926,
+        "cached_input_tokens": 132352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 345,
+        "reasoning_output_tokens": 23,
+        "total_tokens": 147271
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 73570,
+      "cached_input_tokens": 60544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 209,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 73779,
+      "responses": 4,
+      "input_minus_cached": 13026
+    },
+    "child_usage": {
+      "input_tokens": 146926,
+      "cached_input_tokens": 132352,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 345,
+      "reasoning_output_tokens": 23,
+      "total_tokens": 147271,
+      "responses": 8,
+      "input_minus_cached": 14574
+    },
+    "combined_usage": {
+      "input_tokens": 220496,
+      "cached_input_tokens": 192896,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 554,
+      "reasoning_output_tokens": 23,
+      "total_tokens": 221050,
+      "responses": 12,
+      "input_minus_cached": 27600
+    },
+    "child_session_count": 1,
+    "job_events": [
+      {
+        "event": "start",
+        "at": 1789375173.78795
+      },
+      {
+        "event": "complete",
+        "at": 1789375248.793643
+      }
+    ],
+    "job_launches": 1,
+    "ci_checks": [],
+    "result_delay_seconds": 5.265,
+    "parent_message_gaps_seconds": [
+      7.497,
+      72.096,
+      20.047
+    ],
+    "max_parent_message_gap_seconds": 72.096
+  },
+  {
+    "name": "gpt-6-astra-terminal-old-r1",
+    "condition": "old",
+    "scenario": "terminal",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/tmp/codex-versions/0.153.1/codex-aarch64-apple-darwin",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "Run `python3 bench_job.py` exactly once and wait for it to finish. Run it yourself; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": null,
+    "patch_file": null,
+    "skills_mode": "ambient",
+    "cli_version": "codex-cli 0.153.1",
+    "thread_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+    "turn_start_epoch": 1789374955.0432582,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789375052.4501371,
+    "status": "completed",
+    "elapsed_seconds": 97.717,
+    "success": true,
+    "prompt_loaded": null,
+    "skills_instruction_sessions": [
+      "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1"
+    ],
+    "calls": [
+      {
+        "at": "2026-09-14T08:36:09.648Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_NRVOSIsSTFooyKHYTNpIABhF",
+        "input": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:36:13.882Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_DBLvqTWQCKSxHdSseNCk80ua",
+        "input": "text(await tools.write_stdin({session_id:41541,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:36:22.763Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_9r3JdmcgfPrDQpi7ILFIuv8L",
+        "input": "text(await tools.write_stdin({session_id:41541,chars:\"\",yield_time_ms:60000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:36:58.587Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "type": "function_call",
+        "name": "wait",
+        "call_id": "call_sH8cHjq9eLmaHs5zUYqIfsjA",
+        "arguments": "{\"cell_id\":\"3\",\"yield_time_ms\":1000,\"max_tokens\":2000}"
+      },
+      {
+        "at": "2026-09-14T08:37:02.983Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "type": "function_call",
+        "name": "wait",
+        "call_id": "call_u77eQrsGZwn3dLVUI37izysq",
+        "arguments": "{\"cell_id\":\"3\",\"yield_time_ms\":20000,\"max_tokens\":2000}"
+      },
+      {
+        "at": "2026-09-14T08:37:29.840Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_ZgC3G06bzUXFGNBcP7Qldi8d",
+        "input": "text(await tools.write_stdin({session_id:41541,chars:\"\",yield_time_ms:60000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:36:10.898Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "call_id": "call_NRVOSIsSTFooyKHYTNpIABhF",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 1.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"07f9f9\",\"wall_time_seconds\":1.001182291,\"session_id\":41541,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:36:18.889Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "call_id": "call_DBLvqTWQCKSxHdSseNCk80ua",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 5.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"249e8a\",\"wall_time_seconds\":5.001923959,\"session_id\":41541,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:36:53.776Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "call_id": "call_9r3JdmcgfPrDQpi7ILFIuv8L",
+        "output": "Script running with cell ID 3\nWall time 31.0 seconds\nOutput:\n"
+      },
+      {
+        "at": "2026-09-14T08:36:59.590Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "call_id": "call_sH8cHjq9eLmaHs5zUYqIfsjA",
+        "output": "Script running with cell ID 3\nWall time 1.0 seconds\nOutput:\n"
+      },
+      {
+        "at": "2026-09-14T08:37:22.779Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "call_id": "call_u77eQrsGZwn3dLVUI37izysq",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 19.8 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"d225b6\",\"wall_time_seconds\":60.002504583,\"session_id\":41541,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:37:29.968Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "call_id": "call_ZgC3G06bzUXFGNBcP7Qldi8d",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"1c2041\",\"wall_time_seconds\":9.17e-7,\"exit_code\":0,\"original_token_count\":5,\"output\":\"BENCH_RESULT_7391\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:36:09.775794+00:00",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "response_id": "resp_058e926820d41ca0016aa7b1f695e487d087d81e60fd8efb4d",
+        "usage": {
+          "total_tokens": 18261,
+          "input_tokens": 18204,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 57,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:36:13.972894+00:00",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "response_id": "resp_058e926820d41ca0016aa7b1fb4f9487d0805a5d8d2ef0fdf8",
+        "usage": {
+          "total_tokens": 18359,
+          "input_tokens": 18320,
+          "cached_input_tokens": 18048,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:36:22.884694+00:00",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "response_id": "resp_058e926820d41ca0016aa7b20343a487d084a423ea1dc97f9a",
+        "usage": {
+          "total_tokens": 18467,
+          "input_tokens": 18417,
+          "cached_input_tokens": 18176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 50,
+          "reasoning_output_tokens": 9
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:36:58.715294+00:00",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "response_id": "resp_058e926820d41ca0016aa7b2262d9487d0ba79aff392fefb7e",
+        "usage": {
+          "total_tokens": 18526,
+          "input_tokens": 18495,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 31,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:37:03.031394+00:00",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "response_id": "resp_058e926820d41ca0016aa7b22c1fec87d083491697c049d7ed",
+        "usage": {
+          "total_tokens": 18594,
+          "input_tokens": 18554,
+          "cached_input_tokens": 18176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 40,
+          "reasoning_output_tokens": 7
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:37:29.964594+00:00",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "response_id": "resp_058e926820d41ca0016aa7b2436f0c87d0b0a5f28888f51c1f",
+        "usage": {
+          "total_tokens": 18712,
+          "input_tokens": 18652,
+          "cached_input_tokens": 18432,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 60,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:37:32.443094+00:00",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "response_id": "resp_058e926820d41ca0016aa7b24a613887d09b49cbafd081eb64",
+        "usage": {
+          "total_tokens": 18786,
+          "input_tokens": 18776,
+          "cached_input_tokens": 18304,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:36:08.889Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T08:37:26.508Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "phase": "commentary",
+        "text": "The command is still running. I\u2019m waiting for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T08:37:32.359Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:36:05.798Z",
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f0e-fe25-7900-9656-9f122c00ac8b"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f0e-fdaa-7dd2-afad-8b185cbf9cc1": {
+        "input_tokens": 129418,
+        "cached_input_tokens": 115456,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 287,
+        "reasoning_output_tokens": 16,
+        "total_tokens": 129705
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 129418,
+      "cached_input_tokens": 115456,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 287,
+      "reasoning_output_tokens": 16,
+      "total_tokens": 129705,
+      "responses": 7,
+      "input_minus_cached": 13962
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 129418,
+      "cached_input_tokens": 115456,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 287,
+      "reasoning_output_tokens": 16,
+      "total_tokens": 129705,
+      "responses": 7,
+      "input_minus_cached": 13962
+    },
+    "child_session_count": 0,
+    "job_events": [
+      {
+        "event": "start",
+        "at": 1789374969.784012
+      },
+      {
+        "event": "complete",
+        "at": 1789375044.7906969
+      }
+    ],
+    "job_launches": 1,
+    "ci_checks": [],
+    "result_delay_seconds": 7.568,
+    "parent_message_gaps_seconds": [
+      13.846,
+      77.619,
+      5.851
+    ],
+    "max_parent_message_gap_seconds": 77.619
+  },
+  {
+    "name": "gpt-6-astra-terminal-old-r2",
+    "condition": "old",
+    "scenario": "terminal",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 2,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/tmp/codex-versions/0.153.1/codex-aarch64-apple-darwin",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "Run `python3 bench_job.py` exactly once and wait for it to finish. Run it yourself; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": null,
+    "patch_file": null,
+    "skills_mode": "ambient",
+    "cli_version": "codex-cli 0.153.1",
+    "thread_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+    "turn_start_epoch": 1789375060.791899,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789375154.252256,
+    "status": "completed",
+    "elapsed_seconds": 93.5687,
+    "success": true,
+    "prompt_loaded": null,
+    "skills_instruction_sessions": [
+      "01a09f10-9b0b-7f51-85fb-e56ecb18f307"
+    ],
+    "calls": [
+      {
+        "at": "2026-09-14T08:37:50.548Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_JRXzzihXw4pJ3hkDxXE2wx3A",
+        "input": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:37:54.840Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_n89zXtZz28FBjYd2Es42WQtg",
+        "input": "text(await tools.write_stdin({session_id:26453,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:38:05.017Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_990iEzALPm6ojJCz6Hk3T7Av",
+        "input": "text(await tools.write_stdin({session_id:26453,chars:\"\",yield_time_ms:60000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:38:38.494Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "type": "function_call",
+        "name": "wait",
+        "call_id": "call_EjINMUzWcB3vLkQCchQFtYnz",
+        "arguments": "{\"cell_id\":\"3\",\"yield_time_ms\":1000,\"max_tokens\":2000}"
+      },
+      {
+        "at": "2026-09-14T08:38:42.671Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "type": "function_call",
+        "name": "wait",
+        "call_id": "call_aA8gc2ENYtH4vx9Q5qE1E8zA",
+        "arguments": "{\"cell_id\":\"3\",\"yield_time_ms\":20000,\"max_tokens\":2000}"
+      },
+      {
+        "at": "2026-09-14T08:39:07.542Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "type": "function_call",
+        "name": "wait",
+        "call_id": "call_sPzliI4MxqUPfFcv5DKwNjJi",
+        "arguments": "{\"cell_id\":\"3\",\"yield_time_ms\":1000,\"max_tokens\":2000}"
+      },
+      {
+        "at": "2026-09-14T08:39:11.776Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_WdpmEHt0t3iUCGfuXhIOR8Ud",
+        "input": "text(await tools.write_stdin({session_id:26453,chars:\"\",yield_time_ms:60000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:37:51.751Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "call_id": "call_JRXzzihXw4pJ3hkDxXE2wx3A",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 1.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"1049d6\",\"wall_time_seconds\":1.001635958,\"session_id\":26453,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:37:59.852Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "call_id": "call_n89zXtZz28FBjYd2Es42WQtg",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 5.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"a79227\",\"wall_time_seconds\":5.002112625,\"session_id\":26453,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:38:36.024Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "call_id": "call_990iEzALPm6ojJCz6Hk3T7Av",
+        "output": "Script running with cell ID 3\nWall time 31.0 seconds\nOutput:\n"
+      },
+      {
+        "at": "2026-09-14T08:38:39.497Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "call_id": "call_EjINMUzWcB3vLkQCchQFtYnz",
+        "output": "Script running with cell ID 3\nWall time 1.0 seconds\nOutput:\n"
+      },
+      {
+        "at": "2026-09-14T08:39:03.674Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "call_id": "call_aA8gc2ENYtH4vx9Q5qE1E8zA",
+        "output": "Script running with cell ID 3\nWall time 21.0 seconds\nOutput:\n"
+      },
+      {
+        "at": "2026-09-14T08:39:07.752Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "call_id": "call_sPzliI4MxqUPfFcv5DKwNjJi",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"14f1c8\",\"wall_time_seconds\":60.001434459,\"session_id\":26453,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:39:11.896Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "call_id": "call_WdpmEHt0t3iUCGfuXhIOR8Ud",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"a840b5\",\"wall_time_seconds\":8.75e-7,\"exit_code\":0,\"original_token_count\":5,\"output\":\"BENCH_RESULT_7391\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:37:50.602160+00:00",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "response_id": "resp_0d584e050268f48f016aa7b25ac9cc87d092166ce7e114b787",
+        "usage": {
+          "total_tokens": 18261,
+          "input_tokens": 18204,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 57,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:37:54.940460+00:00",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "response_id": "resp_0d584e050268f48f016aa7b2605ec487d09d51b99f8849b0a3",
+        "usage": {
+          "total_tokens": 18358,
+          "input_tokens": 18319,
+          "cached_input_tokens": 18048,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:38:05.036160+00:00",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "response_id": "resp_0d584e050268f48f016aa7b26845f887d092dc3ae808035e8d",
+        "usage": {
+          "total_tokens": 18465,
+          "input_tokens": 18415,
+          "cached_input_tokens": 18176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 50,
+          "reasoning_output_tokens": 9
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:38:38.554660+00:00",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "response_id": "resp_0d584e050268f48f016aa7b28c687c87d0818cf0532d5d71a9",
+        "usage": {
+          "total_tokens": 18524,
+          "input_tokens": 18493,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 31,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:38:42.826060+00:00",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "response_id": "resp_0d584e050268f48f016aa7b290038487d0a3459b6c4e3fd04b",
+        "usage": {
+          "total_tokens": 18593,
+          "input_tokens": 18552,
+          "cached_input_tokens": 18304,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 41,
+          "reasoning_output_tokens": 8
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:39:07.748660+00:00",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "response_id": "resp_0d584e050268f48f016aa7b2a8590887d0a997377574b3987f",
+        "usage": {
+          "total_tokens": 18683,
+          "input_tokens": 18621,
+          "cached_input_tokens": 18432,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 62,
+          "reasoning_output_tokens": 8
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:39:11.892860+00:00",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "response_id": "resp_0d584e050268f48f016aa7b2ad153887d0950144150a5a183e",
+        "usage": {
+          "total_tokens": 18781,
+          "input_tokens": 18742,
+          "cached_input_tokens": 18432,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:39:14.233260+00:00",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "response_id": "resp_0d584e050268f48f016aa7b2b0657087d09f90f2b200c70c40",
+        "usage": {
+          "total_tokens": 18855,
+          "input_tokens": 18845,
+          "cached_input_tokens": 18560,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:37:49.896Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T08:39:06.924Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019m waiting for it to complete.\n"
+      },
+      {
+        "at": "2026-09-14T08:39:14.092Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:37:46.323Z",
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f10-9b38-7de1-a7e3-d1fccbb91e4e"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f10-9b0b-7f51-85fb-e56ecb18f307",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f10-9b0b-7f51-85fb-e56ecb18f307": {
+        "input_tokens": 148191,
+        "cached_input_tokens": 134272,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 329,
+        "reasoning_output_tokens": 25,
+        "total_tokens": 148520
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 148191,
+      "cached_input_tokens": 134272,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 329,
+      "reasoning_output_tokens": 25,
+      "total_tokens": 148520,
+      "responses": 8,
+      "input_minus_cached": 13919
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 148191,
+      "cached_input_tokens": 134272,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 329,
+      "reasoning_output_tokens": 25,
+      "total_tokens": 148520,
+      "responses": 8,
+      "input_minus_cached": 13919
+    },
+    "child_session_count": 0,
+    "job_events": [
+      {
+        "event": "start",
+        "at": 1789375070.647033
+      },
+      {
+        "event": "complete",
+        "at": 1789375145.653771
+      }
+    ],
+    "job_launches": 1,
+    "ci_checks": [],
+    "result_delay_seconds": 8.438,
+    "parent_message_gaps_seconds": [
+      9.104,
+      77.028,
+      7.168
+    ],
+    "max_parent_message_gap_seconds": 77.028
+  }
+]

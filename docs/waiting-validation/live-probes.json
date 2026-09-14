@@ -1,0 +1,293 @@
+{
+  "session": {
+    "id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+    "cli_version": "0.154.0",
+    "originator": "codex-tui",
+    "source": "cli",
+    "timestamp": "2026-09-14T02:23:02.482Z"
+  },
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "note": "Deliberately selected diagnostic calls; these are not measurements of natural failure incidence. Usage belongs to the response that emitted the call, not to elapsed tool execution. Selected fields only; no private prompts or auth exported.",
+  "records": [
+    {
+      "called_at": "2026-09-14T03:26:41.961Z",
+      "ordinal": 65,
+      "call": {
+        "type": "function_call",
+        "id": "fc_0518734b6b1a7066016aa7697135a487d08bd07697b8757ee8",
+        "name": "sleep",
+        "namespace": "clock",
+        "arguments": "{\"duration_ms\":1.5}",
+        "call_id": "call_BOg1pphgVmGJlJhE7YiFi0fM"
+      },
+      "returned_at": "2026-09-14T03:26:42.007Z",
+      "output": "failed to parse function arguments: invalid type: floating point `1.5`, expected u64 at line 1 column 18",
+      "response_usage": {
+        "recorded_at": "2026-09-14T03:26:42.006Z",
+        "response_id": "resp_0518734b6b1a7066016aa7696d2f7887d0a530ca31a99c1cf7",
+        "thread_id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+        "turn_id": "01a09df1-dc66-70b2-8d7c-06f2343ed577",
+        "usage": {
+          "input_tokens": 71589,
+          "cached_input_tokens": 58368,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 73,
+          "reasoning_output_tokens": 51,
+          "total_tokens": 71662
+        }
+      }
+    },
+    {
+      "called_at": "2026-09-14T03:26:44.823Z",
+      "ordinal": 69,
+      "call": {
+        "type": "function_call",
+        "id": "fc_0518734b6b1a7066016aa76974502c87d0917d089798839826",
+        "name": "sleep",
+        "namespace": "clock",
+        "arguments": "{\"duration_ms\":1.0}",
+        "call_id": "call_RHzHEoo0dbc80kH7MOJuhxL5"
+      },
+      "returned_at": "2026-09-14T03:26:45.048Z",
+      "output": "failed to parse function arguments: invalid type: floating point `1.0`, expected u64 at line 1 column 18",
+      "response_usage": {
+        "recorded_at": "2026-09-14T03:26:45.047Z",
+        "response_id": "resp_0518734b6b1a7066016aa7697262bc87d099bf063982f43b67",
+        "thread_id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+        "turn_id": "01a09df1-dc66-70b2-8d7c-06f2343ed577",
+        "usage": {
+          "input_tokens": 71698,
+          "cached_input_tokens": 71424,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 20,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 71718
+        }
+      }
+    },
+    {
+      "called_at": "2026-09-14T03:26:47.671Z",
+      "ordinal": 73,
+      "call": {
+        "type": "function_call",
+        "id": "fc_0518734b6b1a7066016aa769773d6c87d09603b14940ace2e5",
+        "name": "sleep",
+        "namespace": "clock",
+        "arguments": "{\"duration_ms\":1000}",
+        "call_id": "call_LM9700kD0W6ETgV4FokUqkdr"
+      },
+      "returned_at": "2026-09-14T03:26:48.678Z",
+      "output": "Wall time: 1.0034 seconds\nSleep completed.",
+      "response_usage": {
+        "recorded_at": "2026-09-14T03:26:47.946Z",
+        "response_id": "resp_0518734b6b1a7066016aa76975705087d086787f1d3cc520c7",
+        "thread_id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+        "turn_id": "01a09df1-dc66-70b2-8d7c-06f2343ed577",
+        "usage": {
+          "input_tokens": 71754,
+          "cached_input_tokens": 71552,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 71773
+        }
+      }
+    },
+    {
+      "called_at": "2026-09-14T03:26:52.204Z",
+      "ordinal": 78,
+      "call": {
+        "type": "function_call",
+        "id": "fc_0518734b6b1a7066016aa7697b9d8487d080cc6a276016a3e7",
+        "name": "wait_agent",
+        "namespace": "collaboration",
+        "arguments": "{\"timeout_ms\":1000}",
+        "call_id": "call_vQ8toZbOm4RMuQaSc44PASps"
+      },
+      "returned_at": "2026-09-14T03:27:02.217Z",
+      "output": "{\"message\":\"Wait timed out.\\n\\nRequested timeout of 1000ms was clamped to the minimum of 10000ms.\",\"timed_out\":true}",
+      "response_usage": {
+        "recorded_at": "2026-09-14T03:26:52.469Z",
+        "response_id": "resp_0518734b6b1a7066016aa7697964a487d0a7a18690f4e9cfb3",
+        "thread_id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+        "turn_id": "01a09df1-dc66-70b2-8d7c-06f2343ed577",
+        "usage": {
+          "input_tokens": 71796,
+          "cached_input_tokens": 71552,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 21,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 71817
+        }
+      }
+    },
+    {
+      "called_at": "2026-09-14T03:27:08.432Z",
+      "ordinal": 83,
+      "call": {
+        "type": "custom_tool_call",
+        "id": "ctc_0518734b6b1a7066016aa76989e02c87d0b6ce17f7de4693f4",
+        "call_id": "call_8oDNrZzch8NgPpEtaIawsTjm",
+        "name": "exec",
+        "input": "// @exec: {\"yield_time_ms\": 1000, \"max_output_tokens\": 1000}\nawait new Promise(resolve=>setTimeout(resolve,4500));\ntext({probe:\"wrapper-short\",finished:true});\n"
+      },
+      "returned_at": "2026-09-14T03:27:09.440Z",
+      "output": "Script running with cell ID 6\nWall time 1.0 seconds\nOutput:\n",
+      "response_usage": {
+        "recorded_at": "2026-09-14T03:27:08.551Z",
+        "response_id": "resp_0518734b6b1a7066016aa76986c12c87d0922a440f371c04f1",
+        "thread_id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+        "turn_id": "01a09df1-dc66-70b2-8d7c-06f2343ed577",
+        "usage": {
+          "input_tokens": 71863,
+          "cached_input_tokens": 71680,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 54,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 71917
+        }
+      }
+    },
+    {
+      "called_at": "2026-09-14T03:27:12.612Z",
+      "ordinal": 87,
+      "call": {
+        "type": "function_call",
+        "id": "fc_0518734b6b1a7066016aa7698f973487d0a2fd725b2e8674d3",
+        "name": "wait",
+        "arguments": "{\"cell_id\":\"6\",\"yield_time_ms\":1000,\"max_tokens\":1000}",
+        "call_id": "call_QAuCkymC9mdmw7GMOoFFbbsH"
+      },
+      "returned_at": "2026-09-14T03:27:12.943Z",
+      "output": [
+        {
+          "type": "input_text",
+          "text": "Script completed\nWall time 0.3 seconds\nOutput:\n"
+        },
+        {
+          "type": "input_text",
+          "text": "{\"probe\":\"wrapper-short\",\"finished\":true}"
+        }
+      ],
+      "response_usage": {
+        "recorded_at": "2026-09-14T03:27:12.916Z",
+        "response_id": "resp_0518734b6b1a7066016aa7698df55887d0954112696291dda8",
+        "thread_id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+        "turn_id": "01a09df1-dc66-70b2-8d7c-06f2343ed577",
+        "usage": {
+          "input_tokens": 71945,
+          "cached_input_tokens": 71680,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 31,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 71976
+        }
+      }
+    },
+    {
+      "called_at": "2026-09-14T03:27:17.330Z",
+      "ordinal": 91,
+      "call": {
+        "type": "custom_tool_call",
+        "id": "ctc_0518734b6b1a7066016aa769937f0887d0bdfd4d44be4c3d88",
+        "call_id": "call_TaIRf2j7H11TKCfbZCJFBG2f",
+        "name": "exec",
+        "input": "// @exec: {\"yield_time_ms\": 8000, \"max_output_tokens\": 1000}\nawait new Promise(resolve=>setTimeout(resolve,4500));\ntext({probe:\"wrapper-long\",finished:true});\n"
+      },
+      "returned_at": "2026-09-14T03:27:21.844Z",
+      "output": [
+        {
+          "type": "input_text",
+          "text": "Script completed\nWall time 4.5 seconds\nOutput:\n"
+        },
+        {
+          "type": "input_text",
+          "text": "{\"probe\":\"wrapper-long\",\"finished\":true}"
+        }
+      ],
+      "response_usage": {
+        "recorded_at": "2026-09-14T03:27:17.459Z",
+        "response_id": "resp_0518734b6b1a7066016aa76991671487d0a4e6f138164da804",
+        "thread_id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+        "turn_id": "01a09df1-dc66-70b2-8d7c-06f2343ed577",
+        "usage": {
+          "input_tokens": 72009,
+          "cached_input_tokens": 71808,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 54,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 72063
+        }
+      }
+    },
+    {
+      "called_at": "2026-09-14T03:59:26.726Z",
+      "ordinal": 232,
+      "call": {
+        "type": "custom_tool_call",
+        "id": "ctc_0518734b6b1a7066016aa7711aa52087d0977840ba760e0746",
+        "call_id": "call_TS5sPdUVwN6mq9IVjKybC6H1",
+        "name": "exec",
+        "input": "const r=await tools.exec_command({cmd:\"python3 -c 'import json,time,pathlib; p=pathlib.Path(\\\"tmp/wait-probes/background-timestamps.json\\\"); start=time.time(); p.write_text(json.dumps({\\\"start\\\":start})); time.sleep(15); end=time.time(); p.write_text(json.dumps({\\\"start\\\":start,\\\"end\\\":end})); print(\\\"BACKGROUND_PROBE_DONE\\\", flush=True)'\",\"yield_time_ms\":250,\"max_output_tokens\":500});\nstore(\"bgProbe\",r);text(r);\n"
+      },
+      "returned_at": "2026-09-14T03:59:27.145Z",
+      "output": [
+        {
+          "type": "input_text",
+          "text": "Script completed\nWall time 0.4 seconds\nOutput:\n"
+        },
+        {
+          "type": "input_text",
+          "text": "{\"chunk_id\":\"7667f0\",\"wall_time_seconds\":0.251609916,\"session_id\":30563,\"original_token_count\":0,\"output\":\"\"}"
+        }
+      ],
+      "response_usage": {
+        "recorded_at": "2026-09-14T03:59:26.854Z",
+        "response_id": "resp_0518734b6b1a7066016aa77104040087d0bc4f9a2bb1b60d09",
+        "thread_id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+        "turn_id": "01a09df1-dc66-70b2-8d7c-06f2343ed577",
+        "usage": {
+          "input_tokens": 115685,
+          "cached_input_tokens": 109312,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 698,
+          "reasoning_output_tokens": 495,
+          "total_tokens": 116383
+        }
+      }
+    },
+    {
+      "called_at": "2026-09-14T03:59:30.120Z",
+      "ordinal": 236,
+      "call": {
+        "type": "function_call",
+        "id": "fc_0518734b6b1a7066016aa77121b28087d0acb0efcdc3c308a6",
+        "name": "sleep",
+        "namespace": "clock",
+        "arguments": "{\"duration_ms\":25000}",
+        "call_id": "call_6SG4nk5vNyP8IN8VILwFqWgY"
+      },
+      "returned_at": "2026-09-14T03:59:55.127Z",
+      "output": "Wall time: 25.0037 seconds\nSleep completed.",
+      "response_usage": {
+        "recorded_at": "2026-09-14T03:59:30.408Z",
+        "response_id": "resp_0518734b6b1a7066016aa7711fa1d887d0b9d77ef3fb3307fe",
+        "thread_id": "01a09db9-9d30-7911-9add-5ae34109fdfd",
+        "turn_id": "01a09df1-dc66-70b2-8d7c-06f2343ed577",
+        "usage": {
+          "input_tokens": 116441,
+          "cached_input_tokens": 115456,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 116460
+        }
+      }
+    }
+  ],
+  "background_process": {
+    "start": 1789358366.7888389,
+    "end": 1789358381.793513
+  }
+}

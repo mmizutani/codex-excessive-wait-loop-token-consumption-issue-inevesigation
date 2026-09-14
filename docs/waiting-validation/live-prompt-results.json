@@ -1,0 +1,676 @@
+{
+  "scope": "One paired 75-second simulated-subagent scenario per model at low effort; actual OpenAI model inference through Codex 0.154.0. A driver delivered results via active-turn steering; no real subagents were created.",
+  "limitations": "Not randomized or repeated; cache warmness differs. Counts measure this scenario, not company costs or general prompt reliability. Initial smoke tests used the earlier candidate, not the recommended file.",
+  "comparisons": [
+    {
+      "name": "astra-subagent-baseline-75",
+      "model": "gpt-6-astra",
+      "condition": "baseline",
+      "waiting_calls": [
+        {
+          "tool": "clock.sleep",
+          "arguments": {
+            "duration_ms": 60000
+          }
+        },
+        {
+          "tool": "clock.sleep",
+          "arguments": {
+            "duration_ms": 60000
+          }
+        }
+      ],
+      "response_count": 3,
+      "usage_totals": {
+        "input_tokens": 53912,
+        "cached_input_tokens": 42112,
+        "output_tokens": 96,
+        "reasoning_output_tokens": 7
+      },
+      "result_latency_seconds": 2.6247,
+      "result_correct": true,
+      "prompt_loaded": null,
+      "prompt_sha256": null
+    },
+    {
+      "name": "astra-subagent-recommended-75",
+      "model": "gpt-6-astra",
+      "condition": "recommended",
+      "waiting_calls": [
+        {
+          "tool": "collaboration.wait_agent",
+          "arguments": {
+            "timeout_ms": 300000
+          }
+        }
+      ],
+      "response_count": 2,
+      "usage_totals": {
+        "input_tokens": 36394,
+        "cached_input_tokens": 30080,
+        "output_tokens": 53,
+        "reasoning_output_tokens": 0
+      },
+      "result_latency_seconds": 2.3648,
+      "result_correct": true,
+      "prompt_loaded": true,
+      "prompt_sha256": "627c210e060f6e368350dbd1b0dfb0f9e761bfb48d3ee785cd03895050aef00c"
+    },
+    {
+      "name": "sol-subagent-baseline-75",
+      "model": "gpt-5.6-sol",
+      "condition": "baseline",
+      "waiting_calls": [
+        {
+          "tool": "clock.sleep",
+          "arguments": {
+            "duration_ms": 43200000
+          }
+        }
+      ],
+      "response_count": 2,
+      "usage_totals": {
+        "input_tokens": 34068,
+        "cached_input_tokens": 23168,
+        "output_tokens": 51,
+        "reasoning_output_tokens": 0
+      },
+      "result_latency_seconds": 2.0991,
+      "result_correct": true,
+      "prompt_loaded": null,
+      "prompt_sha256": null
+    },
+    {
+      "name": "sol-subagent-recommended-75",
+      "model": "gpt-5.6-sol",
+      "condition": "recommended",
+      "waiting_calls": [
+        {
+          "tool": "collaboration.wait_agent",
+          "arguments": {
+            "timeout_ms": 300000
+          }
+        }
+      ],
+      "response_count": 2,
+      "usage_totals": {
+        "input_tokens": 34593,
+        "cached_input_tokens": 16896,
+        "output_tokens": 73,
+        "reasoning_output_tokens": 16
+      },
+      "result_latency_seconds": 1.9067,
+      "result_correct": true,
+      "prompt_loaded": true,
+      "prompt_sha256": "627c210e060f6e368350dbd1b0dfb0f9e761bfb48d3ee785cd03895050aef00c"
+    }
+  ],
+  "selected_trial_records": [
+    {
+      "name": "astra-subagent-baseline-75",
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "scenario": "This is a controlled waiting test using simulated task state:\na V2 subagent is healthy and still working; only its result remains before you can\nfinish. No useful local work remains and its completion time is unknown. The test\ndriver owns this simulated worker and will deliver its result into this active\nturn. Use the available waiting tools, then report the exact delivered value.\nDo not create agents, inspect agent lists, run commands, access files, or query\nservices. Use the supplied task state and wait for the driver's result.",
+      "event_delay_after_first_wait_seconds": 75.0,
+      "backend": "live-openai-via-codex",
+      "prompt_file": null,
+      "thread_id": "01a09e3d-71aa-75a3-8fcb-4715aac0bf79",
+      "delivered_at": 84.9344,
+      "turn_status": "completed",
+      "turn_error": null,
+      "status": "completed_after_result",
+      "first_wait_at": 9.8609,
+      "elapsed_seconds": 87.5591,
+      "calls": [
+        {
+          "at": "2026-09-14T04:47:11.866Z",
+          "type": "function_call",
+          "name": "sleep",
+          "namespace": "clock",
+          "call_id": "call_Rkze6MoHoxNiCHBS7ktSz6yN",
+          "arguments": "{\"duration_ms\":60000}"
+        },
+        {
+          "at": "2026-09-14T04:48:15.997Z",
+          "type": "function_call",
+          "name": "sleep",
+          "namespace": "clock",
+          "call_id": "call_V66HwvXjUQDiAsfurh6TRQOq",
+          "arguments": "{\"duration_ms\":60000}"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "at": "2026-09-14T04:48:11.875Z",
+          "call_id": "call_Rkze6MoHoxNiCHBS7ktSz6yN",
+          "output": "Wall time: 60.0054 seconds\nSleep completed."
+        },
+        {
+          "at": "2026-09-14T04:48:26.946Z",
+          "call_id": "call_V66HwvXjUQDiAsfurh6TRQOq",
+          "output": "Wall time: 10.9453 seconds\nSleep interrupted by new input."
+        }
+      ],
+      "response_usage": [
+        {
+          "at": "2026-09-14T04:47:11.965Z",
+          "response_id": "resp_0cb73bd0340d6b30016aa77c4d19f487d08444904d1e0d74f0",
+          "usage": {
+            "input_tokens": 17896,
+            "cached_input_tokens": 12160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 42,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17938
+          }
+        },
+        {
+          "at": "2026-09-14T04:48:16.089Z",
+          "response_id": "resp_0cb73bd0340d6b30016aa77c8c6e2887d0a6b9c3bd26f7181d",
+          "usage": {
+            "input_tokens": 17961,
+            "cached_input_tokens": 12160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 45,
+            "reasoning_output_tokens": 7,
+            "total_tokens": 18006
+          }
+        },
+        {
+          "at": "2026-09-14T04:48:29.562Z",
+          "response_id": "resp_0cb73bd0340d6b30016aa77c9b6e8487d0aaa646100ad8c91b",
+          "usage": {
+            "input_tokens": 18055,
+            "cached_input_tokens": 17792,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 18064
+          }
+        }
+      ],
+      "messages": [
+        {
+          "type": "agentMessage",
+          "id": "msg_0cb73bd0340d6b30016aa77c4e939c87d093b458b00ebffe97",
+          "text": "I\u2019ll wait for the driver\u2019s result and report the exact value it delivers.",
+          "phase": "commentary",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0cb73bd0340d6b30016aa77c8ef25487d0ab29ae00c7bfc4e3",
+          "text": "I\u2019m still waiting for the driver\u2019s result.",
+          "phase": "commentary",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0cb73bd0340d6b30016aa77c9d10f887d0a1cf51922dbb51bd",
+          "text": "WAIT_RESULT_7391",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "model_metadata": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "turn_id": "01a09e3d-71db-7c12-b32e-5b7276264814"
+        }
+      ],
+      "candidate_found_in_user_instructions": null,
+      "result_reported": true
+    },
+    {
+      "name": "astra-subagent-recommended-75",
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "scenario": "This is a controlled waiting test using simulated task state:\na V2 subagent is healthy and still working; only its result remains before you can\nfinish. No useful local work remains and its completion time is unknown. The test\ndriver owns this simulated worker and will deliver its result into this active\nturn. Use the available waiting tools, then report the exact delivered value.\nDo not create agents, inspect agent lists, run commands, access files, or query\nservices. Use the supplied task state and wait for the driver's result.",
+      "event_delay_after_first_wait_seconds": 75.0,
+      "backend": "live-openai-via-codex",
+      "prompt_file": "docs/waiting-validation/AGENTS.waiting-recommended.md",
+      "prompt_sha256": "627c210e060f6e368350dbd1b0dfb0f9e761bfb48d3ee785cd03895050aef00c",
+      "thread_id": "01a09e3f-1c5a-7b52-9830-d14e776d52bd",
+      "delivered_at": 84.3661,
+      "turn_status": "completed",
+      "turn_error": null,
+      "status": "completed_after_result",
+      "first_wait_at": 9.2642,
+      "elapsed_seconds": 86.7309,
+      "calls": [
+        {
+          "at": "2026-09-14T04:49:00.491Z",
+          "type": "function_call",
+          "name": "wait_agent",
+          "namespace": "collaboration",
+          "call_id": "call_pUJFINrcA2ruOv0uirjNGWGW",
+          "arguments": "{\"timeout_ms\":300000}"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "at": "2026-09-14T04:50:15.602Z",
+          "call_id": "call_pUJFINrcA2ruOv0uirjNGWGW",
+          "output": "{\"message\":\"Wait interrupted by new input.\",\"timed_out\":false}"
+        }
+      ],
+      "response_usage": [
+        {
+          "at": "2026-09-14T04:49:00.663Z",
+          "response_id": "resp_0ad3dcbc7f04c280016aa77cb9a79487d0a9671e9a5993a5bc",
+          "usage": {
+            "input_tokens": 18150,
+            "cached_input_tokens": 12160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 44,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 18194
+          }
+        },
+        {
+          "at": "2026-09-14T04:50:17.956Z",
+          "response_id": "resp_0ad3dcbc7f04c280016aa77d08059087d0bb8b96a6597abe06",
+          "usage": {
+            "input_tokens": 18244,
+            "cached_input_tokens": 17920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 18253
+          }
+        }
+      ],
+      "messages": [
+        {
+          "type": "agentMessage",
+          "id": "msg_0ad3dcbc7f04c280016aa77cbb129487d086c18566b9931eb6",
+          "text": "I\u2019ll wait for the driver\u2019s result, then report the exact value delivered.\n",
+          "phase": "commentary",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0ad3dcbc7f04c280016aa77d09a13887d09593d5611baadfa8",
+          "text": "WAIT_RESULT_7391",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "model_metadata": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "turn_id": "01a09e3f-1c96-7190-b057-518042355819"
+        }
+      ],
+      "candidate_found_in_user_instructions": true,
+      "result_reported": true
+    },
+    {
+      "name": "sol-subagent-baseline-75",
+      "model": "gpt-5.6-sol",
+      "effort": "low",
+      "scenario": "This is a controlled waiting test using simulated task state:\na V2 subagent is healthy and still working; only its result remains before you can\nfinish. No useful local work remains and its completion time is unknown. The test\ndriver owns this simulated worker and will deliver its result into this active\nturn. Use the available waiting tools, then report the exact delivered value.\nDo not create agents, inspect agent lists, run commands, access files, or query\nservices. Use the supplied task state and wait for the driver's result.",
+      "event_delay_after_first_wait_seconds": 75.0,
+      "backend": "live-openai-via-codex",
+      "prompt_file": null,
+      "thread_id": "01a09e3f-2607-7ce1-af13-5848720c7c7b",
+      "delivered_at": 88.1802,
+      "turn_status": "completed",
+      "turn_error": null,
+      "status": "completed_after_result",
+      "first_wait_at": 13.1459,
+      "elapsed_seconds": 90.2793,
+      "calls": [
+        {
+          "at": "2026-09-14T04:49:06.862Z",
+          "type": "function_call",
+          "name": "sleep",
+          "namespace": "clock",
+          "call_id": "call_Z0apV4gR63Op5rQ8oL2F8sH2",
+          "arguments": "{\"duration_ms\":43200000}"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "at": "2026-09-14T04:50:21.905Z",
+          "call_id": "call_Z0apV4gR63Op5rQ8oL2F8sH2",
+          "output": "Wall time: 75.0390 seconds\nSleep interrupted by new input."
+        }
+      ],
+      "response_usage": [
+        {
+          "at": "2026-09-14T04:49:06.908Z",
+          "response_id": "resp_04352d3e1f81cf7b016aa77cbbc01c87d09729e800193acf65",
+          "usage": {
+            "input_tokens": 16882,
+            "cached_input_tokens": 6528,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 42,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 16924
+          }
+        },
+        {
+          "at": "2026-09-14T04:50:23.994Z",
+          "response_id": "resp_04352d3e1f81cf7b016aa77d0e6c9487d092a1a24c64a68576",
+          "usage": {
+            "input_tokens": 17186,
+            "cached_input_tokens": 16640,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17195
+          }
+        }
+      ],
+      "messages": [
+        {
+          "type": "agentMessage",
+          "id": "msg_04352d3e1f81cf7b016aa77cc213e887d085b75d93fd818943",
+          "text": "The simulated worker is still healthy, so I\u2019ll wait for its result.",
+          "phase": "commentary",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_04352d3e1f81cf7b016aa77d0fc8b887d09b6b9f5564cd02fc",
+          "text": "WAIT_RESULT_7391",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "model_metadata": [
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "low",
+          "turn_id": "01a09e3f-2640-7bf3-8983-19cb0031a346"
+        }
+      ],
+      "candidate_found_in_user_instructions": null,
+      "result_reported": true
+    },
+    {
+      "name": "sol-subagent-recommended-75",
+      "model": "gpt-5.6-sol",
+      "effort": "low",
+      "scenario": "This is a controlled waiting test using simulated task state:\na V2 subagent is healthy and still working; only its result remains before you can\nfinish. No useful local work remains and its completion time is unknown. The test\ndriver owns this simulated worker and will deliver its result into this active\nturn. Use the available waiting tools, then report the exact delivered value.\nDo not create agents, inspect agent lists, run commands, access files, or query\nservices. Use the supplied task state and wait for the driver's result.",
+      "event_delay_after_first_wait_seconds": 75.0,
+      "backend": "live-openai-via-codex",
+      "prompt_file": "docs/waiting-validation/AGENTS.waiting-recommended.md",
+      "prompt_sha256": "627c210e060f6e368350dbd1b0dfb0f9e761bfb48d3ee785cd03895050aef00c",
+      "thread_id": "01a09e3d-77c4-7f83-97db-56af3a309690",
+      "delivered_at": 85.2121,
+      "turn_status": "completed",
+      "turn_error": null,
+      "status": "completed_after_result",
+      "first_wait_at": 10.1884,
+      "elapsed_seconds": 87.1188,
+      "calls": [
+        {
+          "at": "2026-09-14T04:47:13.759Z",
+          "type": "function_call",
+          "name": "wait_agent",
+          "namespace": "collaboration",
+          "call_id": "call_5ZGfVkQ4EaggLSbqv4YfF6Tl",
+          "arguments": "{\"timeout_ms\":300000}"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "at": "2026-09-14T04:48:28.792Z",
+          "call_id": "call_5ZGfVkQ4EaggLSbqv4YfF6Tl",
+          "output": "{\"message\":\"Wait interrupted by new input.\",\"timed_out\":false}"
+        }
+      ],
+      "response_usage": [
+        {
+          "at": "2026-09-14T04:47:13.760Z",
+          "response_id": "resp_0bec57360cfbdd35016aa77c4f93a087d09fba3acad0a23c57",
+          "usage": {
+            "input_tokens": 17133,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 64,
+            "reasoning_output_tokens": 16,
+            "total_tokens": 17197
+          }
+        },
+        {
+          "at": "2026-09-14T04:48:30.685Z",
+          "response_id": "resp_0bec57360cfbdd35016aa77c9d556c87d0be2e04a3124cce31",
+          "usage": {
+            "input_tokens": 17460,
+            "cached_input_tokens": 16896,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17469
+          }
+        }
+      ],
+      "messages": [
+        {
+          "type": "agentMessage",
+          "id": "msg_0bec57360cfbdd35016aa77c50de8c87d09e91d68098926ff0",
+          "text": "The simulated worker is the only remaining dependency, so I\u2019m waiting for its completion notification.",
+          "phase": "commentary",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_0bec57360cfbdd35016aa77c9e51a087d09c882d5cd6cab87b",
+          "text": "WAIT_RESULT_7391",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "model_metadata": [
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "low",
+          "turn_id": "01a09e3d-77f2-7d23-977e-5e0d56f46a1b"
+        }
+      ],
+      "candidate_found_in_user_instructions": true,
+      "result_reported": true
+    },
+    {
+      "name": "astra-candidate-smoke",
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "scenario": "This is a controlled waiting test. A test driver will deliver a pending\nworker's result into this active turn. No local work remains until that result\narrives, and its arrival time is unknown to you. Wait for the result, then report\nits exact value. Do not create agents, run commands, access files, or query other\nservices: the driver owns the worker and will deliver its result. Use the available\nwaiting tools to keep this turn waiting for the result.",
+      "event_delay_after_first_wait_seconds": 2.0,
+      "backend": "live-openai-via-codex",
+      "prompt_file": "docs/waiting-validation/AGENTS.waiting-candidate.md",
+      "prompt_sha256": "bd52d45cb028ec1852572f7b779139a533a5291a0f5da018efea0e6465467256",
+      "thread_id": "01a09e3b-26ed-7bb3-b7ec-02ff108ed5e4",
+      "delivered_at": 11.7275,
+      "turn_status": "completed",
+      "turn_error": null,
+      "status": "completed_after_result",
+      "first_wait_at": 9.6535,
+      "elapsed_seconds": 15.4512,
+      "calls": [
+        {
+          "at": "2026-09-14T04:44:41.457Z",
+          "type": "function_call",
+          "name": "sleep",
+          "namespace": "clock",
+          "call_id": "call_ecj7jAiMQl19qSBniHK52I0g",
+          "arguments": "{\"duration_ms\":60000}"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "at": "2026-09-14T04:44:43.536Z",
+          "call_id": "call_ecj7jAiMQl19qSBniHK52I0g",
+          "output": "Wall time: 2.0757 seconds\nSleep interrupted by new input."
+        }
+      ],
+      "response_usage": [
+        {
+          "at": "2026-09-14T04:44:41.571Z",
+          "response_id": "resp_01537c4cf08c3978016aa77bb6cf3087d0b956a4a1cca77ad0",
+          "usage": {
+            "input_tokens": 18133,
+            "cached_input_tokens": 12160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 43,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 18176
+          }
+        },
+        {
+          "at": "2026-09-14T04:44:47.253Z",
+          "response_id": "resp_01537c4cf08c3978016aa77bbc2bdc87d0a1d7473dabd2b9bb",
+          "usage": {
+            "input_tokens": 18225,
+            "cached_input_tokens": 17920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 18234
+          }
+        }
+      ],
+      "messages": [
+        {
+          "type": "agentMessage",
+          "id": "msg_01537c4cf08c3978016aa77bb8289c87d0800a03a8f8b61305",
+          "text": "I\u2019ll wait for the worker\u2019s result and report its exact value when it arrives.\n",
+          "phase": "commentary",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_01537c4cf08c3978016aa77bbebb8487d08f7737b93ac91378",
+          "text": "WAIT_RESULT_7391",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "model_metadata": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "turn_id": "01a09e3b-2719-7b61-a8d9-f4f86a997f76"
+        }
+      ],
+      "candidate_found_in_user_instructions": true,
+      "result_reported": true
+    },
+    {
+      "name": "astra-subagent-candidate-smoke",
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "scenario": "This is a controlled waiting test using simulated task state:\na V2 subagent is healthy and still working; only its result remains before you can\nfinish. No useful local work remains and its completion time is unknown. The test\ndriver owns this simulated worker and will deliver its result into this active\nturn. Use the available waiting tools, then report the exact delivered value.\nDo not create agents, inspect agent lists, run commands, access files, or query\nservices. Use the supplied task state and wait for the driver's result.",
+      "event_delay_after_first_wait_seconds": 2.0,
+      "backend": "live-openai-via-codex",
+      "prompt_file": "docs/waiting-validation/AGENTS.waiting-candidate.md",
+      "prompt_sha256": "bd52d45cb028ec1852572f7b779139a533a5291a0f5da018efea0e6465467256",
+      "thread_id": "01a09e3c-19a2-7951-b7e4-9c1a03303e84",
+      "delivered_at": 11.8647,
+      "turn_status": "completed",
+      "turn_error": null,
+      "status": "completed_after_result",
+      "first_wait_at": 9.815,
+      "elapsed_seconds": 16.2916,
+      "calls": [
+        {
+          "at": "2026-09-14T04:45:43.747Z",
+          "type": "function_call",
+          "name": "wait_agent",
+          "namespace": "collaboration",
+          "call_id": "call_RbvZ8XSF7AQAduyPzwSO9Qnr",
+          "arguments": "{\"timeout_ms\":300000}"
+        }
+      ],
+      "tool_outputs": [
+        {
+          "at": "2026-09-14T04:45:45.816Z",
+          "call_id": "call_RbvZ8XSF7AQAduyPzwSO9Qnr",
+          "output": "{\"message\":\"Wait interrupted by new input.\",\"timed_out\":false}"
+        }
+      ],
+      "response_usage": [
+        {
+          "at": "2026-09-14T04:45:43.823Z",
+          "response_id": "resp_017b4e0a43b0da45016aa77bf375a487d09e04a4e25b6fcb20",
+          "usage": {
+            "input_tokens": 18146,
+            "cached_input_tokens": 12160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 43,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 18189
+          }
+        },
+        {
+          "at": "2026-09-14T04:45:50.219Z",
+          "response_id": "resp_017b4e0a43b0da45016aa77bfaa19087d0baa5ce9320dba7f2",
+          "usage": {
+            "input_tokens": 18239,
+            "cached_input_tokens": 17920,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 18248
+          }
+        }
+      ],
+      "messages": [
+        {
+          "type": "agentMessage",
+          "id": "msg_017b4e0a43b0da45016aa77bf676b087d09c12daf96a829c7a",
+          "text": "I\u2019ll wait for the driver\u2019s result and report the exact value delivered.",
+          "phase": "commentary",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        },
+        {
+          "type": "agentMessage",
+          "id": "msg_017b4e0a43b0da45016aa77bfd94e887d0b9384a22ee15a1f1",
+          "text": "WAIT_RESULT_7391",
+          "phase": "final_answer",
+          "memoryCitation": null,
+          "delivery": null,
+          "questions": null
+        }
+      ],
+      "model_metadata": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "low",
+          "turn_id": "01a09e3c-19cf-7e12-a01b-bda30e3f050e"
+        }
+      ],
+      "candidate_found_in_user_instructions": true,
+      "result_reported": true
+    }
+  ]
+}

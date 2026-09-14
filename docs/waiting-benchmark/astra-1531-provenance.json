@@ -1,0 +1,304 @@
+{
+  "tags": [
+    {
+      "tag": "rust-v0.151.0",
+      "commit": "78c290807ce710180111df227df3b7a4fe845452",
+      "contains_pr_41243": false,
+      "contains_pr_42605": false
+    },
+    {
+      "tag": "rust-v0.153.1",
+      "commit": "985641272869835d01d025ed2a218fbbce35fa9f",
+      "contains_pr_41243": true,
+      "contains_pr_42605": true
+    },
+    {
+      "tag": "rust-v0.154.0",
+      "commit": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+      "contains_pr_41243": true,
+      "contains_pr_42605": false
+    }
+  ],
+  "blobs": [
+    {
+      "path": "codex-rs/core/src/tools/handlers/multi_agents_v2/wait.rs",
+      "blobs": {
+        "rust-v0.151.0": "d2f92feb8d011bb468dcc1f81b0efc20e756179e",
+        "rust-v0.153.1": "d2f92feb8d011bb468dcc1f81b0efc20e756179e",
+        "rust-v0.154.0": "d2f92feb8d011bb468dcc1f81b0efc20e756179e"
+      }
+    },
+    {
+      "path": "codex-rs/core/src/tools/handlers/sleep.rs",
+      "blobs": {
+        "rust-v0.151.0": "179157a6bfa111426db69106cb4a67fe6f224084",
+        "rust-v0.153.1": "7defc8314bd2ddde3cf683601ec02a57588cb4f1",
+        "rust-v0.154.0": "7defc8314bd2ddde3cf683601ec02a57588cb4f1"
+      }
+    },
+    {
+      "path": "codex-rs/core/src/session/multi_agents.rs",
+      "blobs": {
+        "rust-v0.151.0": "22d56df3905b5faab0594ac7c4bc1f9877b2e8e6",
+        "rust-v0.153.1": "666f32cce208137fc6830121aa3d161e108c24d1",
+        "rust-v0.154.0": "666f32cce208137fc6830121aa3d161e108c24d1"
+      }
+    }
+  ],
+  "bundled_catalog_check": [
+    {
+      "tag": "rust-v0.153.0",
+      "astra_entries": []
+    },
+    {
+      "tag": "rust-v0.153.1",
+      "astra_entries": [
+        {
+          "slug": "gpt-6-astra",
+          "visibility": "hide",
+          "supported_in_api": true,
+          "shell_type": "unified_exec"
+        }
+      ]
+    },
+    {
+      "tag": "rust-v0.154.0",
+      "astra_entries": [
+        {
+          "slug": "gpt-6-astra",
+          "visibility": "list",
+          "supported_in_api": true,
+          "shell_type": "unified_exec"
+        }
+      ]
+    }
+  ],
+  "interpretation": "PR #42605 is a release-branch backport. Its merge SHA not being an ancestor of 0.154.0 does not imply that release lacks Astra; both 0.153.1 and 0.154.0 bundle the entry. The controlled benchmark pins the same current catalog for both.",
+  "downloads": [
+    {
+      "file": "codex.tar.gz",
+      "asset_id": 543336506,
+      "sha256": "818f3c65c6973ae54586ba52f8e37c7673f3f5b8e09c74858c19e25c74479226"
+    },
+    {
+      "file": "host.tar.gz",
+      "asset_id": 543336502,
+      "sha256": "4a87aa89a198976ebc68a85017b36234edd1b126dfb63d94c10a20fcfab81479"
+    }
+  ],
+  "cli_version": "codex-cli 0.153.1",
+  "release_url": "https://github.com/openai/codex/releases/tag/rust-v0.153.1",
+  "pr_url": "https://github.com/openai/codex/pull/42605",
+  "published_at": "2026-09-03T21:02:56Z",
+  "backport_merged_at": "2026-09-03T20:07:44Z",
+  "compatibility_probe": {
+    "name": "gpt-6-astra-terminal-old-r1",
+    "condition": "old",
+    "scenario": "terminal",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 2,
+    "backend": "live-current-subscription",
+    "binary": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/tmp/codex-versions/0.153.1/codex-aarch64-apple-darwin",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "Run `python3 bench_job.py` exactly once and wait for it to finish. Run it yourself; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": null,
+    "patch_file": null,
+    "skills_mode": "instructions_disabled",
+    "cli_version": "codex-cli 0.153.1",
+    "thread_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+    "turn_start_epoch": 1789374854.18356,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789374870.655617,
+    "status": "completed",
+    "elapsed_seconds": 16.6131,
+    "success": true,
+    "prompt_loaded": null,
+    "skills_instruction_sessions": [],
+    "calls": [
+      {
+        "at": "2026-09-14T08:34:23.319Z",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_Q8DkMmJxLAd8cUlvzcKDi1ej",
+        "input": "text(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:34:28.227Z",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_i6v4kbgzYivZOVhVGTyc1yEh",
+        "input": "text(await tools.write_stdin({session_id:93835,chars:\"\",yield_time_ms:1000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:34:25.068Z",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "call_id": "call_Q8DkMmJxLAd8cUlvzcKDi1ej",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 1.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"7adb80\",\"wall_time_seconds\":1.002009417,\"session_id\":93835,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:34:28.235Z",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "call_id": "call_i6v4kbgzYivZOVhVGTyc1yEh",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"31c134\",\"wall_time_seconds\":0.000001125,\"exit_code\":0,\"original_token_count\":5,\"output\":\"BENCH_RESULT_7391\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:34:23.334356+00:00",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "response_id": "resp_04d48de229d7f21a016aa7b18be27887d091e3340ced44635e",
+        "usage": {
+          "total_tokens": 15168,
+          "input_tokens": 15111,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 57,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:34:28.228856+00:00",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "response_id": "resp_04d48de229d7f21a016aa7b191961c87d0bf2153e86d39ff0b",
+        "usage": {
+          "total_tokens": 15264,
+          "input_tokens": 15225,
+          "cached_input_tokens": 14976,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:34:30.650456+00:00",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "response_id": "resp_04d48de229d7f21a016aa7b194f3e887d0b2fa17b98e4e8747",
+        "usage": {
+          "total_tokens": 15336,
+          "input_tokens": 15326,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:34:22.287Z",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T08:34:30.649Z",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:34:19.467Z",
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f0d-7428-7d71-9919-6cff06e20ab0"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f0d-73ec-7b50-9358-d1863f0b52d2",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f0d-73ec-7b50-9358-d1863f0b52d2": {
+        "input_tokens": 45662,
+        "cached_input_tokens": 42240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 106,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 45768
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 45662,
+      "cached_input_tokens": 42240,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 106,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 45768,
+      "responses": 3,
+      "input_minus_cached": 3422
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 45662,
+      "cached_input_tokens": 42240,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 106,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 45768,
+      "responses": 3,
+      "input_minus_cached": 3422
+    },
+    "child_session_count": 0,
+    "job_events": [
+      {
+        "event": "start",
+        "at": 1789374863.9468522
+      },
+      {
+        "event": "complete",
+        "at": 1789374865.949461
+      }
+    ],
+    "job_launches": 1,
+    "ci_checks": [],
+    "result_delay_seconds": 4.7,
+    "parent_message_gaps_seconds": [
+      8.103,
+      8.362
+    ],
+    "max_parent_message_gap_seconds": 8.362
+  }
+}

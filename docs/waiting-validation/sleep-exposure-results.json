@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-09-14T04:48:01.988195+00:00",
+  "backend": "scripted local provider, actual installed tool registration",
+  "cases": [
+    {
+      "name": "exposure-astra-default",
+      "model": "gpt-6-astra",
+      "sleep_exposed": true,
+      "sleep_schema": {
+        "type": "function",
+        "name": "sleep",
+        "description": "Pause execution for a specified duration. The sleep ends early when new input arrives for the active turn. Returns the elapsed wall-clock time.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "duration_ms": {
+              "type": "number",
+              "description": "How long to sleep in milliseconds. Must be between 1 and 43200000."
+            }
+          },
+          "required": [
+            "duration_ms"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "assertions": "passed"
+    },
+    {
+      "name": "exposure-sol-default",
+      "model": "gpt-5.6-sol",
+      "sleep_exposed": false,
+      "sleep_schema": null,
+      "assertions": "passed"
+    },
+    {
+      "name": "exposure-sol-always-on",
+      "model": "gpt-5.6-sol",
+      "sleep_exposed": true,
+      "sleep_schema": {
+        "type": "function",
+        "name": "sleep",
+        "description": "Pause execution for a specified duration. The sleep ends early when new input arrives for the active turn. Returns the elapsed wall-clock time.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "duration_ms": {
+              "type": "number",
+              "description": "How long to sleep in milliseconds. Must be between 1 and 43200000."
+            }
+          },
+          "required": [
+            "duration_ms"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "assertions": "passed",
+      "configuration_note": "enabled omitted from both the temporary home config and thread override; mode is always_on"
+    },
+    {
+      "name": "exposure-sol-disabled",
+      "model": "gpt-5.6-sol",
+      "sleep_exposed": false,
+      "sleep_schema": null,
+      "assertions": "passed"
+    }
+  ],
+  "mode_only_rechecked_at": "2026-09-14T04:55:07.185413+00:00"
+}

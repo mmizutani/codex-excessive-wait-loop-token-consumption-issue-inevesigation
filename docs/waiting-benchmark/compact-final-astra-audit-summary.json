@@ -1,0 +1,44 @@
+{
+  "prior_audit": "astra-1531-audit-summary.json",
+  "compact_final_phase": {
+    "workload_trials": 3,
+    "successful": 3,
+    "combined_response_count": 16,
+    "reported_token_counts": {
+      "input_tokens": 252200,
+      "cached_input_tokens": 227712,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1120,
+      "reasoning_output_tokens": 46,
+      "total_tokens": 253320,
+      "ordinary_classified_input_tokens": 24488
+    },
+    "api_rate_usd": 0.528592,
+    "max_input_per_response": 16192,
+    "observed_first_response": "2026-09-14T09:11:54.759529+00:00",
+    "observed_last_response": "2026-09-14T09:15:17.398868+00:00"
+  },
+  "all_73_workloads": {
+    "workload_trials": 73,
+    "successful": 73,
+    "combined_response_count": 512,
+    "reported_token_counts": {
+      "input_tokens": 8700714,
+      "cached_input_tokens": 7571456,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 33034,
+      "reasoning_output_tokens": 4342,
+      "total_tokens": 8733748,
+      "ordinary_classified_input_tokens": 1129258
+    },
+    "api_rate_usd": 14.2678064,
+    "max_input_per_response": 23197,
+    "observed_first_response": "2026-09-14T07:11:56.689510+00:00",
+    "observed_last_response": "2026-09-14T09:15:17.398868+00:00"
+  },
+  "compact_prompt_sha256": "a60d7f36e699d61a17abf4fafc46c9dcfe3195826d6e59e6546e39737b9ff2cf",
+  "comparison_controls_reused": true,
+  "excluded": "Setup/smoke probes, investigator/reviewer usage, and duplicate control rows in comparison views.",
+  "pricing_scope": "Standard API-rate equivalent of reported/defaulted subscription counters, not actual charges; actual cache writes not separately observable.",
+  "validation": "All 73 per-session counters reconcile; response IDs globally unique; prompt hashes, model identities, clean-skill isolation and single command launch checks pass. All three compact-patch parent update gaps are below 60 seconds."
+}

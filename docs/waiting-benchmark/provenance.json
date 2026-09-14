@@ -1,0 +1,122 @@
+{
+  "before": "rust-v0.151.0",
+  "after": "rust-v0.154.0",
+  "pr_41243": "ec9620c231396895194329c410f3ec360b4cadef",
+  "blob_comparison": [
+    {
+      "path": "codex-rs/core/src/tools/handlers/multi_agents_v2/wait.rs",
+      "before": "d2f92feb8d011bb468dcc1f81b0efc20e756179e",
+      "after": "d2f92feb8d011bb468dcc1f81b0efc20e756179e",
+      "identical": true
+    },
+    {
+      "path": "codex-rs/core/src/tools/handlers/sleep.rs",
+      "before": "179157a6bfa111426db69106cb4a67fe6f224084",
+      "after": "7defc8314bd2ddde3cf683601ec02a57588cb4f1",
+      "identical": false
+    },
+    {
+      "path": "codex-rs/core/src/session/multi_agents.rs",
+      "before": "22d56df3905b5faab0594ac7c4bc1f9877b2e8e6",
+      "after": "666f32cce208137fc6830121aa3d161e108c24d1",
+      "identical": false
+    }
+  ],
+  "release_commits": {
+    "before": "78c290807ce710180111df227df3b7a4fe845452",
+    "after": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340"
+  },
+  "announcement": {
+    "url": "https://x.com/thsottiaux/status/2098612714704891959",
+    "retrieved_via": "https://api.fxtwitter.com/thsottiaux/status/2098612714704891959",
+    "posted_at": "2026-09-12T03:20:36Z",
+    "summary": "Reports changes to skills, disabling an opt-in context-management experiment, and removing poorly configured backend engines. Does not identify PR #41243 or a waiting-specific CLI release. Older clients cannot restore those backend conditions."
+  },
+  "old_downloads": [
+    {
+      "asset_id": 535048350,
+      "sha256": "6409e2c65994d294a92bc7330148ebc447ab23908bd7f5c71e718425a622c965"
+    },
+    {
+      "asset_id": 535048355,
+      "sha256": "9bab87888f9d7b32cecf46e5c3df1a0b7a810f44281c8ec0cf39534569dc16f2"
+    }
+  ],
+  "prior_fix_ancestry": [
+    {
+      "number": 34969,
+      "title": "Keep the sleep tool outside code mode",
+      "in_0_151_0": true,
+      "in_0_154_0": true
+    },
+    {
+      "number": 41243,
+      "title": "Add configurable gating for the sleep tool",
+      "in_0_151_0": false,
+      "in_0_154_0": true
+    },
+    {
+      "number": 25266,
+      "title": "Set multi-agent v2 dogfood defaults",
+      "in_0_151_0": true,
+      "in_0_154_0": true
+    },
+    {
+      "number": 35594,
+      "title": "Recommend longer waits in the v2 wait_agent schema",
+      "in_0_151_0": true,
+      "in_0_154_0": true
+    },
+    {
+      "number": 37189,
+      "title": "Track multi-agent usage hints in world state",
+      "in_0_151_0": true,
+      "in_0_154_0": true
+    },
+    {
+      "number": 23094,
+      "title": "goal: pause continuation loops on usage limits and blockers",
+      "in_0_151_0": true,
+      "in_0_154_0": true
+    },
+    {
+      "number": 41454,
+      "title": "Block goals after repeated execution host failures",
+      "in_0_151_0": false,
+      "in_0_154_0": true
+    },
+    {
+      "number": 44320,
+      "title": "Block goals after three empty automatic continuation turns",
+      "in_0_151_0": false,
+      "in_0_154_0": false
+    },
+    {
+      "number": 44862,
+      "title": "Preserve parent cache affinity for ephemeral forks",
+      "in_0_151_0": false,
+      "in_0_154_0": false
+    }
+  ],
+  "ambient_skill": {
+    "path": "/Users/mmizutani/dev/coding-agents/skills/monitor-long-running-jobs/SKILL.md",
+    "sha256": "5c120fbd3dc363a25ff4334f812262b21a283f3df03e66751970fdc1ce5f438f",
+    "discovery": "Shared ~/.agents/skills is discovered despite a temporary CODEX_HOME. Primary CI traces read this skill."
+  },
+  "clean_configuration": {
+    "skills.include_instructions": false,
+    "skills.bundled.enabled": false,
+    "validation": "Both CLI versions parse these options and completed 2-second smoke trials without a skill catalog. Clean analyzer rejects catalog presence and SKILL.md reads."
+  },
+  "cadence_check": "Pinned Astra and Sol base instructions require commentary within60 seconds and discourage blocking waits longer than60 seconds; the benchmark records completed parent message gaps.",
+  "prompt_hashes": {
+    "initial": "aaa53f014e986427bc67cc71b1f8d3e601501a6eb1232b42175ede988f59248b",
+    "tuned-v1": "afaa25f938f88060ddf609b1854682676e20202146e882113c6d53e11c050b95",
+    "tuned-v2": "8f50b8281aa5f135a687397493caca814a460545dd5148abd3049fb0f230b077",
+    "tuned-v3": "9f9cd9529490cc3f4d93879ca8cd21e64449cb8d06b1c19c8dfacd9d323114e1",
+    "tuned-v4": "ec30d18f752efd4dae9ac94ac08e25d52b1a525df8cefda5732c9758a6a7d764"
+  },
+  "final_export": "docs/waiting-validation/AGENTS.waiting-compatible.md",
+  "audit_summary": "docs/waiting-benchmark/audit-summary.json",
+  "astra_0_153_1_followup": "docs/waiting-benchmark/astra-1531-provenance.json"
+}

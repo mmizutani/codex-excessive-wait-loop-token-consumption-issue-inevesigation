@@ -1,0 +1,633 @@
+[
+  {
+    "name": "gpt-5.6-sol-ci-tuned-r1",
+    "condition": "tuned",
+    "scenario": "ci",
+    "model": "gpt-5.6-sol",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/opt/homebrew/Caskroom/codex/0.154.0/bin/codex",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "The CI run `job-7391` is pending. Its authoritative status command is `python3 bench_ci.py status`. It provides no completion notifications or watch mode. Monitor it until it completes; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": "ec30d18f752efd4dae9ac94ac08e25d52b1a525df8cefda5732c9758a6a7d764",
+    "patch_file": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/docs/waiting-benchmark/AGENTS.tuned-v4.md",
+    "skills_mode": "instructions_disabled",
+    "cli_version": "codex-cli 0.154.0",
+    "thread_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+    "turn_start_epoch": 1789373486.677859,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789373605.1139681,
+    "status": "completed",
+    "elapsed_seconds": 118.5627,
+    "success": true,
+    "prompt_loaded": true,
+    "skills_instruction_sessions": [],
+    "calls": [
+      {
+        "at": "2026-09-14T08:11:40.644Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_gAlBLH1USm6xCGxw2AivJ5kw",
+        "input": "const r = await tools.exec_command({cmd:\"python3 - <<'PY'\\nimport subprocess, time\\nlast = None\\nchecks = 0\\nwhile checks < 12:\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], text=True, capture_output=True)\\n    out = (p.stdout + p.stderr).strip()\\n    state = (p.returncode, out)\\n    if state != last:\\n        print(out, flush=True)\\n        last = state\\n    if p.returncode == 0 and ('pending' not in out.lower() and 'running' not in out.lower()):\\n        raise SystemExit(0)\\n    checks += 1\\n    time.sleep(min(3 * (2 ** checks), 30))\\nraise SystemExit(124)\\nPY\",\"workdir\":\"/var/folders/yx/77rb9j1j2mvbrdb1nsmrjdsr0000gn/T/codex-wait-benchmark-hbckdr0r/work\",\"yield_time_ms\":30000,\"max_output_tokens\":2000});\ntext(JSON.stringify(r));\n"
+      },
+      {
+        "at": "2026-09-14T08:12:14.017Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "type": "function_call",
+        "name": "wait",
+        "call_id": "call_Abr8X4MPkztayATHg9JQx3ff",
+        "arguments": "{\"cell_id\":\"739a5b\",\"yield_time_ms\":45000,\"max_tokens\":2000}"
+      },
+      {
+        "at": "2026-09-14T08:12:17.274Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_I19jttOAiQJ1HNbDetASxDn1",
+        "input": "const r = await tools.write_stdin({session_id:33020,chars:\"\",yield_time_ms:30000,max_output_tokens:2000});\ntext(JSON.stringify(r));\n"
+      },
+      {
+        "at": "2026-09-14T08:12:50.027Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_LtdtUwGklhf9vbPW4B55Sm3Y",
+        "input": "const r = await tools.write_stdin({session_id:33020,chars:\"\",yield_time_ms:30000,max_output_tokens:2000});\ntext(JSON.stringify(r));\n"
+      },
+      {
+        "at": "2026-09-14T08:13:22.968Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_rDgFFLps40OaVJPVYjFj7uEF",
+        "input": "const r = await tools.write_stdin({session_id:33020,chars:\"\",yield_time_ms:30000,max_output_tokens:2000});\ntext(JSON.stringify(r));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:12:10.859Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "call_id": "call_gAlBLH1USm6xCGxw2AivJ5kw",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 30.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"739a5b\",\"wall_time_seconds\":30.001406667,\"session_id\":33020,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:12:14.088Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "call_id": "call_Abr8X4MPkztayATHg9JQx3ff",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script failed\nWall time 0.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "Script error:\nexec cell 739a5b not found"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:12:47.304Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "call_id": "call_I19jttOAiQJ1HNbDetASxDn1",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 30.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"943d9d\",\"wall_time_seconds\":30.001692,\"session_id\":33020,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:13:20.042Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "call_id": "call_LtdtUwGklhf9vbPW4B55Sm3Y",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 30.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"ddcd7b\",\"wall_time_seconds\":30.001556833,\"session_id\":33020,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:13:23.062Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "call_id": "call_rDgFFLps40OaVJPVYjFj7uEF",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"ad9c36\",\"wall_time_seconds\":0.082387042,\"exit_code\":0,\"original_token_count\":20,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"completed\\\", \\\"result\\\": \\\"BENCH_RESULT_7391\\\"}\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:11:40.646941+00:00",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "response_id": "resp_007c39c9364f7f9e016aa7ac35e5bc87d0be067c8226893d96",
+        "usage": {
+          "total_tokens": 14780,
+          "input_tokens": 14498,
+          "cached_input_tokens": 11136,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 282,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:12:14.083641+00:00",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "response_id": "resp_007c39c9364f7f9e016aa7ac5b664c87d08daa213051a9b3c5",
+        "usage": {
+          "total_tokens": 15152,
+          "input_tokens": 15072,
+          "cached_input_tokens": 14336,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 80,
+          "reasoning_output_tokens": 17
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:12:17.353141+00:00",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "response_id": "resp_007c39c9364f7f9e016aa7ac5eb44c87d0b6b0897d451d41f9",
+        "usage": {
+          "total_tokens": 15250,
+          "input_tokens": 15187,
+          "cached_input_tokens": 11136,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 63,
+          "reasoning_output_tokens": 15
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:12:50.074241+00:00",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "response_id": "resp_007c39c9364f7f9e016aa7ac7fd6d887d0b14cf3c902548555",
+        "usage": {
+          "total_tokens": 15371,
+          "input_tokens": 15307,
+          "cached_input_tokens": 14976,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 64,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:13:23.027741+00:00",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "response_id": "resp_007c39c9364f7f9e016aa7aca089fc87d0a009dfc040a00be2",
+        "usage": {
+          "total_tokens": 15502,
+          "input_tokens": 15429,
+          "cached_input_tokens": 11136,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 73,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:13:25.103941+00:00",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "response_id": "resp_007c39c9364f7f9e016aa7aca389c887d0a8a247ee3be64fab",
+        "usage": {
+          "total_tokens": 15611,
+          "input_tokens": 15587,
+          "cached_input_tokens": 15232,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 24,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:11:36.197Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor the existing job with the authoritative status command, using a bounded watcher and reporting only meaningful state changes."
+      },
+      {
+        "at": "2026-09-14T08:12:13.549Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019m continuing the same watcher and preserving `job-7391`."
+      },
+      {
+        "at": "2026-09-14T08:12:49.317Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "phase": "commentary",
+        "text": "No status change yet; the bounded watcher remains active."
+      },
+      {
+        "at": "2026-09-14T08:13:22.235Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "phase": "commentary",
+        "text": "`job-7391` is still unchanged. I\u2019m continuing to wait for its terminal result."
+      },
+      {
+        "at": "2026-09-14T08:13:25.073Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "phase": "final_answer",
+        "text": "`job-7391` completed successfully.\n\nExact result: `BENCH_RESULT_7391`"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:11:33.449Z",
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "model": "gpt-5.6-sol",
+        "effort": "low",
+        "turn_id": "01a09ef8-9656-78f1-92a8-df2da66b1339"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09ef8-9626-7082-a8ac-bd6b6a30adb5",
+        "sha256": "e9cee03d102eeb8f125a015776e2a8220dca00aec32edfddd3017551ad97d528"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09ef8-9626-7082-a8ac-bd6b6a30adb5": {
+        "input_tokens": 91080,
+        "cached_input_tokens": 77952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 586,
+        "reasoning_output_tokens": 32,
+        "total_tokens": 91666
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 91080,
+      "cached_input_tokens": 77952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 586,
+      "reasoning_output_tokens": 32,
+      "total_tokens": 91666,
+      "responses": 6,
+      "input_minus_cached": 13128
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 91080,
+      "cached_input_tokens": 77952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 586,
+      "reasoning_output_tokens": 32,
+      "total_tokens": 91666,
+      "responses": 6,
+      "input_minus_cached": 13128
+    },
+    "child_session_count": 0,
+    "job_events": [],
+    "job_launches": 0,
+    "ci_checks": [
+      {
+        "at": 1789373500.7557518,
+        "done": false
+      },
+      {
+        "at": 1789373506.8108711,
+        "done": false
+      },
+      {
+        "at": 1789373518.85743,
+        "done": false
+      },
+      {
+        "at": 1789373542.929025,
+        "done": false
+      },
+      {
+        "at": 1789373572.988563,
+        "done": false
+      },
+      {
+        "at": 1789373603.052524,
+        "done": true
+      }
+    ],
+    "result_delay_seconds": 29.317,
+    "parent_message_gaps_seconds": [
+      9.519,
+      37.352,
+      35.768,
+      32.918,
+      2.838
+    ],
+    "max_parent_message_gap_seconds": 37.352
+  },
+  {
+    "name": "gpt-6-astra-ci-tuned-r1",
+    "condition": "tuned",
+    "scenario": "ci",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/opt/homebrew/Caskroom/codex/0.154.0/bin/codex",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "The CI run `job-7391` is pending. Its authoritative status command is `python3 bench_ci.py status`. It provides no completion notifications or watch mode. Monitor it until it completes; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": "ec30d18f752efd4dae9ac94ac08e25d52b1a525df8cefda5732c9758a6a7d764",
+    "patch_file": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/docs/waiting-benchmark/AGENTS.tuned-v4.md",
+    "skills_mode": "instructions_disabled",
+    "cli_version": "codex-cli 0.154.0",
+    "thread_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+    "turn_start_epoch": 1789373486.6787431,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789373583.464897,
+    "status": "completed",
+    "elapsed_seconds": 96.9143,
+    "success": true,
+    "prompt_loaded": true,
+    "skills_instruction_sessions": [],
+    "calls": [
+      {
+        "at": "2026-09-14T08:11:37.569Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_MyqOiDzYNEjyIrtffSjNZl74",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:11:50.373Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_tXFHE55rR1fpkBdHfRfiBKLo",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = ('job-7391', 'running', None)\\ndeadline = time.monotonic() + 1800\\ninterval = 10\\nwhile time.monotonic() < deadline:\\n    time.sleep(interval)\\n    result = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if result.returncode:\\n        print(result.stdout, end='')\\n        print(result.stderr, end='')\\n        raise SystemExit(result.returncode)\\n    state = json.loads(result.stdout)\\n    current = (state.get('run_id'), state.get('status'), state.get('result'))\\n    if current != previous:\\n        print(result.stdout, end='', flush=True)\\n        previous = current\\n    if state.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if state.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\n    interval = min(30, interval + 5)\\nelse:\\n    print('Observation window ended; run remains active.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T08:12:25.942Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_BUKwIxMPOXPWBQliPw3UKwLz",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:83298,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:11:37.686Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "call_id": "call_MyqOiDzYNEjyIrtffSjNZl74",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"ec5f91\",\"wall_time_seconds\":0.000003,\"exit_code\":0,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:12:20.563Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "call_id": "call_tXFHE55rR1fpkBdHfRfiBKLo",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 30.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"0a8756\",\"wall_time_seconds\":30.002153958,\"session_id\":83298,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:13:00.658Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "call_id": "call_BUKwIxMPOXPWBQliPw3UKwLz",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 34.7 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"dd8b55\",\"wall_time_seconds\":34.689645791,\"exit_code\":0,\"original_token_count\":20,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"completed\\\", \\\"result\\\": \\\"BENCH_RESULT_7391\\\"}\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:11:37.594683+00:00",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "response_id": "resp_0c6adc61f97c3b11016aa7ac35ada087d08011824cbfee9bc4",
+        "usage": {
+          "total_tokens": 15677,
+          "input_tokens": 15599,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 78,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:11:50.434283+00:00",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "response_id": "resp_0c6adc61f97c3b11016aa7ac3a4e0087d09ad90621a3913ae1",
+        "usage": {
+          "total_tokens": 16118,
+          "input_tokens": 15754,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 364,
+          "reasoning_output_tokens": 25
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:12:25.976683+00:00",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "response_id": "resp_0c6adc61f97c3b11016aa7ac651c8c87d0945e7ef86acf7f41",
+        "usage": {
+          "total_tokens": 16249,
+          "input_tokens": 16176,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 73,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:13:03.454583+00:00",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "response_id": "resp_0c6adc61f97c3b11016aa7ac8d4be487d092abda353ef8c0ed",
+        "usage": {
+          "total_tokens": 16344,
+          "input_tokens": 16334,
+          "cached_input_tokens": 15616,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:11:36.432Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` using the authoritative status command and preserve the existing run.\n"
+      },
+      {
+        "at": "2026-09-14T08:11:41.527Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "phase": "commentary",
+        "text": "`job-7391` is running. I\u2019ll keep checking until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T08:12:24.633Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "phase": "commentary",
+        "text": "The run is still active; the status checks have reported no change.\n"
+      },
+      {
+        "at": "2026-09-14T08:13:03.325Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:11:33.127Z",
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ef8-9656-7ea3-98cf-4a47495eb64e"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09ef8-9624-7842-9bf6-67a86ddcce06",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09ef8-9624-7842-9bf6-67a86ddcce06": {
+        "input_tokens": 63863,
+        "cached_input_tokens": 52096,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 525,
+        "reasoning_output_tokens": 25,
+        "total_tokens": 64388
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 63863,
+      "cached_input_tokens": 52096,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 525,
+      "reasoning_output_tokens": 25,
+      "total_tokens": 64388,
+      "responses": 4,
+      "input_minus_cached": 11767
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 63863,
+      "cached_input_tokens": 52096,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 525,
+      "reasoning_output_tokens": 25,
+      "total_tokens": 64388,
+      "responses": 4,
+      "input_minus_cached": 11767
+    },
+    "child_session_count": 0,
+    "job_events": [],
+    "job_launches": 0,
+    "ci_checks": [
+      {
+        "at": 1789373497.6601138,
+        "done": false
+      },
+      {
+        "at": 1789373520.503001,
+        "done": false
+      },
+      {
+        "at": 1789373535.5610318,
+        "done": false
+      },
+      {
+        "at": 1789373555.605608,
+        "done": false
+      },
+      {
+        "at": 1789373580.649845,
+        "done": true
+      }
+    ],
+    "result_delay_seconds": 10.665,
+    "parent_message_gaps_seconds": [
+      9.753,
+      5.095,
+      43.106,
+      38.692
+    ],
+    "max_parent_message_gap_seconds": 43.106
+  }
+]

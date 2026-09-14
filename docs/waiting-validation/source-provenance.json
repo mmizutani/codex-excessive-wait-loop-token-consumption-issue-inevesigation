@@ -1,0 +1,100 @@
+{
+  "checked_at": "2026-09-14T04:02:09.943623+00:00",
+  "version": "codex-cli 0.154.0",
+  "release_commit": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+  "checkout_commit": "3abbf9fe2c6b6910e9de61f6a0c5bb468f74b5c8",
+  "files": [
+    {
+      "path": "codex-rs/core/src/tools/handlers/sleep.rs",
+      "release_blob": "7defc8314bd2ddde3cf683601ec02a57588cb4f1",
+      "checkout_blob": "7defc8314bd2ddde3cf683601ec02a57588cb4f1",
+      "identical": true
+    },
+    {
+      "path": "codex-rs/core/src/tools/handlers/multi_agents_v2/wait.rs",
+      "release_blob": "d2f92feb8d011bb468dcc1f81b0efc20e756179e",
+      "checkout_blob": "d2f92feb8d011bb468dcc1f81b0efc20e756179e",
+      "identical": true
+    },
+    {
+      "path": "codex-rs/core/src/tools/spec_plan.rs",
+      "release_blob": "01054b1b504811a5fee21d6bc083c1f5117d52ea",
+      "checkout_blob": "1f308ab5f349b5bfa749e98572d7d909088e6f77",
+      "identical": false
+    },
+    {
+      "path": "codex-rs/core/src/session/multi_agents.rs",
+      "release_blob": "666f32cce208137fc6830121aa3d161e108c24d1",
+      "checkout_blob": "19d0cb95e51e6d7720ac8765be4454ac8a59f3e9",
+      "identical": false
+    },
+    {
+      "path": "codex-rs/core/src/unified_exec/async_watcher.rs",
+      "release_blob": "366f6310523b46114d8672c29bc96652a54c78dd",
+      "checkout_blob": "ba91d7244424c233898852f415837c66ea0988c9",
+      "identical": false
+    },
+    {
+      "path": "codex-rs/ext/goal/src/runtime.rs",
+      "release_blob": "84fa4204ba41947d2d7ea638d94183b87b8d547d",
+      "checkout_blob": "7d826ac2381df8b0dafa39ef66959b22527a4604",
+      "identical": false
+    },
+    {
+      "path": "codex-rs/core/src/config/mod.rs",
+      "release_blob": "ebda9778b17bf8df3670039d9d018493e2cb449b",
+      "checkout_blob": "96c2a43f227a9877deb32fb5a37d821fc6026510",
+      "identical": false
+    },
+    {
+      "path": "codex-rs/models-manager/models.json",
+      "release_blob": "c9b4d6ce6e85acc87c236e83421e3b4520e1a5a0",
+      "checkout_blob": "4e54e700038746e7cc152f9ce7113b3306a885eb",
+      "identical": false
+    }
+  ],
+  "model_catalog_checks": {
+    "release": [
+      {
+        "slug": "gpt-6-astra",
+        "tool_mode": "code_mode_only",
+        "multi_agent_version": "v2",
+        "experimental_supported_tools": [
+          "send_user_message_async",
+          "clock"
+        ],
+        "has_60_second_blocking_caution": true,
+        "has_60_second_commentary_requirement": true
+      },
+      {
+        "slug": "gpt-5.6-sol",
+        "tool_mode": "code_mode_only",
+        "multi_agent_version": "v2",
+        "experimental_supported_tools": [],
+        "has_60_second_blocking_caution": true,
+        "has_60_second_commentary_requirement": true
+      }
+    ],
+    "checkout": [
+      {
+        "slug": "gpt-6-astra",
+        "tool_mode": "code_mode_only",
+        "multi_agent_version": "v2",
+        "experimental_supported_tools": [
+          "send_user_message_async",
+          "clock"
+        ],
+        "has_60_second_blocking_caution": true,
+        "has_60_second_commentary_requirement": true
+      },
+      {
+        "slug": "gpt-5.6-sol",
+        "tool_mode": "code_mode_only",
+        "multi_agent_version": "v2",
+        "experimental_supported_tools": [],
+        "has_60_second_blocking_caution": true,
+        "has_60_second_commentary_requirement": true
+      }
+    ]
+  }
+}

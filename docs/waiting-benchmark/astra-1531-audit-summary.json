@@ -1,0 +1,52 @@
+{
+  "original_audit": "audit-summary.json",
+  "new_phases": {
+    "astra-1531-results": {
+      "trials": 6,
+      "api_rate_usd": 2.0557339999999997
+    },
+    "astra-1531-clean-results": {
+      "trials": 3,
+      "api_rate_usd": 0.79216
+    }
+  },
+  "followup": {
+    "workload_trials": 9,
+    "successful": 9,
+    "combined_response_count": 78,
+    "reported_token_counts": {
+      "input_tokens": 1355758,
+      "cached_input_tokens": 1208704,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3373,
+      "reasoning_output_tokens": 220,
+      "total_tokens": 1359131,
+      "ordinary_classified_input_tokens": 147054
+    },
+    "api_rate_usd": 2.8478939999999997,
+    "max_input_per_response": 19593,
+    "observed_first_response": "2026-09-14T08:36:09.355667+00:00",
+    "observed_last_response": "2026-09-14T08:45:47.857594+00:00"
+  },
+  "all_70_workloads": {
+    "workload_trials": 70,
+    "successful": 70,
+    "combined_response_count": 496,
+    "reported_token_counts": {
+      "input_tokens": 8448514,
+      "cached_input_tokens": 7343744,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 31914,
+      "reasoning_output_tokens": 4296,
+      "total_tokens": 8480428,
+      "ordinary_classified_input_tokens": 1104770
+    },
+    "api_rate_usd": 13.7392144,
+    "max_input_per_response": 23197,
+    "observed_first_response": "2026-09-14T07:11:56.689510+00:00",
+    "observed_last_response": "2026-09-14T08:45:47.857594+00:00"
+  },
+  "pricing_scope": "Standard API-rate equivalent of reported/defaulted subscription counters, not actual charges; actual cache writes not separately observable.",
+  "excluded": "All compatibility/setup probes, investigator and reviewer usage. Comparison-metrics files reuse controls and are not counted as new trials.",
+  "validation": "All per-session counters reconcile; response IDs are globally unique; all workloads succeeded; model, catalog, prompt, clean-skill isolation, and single command launch checks passed."
+}

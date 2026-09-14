@@ -1,0 +1,956 @@
+[
+  {
+    "name": "gpt-6-astra-ci-patch-r1",
+    "condition": "patch",
+    "scenario": "ci",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/opt/homebrew/Caskroom/codex/0.154.0/bin/codex",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "The CI run `job-7391` is pending. Its authoritative status command is `python3 bench_ci.py status`. It provides no completion notifications or watch mode. Monitor it until it completes; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": "a60d7f36e699d61a17abf4fafc46c9dcfe3195826d6e59e6546e39737b9ff2cf",
+    "patch_file": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/docs/waiting-benchmark/AGENTS.compact-final.md",
+    "skills_mode": "instructions_disabled",
+    "cli_version": "codex-cli 0.154.0",
+    "thread_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+    "turn_start_epoch": 1789377198.280597,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789377317.405429,
+    "status": "completed",
+    "elapsed_seconds": 119.2285,
+    "success": true,
+    "prompt_loaded": true,
+    "skills_instruction_sessions": [],
+    "calls": [
+      {
+        "at": "2026-09-14T09:13:34.879Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_aKkA1zoJ1GtrxpTKjTmA6oBg",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport subprocess, time\\nlast = None\\nfor attempt in range(120):\\n    result = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    output = result.stdout + result.stderr\\n    if output != last:\\n        print(output, end='' if output.endswith('\\\\n') else '\\\\n', flush=True)\\n        last = output\\n    normalized = output.lower()\\n    if any(word in normalized for word in ('success', 'completed', 'failed', 'cancelled', 'canceled')):\\n        break\\n    if result.returncode != 0:\\n        break\\n    time.sleep(min(10 + attempt * 5, 30))\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":2000}));\n"
+      },
+      {
+        "at": "2026-09-14T09:14:10.035Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_DLxbRPUbHUAMVRazEzw5rm22",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:34767,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T09:14:55.456Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_zWzS1F58eWqkMLmji65L1ipW",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:34767,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T09:14:05.077Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "call_id": "call_aKkA1zoJ1GtrxpTKjTmA6oBg",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 30.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"b8e5a2\",\"wall_time_seconds\":30.002435625,\"session_id\":34767,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T09:14:50.045Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "call_id": "call_DLxbRPUbHUAMVRazEzw5rm22",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 40.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"7daea9\",\"wall_time_seconds\":40.000302292,\"session_id\":34767,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T09:15:15.147Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "call_id": "call_zWzS1F58eWqkMLmji65L1ipW",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 19.7 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"397195\",\"wall_time_seconds\":19.683920209,\"exit_code\":0,\"original_token_count\":20,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"completed\\\", \\\"result\\\": \\\"BENCH_RESULT_7391\\\"}\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T09:13:35.009768+00:00",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "response_id": "resp_003eabec9ba6c127016aa7bab6ba9087d0a82e230921c9bc81",
+        "usage": {
+          "total_tokens": 15798,
+          "input_tokens": 15560,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 238,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T09:14:10.199968+00:00",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "response_id": "resp_003eabec9ba6c127016aa7badf942887d0b4c0f76b70bc0fd8",
+        "usage": {
+          "total_tokens": 15967,
+          "input_tokens": 15879,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 88,
+          "reasoning_output_tokens": 9
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T09:14:55.455068+00:00",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "response_id": "resp_003eabec9ba6c127016aa7bb0c87f087d084bb200fd403f09f",
+        "usage": {
+          "total_tokens": 16109,
+          "input_tokens": 16025,
+          "cached_input_tokens": 15744,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 84,
+          "reasoning_output_tokens": 6
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T09:15:17.398868+00:00",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "response_id": "resp_003eabec9ba6c127016aa7bb25b41087d091727d5e1d8b8a6b",
+        "usage": {
+          "total_tokens": 16202,
+          "input_tokens": 16192,
+          "cached_input_tokens": 15872,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T09:13:28.733Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the supplied status command and report its result once it completes.\n"
+      },
+      {
+        "at": "2026-09-14T09:14:08.705Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll continue waiting for its result.\n"
+      },
+      {
+        "at": "2026-09-14T09:14:54.039Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "phase": "commentary",
+        "text": "The status has not changed. I\u2019m continuing to monitor `job-7391`.\n"
+      },
+      {
+        "at": "2026-09-14T09:15:17.321Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T09:13:24.225Z",
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f31-38c8-7231-b607-c292a6b120cc"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f31-389d-7621-9286-4e1434c7aed1",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f31-389d-7621-9286-4e1434c7aed1": {
+        "input_tokens": 63656,
+        "cached_input_tokens": 59136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 420,
+        "reasoning_output_tokens": 15,
+        "total_tokens": 64076
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 63656,
+      "cached_input_tokens": 59136,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 420,
+      "reasoning_output_tokens": 15,
+      "total_tokens": 64076,
+      "responses": 4,
+      "input_minus_cached": 4520
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 63656,
+      "cached_input_tokens": 59136,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 420,
+      "reasoning_output_tokens": 15,
+      "total_tokens": 64076,
+      "responses": 4,
+      "input_minus_cached": 4520
+    },
+    "child_session_count": 0,
+    "job_events": [],
+    "job_launches": 0,
+    "ci_checks": [
+      {
+        "at": 1789377214.978177,
+        "done": false
+      },
+      {
+        "at": 1789377225.009123,
+        "done": false
+      },
+      {
+        "at": 1789377240.045254,
+        "done": false
+      },
+      {
+        "at": 1789377260.078899,
+        "done": false
+      },
+      {
+        "at": 1789377285.107191,
+        "done": false
+      },
+      {
+        "at": 1789377315.1388319,
+        "done": true
+      }
+    ],
+    "result_delay_seconds": 27.343,
+    "parent_message_gaps_seconds": [
+      10.452,
+      39.972,
+      45.334,
+      23.282
+    ],
+    "max_parent_message_gap_seconds": 45.334
+  },
+  {
+    "name": "gpt-6-astra-subagent-patch-r1",
+    "condition": "patch",
+    "scenario": "subagent",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/opt/homebrew/Caskroom/codex/0.154.0/bin/codex",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "Delegate running `python3 bench_job.py` exactly once to exactly one subagent, using model `gpt-6-astra` at low reasoning effort. The child should wait for command completion and return its result. You have no independent work while that child runs. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": "a60d7f36e699d61a17abf4fafc46c9dcfe3195826d6e59e6546e39737b9ff2cf",
+    "patch_file": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/docs/waiting-benchmark/AGENTS.compact-final.md",
+    "skills_mode": "instructions_disabled",
+    "cli_version": "codex-cli 0.154.0",
+    "thread_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+    "turn_start_epoch": 1789377104.666314,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789377206.8760011,
+    "status": "completed",
+    "elapsed_seconds": 102.3401,
+    "success": true,
+    "prompt_loaded": true,
+    "skills_instruction_sessions": [],
+    "calls": [
+      {
+        "at": "2026-09-14T09:11:57.587Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "type": "function_call",
+        "name": "spawn_agent",
+        "namespace": "collaboration",
+        "call_id": "call_2eABWScwx2W8KzwZ7CJoc2OG",
+        "arguments": "{\"task_name\":\"benchmark\",\"model\":\"gpt-6-astra\",\"reasoning_effort\":\"low\",\"fork_turns\":\"all\",\"message\":\"gAAAAABqp7pffIiYlVgewP1qXa-Z6L4qGa4EdGlwVw8TJ71ld79l4iDuKL2rJIj1i4lag140v_di1fGFXSKgM4oU1qVcFB93T1wYo8SaTJVr44M_1H_6imtVi1Xd3O4x-3Uh7oaIvK2ND3S7REnoXzF75H4jyBg_0_1pnnOdkcW7wPs1fWwiHLS0nKmWExJdyAp7vUuj3xVEy8lcRLEH-lvddgOWn_f3FwquXz3EMGbe2MQuhVJK8KQabCewRTeWwF5TC5URynVPSDoj7fQ3oJWYozB9HtHELjFFAH0XjNjGCqwMMW5icbV-iplZiVGG1zFI0LY2EROmGclUimQQpkGc3-t5xozK2MMh5-uL4Ttp7eDB0kHBBjbk3CkUbCJOXqENLf-LlHDINcWOLKmfJOGgDXsy4PJ4MrN5QYzENi1U_NuBaba3xdCCZZUdeuSxHzZsP9IIcHiuYZ42WJj8Ej-5b-5ed5l84H24T9toW-gqD3bxWFIcKgQktY_Cx2rqyXIjahEVvER8bhDb5yZa5CW19tiLN_u5UATPOOmyZlkDjiqXsY1aAmdf6U6MTTfqjtT20JG02mqNj1lQWyihiOmTPLeEAkQ5UVeZR6TJvbKBXx0EWK7SwaDRmQIRjZDGk14jT8G3YS1UwupjV0W_UaFo8uqb8nbld-DQUUWWq51vlNHwLNsw_xTzpA9hVQuOy2WyVIHtIrdF\"}"
+      },
+      {
+        "at": "2026-09-14T09:12:01.573Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "type": "function_call",
+        "name": "wait_agent",
+        "namespace": "collaboration",
+        "call_id": "call_j3cOVWwq5z21tXIZlxs2jgEM",
+        "arguments": "{\"timeout_ms\":45000}"
+      },
+      {
+        "at": "2026-09-14T09:12:49.694Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "type": "function_call",
+        "name": "wait_agent",
+        "namespace": "collaboration",
+        "call_id": "call_MjmeOCdtTHfo8upnk2tun8uT",
+        "arguments": "{\"timeout_ms\":45000}"
+      },
+      {
+        "at": "2026-09-14T09:12:04.639Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_QGoLNHxQ9N7YnpkDxfSkPCGS",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T09:12:38.649Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_CkOIl4yX0tywzCohQscPW1pA",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:95182,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T09:13:22.260Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_mS9ecCfcXMoJasPAzQDiw3jO",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:95182,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T09:11:57.695Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "call_id": "call_2eABWScwx2W8KzwZ7CJoc2OG",
+        "output": "{\"task_name\":\"/root/benchmark\"}"
+      },
+      {
+        "at": "2026-09-14T09:12:46.583Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "call_id": "call_j3cOVWwq5z21tXIZlxs2jgEM",
+        "output": "{\"message\":\"Wait timed out.\",\"timed_out\":true}"
+      },
+      {
+        "at": "2026-09-14T09:13:24.794Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "call_id": "call_MjmeOCdtTHfo8upnk2tun8uT",
+        "output": "{\"message\":\"Wait completed.\",\"timed_out\":false}"
+      },
+      {
+        "at": "2026-09-14T09:12:34.854Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "call_id": "call_QGoLNHxQ9N7YnpkDxfSkPCGS",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 30.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"d268ac\",\"wall_time_seconds\":30.002005958,\"session_id\":95182,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T09:13:18.663Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "call_id": "call_CkOIl4yX0tywzCohQscPW1pA",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 40.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"0c1733\",\"wall_time_seconds\":40.002004,\"session_id\":95182,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T09:13:22.292Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "call_id": "call_mS9ecCfcXMoJasPAzQDiw3jO",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"db7b32\",\"wall_time_seconds\":0.0000015,\"exit_code\":0,\"original_token_count\":5,\"output\":\"BENCH_RESULT_7391\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T09:11:57.694850+00:00",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "response_id": "resp_06998f3a7510e6e0016aa7ba598d1487d0851c637ab3ea4309",
+        "usage": {
+          "total_tokens": 15720,
+          "input_tokens": 15563,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 157,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T09:12:01.616150+00:00",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "response_id": "resp_06998f3a7510e6e0016aa7ba603b3487d0a3c191d6e4fd5020",
+        "usage": {
+          "total_tokens": 15807,
+          "input_tokens": 15741,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 66,
+          "reasoning_output_tokens": 22
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T09:12:04.714Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "response_id": "resp_028b626d91857144016aa7ba62d01087d09492ab1b90c82648",
+        "usage": {
+          "input_tokens": 15458,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 65,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 15523
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T09:12:38.774Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "response_id": "resp_028b626d91857144016aa7ba854c8087d0920d491326e15b81",
+        "usage": {
+          "input_tokens": 15580,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 66,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 15646
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T09:12:49.708850+00:00",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "response_id": "resp_06998f3a7510e6e0016aa7ba910e9c87d0a4d72ac403604739",
+        "usage": {
+          "total_tokens": 15872,
+          "input_tokens": 15832,
+          "cached_input_tokens": 15616,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 40,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T09:13:22.291Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "response_id": "resp_028b626d91857144016aa7bab11c3487d09d5ddbac9fc4a3f0",
+        "usage": {
+          "input_tokens": 15703,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 69,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 15772
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T09:13:24.786Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "response_id": "resp_028b626d91857144016aa7bab4b98887d082672a8c0d112cf0",
+        "usage": {
+          "input_tokens": 15835,
+          "cached_input_tokens": 15488,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 15845
+        },
+        "source": "per_response_rollout"
+      },
+      {
+        "at": "2026-09-14T09:13:26.870150+00:00",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "response_id": "resp_06998f3a7510e6e0016aa7bab7550087d081405015f616afa7",
+        "usage": {
+          "total_tokens": 15947,
+          "input_tokens": 15937,
+          "cached_input_tokens": 15616,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T09:11:54.251Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "phase": "commentary",
+        "text": "I\u2019ll delegate the command to one subagent and wait for its result.\n"
+      },
+      {
+        "at": "2026-09-14T09:12:01.303Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "phase": "commentary",
+        "text": "The subagent is running the benchmark. I\u2019m waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T09:12:49.475Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "phase": "commentary",
+        "text": "I\u2019m still waiting for the subagent\u2019s completion result.\n"
+      },
+      {
+        "at": "2026-09-14T09:13:26.738Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      },
+      {
+        "at": "2026-09-14T09:12:03.558Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "phase": "commentary",
+        "text": "I\u2019m running the benchmark once and will wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T09:12:37.486Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "phase": "commentary",
+        "text": "The benchmark is still running. I\u2019m waiting for its result.\n"
+      },
+      {
+        "at": "2026-09-14T09:13:21.046Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "phase": "commentary",
+        "text": "The benchmark has not produced output yet. I\u2019m continuing to wait for completion.\n"
+      },
+      {
+        "at": "2026-09-14T09:13:24.702Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T09:11:51.069Z",
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f2f-cb1a-7c23-895e-1d0a515fd84e"
+      },
+      {
+        "at": "2026-09-14T09:11:57.600Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f2f-cb1a-7c23-895e-1d0a515fd84e"
+      },
+      {
+        "at": "2026-09-14T09:12:00.366Z",
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f2f-fdaf-79f2-98d0-f508e28b0d52"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f2f-cae6-78d3-a4d0-124a9e650e97",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      },
+      {
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      },
+      {
+        "session_id": "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f2f-cae6-78d3-a4d0-124a9e650e97": {
+        "input_tokens": 63073,
+        "cached_input_tokens": 58752,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 273,
+        "reasoning_output_tokens": 22,
+        "total_tokens": 63346
+      },
+      "01a09f2f-fd9d-7061-84e8-8a7e57fb72ee": {
+        "input_tokens": 62576,
+        "cached_input_tokens": 54656,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 210,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 62786
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 63073,
+      "cached_input_tokens": 58752,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 273,
+      "reasoning_output_tokens": 22,
+      "total_tokens": 63346,
+      "responses": 4,
+      "input_minus_cached": 4321
+    },
+    "child_usage": {
+      "input_tokens": 62576,
+      "cached_input_tokens": 54656,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 210,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 62786,
+      "responses": 4,
+      "input_minus_cached": 7920
+    },
+    "combined_usage": {
+      "input_tokens": 125649,
+      "cached_input_tokens": 113408,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 483,
+      "reasoning_output_tokens": 22,
+      "total_tokens": 126132,
+      "responses": 8,
+      "input_minus_cached": 12241
+    },
+    "child_session_count": 1,
+    "job_events": [
+      {
+        "event": "start",
+        "at": 1789377124.745044
+      },
+      {
+        "event": "complete",
+        "at": 1789377199.7523682
+      }
+    ],
+    "job_launches": 1,
+    "ci_checks": [],
+    "result_delay_seconds": 6.986,
+    "parent_message_gaps_seconds": [
+      9.585,
+      7.052,
+      48.172,
+      37.263
+    ],
+    "max_parent_message_gap_seconds": 48.172
+  },
+  {
+    "name": "gpt-6-astra-terminal-patch-r1",
+    "condition": "patch",
+    "scenario": "terminal",
+    "model": "gpt-6-astra",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/opt/homebrew/Caskroom/codex/0.154.0/bin/codex",
+    "sleep_mode": "default",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "Run `python3 bench_job.py` exactly once and wait for it to finish. Run it yourself; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": "a60d7f36e699d61a17abf4fafc46c9dcfe3195826d6e59e6546e39737b9ff2cf",
+    "patch_file": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/docs/waiting-benchmark/AGENTS.compact-final.md",
+    "skills_mode": "instructions_disabled",
+    "cli_version": "codex-cli 0.154.0",
+    "thread_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+    "turn_start_epoch": 1789377104.6679108,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789377198.1416461,
+    "status": "completed",
+    "elapsed_seconds": 93.6065,
+    "success": true,
+    "prompt_loaded": true,
+    "skills_instruction_sessions": [],
+    "calls": [
+      {
+        "at": "2026-09-14T09:11:54.745Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_aYnAWPrZRpksZNC03LUwKkZ7",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T09:12:29.089Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_DslhcaabxpBTMC9tl2jNt2B9",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:96552,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T09:13:14.985Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_XaYAAsH8paXmeBjv8aNLN1GC",
+        "input": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:96552,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T09:12:24.961Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "call_id": "call_aYnAWPrZRpksZNC03LUwKkZ7",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 30.2 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"e21833\",\"wall_time_seconds\":30.001049417,\"session_id\":96552,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T09:13:09.098Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "call_id": "call_DslhcaabxpBTMC9tl2jNt2B9",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 40.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"bb66a4\",\"wall_time_seconds\":40.000802125,\"session_id\":96552,\"original_token_count\":0,\"output\":\"\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T09:13:15.087Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "call_id": "call_XaYAAsH8paXmeBjv8aNLN1GC",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.0 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"877b87\",\"wall_time_seconds\":0.000002084,\"exit_code\":0,\"original_token_count\":5,\"output\":\"BENCH_RESULT_7391\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T09:11:54.759529+00:00",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "response_id": "resp_0f3a69d507d5e01b016aa7ba59399087d0993e1f62e818860e",
+        "usage": {
+          "total_tokens": 15598,
+          "input_tokens": 15534,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 64,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T09:12:29.120129+00:00",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "response_id": "resp_0f3a69d507d5e01b016aa7ba7b764487d09fdeef7a5173a98b",
+        "usage": {
+          "total_tokens": 15730,
+          "input_tokens": 15655,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 75,
+          "reasoning_output_tokens": 9
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T09:13:15.084329+00:00",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "response_id": "resp_0f3a69d507d5e01b016aa7baa7dd7087d09c3b2163bd70f3a5",
+        "usage": {
+          "total_tokens": 15856,
+          "input_tokens": 15788,
+          "cached_input_tokens": 15488,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 68,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T09:13:18.136629+00:00",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "response_id": "resp_0f3a69d507d5e01b016aa7baad999087d0914f2ff8ffb53f4e",
+        "usage": {
+          "total_tokens": 15928,
+          "input_tokens": 15918,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T09:11:53.546Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T09:12:27.972Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll keep waiting.\n"
+      },
+      {
+        "at": "2026-09-14T09:13:13.813Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "phase": "commentary",
+        "text": "The job is still running with no output yet. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T09:13:18.084Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T09:11:50.416Z",
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09f2f-cb1c-73e3-b760-b3ce5a6b573f"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09f2f-cae8-7281-9010-b8ae3a99a61d",
+        "sha256": "e0552df2d49b840eaaafca225fcad964c6b4271785569cccdb71a4e44fb1a065"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09f2f-cae8-7281-9010-b8ae3a99a61d": {
+        "input_tokens": 62895,
+        "cached_input_tokens": 55168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 217,
+        "reasoning_output_tokens": 9,
+        "total_tokens": 63112
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 62895,
+      "cached_input_tokens": 55168,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 217,
+      "reasoning_output_tokens": 9,
+      "total_tokens": 63112,
+      "responses": 4,
+      "input_minus_cached": 7727
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 62895,
+      "cached_input_tokens": 55168,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 217,
+      "reasoning_output_tokens": 9,
+      "total_tokens": 63112,
+      "responses": 4,
+      "input_minus_cached": 7727
+    },
+    "child_session_count": 0,
+    "job_events": [
+      {
+        "event": "start",
+        "at": 1789377114.852892
+      },
+      {
+        "event": "complete",
+        "at": 1789377189.859622
+      }
+    ],
+    "job_launches": 1,
+    "ci_checks": [],
+    "result_delay_seconds": 8.224,
+    "parent_message_gaps_seconds": [
+      8.878,
+      34.426,
+      45.841,
+      4.271
+    ],
+    "max_parent_message_gap_seconds": 45.841
+  }
+]

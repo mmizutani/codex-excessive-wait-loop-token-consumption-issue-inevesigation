@@ -1,0 +1,344 @@
+[
+  {
+    "source": "tmp/wait-benchmark-smoke/gpt-6-astra-terminal-new-r1.json",
+    "name": "gpt-6-astra-terminal-new-r1",
+    "cli_version": "codex-cli 0.154.0",
+    "model": "gpt-6-astra",
+    "status": "completed",
+    "success": true,
+    "turn_error": null,
+    "combined_usage": {
+      "input_tokens": 54929,
+      "cached_input_tokens": 48384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 111,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 55040,
+      "responses": 3,
+      "input_minus_cached": 6545
+    },
+    "response_usage": [
+      {
+        "at": "2026-09-14T07:02:34.192Z",
+        "session_id": "01a09eb9-64f4-7932-81c6-384db0387c65",
+        "response_id": "resp_0e01f13341668361016aa79c05d82487d09f34de26921c7fab",
+        "usage": {
+          "input_tokens": 18196,
+          "cached_input_tokens": 12160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 62,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18258
+        }
+      },
+      {
+        "at": "2026-09-14T07:02:39.742Z",
+        "session_id": "01a09eb9-64f4-7932-81c6-384db0387c65",
+        "response_id": "resp_0e01f13341668361016aa79c0c168487d0907162ff1beefde1",
+        "usage": {
+          "input_tokens": 18316,
+          "cached_input_tokens": 18048,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18355
+        }
+      },
+      {
+        "at": "2026-09-14T07:02:42.058Z",
+        "session_id": "01a09eb9-64f4-7932-81c6-384db0387c65",
+        "response_id": "resp_0e01f13341668361016aa79c106dd087d0b818d9edcfe31adc",
+        "usage": {
+          "input_tokens": 18417,
+          "cached_input_tokens": 18176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 18427
+        }
+      }
+    ]
+  },
+  {
+    "source": "tmp/wait-benchmark-smoke/gpt-6-astra-terminal-old-r1.json",
+    "name": "gpt-6-astra-terminal-old-r1",
+    "cli_version": "codex-cli 0.151.0",
+    "model": "gpt-6-astra",
+    "status": "probe_error",
+    "success": false,
+    "turn_error": {
+      "message": "{\"type\":\"error\",\"status\":400,\"error\":{\"type\":\"invalid_request_error\",\"message\":\"The 'gpt-6-astra' model requires a newer version of Codex. Please upgrade to the latest app or CLI and try again.\"}}",
+      "codexErrorInfo": "other",
+      "additionalDetails": null,
+      "misalignment": null
+    },
+    "error": "RuntimeError({'code': -32600, 'message': 'no active turn to interrupt'})",
+    "combined_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "response_usage": []
+  },
+  {
+    "source": "tmp/wait-benchmark-ready/gpt-5.6-sol-subagent-old-r1.json",
+    "name": "gpt-5.6-sol-subagent-old-r1",
+    "cli_version": "codex-cli 0.151.0",
+    "model": "gpt-5.6-sol",
+    "status": "completed",
+    "success": true,
+    "turn_error": null,
+    "combined_usage": {
+      "input_tokens": 87636,
+      "cached_input_tokens": 66176,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 414,
+      "reasoning_output_tokens": 127,
+      "total_tokens": 88050,
+      "responses": 5,
+      "input_minus_cached": 21460
+    },
+    "response_usage": [
+      {
+        "at": "2026-09-14T07:11:12.267140+00:00",
+        "session_id": "01a09ec1-058c-7061-8e3b-024ba67c9093",
+        "response_id": "resp_0e979d90fcb03b7e016aa79e0739dc87d082bd232d53e1eddc",
+        "usage": {
+          "total_tokens": 17489,
+          "input_tokens": 17254,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 235,
+          "reasoning_output_tokens": 108
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T07:11:15.638440+00:00",
+        "session_id": "01a09ec1-058c-7061-8e3b-024ba67c9093",
+        "response_id": "resp_0e979d90fcb03b7e016aa79e111ec487d0bcb37724e9586fac",
+        "usage": {
+          "total_tokens": 17543,
+          "input_tokens": 17511,
+          "cached_input_tokens": 17024,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 32,
+          "reasoning_output_tokens": 8
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T07:11:24.609740+00:00",
+        "session_id": "01a09ec1-6f95-7821-a50c-bc17d26dc8f8",
+        "response_id": "resp_0325aad06e33d843016aa79e16859c87d0a8f88a87451b4750",
+        "usage": {
+          "total_tokens": 17449,
+          "input_tokens": 17322,
+          "cached_input_tokens": 14720,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 127,
+          "reasoning_output_tokens": 11
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T07:11:30.394940+00:00",
+        "session_id": "01a09ec1-6f95-7821-a50c-bc17d26dc8f8",
+        "response_id": "resp_0325aad06e33d843016aa79e1f8fe087d0ba14136115388bbc",
+        "usage": {
+          "total_tokens": 17736,
+          "input_tokens": 17726,
+          "cached_input_tokens": 17152,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T07:11:34.354140+00:00",
+        "session_id": "01a09ec1-058c-7061-8e3b-024ba67c9093",
+        "response_id": "resp_0e979d90fcb03b7e016aa79e23512087d0a914f7ff42487745",
+        "usage": {
+          "total_tokens": 17833,
+          "input_tokens": 17823,
+          "cached_input_tokens": 17280,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ]
+  },
+  {
+    "source": "tmp/wait-benchmark-ready/gpt-5.6-sol-terminal-old-r1.json",
+    "name": "gpt-5.6-sol-terminal-old-r1",
+    "cli_version": "codex-cli 0.151.0",
+    "model": "gpt-5.6-sol",
+    "status": "completed",
+    "success": true,
+    "turn_error": null,
+    "combined_usage": {
+      "input_tokens": 52344,
+      "cached_input_tokens": 40832,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 177,
+      "reasoning_output_tokens": 9,
+      "total_tokens": 52521,
+      "responses": 3,
+      "input_minus_cached": 11512
+    },
+    "response_usage": [
+      {
+        "at": "2026-09-14T07:11:07.638760+00:00",
+        "session_id": "01a09ec1-058c-71d0-bac2-fd77a907eabf",
+        "response_id": "resp_0541467acbd77fa7016aa79e086f4887d09a65f029a5b8d2bd",
+        "usage": {
+          "total_tokens": 17336,
+          "input_tokens": 17224,
+          "cached_input_tokens": 6656,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 112,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T07:11:12.744960+00:00",
+        "session_id": "01a09ec1-058c-71d0-bac2-fd77a907eabf",
+        "response_id": "resp_0541467acbd77fa7016aa79e0e32d087d09706941e0a06e3b0",
+        "usage": {
+          "total_tokens": 17449,
+          "input_tokens": 17394,
+          "cached_input_tokens": 17024,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 55,
+          "reasoning_output_tokens": 9
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T07:11:14.804560+00:00",
+        "session_id": "01a09ec1-058c-71d0-bac2-fd77a907eabf",
+        "response_id": "resp_0541467acbd77fa7016aa79e118cc887d08dd2beeb679c0e56",
+        "usage": {
+          "total_tokens": 17736,
+          "input_tokens": 17726,
+          "cached_input_tokens": 17152,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ]
+  },
+  {
+    "source": "tmp/wait-benchmark-clean-smoke/gpt-5.6-sol-terminal-new-r1.json",
+    "name": "gpt-5.6-sol-terminal-new-r1",
+    "cli_version": "codex-cli 0.154.0",
+    "model": "gpt-5.6-sol",
+    "status": "completed",
+    "success": true,
+    "turn_error": null,
+    "skills_mode": "instructions_disabled",
+    "skills_instruction_sessions": [],
+    "combined_usage": {
+      "input_tokens": 28209,
+      "cached_input_tokens": 24960,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 122,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 28331,
+      "responses": 2,
+      "input_minus_cached": 3249
+    },
+    "response_usage": [
+      {
+        "at": "2026-09-14T07:29:41.173658+00:00",
+        "session_id": "01a09ed2-35c5-7291-a349-4a450ce00950",
+        "response_id": "resp_061534a7fc95e86d016aa7a261458c87d0af401a3bce5642df",
+        "usage": {
+          "total_tokens": 14129,
+          "input_tokens": 14017,
+          "cached_input_tokens": 11136,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 112,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T07:29:46.093658+00:00",
+        "session_id": "01a09ed2-35c5-7291-a349-4a450ce00950",
+        "response_id": "resp_061534a7fc95e86d016aa7a26803c887d0a80ef589ee809933",
+        "usage": {
+          "total_tokens": 14202,
+          "input_tokens": 14192,
+          "cached_input_tokens": 13824,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ]
+  },
+  {
+    "source": "tmp/wait-benchmark-clean-smoke/gpt-5.6-sol-terminal-old-r1.json",
+    "name": "gpt-5.6-sol-terminal-old-r1",
+    "cli_version": "codex-cli 0.151.0",
+    "model": "gpt-5.6-sol",
+    "status": "completed",
+    "success": true,
+    "turn_error": null,
+    "skills_mode": "instructions_disabled",
+    "skills_instruction_sessions": [],
+    "combined_usage": {
+      "input_tokens": 28665,
+      "cached_input_tokens": 20608,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 123,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 28788,
+      "responses": 2,
+      "input_minus_cached": 8057
+    },
+    "response_usage": [
+      {
+        "at": "2026-09-14T07:29:25.071396+00:00",
+        "session_id": "01a09ed1-f47f-7632-b95d-ec2a9278d801",
+        "response_id": "resp_0cc95ad23852a2ee016aa7a24fbd2887d0a876335b2887067c",
+        "usage": {
+          "total_tokens": 14251,
+          "input_tokens": 14138,
+          "cached_input_tokens": 6656,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 113,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T07:29:31.459496+00:00",
+        "session_id": "01a09ed1-f47f-7632-b95d-ec2a9278d801",
+        "response_id": "resp_0cc95ad23852a2ee016aa7a2583d4c87d09ee4deb67b64073e",
+        "usage": {
+          "total_tokens": 14537,
+          "input_tokens": 14527,
+          "cached_input_tokens": 13952,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ]
+  }
+]

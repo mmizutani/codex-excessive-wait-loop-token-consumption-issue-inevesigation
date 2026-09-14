@@ -1,0 +1,428 @@
+{
+  "measurement_note": "Scripted backend: request counts and runtime behavior are real; model inference and all token usage are simulated.",
+  "cases": [
+    {
+      "name": "sleep-integer",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "clock",
+        "name": "sleep",
+        "arguments": "{\"duration_ms\":1000}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.1044,
+        1.1092
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "Wall time: 1.0019 seconds\nSleep completed."
+      ],
+      "request_gap_seconds": 1.0048,
+      "assertions": "passed"
+    },
+    {
+      "name": "sleep-float-integral",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "clock",
+        "name": "sleep",
+        "arguments": "{\"duration_ms\":1.0}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.1011,
+        0.1031
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "failed to parse function arguments: invalid type: floating point `1.0`, expected u64 at line 1 column 18"
+      ],
+      "request_gap_seconds": 0.002,
+      "assertions": "passed"
+    },
+    {
+      "name": "sleep-float-fractional",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "clock",
+        "name": "sleep",
+        "arguments": "{\"duration_ms\":1.5}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.1101,
+        0.1122
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "failed to parse function arguments: invalid type: floating point `1.5`, expected u64 at line 1 column 18"
+      ],
+      "request_gap_seconds": 0.0021,
+      "assertions": "passed"
+    },
+    {
+      "name": "wait-minimum",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "collaboration",
+        "name": "wait_agent",
+        "arguments": "{\"timeout_ms\":1}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.1026,
+        10.1069
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "{\"message\":\"Wait timed out.\\n\\nRequested timeout of 1ms was clamped to the minimum of 10000ms.\",\"timed_out\":true}"
+      ],
+      "request_gap_seconds": 10.0043,
+      "assertions": "passed"
+    },
+    {
+      "name": "wait-default",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "collaboration",
+        "name": "wait_agent",
+        "arguments": "{}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.0985,
+        30.1025
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "{\"message\":\"Wait timed out.\",\"timed_out\":true}"
+      ],
+      "request_gap_seconds": 30.004,
+      "assertions": "passed"
+    },
+    {
+      "name": "wait-long-steer-astra",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "collaboration",
+        "name": "wait_agent",
+        "arguments": "{\"timeout_ms\":300000}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.0943,
+        1.1386
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "{\"message\":\"Wait interrupted by new input.\",\"timed_out\":false}"
+      ],
+      "request_gap_seconds": 1.0443,
+      "steer_to_next_request_seconds": 0.0056,
+      "assertions": "passed"
+    },
+    {
+      "name": "wait-long-steer-sol",
+      "model_catalog_entry": "gpt-5.6-sol",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "collaboration",
+        "name": "wait_agent",
+        "arguments": "{\"timeout_ms\":300000}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.1035,
+        1.1427
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "{\"message\":\"Wait interrupted by new input.\",\"timed_out\":false}"
+      ],
+      "request_gap_seconds": 1.0392,
+      "steer_to_next_request_seconds": 0.0031,
+      "assertions": "passed"
+    },
+    {
+      "name": "sleep-long-steer",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "clock",
+        "name": "sleep",
+        "arguments": "{\"duration_ms\":300000}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.0969,
+        1.1512
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "Wall time: 1.0509 seconds\nSleep interrupted by new input."
+      ],
+      "request_gap_seconds": 1.0543,
+      "steer_to_next_request_seconds": 0.0033,
+      "assertions": "passed"
+    },
+    {
+      "name": "wait-float",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "collaboration",
+        "name": "wait_agent",
+        "arguments": "{\"timeout_ms\":10000.0}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.0911,
+        0.0935
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "failed to parse function arguments: invalid type: floating point `10000.0`, expected i64 at line 1 column 21"
+      ],
+      "request_gap_seconds": 0.0024,
+      "assertions": "passed"
+    },
+    {
+      "name": "wait-over-maximum",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "collaboration",
+        "name": "wait_agent",
+        "arguments": "{\"timeout_ms\":3600001}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.1055,
+        0.1074
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "timeout_ms must be at most 3600000"
+      ],
+      "request_gap_seconds": 0.0019,
+      "assertions": "passed"
+    },
+    {
+      "name": "wait-config-default",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "collaboration",
+        "name": "wait_agent",
+        "arguments": "{}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.1121,
+        1.1173
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "{\"message\":\"Wait timed out.\",\"timed_out\":true}"
+      ],
+      "request_gap_seconds": 1.0052,
+      "assertions": "passed"
+    },
+    {
+      "name": "wait-config-explicit-short",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "function_call",
+        "namespace": "collaboration",
+        "name": "wait_agent",
+        "arguments": "{\"timeout_ms\":10000}",
+        "call_id": "probe-call"
+      },
+      "request_times_seconds": [
+        0.0973,
+        10.102
+      ],
+      "request_count": 2,
+      "tool_outputs": [
+        "{\"message\":\"Wait timed out.\",\"timed_out\":true}"
+      ],
+      "request_gap_seconds": 10.0047,
+      "assertions": "passed"
+    },
+    {
+      "name": "goal-empty",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "message",
+        "role": "assistant",
+        "id": "probe-message",
+        "phase": "final_answer",
+        "content": [
+          {
+            "type": "output_text",
+            "text": ""
+          }
+        ]
+      },
+      "request_times_seconds": [
+        0.2762,
+        0.5914,
+        0.9056,
+        1.2193
+      ],
+      "request_count": 4,
+      "tool_outputs": [],
+      "before_pause": "active",
+      "after_pause": "paused",
+      "new_requests_in_1s_after_pause": 0,
+      "completed_turns": 4,
+      "assertions": "passed"
+    },
+    {
+      "name": "goal-status-text",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "message",
+        "role": "assistant",
+        "id": "probe-message",
+        "phase": "final_answer",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "Still waiting."
+          }
+        ]
+      },
+      "request_times_seconds": [
+        0.2797,
+        0.593,
+        0.9018,
+        1.2124
+      ],
+      "request_count": 4,
+      "tool_outputs": [],
+      "before_pause": "active",
+      "after_pause": "paused",
+      "new_requests_in_1s_after_pause": 0,
+      "completed_turns": 4,
+      "assertions": "passed"
+    },
+    {
+      "name": "exposure-astra-default",
+      "model_catalog_entry": "gpt-6-astra",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "message",
+        "role": "assistant",
+        "id": "probe-message",
+        "phase": "final_answer",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "PROBE_DONE"
+          }
+        ]
+      },
+      "request_times_seconds": [
+        0.1095
+      ],
+      "request_count": 1,
+      "tool_outputs": [],
+      "sleep_exposed": true,
+      "assertions": "passed"
+    },
+    {
+      "name": "exposure-sol-default",
+      "model_catalog_entry": "gpt-5.6-sol",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "message",
+        "role": "assistant",
+        "id": "probe-message",
+        "phase": "final_answer",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "PROBE_DONE"
+          }
+        ]
+      },
+      "request_times_seconds": [
+        0.1234
+      ],
+      "request_count": 1,
+      "tool_outputs": [],
+      "sleep_exposed": false,
+      "assertions": "passed"
+    },
+    {
+      "name": "exposure-sol-always-on",
+      "model_catalog_entry": "gpt-5.6-sol",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "message",
+        "role": "assistant",
+        "id": "probe-message",
+        "phase": "final_answer",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "PROBE_DONE"
+          }
+        ]
+      },
+      "request_times_seconds": [
+        0.0994
+      ],
+      "request_count": 1,
+      "tool_outputs": [],
+      "sleep_exposed": true,
+      "assertions": "passed"
+    },
+    {
+      "name": "exposure-sol-disabled",
+      "model_catalog_entry": "gpt-5.6-sol",
+      "backend": "scripted-local-no-model-inference",
+      "call": {
+        "type": "message",
+        "role": "assistant",
+        "id": "probe-message",
+        "phase": "final_answer",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "PROBE_DONE"
+          }
+        ]
+      },
+      "request_times_seconds": [
+        0.1129
+      ],
+      "request_count": 1,
+      "tool_outputs": [],
+      "sleep_exposed": false,
+      "assertions": "passed"
+    }
+  ]
+}

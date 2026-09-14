@@ -1,0 +1,6 @@
+## Waiting for work
+
+- Do useful independent work first. When only subagent results remain, use direct `wait_agent` with `timeout_ms=300000`. This is an interruptible maximum: delivered messages and user steering can end it early. Do not shorten it merely to recheck or narrate unchanged status; respect tool limits and actionable deadlines.
+- For running commands, retain the session handle and prefer a completion-aware wait. In code mode, coordinate the inner wait and outer `functions.exec`/`functions.wait` yield durations so the wrapper does not cause unnecessary polling. Use integer millisecond arguments.
+- For external work without completion notifications, use direct `clock.sleep` between checks chosen for when their outcome could change the next action; back off unchanged status within applicable limits. Do not add sleep around an existing event-aware wait or assume shell completion will wake sleep.
+- Process results promptly and preserve required verification. An observation timeout is not task failure. For prolonged external waiting under an active `/goal`, ask the user to pause it and verify `paused`; a final reply does not pause it. Never mark unfinished work complete or invent a blocker to stop usage.

@@ -1,0 +1,10 @@
+## Waiting for work
+
+Apply these preferences within higher-priority instructions. When a 60-second update cadence applies, plan waits to return by 50 seconds after the last update; send the update first if that budget is exhausted. Shorten further for tool limits and actionable deadlines.
+
+Longer waits do not necessarily lower total usage; do not add cache-only keepalives without measured savings.
+
+- Do useful independent work first. When only subagent results remain, prefer direct `wait_agent` with `timeout_ms` bounded by the remaining update budget. Required progress updates alone do not justify extra status queries for agents, commands, or CI.
+- When command completion is the only remaining work, start `exec_command` with `yield_time_ms: 30000`, shortened for the remaining update budget or tool limits. Retain the session handle and use empty `write_stdin` waits within that budget; do not add a preliminary short poll. In code mode, explicitly set the first-line `// @exec: {"yield_time_ms": 50000}` (adjust to the budget) so the outer yield covers the inner wait plus a small margin. If a cell is still running, use `functions.wait` with the remaining budget instead of 1-second/default checks; finish that cell before polling the process again. Use integer milliseconds.
+- For CI and other external work, retain the job identity and prefer an existing completion notification or a bounded watcher that reports meaningful changes. Otherwise use direct `clock.sleep` if available between useful checks; back off unchanged status within the limits above. Do not add sleep around an event-aware wait or assume sleep wakes on shell or CI completion.
+- Process results promptly and preserve required verification. An observation timeout is not task failure. If an active `/goal` would only wait on a prolonged external dependency, ask once whether the user wants to pause it; treat it as paused only after verifying that state. A final reply does not pause it. Never mark unfinished work complete or invent a blocker to stop usage.

@@ -1,0 +1,132 @@
+{
+  "retrieved_at": "2026-09-14T04:05:26.547503+00:00",
+  "latest_stable": {
+    "tag_name": "rust-v0.154.0",
+    "published_at": "2026-09-09T22:35:38Z",
+    "html_url": "https://github.com/openai/codex/releases/tag/rust-v0.154.0"
+  },
+  "pull_requests": [
+    {
+      "number": 34969,
+      "title": "Keep the sleep tool outside code mode",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-07-23T16:22:51Z",
+      "merge_commit_sha": "205d37a20f742b0bf8e191622bd07c43f567ea49",
+      "html_url": "https://github.com/openai/codex/pull/34969",
+      "in_0_154_0": true,
+      "in_checkout": true
+    },
+    {
+      "number": 41243,
+      "title": "Add configurable gating for the sleep tool",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-08-28T02:10:53Z",
+      "merge_commit_sha": "ec9620c231396895194329c410f3ec360b4cadef",
+      "html_url": "https://github.com/openai/codex/pull/41243",
+      "in_0_154_0": true,
+      "in_checkout": true
+    },
+    {
+      "number": 25266,
+      "title": "Set multi-agent v2 dogfood defaults",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-06-01T08:24:46Z",
+      "merge_commit_sha": "8d49394febc57518479ece9e3dc5eb9060ac6968",
+      "html_url": "https://github.com/openai/codex/pull/25266",
+      "in_0_154_0": true,
+      "in_checkout": true
+    },
+    {
+      "number": 35594,
+      "title": "Recommend longer waits in the v2 wait_agent schema",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-07-27T10:53:18Z",
+      "merge_commit_sha": "8a1c9414399bd8c52cd11d89f420767c41f4ae99",
+      "html_url": "https://github.com/openai/codex/pull/35594",
+      "in_0_154_0": true,
+      "in_checkout": true
+    },
+    {
+      "number": 37189,
+      "title": "Track multi-agent usage hints in world state",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-08-06T00:23:21Z",
+      "merge_commit_sha": "92b83e226df59dc5ec43a49259d7716821e20c85",
+      "html_url": "https://github.com/openai/codex/pull/37189",
+      "in_0_154_0": true,
+      "in_checkout": true
+    },
+    {
+      "number": 23094,
+      "title": "goal: pause continuation loops on usage limits and blockers",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-05-18T18:28:54Z",
+      "merge_commit_sha": "0d344aca9b0caee4e5a508ee10d8a72f4d416896",
+      "html_url": "https://github.com/openai/codex/pull/23094",
+      "in_0_154_0": true,
+      "in_checkout": true
+    },
+    {
+      "number": 41454,
+      "title": "Block goals after repeated execution host failures",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-08-29T03:06:45Z",
+      "merge_commit_sha": "62b458c93151595cdf2b5ef5e37aa3d8b5613aeb",
+      "html_url": "https://github.com/openai/codex/pull/41454",
+      "in_0_154_0": true,
+      "in_checkout": true
+    },
+    {
+      "number": 44320,
+      "title": "Block goals after three empty automatic continuation turns",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-09-09T22:27:51Z",
+      "merge_commit_sha": "0735c519789d300097554425cc3d7cf3f2d718a1",
+      "html_url": "https://github.com/openai/codex/pull/44320",
+      "in_0_154_0": false,
+      "in_checkout": true
+    },
+    {
+      "number": 44862,
+      "title": "Preserve parent cache affinity for ephemeral forks",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-09-11T16:42:10Z",
+      "merge_commit_sha": "bc5957eac9e89e66f990ed490d11e625a4a3b02c",
+      "html_url": "https://github.com/openai/codex/pull/44862",
+      "in_0_154_0": false,
+      "in_checkout": true
+    }
+  ],
+  "issues": [
+    {
+      "number": 35108,
+      "title": "[Codex Desktop] Nested functions.exec wait_agent polling causes repeated parent turns and token usage",
+      "state": "open",
+      "updated_at": "2026-09-05T14:25:22Z",
+      "html_url": "https://github.com/openai/codex/issues/35108"
+    },
+    {
+      "number": 28144,
+      "title": "Add wait/wake support for goals without spending tokens",
+      "state": "open",
+      "updated_at": "2026-08-25T07:09:05Z",
+      "html_url": "https://github.com/openai/codex/issues/28144"
+    },
+    {
+      "number": 36379,
+      "title": "Raise the default wait_agent deadline from 30 seconds to 5 minutes",
+      "state": "closed",
+      "updated_at": "2026-09-05T14:27:21Z",
+      "html_url": "https://github.com/openai/codex/issues/36379"
+    }
+  ]
+}

@@ -1,0 +1,767 @@
+[
+  {
+    "name": "gpt-5.6-sol-ci-new-on-r1",
+    "condition": "new-on",
+    "scenario": "ci",
+    "model": "gpt-5.6-sol",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/opt/homebrew/Caskroom/codex/0.154.0/bin/codex",
+    "sleep_mode": "always_on",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "The CI run `job-7391` is pending. Its authoritative status command is `python3 bench_ci.py status`. It provides no completion notifications or watch mode. Monitor it until it completes; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": null,
+    "patch_file": null,
+    "skills_mode": "instructions_disabled",
+    "cli_version": "codex-cli 0.154.0",
+    "thread_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+    "turn_start_epoch": 1789372888.488443,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789372984.695159,
+    "status": "completed",
+    "elapsed_seconds": 96.3498,
+    "success": true,
+    "prompt_loaded": null,
+    "skills_instruction_sessions": [],
+    "calls": [
+      {
+        "at": "2026-09-14T08:01:41.647Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_7q4ASy0y5s1zO5rtQX6qEqSZ",
+        "input": "const r = await tools.exec_command({cmd:\"python3 bench_ci.py status\",\"workdir\":\"/var/folders/yx/77rb9j1j2mvbrdb1nsmrjdsr0000gn/T/codex-wait-benchmark-yalaenpe/work\",\"yield_time_ms\":10000,\"max_output_tokens\":2000}); text(JSON.stringify(r))\n"
+      },
+      {
+        "at": "2026-09-14T08:01:44.300Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_Mq3TManfFk1XDewR5kvB2Yub",
+        "arguments": "{\"duration_ms\":10000}"
+      },
+      {
+        "at": "2026-09-14T08:01:58.857Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_qOaTGAqlp3yi1RBZ3ooVn267",
+        "input": "const r = await tools.exec_command({cmd:\"python3 bench_ci.py status\",\"workdir\":\"/var/folders/yx/77rb9j1j2mvbrdb1nsmrjdsr0000gn/T/codex-wait-benchmark-yalaenpe/work\",\"yield_time_ms\":10000,\"max_output_tokens\":2000}); text(JSON.stringify(r))\n"
+      },
+      {
+        "at": "2026-09-14T08:02:01.405Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_ZxOoCiUAhcc0lZ55IUjrqEwF",
+        "arguments": "{\"duration_ms\":20000}"
+      },
+      {
+        "at": "2026-09-14T08:02:25.180Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_zs2o3mluZsL6EhmhY00eBBqk",
+        "input": "const r = await tools.exec_command({cmd:\"python3 bench_ci.py status\",\"workdir\":\"/var/folders/yx/77rb9j1j2mvbrdb1nsmrjdsr0000gn/T/codex-wait-benchmark-yalaenpe/work\",\"yield_time_ms\":10000,\"max_output_tokens\":2000}); text(JSON.stringify(r))\n"
+      },
+      {
+        "at": "2026-09-14T08:02:28.778Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_xxjshNeJu7x8JTHCKxw7REKa",
+        "arguments": "{\"duration_ms\":30000}"
+      },
+      {
+        "at": "2026-09-14T08:03:02.607Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_4YAUd3MpnXaAL8yPsWDag5g3",
+        "input": "const r = await tools.exec_command({cmd:\"python3 bench_ci.py status\",\"workdir\":\"/var/folders/yx/77rb9j1j2mvbrdb1nsmrjdsr0000gn/T/codex-wait-benchmark-yalaenpe/work\",\"yield_time_ms\":10000,\"max_output_tokens\":2000}); text(JSON.stringify(r))\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:01:41.818Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "call_id": "call_7q4ASy0y5s1zO5rtQX6qEqSZ",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"787e23\",\"wall_time_seconds\":0.000001708,\"exit_code\":0,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:01:54.305Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "call_id": "call_Mq3TManfFk1XDewR5kvB2Yub",
+        "output": "Wall time: 10.0025 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:01:58.933Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "call_id": "call_qOaTGAqlp3yi1RBZ3ooVn267",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"b37f08\",\"wall_time_seconds\":0.000001667,\"exit_code\":0,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:02:21.415Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "call_id": "call_ZxOoCiUAhcc0lZ55IUjrqEwF",
+        "output": "Wall time: 20.0041 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:02:25.356Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "call_id": "call_zs2o3mluZsL6EhmhY00eBBqk",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"16c1c0\",\"wall_time_seconds\":0.000002583,\"exit_code\":0,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:02:58.784Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "call_id": "call_xxjshNeJu7x8JTHCKxw7REKa",
+        "output": "Wall time: 30.0033 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:03:02.691Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "call_id": "call_4YAUd3MpnXaAL8yPsWDag5g3",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"496901\",\"wall_time_seconds\":0.00000125,\"exit_code\":0,\"original_token_count\":20,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"completed\\\", \\\"result\\\": \\\"BENCH_RESULT_7391\\\"}\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:01:41.818081+00:00",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "response_id": "resp_01fa5e8c6d243271016aa7a9e1246c87d0b823140394471001",
+        "usage": {
+          "total_tokens": 14230,
+          "input_tokens": 14109,
+          "cached_input_tokens": 6528,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 121,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:01:44.301281+00:00",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "response_id": "resp_01fa5e8c6d243271016aa7a9e670a087d0b40b7c2e7386d292",
+        "usage": {
+          "total_tokens": 14343,
+          "input_tokens": 14307,
+          "cached_input_tokens": 13952,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 36,
+          "reasoning_output_tokens": 15
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:01:58.918081+00:00",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "response_id": "resp_01fa5e8c6d243271016aa7a9f3036087d0a9366f11cdf6c8ef",
+        "usage": {
+          "total_tokens": 14669,
+          "input_tokens": 14579,
+          "cached_input_tokens": 6528,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 90,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:02:01.435781+00:00",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "response_id": "resp_01fa5e8c6d243271016aa7a9f7b4cc87d0ae1db7035f8b5af0",
+        "usage": {
+          "total_tokens": 14766,
+          "input_tokens": 14747,
+          "cached_input_tokens": 14464,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:02:25.355081+00:00",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "response_id": "resp_01fa5e8c6d243271016aa7aa0de03487d0be3aeda1443d198f",
+        "usage": {
+          "total_tokens": 14879,
+          "input_tokens": 14789,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 90,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:02:28.893281+00:00",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "response_id": "resp_01fa5e8c6d243271016aa7aa12155087d0bcae8557179120f2",
+        "usage": {
+          "total_tokens": 14989,
+          "input_tokens": 14958,
+          "cached_input_tokens": 14592,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 31,
+          "reasoning_output_tokens": 10
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:03:02.670881+00:00",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "response_id": "resp_01fa5e8c6d243271016aa7aa33538087d0a147081ae489dfb8",
+        "usage": {
+          "total_tokens": 15102,
+          "input_tokens": 15012,
+          "cached_input_tokens": 14720,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 90,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:03:04.686181+00:00",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "response_id": "resp_01fa5e8c6d243271016aa7aa37357087d09e6dffb96ce1e5ea",
+        "usage": {
+          "total_tokens": 15195,
+          "input_tokens": 15185,
+          "cached_input_tokens": 14592,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:01:40.159Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "phase": "commentary",
+        "text": "I\u2019ll poll the authoritative status command without inspecting or changing the benchmark scripts, and report only once the job completes successfully."
+      },
+      {
+        "at": "2026-09-14T08:03:04.635Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:01:35.673Z",
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "model": "gpt-5.6-sol",
+        "effort": "low",
+        "turn_id": "01a09eef-75a8-7af3-9ad2-6359a6516daf"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09eef-756c-7601-94d9-d34970432f6f",
+        "sha256": "e9cee03d102eeb8f125a015776e2a8220dca00aec32edfddd3017551ad97d528"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09eef-756c-7601-94d9-d34970432f6f": {
+        "input_tokens": 117686,
+        "cached_input_tokens": 99456,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 487,
+        "reasoning_output_tokens": 25,
+        "total_tokens": 118173
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 117686,
+      "cached_input_tokens": 99456,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 487,
+      "reasoning_output_tokens": 25,
+      "total_tokens": 118173,
+      "responses": 8,
+      "input_minus_cached": 18230
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 117686,
+      "cached_input_tokens": 99456,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 487,
+      "reasoning_output_tokens": 25,
+      "total_tokens": 118173,
+      "responses": 8,
+      "input_minus_cached": 18230
+    },
+    "child_session_count": 0,
+    "job_events": [],
+    "job_launches": 0,
+    "ci_checks": [
+      {
+        "at": 1789372901.729944,
+        "done": false
+      },
+      {
+        "at": 1789372918.906771,
+        "done": false
+      },
+      {
+        "at": 1789372945.226818,
+        "done": false
+      },
+      {
+        "at": 1789372982.664045,
+        "done": true
+      }
+    ],
+    "result_delay_seconds": 7.905,
+    "parent_message_gaps_seconds": [
+      11.671,
+      84.476
+    ],
+    "max_parent_message_gap_seconds": 84.476
+  },
+  {
+    "name": "gpt-5.6-sol-ci-tuned-on-r1",
+    "condition": "tuned-on",
+    "scenario": "ci",
+    "model": "gpt-5.6-sol",
+    "effort": "low",
+    "repetition": 1,
+    "delay_seconds": 75,
+    "backend": "live-current-subscription",
+    "binary": "/opt/homebrew/Caskroom/codex/0.154.0/bin/codex",
+    "sleep_mode": "always_on",
+    "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+    "scenario_prompt": "The CI run `job-7391` is pending. Its authoritative status command is `python3 bench_ci.py status`. It provides no completion notifications or watch mode. Monitor it until it completes; do not delegate. No other work is needed. Preserve the existing job; report its exact result only after successful completion. Do not inspect or modify the implementation of the supplied benchmark scripts.\n",
+    "patch_sha256": "8f50b8281aa5f135a687397493caca814a460545dd5148abd3049fb0f230b077",
+    "patch_file": "/Users/mmizutani/dev/coding-agents/codex-excessive-wait-loop-token-consumption-issue-inevesigation/docs/waiting-benchmark/AGENTS.tuned-v2.md",
+    "skills_mode": "instructions_disabled",
+    "cli_version": "codex-cli 0.154.0",
+    "thread_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+    "turn_start_epoch": 1789372888.48855,
+    "turn_status": "completed",
+    "turn_error": null,
+    "turn_end_epoch": 1789373010.865382,
+    "status": "completed",
+    "elapsed_seconds": 122.511,
+    "success": true,
+    "prompt_loaded": true,
+    "skills_instruction_sessions": [],
+    "calls": [
+      {
+        "at": "2026-09-14T08:01:40.063Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_3RzAP487lb3eNgIxa6z6oMla",
+        "input": "const r = await tools.exec_command({\"cmd\":\"python3 bench_ci.py status\",\"workdir\":\"/var/folders/yx/77rb9j1j2mvbrdb1nsmrjdsr0000gn/T/codex-wait-benchmark-4fxw7hpy/work\",\"yield_time_ms\":30000,\"max_output_tokens\":2000});\ntext(JSON.stringify(r));\n"
+      },
+      {
+        "at": "2026-09-14T08:01:42.281Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_xxsKH3jjstmcoDlEkwErfit3",
+        "arguments": "{\"duration_ms\":20000}"
+      },
+      {
+        "at": "2026-09-14T08:02:07.004Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_lFIir1hB6zYnC9MQqyXPx3fW",
+        "input": "const r = await tools.exec_command({\"cmd\":\"python3 bench_ci.py status\",\"workdir\":\"/var/folders/yx/77rb9j1j2mvbrdb1nsmrjdsr0000gn/T/codex-wait-benchmark-4fxw7hpy/work\",\"yield_time_ms\":30000,\"max_output_tokens\":2000});\ntext(JSON.stringify(r));\n"
+      },
+      {
+        "at": "2026-09-14T08:02:09.938Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_rgFl3ymhoyYIaL7BG9BITLFW",
+        "arguments": "{\"duration_ms\":30000}"
+      },
+      {
+        "at": "2026-09-14T08:02:43.772Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_FkEbLeykaShI1L6mvb1FPu7S",
+        "input": "const r = await tools.exec_command({\"cmd\":\"python3 bench_ci.py status\",\"workdir\":\"/var/folders/yx/77rb9j1j2mvbrdb1nsmrjdsr0000gn/T/codex-wait-benchmark-4fxw7hpy/work\",\"yield_time_ms\":30000,\"max_output_tokens\":2000});\ntext(JSON.stringify(r));\n"
+      },
+      {
+        "at": "2026-09-14T08:02:45.990Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "type": "function_call",
+        "name": "sleep",
+        "namespace": "clock",
+        "call_id": "call_Fq8m96TdxZvqT4fdnNo8oOAI",
+        "arguments": "{\"duration_ms\":40000}"
+      },
+      {
+        "at": "2026-09-14T08:03:29.042Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "type": "custom_tool_call",
+        "name": "exec",
+        "call_id": "call_7uQqnC6dNbRavdZI5lYBd8xS",
+        "input": "const r = await tools.exec_command({\"cmd\":\"python3 bench_ci.py status\",\"workdir\":\"/var/folders/yx/77rb9j1j2mvbrdb1nsmrjdsr0000gn/T/codex-wait-benchmark-4fxw7hpy/work\",\"yield_time_ms\":30000,\"max_output_tokens\":2000});\ntext(JSON.stringify(r));\n"
+      }
+    ],
+    "tool_outputs": [
+      {
+        "at": "2026-09-14T08:01:40.183Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "call_id": "call_3RzAP487lb3eNgIxa6z6oMla",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"1c9221\",\"wall_time_seconds\":0.000002584,\"exit_code\":0,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:02:02.287Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "call_id": "call_xxsKH3jjstmcoDlEkwErfit3",
+        "output": "Wall time: 20.0038 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:02:07.082Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "call_id": "call_lFIir1hB6zYnC9MQqyXPx3fW",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"f6a795\",\"wall_time_seconds\":0.000002417,\"exit_code\":0,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:02:39.946Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "call_id": "call_rgFl3ymhoyYIaL7BG9BITLFW",
+        "output": "Wall time: 30.0045 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:02:43.842Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "call_id": "call_FkEbLeykaShI1L6mvb1FPu7S",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"ccfee3\",\"wall_time_seconds\":0.00000275,\"exit_code\":0,\"original_token_count\":15,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"running\\\", \\\"result\\\": null}\\n\"}"
+          }
+        ]
+      },
+      {
+        "at": "2026-09-14T08:03:25.995Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "call_id": "call_Fq8m96TdxZvqT4fdnNo8oOAI",
+        "output": "Wall time: 40.0024 seconds\nSleep completed."
+      },
+      {
+        "at": "2026-09-14T08:03:29.115Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "call_id": "call_7uQqnC6dNbRavdZI5lYBd8xS",
+        "output": [
+          {
+            "type": "input_text",
+            "text": "Script completed\nWall time 0.1 seconds\nOutput:\n"
+          },
+          {
+            "type": "input_text",
+            "text": "{\"chunk_id\":\"6205ac\",\"wall_time_seconds\":0.000002541,\"exit_code\":0,\"original_token_count\":20,\"output\":\"{\\\"run_id\\\": \\\"job-7391\\\", \\\"status\\\": \\\"completed\\\", \\\"result\\\": \\\"BENCH_RESULT_7391\\\"}\\n\"}"
+          }
+        ]
+      }
+    ],
+    "response_usage": [
+      {
+        "at": "2026-09-14T08:01:40.065783+00:00",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "response_id": "resp_00b916f03e9c01c2016aa7a9e020ec87d08209f0ec7041d2a4",
+        "usage": {
+          "total_tokens": 14678,
+          "input_tokens": 14552,
+          "cached_input_tokens": 6528,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 126,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:01:42.374183+00:00",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "response_id": "resp_00b916f03e9c01c2016aa7a9e4a07087d0ae6620b8ec284189",
+        "usage": {
+          "total_tokens": 14790,
+          "input_tokens": 14756,
+          "cached_input_tokens": 6528,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 34,
+          "reasoning_output_tokens": 13
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:02:07.039483+00:00",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "response_id": "resp_00b916f03e9c01c2016aa7a9fad5d487d08b4c114922a207d6",
+        "usage": {
+          "total_tokens": 15119,
+          "input_tokens": 15026,
+          "cached_input_tokens": 14592,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 93,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:02:10.046883+00:00",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "response_id": "resp_00b916f03e9c01c2016aa7a9ff94a087d0a857f2c145427f8d",
+        "usage": {
+          "total_tokens": 15216,
+          "input_tokens": 15197,
+          "cached_input_tokens": 14848,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:02:43.823883+00:00",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "response_id": "resp_00b916f03e9c01c2016aa7aa20664487d08c88113fdb246bae",
+        "usage": {
+          "total_tokens": 15360,
+          "input_tokens": 15239,
+          "cached_input_tokens": 14976,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 121,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:02:46.062083+00:00",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "response_id": "resp_00b916f03e9c01c2016aa7aa247a6887d0a6d6439e2a9dee31",
+        "usage": {
+          "total_tokens": 15456,
+          "input_tokens": 15437,
+          "cached_input_tokens": 14336,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:03:29.059283+00:00",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "response_id": "resp_00b916f03e9c01c2016aa7aa4e72cc87d0bcc5609fd1a0f50f",
+        "usage": {
+          "total_tokens": 15572,
+          "input_tokens": 15479,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 93,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      },
+      {
+        "at": "2026-09-14T08:03:30.860083+00:00",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "response_id": "resp_00b916f03e9c01c2016aa7aa51cb1487d0bfb758fa1a32c5f3",
+        "usage": {
+          "total_tokens": 15666,
+          "input_tokens": 15656,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10,
+          "reasoning_output_tokens": 0
+        },
+        "source": "raw_response_notification"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T08:01:38.347Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor the existing job with the authoritative status command, using bounded waits between checks, and report only once it completes successfully."
+      },
+      {
+        "at": "2026-09-14T08:02:42.216Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019m continuing to monitor the same run; no changes have been made."
+      },
+      {
+        "at": "2026-09-14T08:03:30.860Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ],
+    "model_contexts": [
+      {
+        "at": "2026-09-14T08:01:35.422Z",
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "model": "gpt-5.6-sol",
+        "effort": "low",
+        "turn_id": "01a09eef-75a8-7003-a450-30dcd4e33a2c"
+      }
+    ],
+    "base_instruction_hashes": [
+      {
+        "session_id": "01a09eef-756a-7fa0-8a74-8807a4d9bf17",
+        "sha256": "e9cee03d102eeb8f125a015776e2a8220dca00aec32edfddd3017551ad97d528"
+      }
+    ],
+    "cumulative_final_by_session": {
+      "01a09eef-756a-7fa0-8a74-8807a4d9bf17": {
+        "input_tokens": 121342,
+        "cached_input_tokens": 102272,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 515,
+        "reasoning_output_tokens": 13,
+        "total_tokens": 121857
+      }
+    },
+    "parent_usage": {
+      "input_tokens": 121342,
+      "cached_input_tokens": 102272,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 515,
+      "reasoning_output_tokens": 13,
+      "total_tokens": 121857,
+      "responses": 8,
+      "input_minus_cached": 19070
+    },
+    "child_usage": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 0,
+      "responses": 0,
+      "input_minus_cached": 0
+    },
+    "combined_usage": {
+      "input_tokens": 121342,
+      "cached_input_tokens": 102272,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 515,
+      "reasoning_output_tokens": 13,
+      "total_tokens": 121857,
+      "responses": 8,
+      "input_minus_cached": 19070
+    },
+    "child_session_count": 0,
+    "job_events": [],
+    "job_launches": 0,
+    "ci_checks": [
+      {
+        "at": 1789372900.156184,
+        "done": false
+      },
+      {
+        "at": 1789372927.056308,
+        "done": false
+      },
+      {
+        "at": 1789372963.817207,
+        "done": false
+      },
+      {
+        "at": 1789373009.0887191,
+        "done": true
+      }
+    ],
+    "result_delay_seconds": 35.704,
+    "parent_message_gaps_seconds": [
+      9.858,
+      63.869,
+      48.644
+    ],
+    "max_parent_message_gap_seconds": 63.869
+  }
+]

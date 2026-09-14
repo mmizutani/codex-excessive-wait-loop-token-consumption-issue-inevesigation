@@ -1,0 +1,23 @@
+{
+  "patch_file": "docs/waiting-benchmark/AGENTS.compact-final.md",
+  "patch_sha256": "a60d7f36e699d61a17abf4fafc46c9dcfe3195826d6e59e6546e39737b9ff2cf",
+  "runtime": "codex-cli 0.154.0",
+  "model": "gpt-6-astra",
+  "effort": "low",
+  "skills_mode": "instructions_disabled",
+  "sleep_mode": "default",
+  "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+  "workloads": [
+    "ci",
+    "subagent",
+    "terminal"
+  ],
+  "delay_seconds": 75,
+  "repetitions": 1,
+  "comparison_controls": {
+    "1": "astra-1531-clean-results/metrics.json: Astra old",
+    "2": "clean-results/metrics.json: Astra new"
+  },
+  "comparison_scope": "Three later compact-patch trials compared with the existing clean controls; sequential and non-randomized.",
+  "pricing_scope": "Same September 14 Standard API rates as the original benchmark; valuation of subscription counters, not actual charges."
+}
