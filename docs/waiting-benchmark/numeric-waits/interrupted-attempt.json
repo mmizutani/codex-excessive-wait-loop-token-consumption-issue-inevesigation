@@ -1,0 +1,22 @@
+{
+  "phase": "integration",
+  "selected": "e0s0w0",
+  "status": "user_interrupted",
+  "completed_trial_records": 0,
+  "recovered_response_records": 0,
+  "token_usage": null,
+  "api_rate_usd": null,
+  "reason": "No completed trial or response-usage records survived; missing usage is not zero.",
+  "artifacts": [
+    {
+      "path": "tmp/wait-benchmark-numeric-waits/integration/gpt-6-astra-ci-e0s0w0-r1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tmp/wait-benchmark-numeric-waits/integration/gpt-6-astra-terminal-e0s0w0-r1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

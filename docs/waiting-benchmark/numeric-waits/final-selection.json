@@ -1,0 +1,23 @@
+{
+  "selected": "outer-o0n0",
+  "status": "adopted",
+  "sha256": "0354040c90ea9dc3ff4e573bd4a35db648a2fe3d6bcfb6393150c198afb54507",
+  "frozen_prompt": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n0.md",
+  "successful_selected_trials": {
+    "outer:terminal": 3,
+    "outer-ci-name:ci": 2,
+    "outer-subagent-unnamed:subagent": 2
+  },
+  "all_selected_acceptance": true,
+  "individual_numbers_removed": [
+    "exec_command:30000",
+    "functions.exec:45000"
+  ],
+  "common_45_second_cap_retained": true,
+  "explicit_functions_exec_name_added": false,
+  "limitations": [
+    "No pooled fresh original-vs-selected suite; selected exposures occur in separate phases.",
+    "Named wording did not improve response counts; API valuations vary with cache mix.",
+    "One prior named-candidate trial did not spawn; two prior final-format checks failed. Their usage is retained."
+  ]
+}

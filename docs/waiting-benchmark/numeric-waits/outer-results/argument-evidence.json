@@ -1,0 +1,886 @@
+[
+  {
+    "name": "gpt-6-astra-terminal-outer-o0n0-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:47:15.172Z",
+        "session_id": "01a09ff4-dbd3-7790-8b7b-09a169619765",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:47:15.172Z",
+        "session_id": "01a09ff4-dbd3-7790-8b7b-09a169619765",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:47:49.840Z",
+        "session_id": "01a09ff4-dbd3-7790-8b7b-09a169619765",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:88868,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:47:49.840Z",
+        "session_id": "01a09ff4-dbd3-7790-8b7b-09a169619765",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:88868,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:47:11.246Z",
+        "session_id": "01a09ff4-dbd3-7790-8b7b-09a169619765",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ff4-dc05-7df2-8bd5-c5a7a92c00e3"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:47:14.064Z",
+        "session_id": "01a09ff4-dbd3-7790-8b7b-09a169619765",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:47:48.721Z",
+        "session_id": "01a09ff4-dbd3-7790-8b7b-09a169619765",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:48:32.901Z",
+        "session_id": "01a09ff4-dbd3-7790-8b7b-09a169619765",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o0n0-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:50:15.696Z",
+        "session_id": "01a09ff7-a3ca-7930-afbf-22f176d77269",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:50:15.696Z",
+        "session_id": "01a09ff7-a3ca-7930-afbf-22f176d77269",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:50:50.769Z",
+        "session_id": "01a09ff7-a3ca-7930-afbf-22f176d77269",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:76292,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:50:50.769Z",
+        "session_id": "01a09ff7-a3ca-7930-afbf-22f176d77269",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:76292,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:50:06.900Z",
+        "session_id": "01a09ff7-a3ca-7930-afbf-22f176d77269",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ff7-a3fd-7513-ac92-f12f2b0a7bcf"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:50:15.358Z",
+        "session_id": "01a09ff7-a3ca-7930-afbf-22f176d77269",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:50:49.033Z",
+        "session_id": "01a09ff7-a3ca-7930-afbf-22f176d77269",
+        "phase": "commentary",
+        "text": "The command is still running. I\u2019ll keep waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:51:33.296Z",
+        "session_id": "01a09ff7-a3ca-7930-afbf-22f176d77269",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o0n0-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:54:49.921Z",
+        "session_id": "01a09ffb-dd3d-7773-9c1b-eb4192adeaa3",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:54:49.921Z",
+        "session_id": "01a09ffb-dd3d-7773-9c1b-eb4192adeaa3",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:55:24.501Z",
+        "session_id": "01a09ffb-dd3d-7773-9c1b-eb4192adeaa3",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:29418,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:55:24.501Z",
+        "session_id": "01a09ffb-dd3d-7773-9c1b-eb4192adeaa3",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:29418,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:54:43.739Z",
+        "session_id": "01a09ffb-dd3d-7773-9c1b-eb4192adeaa3",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ffb-dd6a-76a0-bc2a-ed816746fdbe"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:54:48.601Z",
+        "session_id": "01a09ffb-dd3d-7773-9c1b-eb4192adeaa3",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:55:23.313Z",
+        "session_id": "01a09ffb-dd3d-7773-9c1b-eb4192adeaa3",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:56:08.518Z",
+        "session_id": "01a09ffb-dd3d-7773-9c1b-eb4192adeaa3",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o0n1-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:48:44.622Z",
+        "session_id": "01a09ff6-4966-7fe0-b48b-64072afe6ab9",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:48:44.622Z",
+        "session_id": "01a09ff6-4966-7fe0-b48b-64072afe6ab9",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:49:19.733Z",
+        "session_id": "01a09ff6-4966-7fe0-b48b-64072afe6ab9",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:76081,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:49:19.733Z",
+        "session_id": "01a09ff6-4966-7fe0-b48b-64072afe6ab9",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:76081,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:48:40.500Z",
+        "session_id": "01a09ff6-4966-7fe0-b48b-64072afe6ab9",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ff6-4994-7fc1-827c-d7abbaf5b565"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:48:43.518Z",
+        "session_id": "01a09ff6-4966-7fe0-b48b-64072afe6ab9",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:49:18.602Z",
+        "session_id": "01a09ff6-4966-7fe0-b48b-64072afe6ab9",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll keep waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:50:01.520Z",
+        "session_id": "01a09ff6-4966-7fe0-b48b-64072afe6ab9",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o0n1-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:50:11.082Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:50:11.082Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:50:45.839Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:50703,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:50:45.839Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:50703,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:51:30.250Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:50703,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:51:30.250Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:50703,chars:\"\",yield_time_ms:40000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:50:07.038Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ff7-a3fd-7051-85e6-0a5a898622db"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:50:09.807Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:50:44.455Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll keep waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T12:51:28.892Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "phase": "commentary",
+        "text": "The job is still running with no output yet. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:51:32.391Z",
+        "session_id": "01a09ff7-a3ca-7271-a47a-c5d61de88b77",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o0n1-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:53:19.240Z",
+        "session_id": "01a09ffa-809e-7f01-89fe-edfbd41af9b2",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:53:19.240Z",
+        "session_id": "01a09ffa-809e-7f01-89fe-edfbd41af9b2",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:53:54.601Z",
+        "session_id": "01a09ffa-809e-7f01-89fe-edfbd41af9b2",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:68120,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:53:54.601Z",
+        "session_id": "01a09ffa-809e-7f01-89fe-edfbd41af9b2",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:68120,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:53:15.407Z",
+        "session_id": "01a09ffa-809e-7f01-89fe-edfbd41af9b2",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ffa-80d5-7750-a935-8627900c4155"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:53:18.134Z",
+        "session_id": "01a09ffa-809e-7f01-89fe-edfbd41af9b2",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:53:53.266Z",
+        "session_id": "01a09ffa-809e-7f01-89fe-edfbd41af9b2",
+        "phase": "commentary",
+        "text": "The command is still running. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:54:38.539Z",
+        "session_id": "01a09ffa-809e-7f01-89fe-edfbd41af9b2",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o1n0-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:48:39.478Z",
+        "session_id": "01a09ff6-40a0-7063-8a9e-81e88cb7b9ea",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:48:39.478Z",
+        "session_id": "01a09ff6-40a0-7063-8a9e-81e88cb7b9ea",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:49:13.942Z",
+        "session_id": "01a09ff6-40a0-7063-8a9e-81e88cb7b9ea",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:34040,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:49:13.942Z",
+        "session_id": "01a09ff6-40a0-7063-8a9e-81e88cb7b9ea",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:34040,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:48:35.134Z",
+        "session_id": "01a09ff6-40a0-7063-8a9e-81e88cb7b9ea",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ff6-40cf-7261-84a3-17eb561688b1"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:48:38.378Z",
+        "session_id": "01a09ff6-40a0-7063-8a9e-81e88cb7b9ea",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:49:12.682Z",
+        "session_id": "01a09ff6-40a0-7063-8a9e-81e88cb7b9ea",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:49:57.966Z",
+        "session_id": "01a09ff6-40a0-7063-8a9e-81e88cb7b9ea",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o1n0-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:51:50.999Z",
+        "session_id": "01a09ff9-09cf-7c32-a9a3-17792fcd985d",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:51:50.999Z",
+        "session_id": "01a09ff9-09cf-7c32-a9a3-17792fcd985d",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:52:25.973Z",
+        "session_id": "01a09ff9-09cf-7c32-a9a3-17792fcd985d",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:94131,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:52:25.973Z",
+        "session_id": "01a09ff9-09cf-7c32-a9a3-17792fcd985d",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:94131,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:51:46.339Z",
+        "session_id": "01a09ff9-09cf-7c32-a9a3-17792fcd985d",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ff9-09fb-7c30-ba45-1005534a9b5d"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:51:49.735Z",
+        "session_id": "01a09ff9-09cf-7c32-a9a3-17792fcd985d",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:52:24.569Z",
+        "session_id": "01a09ff9-09cf-7c32-a9a3-17792fcd985d",
+        "phase": "commentary",
+        "text": "The job is still running; I\u2019ll keep waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:53:08.227Z",
+        "session_id": "01a09ff9-09cf-7c32-a9a3-17792fcd985d",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o1n0-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:53:19.689Z",
+        "session_id": "01a09ffa-809e-7321-8cbb-b95c2b076669",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:53:19.689Z",
+        "session_id": "01a09ffa-809e-7321-8cbb-b95c2b076669",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:53:54.721Z",
+        "session_id": "01a09ffa-809e-7321-8cbb-b95c2b076669",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:63015,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:53:54.721Z",
+        "session_id": "01a09ffa-809e-7321-8cbb-b95c2b076669",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:63015,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:53:15.713Z",
+        "session_id": "01a09ffa-809e-7321-8cbb-b95c2b076669",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ffa-80d6-7fd2-844d-5c7bbf902bf1"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:53:18.608Z",
+        "session_id": "01a09ffa-809e-7321-8cbb-b95c2b076669",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:53:53.461Z",
+        "session_id": "01a09ffa-809e-7321-8cbb-b95c2b076669",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:54:37.196Z",
+        "session_id": "01a09ffa-809e-7321-8cbb-b95c2b076669",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o1n1-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:47:12.976Z",
+        "session_id": "01a09ff4-dbd1-7f31-97ec-2c8744030729",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:47:12.976Z",
+        "session_id": "01a09ff4-dbd1-7f31-97ec-2c8744030729",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:47:48.365Z",
+        "session_id": "01a09ff4-dbd1-7f31-97ec-2c8744030729",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:51301,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:47:48.365Z",
+        "session_id": "01a09ff4-dbd1-7f31-97ec-2c8744030729",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:51301,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:47:08.472Z",
+        "session_id": "01a09ff4-dbd1-7f31-97ec-2c8744030729",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ff4-dc05-7ff1-80cc-c5e4d6f71e0e"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:47:11.886Z",
+        "session_id": "01a09ff4-dbd1-7f31-97ec-2c8744030729",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:47:47.206Z",
+        "session_id": "01a09ff4-dbd1-7f31-97ec-2c8744030729",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll keep waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:48:30.663Z",
+        "session_id": "01a09ff4-dbd1-7f31-97ec-2c8744030729",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o1n1-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:51:51.349Z",
+        "session_id": "01a09ff9-0632-7503-a1be-8908ce73a383",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:51:51.349Z",
+        "session_id": "01a09ff9-0632-7503-a1be-8908ce73a383",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:52:26.899Z",
+        "session_id": "01a09ff9-0632-7503-a1be-8908ce73a383",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:73351,chars:\"\",yield_time_ms:40000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:52:26.899Z",
+        "session_id": "01a09ff9-0632-7503-a1be-8908ce73a383",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:73351,chars:\"\",yield_time_ms:40000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:51:47.489Z",
+        "session_id": "01a09ff9-0632-7503-a1be-8908ce73a383",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ff9-065e-7023-8485-e40d38b74ddb"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:51:50.253Z",
+        "session_id": "01a09ff9-0632-7503-a1be-8908ce73a383",
+        "phase": "commentary",
+        "text": "I\u2019ll run the command once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:52:25.745Z",
+        "session_id": "01a09ff9-0632-7503-a1be-8908ce73a383",
+        "phase": "commentary",
+        "text": "The command is still running. I\u2019ll keep waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T12:53:09.132Z",
+        "session_id": "01a09ff9-0632-7503-a1be-8908ce73a383",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-terminal-outer-o1n1-r3",
+    "arguments": [
+      {
+        "at": "2026-09-14T12:54:47.172Z",
+        "session_id": "01a09ffb-d85d-7833-bb6e-8302001776b1",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:54:47.172Z",
+        "session_id": "01a09ffb-d85d-7833-bb6e-8302001776b1",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_job.py\",yield_time_ms:30000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:55:21.973Z",
+        "session_id": "01a09ffb-d85d-7833-bb6e-8302001776b1",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:20139,chars:\"\",yield_time_ms:44000}));\n"
+      },
+      {
+        "at": "2026-09-14T12:55:21.973Z",
+        "session_id": "01a09ffb-d85d-7833-bb6e-8302001776b1",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:20139,chars:\"\",yield_time_ms:44000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T12:54:42.624Z",
+        "session_id": "01a09ffb-d85d-7833-bb6e-8302001776b1",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a09ffb-d88a-7760-845c-578461d678f6"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T12:54:46.157Z",
+        "session_id": "01a09ffb-d85d-7833-bb6e-8302001776b1",
+        "phase": "commentary",
+        "text": "I\u2019ll run the job once and wait for it to finish.\n"
+      },
+      {
+        "at": "2026-09-14T12:55:20.430Z",
+        "session_id": "01a09ffb-d85d-7833-bb6e-8302001776b1",
+        "phase": "commentary",
+        "text": "The job is still running. I\u2019ll continue waiting.\n"
+      },
+      {
+        "at": "2026-09-14T12:56:04.532Z",
+        "session_id": "01a09ffb-d85d-7833-bb6e-8302001776b1",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  }
+]

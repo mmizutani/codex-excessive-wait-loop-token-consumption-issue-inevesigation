@@ -75,7 +75,7 @@ def prompt_for(scenario, model):
             'or watch mode. Monitor it until it completes; do not delegate. ' + common)
 
 class Trial(Probe):
-    def execute(self, options, condition, scenario, repetition):
+    def execute(self, options, condition, scenario, repetition, *, scenario_prompt=None):
         self.start = time.monotonic()
         wall_start = time.time()
         name = self.name
@@ -92,7 +92,7 @@ class Trial(Probe):
                   'delay_seconds': options.delay, 'backend': 'live-current-subscription',
                   'binary': str(binary), 'sleep_mode': 'always_on' if always_on else 'default',
                   'catalog_sha256': hashlib.sha256(options.catalog.read_bytes()).hexdigest(),
-                  'scenario_prompt': prompt_for(scenario, self.model),
+                  'scenario_prompt': scenario_prompt if scenario_prompt is not None else prompt_for(scenario, self.model),
                   'patch_sha256': hashlib.sha256(patch.read_bytes()).hexdigest() if patch else None,
                   'patch_file': str(patch) if patch else None}
         record['skills_mode'] = 'instructions_disabled' if options.no_skill_instructions else 'ambient'

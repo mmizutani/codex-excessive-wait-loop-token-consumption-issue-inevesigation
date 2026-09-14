@@ -1,0 +1,84 @@
+{
+  "phase": "outer-ci-name",
+  "cli_version": "codex-cli 0.154.0",
+  "binary": "/opt/homebrew/Caskroom/codex/0.154.0/bin/codex",
+  "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+  "model": "gpt-6-astra",
+  "effort": "low",
+  "delay_seconds": 75,
+  "workers": 2,
+  "seed": 20260920,
+  "blocks": [
+    [
+      {
+        "scenario": "ci",
+        "variant": "outer-o0n0",
+        "repetition": 1,
+        "name": "gpt-6-astra-ci-outer-o0n0-r1"
+      },
+      {
+        "scenario": "ci",
+        "variant": "outer-o0n1",
+        "repetition": 1,
+        "name": "gpt-6-astra-ci-outer-o0n1-r1"
+      }
+    ],
+    [
+      {
+        "scenario": "ci",
+        "variant": "outer-o0n1",
+        "repetition": 2,
+        "name": "gpt-6-astra-ci-outer-o0n1-r2"
+      },
+      {
+        "scenario": "ci",
+        "variant": "outer-o0n0",
+        "repetition": 2,
+        "name": "gpt-6-astra-ci-outer-o0n0-r2"
+      }
+    ]
+  ],
+  "prompts": {
+    "e0s0w0": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e0s0w0.md",
+      "sha256": "116fc777c7e6f31da00a3e35d2006b7538e383fce98c76a0e78c171d663c7cf9"
+    },
+    "e0s1w0": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e0s1w0.md",
+      "sha256": "5428fe44e3bd57ec1f69e5f1b561ce67a18660828bcd3df59266a36ac6c06aa5"
+    },
+    "e1s0w0": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s0w0.md",
+      "sha256": "a60d7f36e699d61a17abf4fafc46c9dcfe3195826d6e59e6546e39737b9ff2cf"
+    },
+    "e1s1w0": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s1w0.md",
+      "sha256": "0ca52213d67f4d5504a638ffaeec35ac67b1cd955c8732f158e8ac4531137cd8"
+    },
+    "e1s0w1": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s0w1.md",
+      "sha256": "9b34892bb85b445fd0bacaa558ee89ea7c019ff6e8d019c56411f14e07a52f64"
+    },
+    "e1s1w1": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s1w1.md",
+      "sha256": "afa943f32420d963abf47dfecb652f17110d3e5353fccc999462743a362ee12d"
+    },
+    "outer-o0n0": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n0.md",
+      "sha256": "0354040c90ea9dc3ff4e573bd4a35db648a2fe3d6bcfb6393150c198afb54507"
+    },
+    "outer-o0n1": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n1.md",
+      "sha256": "ea0c5066304b7dfa6efaf5bbf534435f9dda0814b4154fbefb17f25cebd0f8b0"
+    },
+    "outer-o1n0": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o1n0.md",
+      "sha256": "116fc777c7e6f31da00a3e35d2006b7538e383fce98c76a0e78c171d663c7cf9"
+    },
+    "outer-o1n1": {
+      "path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o1n1.md",
+      "sha256": "593332888325c8dd8d37d66a227d0cea48b17f36cf91c0ea61b21ad010533ba2"
+    }
+  },
+  "cell_prompt": "This is a controlled test of resuming a running Code Mode cell.\nRun the following JavaScript through functions.exec exactly as written, including\nthe first-line 1 ms yield. This initial yield deliberately exposes a running cell;\nit overrides the global outer-yield preference for this initial call only.\n\n// @exec: {\"yield_time_ms\": 1}\ntext(await tools.exec_command({cmd:\"python3 bench_job.py\",yield_time_ms:30000,max_output_tokens:1000}));\n\nIf a running cell is returned, resume that cell with functions.wait until its\nresult is received. After that, follow the global waiting instructions to wait\nfor the same command to finish. No other work is needed. Do not delegate. Run the\ncommand exactly once, do not inspect or modify the supplied benchmark scripts,\nand report its exact result only after successful completion.\n"
+}

@@ -1,0 +1,430 @@
+[
+  {
+    "name": "gpt-6-astra-ci-outer-o0n0-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T13:10:40.669Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "tool": "functions.exec",
+        "yield_time_ms": 1000,
+        "source": "// @exec: {\"yield_time_ms\": 1000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:10:40.669Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "tool": "exec_command",
+        "yield_time_ms": 1000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:1000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:10:53.687Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\ndeadline = time.monotonic() + 2400\\ninterval = 10\\nwhile time.monotonic() < deadline:\\n    time.sleep(interval)\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stdout + p.stderr, flush=True)\\n        raise SystemExit(p.returncode)\\n    status = json.loads(p.stdout)\\n    if status != previous:\\n        print(p.stdout.strip(), flush=True)\\n        previous = status\\n    if status.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if status.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\n    interval = min(30, interval + 5)\\nelse:\\n    print('Observation time limit reached', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:10:53.687Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 - <<'PY'\\nimport json, subprocess, time\\nprevious = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\ndeadline = time.monotonic() + 2400\\ninterval = 10\\nwhile time.monotonic() < deadline:\\n    time.sleep(interval)\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stdout + p.stderr, flush=True)\\n        raise SystemExit(p.returncode)\\n    status = json.loads(p.stdout)\\n    if status != previous:\\n        print(p.stdout.strip(), flush=True)\\n        previous = status\\n    if status.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    if status.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\n    interval = min(30, interval + 5)\\nelse:\\n    print('Observation time limit reached', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:11:29.081Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:42924,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:11:29.081Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:42924,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T13:10:33.148Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a00a-5f79-7341-b2e7-22f0fa06cf2c"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T13:10:39.080Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the supplied status command and wait for successful completion before reporting its result.\n"
+      },
+      {
+        "at": "2026-09-14T13:10:45.304Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll continue checking, with longer intervals while its status stays unchanged.\n"
+      },
+      {
+        "at": "2026-09-14T13:11:27.760Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "phase": "commentary",
+        "text": "No status change has been reported. The monitor is still checking `job-7391`.\n"
+      },
+      {
+        "at": "2026-09-14T13:12:06.871Z",
+        "session_id": "01a0a00a-5f49-7401-a5ff-38dd328b10f0",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-outer-o0n0-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T13:12:32.620Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:12:32.620Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:12:44.260Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "tool": "functions.exec",
+        "yield_time_ms": 35000,
+        "source": "// @exec: {\"yield_time_ms\": 35000}\ntext(await tools.exec_command({cmd:\"python3 - <<'PY'\\nimport subprocess, json, time\\nprevious = ('running', None)\\nfor attempt in range(40):\\n    time.sleep(min(10 * (attempt + 1), 30))\\n    result = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if result.returncode:\\n        print(result.stderr, flush=True)\\n        raise SystemExit(result.returncode)\\n    status = json.loads(result.stdout)\\n    if status.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    state = (status.get('status'), status.get('result'))\\n    if state != previous:\\n        print(result.stdout, end='', flush=True)\\n        previous = state\\n    if status.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Observation window ended.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:12:44.260Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 - <<'PY'\\nimport subprocess, json, time\\nprevious = ('running', None)\\nfor attempt in range(40):\\n    time.sleep(min(10 * (attempt + 1), 30))\\n    result = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if result.returncode:\\n        print(result.stderr, flush=True)\\n        raise SystemExit(result.returncode)\\n    status = json.loads(result.stdout)\\n    if status.get('run_id') != 'job-7391':\\n        raise SystemExit('Unexpected run identity')\\n    state = (status.get('status'), status.get('result'))\\n    if state != previous:\\n        print(result.stdout, end='', flush=True)\\n        previous = state\\n    if status.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Observation window ended.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:13:20.462Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:43519,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:13:20.462Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:43519,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:14:04.583Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:43519,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:14:04.583Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "tool": "write_stdin",
+        "yield_time_ms": 40000,
+        "source": "{session_id:43519,chars:\"\",yield_time_ms:40000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T13:12:28.390Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a00c-2069-7b11-8475-310b1ef0be20"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T13:12:31.284Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the supplied status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T13:12:36.723Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "phase": "commentary",
+        "text": "`job-7391` is still running. I\u2019ll continue checking with a bounded watcher that reports status changes.\n"
+      },
+      {
+        "at": "2026-09-14T13:13:19.136Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "phase": "commentary",
+        "text": "No status change has been reported. I\u2019m continuing to wait for completion.\n"
+      },
+      {
+        "at": "2026-09-14T13:14:03.246Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "phase": "commentary",
+        "text": "The watcher has reported no change for `job-7391`. Monitoring continues.\n"
+      },
+      {
+        "at": "2026-09-14T13:14:16.646Z",
+        "session_id": "01a0a00c-2036-7d50-9f2e-77580be20245",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-outer-o0n1-r1",
+    "arguments": [
+      {
+        "at": "2026-09-14T13:10:37.952Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:10:37.952Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:10:49.764Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 - <<'PY'\\nimport json, subprocess, time\\nlast = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor attempt in range(80):\\n    time.sleep(min(15 * (attempt + 1), 45))\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stdout, end='', flush=True)\\n        print(p.stderr, end='', flush=True)\\n        raise SystemExit(p.returncode)\\n    state = json.loads(p.stdout)\\n    if state != last:\\n        print(p.stdout, end='', flush=True)\\n        last = state\\n    if state.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Monitoring interval ended; job may still be running.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":2000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:10:49.764Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 - <<'PY'\\nimport json, subprocess, time\\nlast = {'run_id': 'job-7391', 'status': 'running', 'result': None}\\nfor attempt in range(80):\\n    time.sleep(min(15 * (attempt + 1), 45))\\n    p = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if p.returncode:\\n        print(p.stdout, end='', flush=True)\\n        print(p.stderr, end='', flush=True)\\n        raise SystemExit(p.returncode)\\n    state = json.loads(p.stdout)\\n    if state != last:\\n        print(p.stdout, end='', flush=True)\\n        last = state\\n    if state.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Monitoring interval ended; job may still be running.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":2000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:11:24.194Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:72132,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:11:24.194Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:72132,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:12:12.345Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:72132,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:12:12.345Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:72132,chars:\"\",yield_time_ms:44000,max_output_tokens:2000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": false,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T13:10:32.949Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a00a-5f79-7b72-962a-0cbe0162e1e8"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T13:10:36.496Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` using the supplied status command and report its exact result after successful completion.\n"
+      },
+      {
+        "at": "2026-09-14T13:10:42.370Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "phase": "commentary",
+        "text": "`job-7391` is running. I\u2019ll check periodically and wait for a successful result.\n"
+      },
+      {
+        "at": "2026-09-14T13:11:22.817Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "phase": "commentary",
+        "text": "No status change has been reported. I\u2019m continuing to monitor `job-7391`.\n"
+      },
+      {
+        "at": "2026-09-14T13:12:10.841Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "phase": "commentary",
+        "text": "The latest reported status is still `running`. I\u2019ll keep waiting for completion.\n"
+      },
+      {
+        "at": "2026-09-14T13:12:24.108Z",
+        "session_id": "01a0a00a-5f47-7b50-bba4-50663853cf4a",
+        "phase": "final_answer",
+        "text": "{\"run_id\": \"job-7391\", \"status\": \"completed\", \"result\": \"BENCH_RESULT_7391\"}"
+      }
+    ]
+  },
+  {
+    "name": "gpt-6-astra-ci-outer-o0n1-r2",
+    "arguments": [
+      {
+        "at": "2026-09-14T13:12:33.326Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:12:33.326Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 bench_ci.py status\",yield_time_ms:30000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:12:45.006Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "tool": "functions.exec",
+        "yield_time_ms": 31000,
+        "source": "// @exec: {\"yield_time_ms\": 31000}\ntext(await tools.exec_command({cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = None\\nfor attempt in range(40):\\n    time.sleep(min(15 + attempt * 5, 45))\\n    response = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if response.returncode:\\n        print(response.stderr, end='', flush=True)\\n        raise SystemExit(response.returncode)\\n    raw = response.stdout\\n    state = json.loads(raw)\\n    if raw != previous:\\n        print(raw, end='', flush=True)\\n        previous = raw\\n    if state.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Watcher observation limit reached.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:12:45.006Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "tool": "exec_command",
+        "yield_time_ms": 30000,
+        "source": "{cmd:\"python3 -u - <<'PY'\\nimport json, subprocess, time\\nprevious = None\\nfor attempt in range(40):\\n    time.sleep(min(15 + attempt * 5, 45))\\n    response = subprocess.run(['python3', 'bench_ci.py', 'status'], capture_output=True, text=True)\\n    if response.returncode:\\n        print(response.stderr, end='', flush=True)\\n        raise SystemExit(response.returncode)\\n    raw = response.stdout\\n    state = json.loads(raw)\\n    if raw != previous:\\n        print(raw, end='', flush=True)\\n        previous = raw\\n    if state.get('status') not in ('pending', 'queued', 'running', 'in_progress'):\\n        break\\nelse:\\n    print('Watcher observation limit reached.', flush=True)\\nPY\",\"yield_time_ms\":30000,\"max_output_tokens\":1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:13:18.830Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:93762,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:13:18.830Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:93762,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:14:09.673Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "tool": "functions.exec",
+        "yield_time_ms": 45000,
+        "source": "// @exec: {\"yield_time_ms\": 45000}\ntext(await tools.write_stdin({session_id:93762,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      },
+      {
+        "at": "2026-09-14T13:14:09.673Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "tool": "write_stdin",
+        "yield_time_ms": 44000,
+        "source": "{session_id:93762,chars:\"\",yield_time_ms:44000,max_output_tokens:1000}));\n"
+      }
+    ],
+    "acceptance": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "running_cell_returns": 0,
+    "model_contexts": [
+      {
+        "at": "2026-09-14T13:12:28.619Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "turn_id": "01a0a00c-2068-76e0-858f-f5fe018c7818"
+      }
+    ],
+    "messages": [
+      {
+        "at": "2026-09-14T13:12:31.975Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "phase": "commentary",
+        "text": "I\u2019ll monitor `job-7391` with the supplied status command until it completes.\n"
+      },
+      {
+        "at": "2026-09-14T13:12:39.345Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "phase": "commentary",
+        "text": "`job-7391` is running. I\u2019ll continue checking its status with a bounded watcher.\n"
+      },
+      {
+        "at": "2026-09-14T13:13:17.517Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "phase": "commentary",
+        "text": "The latest status is still `running`; monitoring continues.\n"
+      },
+      {
+        "at": "2026-09-14T13:14:08.293Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "phase": "commentary",
+        "text": "The watcher has reported no status change. I\u2019m continuing to wait.\n"
+      },
+      {
+        "at": "2026-09-14T13:14:18.018Z",
+        "session_id": "01a0a00c-2034-7a70-a4d0-c993b9ee4006",
+        "phase": "final_answer",
+        "text": "BENCH_RESULT_7391"
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "selected_for_confirmation": "outer-o0n1",
+  "status": "pending_cross_workload_confirmation",
+  "evidence": "outer-results/comparison.json",
+  "reason": "No repeatable outer numeric benefit or early wrapper return in 12 trials. Explicit naming selected for clarity, not demonstrated savings. One selected-condition trial had an extra process wait near completion; its outer wrapper did not return early. All initial exec calls independently chose 30000.",
+  "selection_scope": "Remove redundant per-tool numbers; retain common 45-second ceiling. This does not establish statistical equivalence or an optimum.",
+  "naming_caveat": "Named variants selected 40000-ms continuation waits in 3/6 trials; unnamed variants selected 44000 in all 6. Naming may indirectly affect inner wait selection; its cost effect is unresolved."
+}

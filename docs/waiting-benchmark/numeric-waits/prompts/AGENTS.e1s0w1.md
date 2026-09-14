@@ -12,9 +12,9 @@ When only subagent results remain, prefer direct `wait_agent` with `timeout_ms` 
 
 ### Terminal commands
 
-When only command completion remains, start `exec_command` with a long `yield_time_ms` within tool limits and the budget. Retain its session; use empty `write_stdin` waits within budget, without preliminary short polls.
+When only command completion remains, start `exec_command` with `yield_time_ms: 30000`, shortened to the budget. Retain its session; use empty `write_stdin` waits within budget, without preliminary short polls.
 
-In code mode, set first-line `@exec` `yield_time_ms` within budget, covering the inner wait plus a small margin. Resume running cells with `functions.wait` within budget instead of 1-second/default checks; finish the cell before polling the process again.
+In code mode, set first-line `// @exec: {"yield_time_ms": 45000}`, adjusted to budget, covering the inner wait plus a small margin. Resume running cells with `functions.wait` using `yield_time_ms: 45000`, shortened to the budget, instead of 1-second/default checks; finish the cell before polling the process again.
 
 ### CI and external work
 

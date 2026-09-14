@@ -1,0 +1,376 @@
+{
+  "groups": [
+    {
+      "scenario": "ci",
+      "condition": "outer-o0n0",
+      "n": 2,
+      "responses": 9,
+      "successes": 2,
+      "tokens": {
+        "input": 143625,
+        "cached": 127360,
+        "write": 0,
+        "output": 1112,
+        "uncached": 16265,
+        "reasoning_in_output": 88
+      },
+      "usd": {
+        "uncached": 0.16265000000000002,
+        "cached": 0.12736,
+        "write": 0.0,
+        "output": 0.0556,
+        "total": 0.34561
+      },
+      "delay_mean": 20.0165,
+      "max_update_gap": 44.11,
+      "over_60": 0
+    },
+    {
+      "scenario": "ci",
+      "condition": "outer-o0n1",
+      "n": 2,
+      "responses": 10,
+      "successes": 2,
+      "tokens": {
+        "input": 159834,
+        "cached": 149760,
+        "write": 0,
+        "output": 1123,
+        "uncached": 10074,
+        "reasoning_in_output": 91
+      },
+      "usd": {
+        "uncached": 0.10074,
+        "cached": 0.14976,
+        "write": 0.0,
+        "output": 0.056150000000000005,
+        "total": 0.30665
+      },
+      "delay_mean": 30.3345,
+      "max_update_gap": 50.776,
+      "over_60": 0
+    }
+  ],
+  "effects": [],
+  "outer_effects": [],
+  "all_trials": {
+    "n": 4,
+    "responses": 19,
+    "successes": 4,
+    "tokens": {
+      "input": 303459,
+      "cached": 277120,
+      "write": 0,
+      "output": 2235,
+      "uncached": 26339,
+      "reasoning_in_output": 179
+    },
+    "usd": {
+      "uncached": 0.26339,
+      "cached": 0.27712000000000003,
+      "write": 0.0,
+      "output": 0.11174999999999999,
+      "total": 0.65226
+    },
+    "delay_mean": 25.1755,
+    "max_update_gap": 50.776,
+    "over_60": 0
+  },
+  "acceptance": {
+    "gpt-6-astra-ci-outer-o0n0-r1": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "gpt-6-astra-ci-outer-o0n0-r2": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "gpt-6-astra-ci-outer-o0n1-r1": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": false,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    },
+    "gpt-6-astra-ci-outer-o0n1-r2": {
+      "reported_success": true,
+      "usage_sessions_have_cumulative": true,
+      "all_contexts_low": true,
+      "exact_final_result": true,
+      "exit_zero_with_result": true,
+      "expected_child_count": true,
+      "one_job": true
+    }
+  },
+  "unique_response_ids": 19,
+  "trials": [
+    {
+      "name": "gpt-6-astra-ci-outer-o0n0-r1",
+      "model": "gpt-6-astra",
+      "scenario": "ci",
+      "condition": "outer-o0n0",
+      "repetition": 1,
+      "status": "completed",
+      "success": true,
+      "delay_seconds": 75,
+      "effort": "low",
+      "cli_version": "codex-cli 0.154.0",
+      "sleep_mode": "default",
+      "patch_sha256": "0354040c90ea9dc3ff4e573bd4a35db648a2fe3d6bcfb6393150c198afb54507",
+      "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+      "job_launches": 0,
+      "child_session_count": 0,
+      "result_delay_seconds": 11.108,
+      "max_parent_message_gap_seconds": 42.456,
+      "ci_check_count": 5,
+      "skills_mode": "instructions_disabled",
+      "scopes": {
+        "parent": {
+          "responses": 4,
+          "tokens": {
+            "input": 63673,
+            "cached": 55680,
+            "write": 0,
+            "output": 538,
+            "uncached": 7993,
+            "reasoning_in_output": 47
+          },
+          "usd": {
+            "uncached": 0.07993,
+            "cached": 0.05568,
+            "write": 0.0,
+            "output": 0.0269,
+            "total": 0.16251
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 4,
+          "tokens": {
+            "input": 63673,
+            "cached": 55680,
+            "write": 0,
+            "output": 538,
+            "uncached": 7993,
+            "reasoning_in_output": 47
+          },
+          "usd": {
+            "uncached": 0.07993,
+            "cached": 0.05568,
+            "write": 0.0,
+            "output": 0.0269,
+            "total": 0.16251
+          }
+        }
+      }
+    },
+    {
+      "name": "gpt-6-astra-ci-outer-o0n0-r2",
+      "model": "gpt-6-astra",
+      "scenario": "ci",
+      "condition": "outer-o0n0",
+      "repetition": 2,
+      "status": "completed",
+      "success": true,
+      "delay_seconds": 75,
+      "effort": "low",
+      "cli_version": "codex-cli 0.154.0",
+      "sleep_mode": "default",
+      "patch_sha256": "0354040c90ea9dc3ff4e573bd4a35db648a2fe3d6bcfb6393150c198afb54507",
+      "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+      "job_launches": 0,
+      "child_session_count": 0,
+      "result_delay_seconds": 28.925,
+      "max_parent_message_gap_seconds": 44.11,
+      "ci_check_count": 5,
+      "skills_mode": "instructions_disabled",
+      "scopes": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79952,
+            "cached": 71680,
+            "write": 0,
+            "output": 574,
+            "uncached": 8272,
+            "reasoning_in_output": 41
+          },
+          "usd": {
+            "uncached": 0.08272,
+            "cached": 0.07168000000000001,
+            "write": 0.0,
+            "output": 0.0287,
+            "total": 0.18309999999999998
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79952,
+            "cached": 71680,
+            "write": 0,
+            "output": 574,
+            "uncached": 8272,
+            "reasoning_in_output": 41
+          },
+          "usd": {
+            "uncached": 0.08272,
+            "cached": 0.07168000000000001,
+            "write": 0.0,
+            "output": 0.0287,
+            "total": 0.18309999999999998
+          }
+        }
+      }
+    },
+    {
+      "name": "gpt-6-astra-ci-outer-o0n1-r1",
+      "model": "gpt-6-astra",
+      "scenario": "ci",
+      "condition": "outer-o0n1",
+      "repetition": 1,
+      "status": "completed",
+      "success": true,
+      "delay_seconds": 75,
+      "effort": "low",
+      "cli_version": "codex-cli 0.154.0",
+      "sleep_mode": "default",
+      "patch_sha256": "ea0c5066304b7dfa6efaf5bbf534435f9dda0814b4154fbefb17f25cebd0f8b0",
+      "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+      "job_launches": 0,
+      "child_session_count": 0,
+      "result_delay_seconds": 31.077,
+      "max_parent_message_gap_seconds": 48.024,
+      "ci_check_count": 4,
+      "skills_mode": "instructions_disabled",
+      "scopes": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79943,
+            "cached": 74880,
+            "write": 0,
+            "output": 595,
+            "uncached": 5063,
+            "reasoning_in_output": 45
+          },
+          "usd": {
+            "uncached": 0.05063,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.029750000000000002,
+            "total": 0.15525999999999998
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79943,
+            "cached": 74880,
+            "write": 0,
+            "output": 595,
+            "uncached": 5063,
+            "reasoning_in_output": 45
+          },
+          "usd": {
+            "uncached": 0.05063,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.029750000000000002,
+            "total": 0.15525999999999998
+          }
+        }
+      }
+    },
+    {
+      "name": "gpt-6-astra-ci-outer-o0n1-r2",
+      "model": "gpt-6-astra",
+      "scenario": "ci",
+      "condition": "outer-o0n1",
+      "repetition": 2,
+      "status": "completed",
+      "success": true,
+      "delay_seconds": 75,
+      "effort": "low",
+      "cli_version": "codex-cli 0.154.0",
+      "sleep_mode": "default",
+      "patch_sha256": "ea0c5066304b7dfa6efaf5bbf534435f9dda0814b4154fbefb17f25cebd0f8b0",
+      "catalog_sha256": "e17cbd5fba8d477929a6a57f3d522325c488acb5e2f488e267aa59f3f239ba40",
+      "job_launches": 0,
+      "child_session_count": 0,
+      "result_delay_seconds": 29.592,
+      "max_parent_message_gap_seconds": 50.776,
+      "ci_check_count": 5,
+      "skills_mode": "instructions_disabled",
+      "scopes": {
+        "parent": {
+          "responses": 5,
+          "tokens": {
+            "input": 79891,
+            "cached": 74880,
+            "write": 0,
+            "output": 528,
+            "uncached": 5011,
+            "reasoning_in_output": 46
+          },
+          "usd": {
+            "uncached": 0.050109999999999995,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.0264,
+            "total": 0.15139
+          }
+        },
+        "child": {
+          "responses": 0,
+          "tokens": {},
+          "usd": {}
+        },
+        "combined": {
+          "responses": 5,
+          "tokens": {
+            "input": 79891,
+            "cached": 74880,
+            "write": 0,
+            "output": 528,
+            "uncached": 5011,
+            "reasoning_in_output": 46
+          },
+          "usd": {
+            "uncached": 0.050109999999999995,
+            "cached": 0.07488,
+            "write": 0.0,
+            "output": 0.0264,
+            "total": 0.15139
+          }
+        }
+      }
+    }
+  ]
+}
