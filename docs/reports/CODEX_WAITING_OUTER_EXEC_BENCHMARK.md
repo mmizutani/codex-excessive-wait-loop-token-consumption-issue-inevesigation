@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-**2026年9月15日追記：** [現在の配布版](waiting-validation/AGENTS.waiting-compatible.md)は、利用者の指摘を受け、外側の `functions.exec`、内側の `exec_command`／`write_stdin`、実行中セルを待つ `functions.wait` の関係を明記しました。また、先頭行の `@exec` という設定構文への言及を省きました。この修正文は[別の18試験で再測定](CODEX_WAITING_PRAGMA_REMOVAL_BENCHMARK.md)しました。現在の文面の6件はすべて受入条件を満たしましたが、直前の構文あり版より応答数と入力が増えています。以下の「最終版」と測定値は、修正前の凍結済み `outer-o0n0` を指します。
+**2026年9月15日追記：** [現在の配布版](../guides/AGENTS.waiting-compatible.md)は、利用者の指摘を受け、外側の `functions.exec`、内側の `exec_command`／`write_stdin`、実行中セルを待つ `functions.wait` の関係を明記しました。また、先頭行の `@exec` という設定構文への言及を省きました。この修正文は[別の18試験で再測定](CODEX_WAITING_PRAGMA_REMOVAL_BENCHMARK.md)しました。現在の文面の6件はすべて受入条件を満たしましたが、直前の構文あり版より応答数と入力が増えています。以下の「最終版」と測定値は、修正前の凍結済み `outer-o0n0` を指します。
 
 - **`exec_command: 30000` と、外側の `functions.exec: 45000` の固定値を配布用パッチから削除しました。** 共通の45秒上限、長く待つ条件、内側の待機と余裕を外側に収める条件は残します。
 - 外側の数値指定×ツール名の明示を比較した12試験では、秒数を省いても外側の早期復帰は0回でした。数値を重ねて書く利点は反復して確認できませんでした。
@@ -10,7 +10,7 @@
 - 最終版は、別々の段階で測ったコマンド3件・CI2件・サブエージェント2件の計7件すべてで受入条件を満たしました。**コスト削減や通知速度の改善が全対象で一様に得られたわけではありません。** キャッシュ差により、応答が少ない方のドル換算額が高い場合もあります。
 - 今回の追加調査は計32試験・140応答、API単価換算額 $5.063908 です。未完了1件と回答形式の逸脱2件も記録し、成功例の節約率へ混ぜていません。サブスクリプションの請求額ではありません。
 
-[配布用パッチ](waiting-validation/AGENTS.waiting-compatible.md)、[日本語解説](waiting-validation/AGENTS.waiting-explanation.ja.md)、[最終選定記録](waiting-benchmark/numeric-waits/final-selection.json)
+[配布用パッチ](../guides/AGENTS.waiting-compatible.md)、[日本語解説](../guides/AGENTS.waiting-explanation.ja.md)、[最終選定記録](../waiting-benchmark/numeric-waits/final-selection.json)
 
 ## 何を追加で調べたか
 
@@ -42,9 +42,9 @@ CLI 0.154.0、Astra／low、実際のサブスクリプション認証、共有�
 
 数値ありの条件は実際の JSON 形式の pragma 例を含み、数値なしの条件は pragma とキーの名前で指定します。したがって、数字だけを機械的に取り除く実験ではなく、配布できる指示文どうしの比較です。ツール名の有無は、それ以外の同じ文章に `functions.exec` を挿入する変更です。
 
-この12試験では、セルが早く返るような強制指定をタスクに加えません。モデルが自然に選んだ引数、実行中セルの返却、`functions.wait` による再開を記録します。選んだ文面は、比較開始時の[凍結済みパッチ](waiting-benchmark/AGENTS.compact-final.md)と、コマンド・CI・サブエージェントを各2回ずつ新規実行して確認します。サブエージェントには両条件で `fork_turns: "all"` を指定します。
+この12試験では、セルが早く返るような強制指定をタスクに加えません。モデルが自然に選んだ引数、実行中セルの返却、`functions.wait` による再開を記録します。選んだ文面は、比較開始時の[凍結済みパッチ](../archive/agents-patches/waiting-benchmark/AGENTS.compact-final.md)と、コマンド・CI・サブエージェントを各2回ずつ新規実行して確認します。サブエージェントには両条件で `fork_turns: "all"` を指定します。
 
-[事前計画](waiting-benchmark/numeric-waits/OUTER_PLAN.md)、[12試験の順序・文面・ハッシュ](waiting-benchmark/numeric-waits/outer-manifest.json)
+[事前計画](../waiting-benchmark/numeric-waits/OUTER_PLAN.md)、[12試験の順序・文面・ハッシュ](../waiting-benchmark/numeric-waits/outer-manifest.json)
 
 ## 判定と集計の方法
 
@@ -67,7 +67,7 @@ API単価換算には、従来と同じ2026年9月14日の Astra Standard 単価
 | なし | なし | 9 | 140,822 | 15,126 | 125,696 | 0 | 438 | $0.298856 | 2.872秒 |
 | なし | あり | 10 | 156,875 | 25,419 | 131,456 | 0 | 537 | $0.412496 | 4.075秒 |
 
-※書き込みは記録上の0です。未報告との区別はできません。[全試験の区分別トークン・金額](waiting-benchmark/numeric-waits/outer-results/COUNTS.md)
+※書き込みは記録上の0です。未報告との区別はできません。[全試験の区分別トークン・金額](../waiting-benchmark/numeric-waits/outer-results/COUNTS.md)
 
 全12試験が正しい結果で終了し、受入確認を通過しました。最大の親の報告間隔は45.284秒です。**外側だけが先に返る事象と、それを再開する `functions.wait` は全12件で0回**でした。`exec_command` は、明記しなくても全件で30秒を選びました。
 
@@ -85,7 +85,7 @@ API単価換算には、従来と同じ2026年9月14日の Astra Standard 単価
 
 名指しした6試験では、継続待機に40秒を選んだものが3件ありました。名指ししない6試験はすべて44秒でした。文面によって内側の時間選択まで変わる可能性は残ります。40秒を選んでも2件は追加応答なしで完了しており、時間選択とコマンド完了のタイミングの両方が影響します。この傾向を、名指しによる確定的な効果とも、単なる偶然とも決めつけません。
 
-4条件でキャッシュ利用率も異なっています。応答数が同じ条件間にもドル換算額の差があり、金額だけで文面の優劣を決めません。[対応する比較の集計](waiting-benchmark/numeric-waits/outer-results/comparison.json)、[実際の引数とセル返却数](waiting-benchmark/numeric-waits/outer-results/COMPARISON.md)
+4条件でキャッシュ利用率も異なっています。応答数が同じ条件間にもドル換算額の差があり、金額だけで文面の優劣を決めません。[対応する比較の集計](../waiting-benchmark/numeric-waits/outer-results/comparison.json)、[実際の引数とセル返却数](../waiting-benchmark/numeric-waits/outer-results/COMPARISON.md)
 
 ### 確認試験へ進めた候補
 
@@ -118,7 +118,7 @@ API単価換算には、従来と同じ2026年9月14日の Astra Standard 単価
 
 試験には履歴をそろえるため `fork_turns: "all"` を追加しましたが、元のタスク文の「Astra／lowを使う」が、明示的な上書き引数を要求すると解釈されました。他の3件は、上書き引数を省略して親の Astra／low を継承できています。設定上不可能なタスクではなく、1件で不要な確認が発生した記録として残します。
 
-また、元のパッチの1件は正しい結果に `Exit status: 0` を付け足し、結果文字列だけを返す厳密な形式チェックに違反しました。返答の追加行を消して成功扱いにする修正や、記録の除外はしていません。[確認12試験の全記録・区分別金額](waiting-benchmark/numeric-waits/outer-integration-results/COUNTS.md)、[受入確認](waiting-benchmark/numeric-waits/outer-integration-results/argument-evidence.json)
+また、元のパッチの1件は正しい結果に `Exit status: 0` を付け足し、結果文字列だけを返す厳密な形式チェックに違反しました。返答の追加行を消して成功扱いにする修正や、記録の除外はしていません。[確認12試験の全記録・区分別金額](../waiting-benchmark/numeric-waits/outer-integration-results/COUNTS.md)、[受入確認](../waiting-benchmark/numeric-waits/outer-integration-results/argument-evidence.json)
 
 このため、サブエージェントの比較は、親の設定を継承し、上書き引数を省くことを明記した共通タスクで別途確認します。元の失敗例と消費量は残し、別条件の測定として報告します。
 
@@ -133,11 +133,11 @@ CIの悪化が反復したため、数値なしの名指しあり・なしを2�
 
 1組目は名指しなし4応答・あり5応答、2組目は両方5応答です。名指しなしの方が入力と通知遅延は小さく、名指しありの方がキャッシュ利用率が高いためドル換算額は安くなりました。どちらかが全指標で優れている結果ではありません。
 
-全4件で処理は完了しました。ただし、名指しありの1件は、結果文字列だけを返す指示に対して状態JSON全体を返し、厳密な回答形式チェックに違反しています。使用量と遅延はそのまま記録しました。名指しなしの2件はすべての受入条件を満たしました。最大の親の報告間隔は、なし44.110秒・あり50.776秒です。外側の早期復帰は両条件とも0回でした。[全カウンター](waiting-benchmark/numeric-waits/outer-ci-name-results/COUNTS.md)、[引数と受入確認](waiting-benchmark/numeric-waits/outer-ci-name-results/argument-evidence.json)
+全4件で処理は完了しました。ただし、名指しありの1件は、結果文字列だけを返す指示に対して状態JSON全体を返し、厳密な回答形式チェックに違反しています。使用量と遅延はそのまま記録しました。名指しなしの2件はすべての受入条件を満たしました。最大の親の報告間隔は、なし44.110秒・あり50.776秒です。外側の早期復帰は両条件とも0回でした。[全カウンター](../waiting-benchmark/numeric-waits/outer-ci-name-results/COUNTS.md)、[引数と受入確認](../waiting-benchmark/numeric-waits/outer-ci-name-results/argument-evidence.json)
 
 **最終候補を、名指しを追加しない `outer-o0n0` へ変更しました。** 通常コマンドとCIのどちらでも名指しによる応答削減は確認できず、少ない指示の方が今回の観測では応答数と入力を抑えられたためです。明確さを狙った追加が、実行上の利点に結びついたとは言えません。ツール名そのものが悪化を引き起こしたと証明した結果ではなく、今回試した文面に対する判断です。
 
-旧パッチの先頭行にある `@exec` が `functions.exec` の設定を指すことは、[日本語解説](waiting-validation/AGENTS.waiting-explanation.ja.md)で明記します。配布用パッチには、設定箇所・キー・待機条件を残します。
+旧パッチの先頭行にある `@exec` が `functions.exec` の設定を指すことは、[日本語解説](../guides/AGENTS.waiting-explanation.ja.md)で明記します。配布用パッチには、設定箇所・キー・待機条件を残します。
 
 ## 曖昧さを除いたサブエージェント確認
 
@@ -148,11 +148,11 @@ CIの悪化が反復したため、数値なしの名指しあり・なしを2�
 | 元のパッチ | 15 | 235,348 | 24,276 | 211,072 | 0 | 755 | $0.491582 | 8.318秒 |
 | 最終候補 `outer-o0n0` | 14 | 219,358 | 29,150 | 190,208 | 0 | 707 | $0.517058 | 5.663秒 |
 
-親はどちらも8応答で、子が7→6応答になりました。最終候補は入力合計と通知遅延を減らしましたが、キャッシュ割合が低く、ドル換算額は増えています。両条件とも外側の早期復帰は0回でした。元の曖昧なタスクでの失敗を、この新しい条件の成功で置き換えてはいません。[全カウンター](waiting-benchmark/numeric-waits/outer-subagent-unnamed-results/COUNTS.md)、[受入確認](waiting-benchmark/numeric-waits/outer-subagent-unnamed-results/argument-evidence.json)
+親はどちらも8応答で、子が7→6応答になりました。最終候補は入力合計と通知遅延を減らしましたが、キャッシュ割合が低く、ドル換算額は増えています。両条件とも外側の早期復帰は0回でした。元の曖昧なタスクでの失敗を、この新しい条件の成功で置き換えてはいません。[全カウンター](../waiting-benchmark/numeric-waits/outer-subagent-unnamed-results/COUNTS.md)、[受入確認](../waiting-benchmark/numeric-waits/outer-subagent-unnamed-results/argument-evidence.json)
 
 ## 最終的に配布する文面
 
-この測定で採用したのは、凍結済みの [`outer-o0n0`](waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n0.md) です。以下は当時の `Terminal commands` 節です。現在の配布版には、冒頭の追記に記した文面修正があります。
+この測定で採用したのは、凍結済みの [`outer-o0n0`](../archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n0.md) です。以下は当時の `Terminal commands` 節です。現在の配布版には、冒頭の追記に記した文面修正があります。
 
 ```text
 When only command completion remains, start `exec_command` with a long `yield_time_ms` within tool limits and the budget. Retain its session; use empty `write_stdin` waits within budget, without preliminary short polls.
@@ -184,7 +184,7 @@ In code mode, set first-line `@exec` `yield_time_ms` within budget, covering the
 
 今回とは別に、前回の `integration --selected e0s0w0` は利用者の操作で中断されています。残ったのは実行計画と2件の stderr ログで、完了試験や応答使用量の JSON はありません。中断後の確認では、追加測定のプロセスは残っていませんでした。
 
-この試行を成功例や使用量0の試験として数えません。回収できなかった使用量は不明のまま扱い、新しい段階は別の保存先で実行します。[中断記録](waiting-benchmark/numeric-waits/interrupted-attempt.json)
+この試行を成功例や使用量0の試験として数えません。回収できなかった使用量は不明のまま扱い、新しい段階は別の保存先で実行します。[中断記録](../waiting-benchmark/numeric-waits/interrupted-attempt.json)
 
 ## 検証範囲
 

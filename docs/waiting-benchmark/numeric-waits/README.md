@@ -26,7 +26,7 @@ default, and it does not remove the other waiting rules.
 | e1s1w1 (combined candidate, if selected) | 30,000 ms | 40,000 ms | 45,000 ms |
 
 Each numeric recommendation still permits shortening for the reporting budget.
-All frozen variants are in [prompts](prompts/). The cell workload deliberately
+All frozen variants are in the [patch archive](../../archive/agents-patches/waiting-benchmark/numeric-waits/prompts/). The cell workload deliberately
 uses a 1 ms initial outer yield to exercise a real running cell. Its initial code
 is identical across both wait variants. Normal terminal runs exercise naturally
 chosen calls. The command itself runs for 75 seconds in both workloads.
@@ -45,13 +45,18 @@ python3 docs/waiting-benchmark/numeric-waits/compare.py \
 ```
 
 `run.py` refuses to alter frozen prompts/manifests and skips existing trials.
+Archived prompt contents and hashes are unchanged. Captured JSON records and frozen
+manifests retain their original paths; [patch_paths.py](../patch_paths.py) resolves
+those paths to the archive. Preparation and live runs use the archived files without
+restoring the old sibling copies.
+
 Its optional `--phase integration --selected <variant>` compares a changed
 candidate against the original control on fresh terminal/CI/subagent workloads.
 The reused collector gains only an optional scenario-prompt argument; existing
 historical benchmark behavior is preserved.
 
 The user-requested `--phase section` compares the control against
-[no-terminal](prompts/AGENTS.no-terminal.md), which deletes the entire Terminal
+[no-terminal](../../archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.no-terminal.md), which deletes the entire Terminal
 commands section. It uses two fresh repetitions per terminal/CI/subagent condition
 (12 trials) and a separate shuffled [manifest](section-manifest.json). Run and export:
 
@@ -92,7 +97,7 @@ exec 30-second guidance tied qualitative wording. Whole-section deletion increas
 and API valuation by 5.19%, with faster delivery. The later outer-yield study supersedes
 the original decision to retain individual numbers merely for brevity.
 
-- [Japanese report and decision](../../CODEX_WAITING_NUMERIC_OVERRIDES_BENCHMARK.md)
+- [Japanese report and decision](../../reports/CODEX_WAITING_NUMERIC_OVERRIDES_BENCHMARK.md)
 - [Numeric results](isolated-results/COMPARISON.md), [token/USD categories](isolated-results/COUNTS.md)
 - [Section results](section-results/COMPARISON.md), [token/USD categories](section-results/COUNTS.md)
 
@@ -130,11 +135,11 @@ in [the interruption ledger](interrupted-attempt.json) and is not reused.
 
 ## Final selection after outer-yield measurements
 
-The selection from this study was [outer-o0n0](prompts/AGENTS.outer-o0n0.md): qualitative
+The selection from this study was [outer-o0n0](../../archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n0.md): qualitative
 initial and outer waits, no added explicit functions.exec name, common 45-second cap
-retained. [Final selection and hash](final-selection.json), [Japanese report](../../CODEX_WAITING_OUTER_EXEC_BENCHMARK.md).
+retained. [Final selection and hash](final-selection.json), [Japanese report](../../reports/CODEX_WAITING_OUTER_EXEC_BENCHMARK.md).
 
-On September 15, the [current export](../../waiting-validation/AGENTS.waiting-compatible.md)
+On September 15, the [current export](../../guides/AGENTS.waiting-compatible.md)
 was revised to name the outer and inner tools and clarify `functions.wait`'s role.
 That wording revision has since been remeasured in the separate phase below. The
 frozen selection and results from the outer study remain unchanged.
@@ -162,7 +167,8 @@ python3 docs/waiting-benchmark/numeric-waits/run.py \
 Use each phase name in the input/output paths for analyze.py and compare.py, as in
 the examples above. The named-candidate `outer-subagent` manifest was prepared but
 not executed; final subagent confirmation used its separately named unnamed phase.
-Historical prompts/manifests and measurements remain unchanged.
+Historical prompt contents, manifests, and measurements remain unchanged; the prompt
+files have moved to the archive.
 
 ## September 15 wording remeasurement
 
@@ -193,7 +199,7 @@ One current CI trial omitted its initial outer setting; v0.154.0's yield grace i
 consistent with the observed 30.2-second completion. Do not infer that the model
 intentionally relied on that grace or that the rewrite preserves token efficiency.
 
-- [Japanese results and decision](../../CODEX_WAITING_PRAGMA_REMOVAL_BENCHMARK.md)
+- [Japanese results and decision](../../reports/CODEX_WAITING_PRAGMA_REMOVAL_BENCHMARK.md)
 - [Current measured wording and decision](wording-selection.json)
 - [Token and dollar categories](wording-results/COUNTS.md)
 - [Wait arguments](wording-results/COMPARISON.md), [timing evidence](wording-results/behavior.json)
@@ -235,7 +241,7 @@ This establishes an observed direct benefit for these Astra workloads, with mixe
 notification-delay effects. It does not establish universal savings or the cheapest
 wording. The current patch and historical trial exports remain unchanged.
 
-- [Japanese report](../../CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md)
+- [Japanese report](../../reports/CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md)
 - [Token and dollar categories](unpatched-results/COUNTS.md)
 - [Comparisons](unpatched-results/COMPARISON.md), [matched pairs and checks](unpatched-results/comparison.json)
 - [Wait behavior and instruction presence](unpatched-results/behavior.json)

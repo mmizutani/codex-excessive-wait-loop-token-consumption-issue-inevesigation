@@ -74,7 +74,7 @@ Result delivery was slower in eight of nine pairs. The workload table shows the 
 
 Counts include parent and child inference, skill loading, and retained failed checks. Input includes cached reads and recorded writes. Dollars use the study's September 14, 2026 Standard API rate card; actual subscription charges and quota savings are unmeasured. Zero recorded writes can reflect missing upstream fields.
 
-This is a small, interleaved Astra sample with simulated CI and uncontrolled cache state. It does not cover Sol, production CI, long-term cache retention, `/goal` pause transitions, or activation among many competing skills. The [comparison report](../../docs/CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) provides the complete method and accounting.
+This is a small, interleaved Astra sample with simulated CI and uncontrolled cache state. It does not cover Sol, production CI, long-term cache retention, `/goal` pause transitions, or activation among many competing skills. The [comparison report](../../docs/reports/CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) provides the complete method and accounting.
 
 ## Earlier evaluation and improvements
 
@@ -82,11 +82,11 @@ The earlier evaluation ran **66 real Astra/low trials** across four skill versio
 
 V4 adds 31 words to the original: clearer bounded CI watchers and explicit skill invocation in delegated waiting work. All three final child trials loaded the skill and avoided short polls. Across its complete suite and two child follow-ups, v4 had **14/14 correct outcomes and 13/14 complete deterministic passes**; one CI run still used a one-second cell wait.
 
-The original and final 12-case suites used **57 versus 58 responses**, with API equivalents of **$1.856236 versus $1.945212**. Those results did not establish savings from revising the skill. The new comparison above answers the separate question of installing the final skill versus no skill. See the [earlier report](../../docs/CODEX_WAITING_SKILL_EVALUATION.md) for all candidates and retained failures.
+The original and final 12-case suites used **57 versus 58 responses**, with API equivalents of **$1.856236 versus $1.945212**. Those results did not establish savings from revising the skill. The new comparison above answers the separate question of installing the final skill versus no skill. See the [earlier report](../../docs/reports/CODEX_WAITING_SKILL_EVALUATION.md) for all candidates and retained failures.
 
 ## Relationship to the AGENTS.md patch
 
-The skill started from the [final AGENTS.md patch](../../docs/waiting-validation/AGENTS.waiting-compatible.md). The observed reductions were smaller for the skill. Each column below shows the reduction against that experiment's own untreated control; both studies used 18 Astra/low trials on CLI 0.154.0.
+The skill started from the [final AGENTS.md patch](../../docs/guides/AGENTS.waiting-compatible.md). The observed reductions were smaller for the skill. Each column below shows the reduction against that experiment's own untreated control; both studies used 18 Astra/low trials on CLI 0.154.0.
 
 | Metric reduced | AGENTS.md patch | Final v4 skill |
 | --- | ---: | ---: |
@@ -96,7 +96,7 @@ The skill started from the [final AGENTS.md patch](../../docs/waiting-validation
 
 Within the skill experiment, terminal and subagent API valuations fell 39.93% and 39.26%, while CI's increased 12.87%, reducing the overall saving. These workload effects do not isolate the reason for the difference between the two studies.
 
-The [AGENTS.md experiment](../../docs/CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md) and [skill experiment](../../docs/CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) used different task prompts and instruction-loading conditions, with uncontrolled cache state and backend scheduling. This supports smaller observed savings in the skill study. A direct controlled comparison is still needed to establish whether the installation format itself changes efficiency.
+The [AGENTS.md experiment](../../docs/reports/CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md) and [skill experiment](../../docs/reports/CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) used different task prompts and instruction-loading conditions, with uncontrolled cache state and backend scheduling. This supports smaller observed savings in the skill study. A direct controlled comparison is still needed to establish whether the installation format itself changes efficiency.
 
 ## Package and evidence
 

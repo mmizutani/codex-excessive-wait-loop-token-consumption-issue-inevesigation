@@ -43,7 +43,7 @@ def main():
             assert record['skill_sha256'] == manifest['versions'][task['version']]
             assert record['catalog_sha256'] == manifest['catalog_sha256']
     assert digest(ROOT/'skills/codex-wait-efficiently/SKILL.md') == digest(HERE/'versions/v4/SKILL.md.fixture')
-    assert digest(ROOT/'docs/waiting-validation/AGENTS.waiting-compatible.md') == '882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411'
+    assert digest(ROOT/'docs/guides/AGENTS.waiting-compatible.md') == '882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411'
     failures = [{'phase':r['phase'],'name':r['name'],'checks':r['evaluation']['failed_checks']}
                 for r in records if not r['evaluation']['overall_pass']]
     result = {'trials':len(records),'unique_responses':len(response_ids),

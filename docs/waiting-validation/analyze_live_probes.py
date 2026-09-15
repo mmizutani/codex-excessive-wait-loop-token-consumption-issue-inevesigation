@@ -7,7 +7,7 @@ import sys
 
 source = Path(sys.argv[1] if len(sys.argv) > 1 else "tmp/live-wait-probes")
 target = Path(__file__).parent
-prompt_hash = hashlib.sha256((target / "AGENTS.waiting-recommended.md").read_bytes()).hexdigest()
+prompt_hash = hashlib.sha256((target.parent / "archive/agents-patches/waiting-validation/AGENTS.waiting-recommended.md").read_bytes()).hexdigest()
 names = ["astra-subagent-baseline-75", "astra-subagent-recommended-75",
          "sol-subagent-baseline-75", "sol-subagent-recommended-75"]
 rows, evidence = [], []

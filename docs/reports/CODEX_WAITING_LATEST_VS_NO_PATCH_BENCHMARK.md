@@ -10,7 +10,7 @@
 - 全18ジョブが完了し、使用量を照合できました。パッチなし1件は正しい結果に余分な書式と終了情報を添え、完全一致の回答形式チェックに不適合でした。親の進捗報告間隔が60秒以内だったのは、パッチなし1/9件、パッチあり9/9件です。
 - 結果通知は常に速くなるわけではありません。通常コマンドは平均約1.1秒遅くなり、CIの対応比較には約11.4秒遅くなった組もあります。各条件3回・75秒の測定であり、実業務全体の削減率、Sol、30分のキャッシュTTL境界は検証していません。
 
-[配布用パッチ](waiting-validation/AGENTS.waiting-compatible.md)、[各指示の日本語解説](waiting-validation/AGENTS.waiting-explanation.ja.md)、[全試験のトークン・金額](waiting-benchmark/numeric-waits/unpatched-results/COUNTS.md)
+[配布用パッチ](../guides/AGENTS.waiting-compatible.md)、[各指示の日本語解説](../guides/AGENTS.waiting-explanation.ja.md)、[全試験のトークン・金額](../waiting-benchmark/numeric-waits/unpatched-results/COUNTS.md)
 
 ## 比較条件
 
@@ -21,7 +21,7 @@
 | パッチなし | 一時 CODEX_HOME に AGENTS.md を配置しない | CLI 0.154.0、Astra／low、同じ固定カタログ、共有・同梱スキル無効 |
 | 最新パッチ | 現在の配布版をそのまま配置 | 同上 |
 
-測定した文面は、凍結済みの [AGENTS.wording-no-pragma.md](waiting-benchmark/numeric-waits/prompts/AGENTS.wording-no-pragma.md) と完全一致します。SHA256 は `882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411` です。外側・内側のツール名と時間の関係を明記し、pragma の設定構文を省いた最終文面です。今回、プロンプトの調整はしていません。
+測定した文面は、凍結済みの [AGENTS.wording-no-pragma.md](../archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.wording-no-pragma.md) と完全一致します。SHA256 は `882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411` です。外側・内側のツール名と時間の関係を明記し、pragma の設定構文を省いた最終文面です。今回、プロンプトの調整はしていません。
 
 各試験に新しい一時 CODEX_HOME と作業ディレクトリを使いました。パッチなしでは AGENTS.md 自体がないことを記録し、作業ディレクトリを調査リポジトリの外に置いて親ディレクトリからの読み込みを避けました。保存された親子のユーザー指示にも待機パッチの節がないことを確認しています。パッチありではファイルのハッシュと読み込みを確認し、親子すべての使用量記録のあるセッションに待機節が含まれていました。
 
@@ -29,7 +29,7 @@
 
 コマンドは実際に75秒間動作し、サブエージェントも実際に起動しています。CIは、最初の状態取得から75秒で完了に変わるローカルの状態シミュレーターです。モデル応答のモックは使っていません。サブエージェントには、両条件とも親の Astra／low を継承する `fork_turns: "all"` を指定し、モデル・推論設定の上書き引数を省かせました。タスク文で待機の引数や監視方法を指定していません。
 
-ネイティブ待機ツールの設定など、ランタイムの設定は両条件で同じです。この比較は、同じランタイムに待機パッチを加える効果を測ります。旧CLIとの比較や、スキル有効・無効の比較は含みません。[事前計画](waiting-benchmark/numeric-waits/UNPATCHED_PLAN.md)、[設定・実行順序・ハッシュ](waiting-benchmark/numeric-waits/unpatched-manifest.json)
+ネイティブ待機ツールの設定など、ランタイムの設定は両条件で同じです。この比較は、同じランタイムに待機パッチを加える効果を測ります。旧CLIとの比較や、スキル有効・無効の比較は含みません。[事前計画](../waiting-benchmark/numeric-waits/UNPATCHED_PLAN.md)、[設定・実行順序・ハッシュ](../waiting-benchmark/numeric-waits/unpatched-manifest.json)
 
 ## トークンとAPI単価換算額
 
@@ -65,7 +65,7 @@
 
 サブエージェントの内訳は、親が14→12応答、子が26→11応答です。今回の削減の多くは、子が実行するコマンドの待ち方で生じています。親の `wait_agent` だけの効果として、親子合計の削減率を説明することはできません。
 
-CIでは出力トークンが896→1,538に増えました。パッチありで監視スクリプトを生成したことを含む差です。入力とモデル応答が減ったため合計金額は下がりましたが、あらゆるトークン区分が必ず減るわけではありません。[対象別の全トークン区分](waiting-benchmark/numeric-waits/unpatched-results/COMPARISON.md)、[親子別の内訳](waiting-benchmark/numeric-waits/unpatched-results/COUNTS.md)
+CIでは出力トークンが896→1,538に増えました。パッチありで監視スクリプトを生成したことを含む差です。入力とモデル応答が減ったため合計金額は下がりましたが、あらゆるトークン区分が必ず減るわけではありません。[対象別の全トークン区分](../waiting-benchmark/numeric-waits/unpatched-results/COMPARISON.md)、[親子別の内訳](../waiting-benchmark/numeric-waits/unpatched-results/COUNTS.md)
 
 ### 対応する9組の差
 
@@ -83,7 +83,7 @@ CIでは出力トークンが896→1,538に増えました。パッチありで�
 | サブエージェント | 2 | −5 | −73,740 | −$0.077900 | +4.449秒 |
 | サブエージェント | 3 | −7 | −105,161 | −$0.151182 | −4.163秒 |
 
-9組すべてで応答・入力・換算額が減りました。一方、通知は5組で遅く、4組で速くなっています。平均だけを見て、通知遅延が悪化しないと判断することはできません。[機械可読の対応比較](waiting-benchmark/numeric-waits/unpatched-results/comparison.json)
+9組すべてで応答・入力・換算額が減りました。一方、通知は5組で遅く、4組で速くなっています。平均だけを見て、通知遅延が悪化しないと判断することはできません。[機械可読の対応比較](../waiting-benchmark/numeric-waits/unpatched-results/comparison.json)
 
 ## 実際に変わった待機動作
 
@@ -103,7 +103,7 @@ CIでは出力トークンが896→1,538に増えました。パッチありで�
 
 最新パッチの通常コマンドと子エージェントは、初回に内側30秒・外側35秒、継続待機に内側40秒・外側45秒を選びました。コード内の設定構文を AGENTS.md に書かなくても、有効な外側の設定を生成しています。全9件で外側の早期復帰はなく、セルを待つ追加応答を回避できました。
 
-内側40秒の待機が完了直前に切れ、もう1回 `write_stdin` が必要になった例は残っています。パッチは、必要な進捗報告のためにモデルへ戻る回数もゼロにはしません。また、今回はパッチありで実行中セルが発生していないため、発生した場合に `functions.wait` の指示を正しく実行するかは直接試されていません。[完全な呼び出し記録](waiting-benchmark/numeric-waits/unpatched-results/trial-evidence.json)、[引数と待機時間](waiting-benchmark/numeric-waits/unpatched-results/behavior.json)
+内側40秒の待機が完了直前に切れ、もう1回 `write_stdin` が必要になった例は残っています。パッチは、必要な進捗報告のためにモデルへ戻る回数もゼロにはしません。また、今回はパッチありで実行中セルが発生していないため、発生した場合に `functions.wait` の指示を正しく実行するかは直接試されていません。[完全な呼び出し記録](../waiting-benchmark/numeric-waits/unpatched-results/trial-evidence.json)、[引数と待機時間](../waiting-benchmark/numeric-waits/unpatched-results/behavior.json)
 
 ### ネイティブの sleep だけではCI確認のモデル呼び出しは減らなかった
 
@@ -128,7 +128,7 @@ CIでは出力トークンが896→1,538に増えました。パッチありで�
 
 全18試験で **145応答、入力2,258,337トークン**（通常169,121、キャッシュ読み出し2,089,216、記録上の書き込み0）、**出力6,960トークン**（うち推論371）でした。API単価換算額は通常入力 $1.691210、キャッシュ読み出し $2.089216、書き込み $0、出力 $0.348000、合計 **$4.128426** です。調査・報告作成用のエージェントの使用量は含みません。
 
-[受入チェックの全結果](waiting-benchmark/numeric-waits/unpatched-results/argument-evidence.json)、[使用量集計](waiting-benchmark/numeric-waits/unpatched-results/metrics.json)、[原記録との一致・応答IDの独立性・配布文面の一致の検証](waiting-benchmark/numeric-waits/unpatched-results/validation.json)
+[受入チェックの全結果](../waiting-benchmark/numeric-waits/unpatched-results/argument-evidence.json)、[使用量集計](../waiting-benchmark/numeric-waits/unpatched-results/metrics.json)、[原記録との一致・応答IDの独立性・配布文面の一致の検証](../waiting-benchmark/numeric-waits/unpatched-results/validation.json)
 
 ## 推奨への反映と限界
 

@@ -5,7 +5,7 @@ September 15, 2026. Codex CLI 0.154.0, GPT-6 Astra, low reasoning effort.
 ## TL;DR
 
 - **Evaluated 66 real Astra/low trials** following OpenAI's skill-evaluation workflow. All requested outcomes were correct; all response counters reconciled. Failures and rejected candidates are retained.
-- **Use [the final v4 skill](../skills/codex-wait-efficiently/SKILL.md)** for the skill alternative. It adds 31 words to the original: clearer bounded CI watchers and explicit skill invocation in delegated waiting work. All three final child trials read the skill and avoided short polls.
+- **Use [the final v4 skill](../../skills/codex-wait-efficiently/SKILL.md)** for the skill alternative. It adds 31 words to the original: clearer bounded CI watchers and explicit skill invocation in delegated waiting work. All three final child trials read the skill and avoided short polls.
 - **Waiting inefficiency remains.** Across its 12-case suite and two handoff trials, the final skill passed 13/14 trials' deterministic checks; one CI run still used a one-second cell wait. Watcher startup and outer waits were not consistently followed.
 - **Revising the skill did not demonstrate general savings.** Across the same 12-case suite, the original used **57 responses / $1.856236**, and the final skill used **58 / $1.945212**. These are API-price equivalents of subscription counters. A subsequent [18-trial comparison against no skill](CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md) measured 36.00% fewer responses and 27.93% lower API valuation overall, with higher CI cost and latency. There is still no direct skill-versus-AGENTS comparison.
 
@@ -13,13 +13,13 @@ September 15, 2026. Codex CLI 0.154.0, GPT-6 Astra, low reasoning effort.
 
 The original skill packaged the final AGENTS.md patch as a discoverable skill. This evaluation follows [OpenAI's “Testing Agent Skills Systematically with Evals” workflow](https://developers.openai.com/blog/eval-skills): define observable success before editing, test explicit and implicit activation plus negative controls, inspect execution evidence, and revise against observed failures. A structured, independent model review supplements deterministic checks.
 
-The installable package is [skills/codex-wait-efficiently](../skills/codex-wait-efficiently/SKILL.md). The [fixtures, frozen versions, graders, and results](../skills/codex-wait-efficiently/evals/README.md) are bundled in its `evals/` directory. Normal use loads the self-contained `SKILL.md`; it does not instruct Codex to read the evaluation suite. Optional Codex UI metadata lives in `agents/openai.yaml`. Waiting requires no helper scripts or external instruction dependencies. The evaluation tools use collectors and fixtures elsewhere in this repository. Implicit invocation remains enabled by default.
+The installable package is [skills/codex-wait-efficiently](../../skills/codex-wait-efficiently/SKILL.md). The [fixtures, frozen versions, graders, and results](../../skills/codex-wait-efficiently/evals/README.md) are bundled in its `evals/` directory. Normal use loads the self-contained `SKILL.md`; it does not instruct Codex to read the evaluation suite. Optional Codex UI metadata lives in `agents/openai.yaml`. Waiting requires no helper scripts or external instruction dependencies. The evaluation tools use collectors and fixtures elsewhere in this repository. Implicit invocation remains enabled by default.
 
 This 66-trial evaluation compares the original and revised skill. It is separate from the earlier [AGENTS.md versus no-patch experiment](CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md) and the subsequent [final-skill versus no-skill experiment](CODEX_WAITING_SKILL_VS_NO_SKILL_BENCHMARK.md). The latter adds a no-skill control without changing the evidence below. No skill-versus-AGENTS comparison has been run.
 
 ## Cases and controls
 
-The [plan](../skills/codex-wait-efficiently/evals/PLAN.md) and [12 prompts](../skills/codex-wait-efficiently/evals/cases.json) were frozen before discovery. The suite contains:
+The [plan](../../skills/codex-wait-efficiently/evals/PLAN.md) and [12 prompts](../../skills/codex-wait-efficiently/evals/cases.json) were frozen before discovery. The suite contains:
 
 | Case | Invocation | Observable requirement |
 | --- | --- | --- |
@@ -71,7 +71,7 @@ The interleaved comparison then exposed a different assumption. In `confirmation
 
 This adds 13 words to v2. The final package adds 31 words to v1 in total and retains the original trigger metadata. It does not add repeated reminders to already running children. Two dedicated actual-child trials test the handoff before the final complete suite.
 
-The [revision log](../skills/codex-wait-efficiently/evals/REVISIONS.md) preserves the reasoning. All four versions were frozen and tested against the same 12 cases. The separate confirmation block compares v1 and v2 in shuffled, interleaved order: two fresh repetitions each of the affected observation case, implicit terminal work, contextual CI, and a real subagent. The two v4 handoff trials bring the total to 66. Every trial is retained. The prepared v1/v3 confirmation manifest was never executed after v3 was rejected; its unused manifest is retained.
+The [revision log](../../skills/codex-wait-efficiently/evals/REVISIONS.md) preserves the reasoning. All four versions were frozen and tested against the same 12 cases. The separate confirmation block compares v1 and v2 in shuffled, interleaved order: two fresh repetitions each of the affected observation case, implicit terminal work, contextual CI, and a real subagent. The two v4 handoff trials bring the total to 66. Every trial is retained. The prepared v1/v3 confirmation manifest was never executed after v3 was rejected; its unused manifest is retained.
 
 ## Results
 
@@ -126,7 +126,7 @@ The independent final reviewer examined nine traces and marked all applicable id
 | final-suite / v4 | 12 | $0.902940 | $0.851072 | $0.000000 | $0.191200 | $1.945212 |
 | All workload trials | 66 | $4.994060 | $5.370496 | $0.000000 | $1.196000 | $11.560556 |
 
-All workload trials total **360 unique responses, 5,869,902 input tokens** (499,406 ordinary; 5,370,496 cached reads; zero recorded writes), **23,920 output tokens**, and **$11.560556 API equivalent**. The [per-trial score table](../skills/codex-wait-efficiently/evals/results/final/SCORES.md) summarizes each run. The [machine-readable scores](../skills/codex-wait-efficiently/evals/results/final/scores.json) additionally separate parent and child accounting.
+All workload trials total **360 unique responses, 5,869,902 input tokens** (499,406 ordinary; 5,370,496 cached reads; zero recorded writes), **23,920 output tokens**, and **$11.560556 API equivalent**. The [per-trial score table](../../skills/codex-wait-efficiently/evals/results/final/SCORES.md) summarizes each run. The [machine-readable scores](../../skills/codex-wait-efficiently/evals/results/final/scores.json) additionally separate parent and child accounting.
 
 ### Separate reviewer usage
 
@@ -135,7 +135,7 @@ All workload trials total **360 unique responses, 5,869,902 input tokens** (499,
 | Original review | 29,285 | 0 | 0 | 3,399 | $0.462800 |
 | Final review | 30,960 | 0 | 0 | 3,639 | $0.491550 |
 
-These two review runs consumed 60,245 input tokens and 7,038 output tokens, valued at **$0.954350** separately from the workloads. Their [reported counters and valuation](../skills/codex-wait-efficiently/evals/results/reviewer-usage.json) are retained.
+These two review runs consumed 60,245 input tokens and 7,038 output tokens, valued at **$0.954350** separately from the workloads. Their [reported counters and valuation](../../skills/codex-wait-efficiently/evals/results/reviewer-usage.json) are retained.
 
 ## Interpreting the accounting
 
@@ -147,7 +147,7 @@ The tables include parent and child responses, skill discovery/read overhead, an
 
 Workload totals exclude this authoring conversation. The separate trace-reviewer's usage is listed separately; the report does not measure the total account usage of conducting the investigation.
 
-Dollar figures use the study's **September 14, 2026 Standard API rate card**, in USD per million tokens: ordinary input $10, cached reads $1, cache writes $12.50, output $50. These are valuations of reported subscription tokens, **not subscription charges or measured quota percentages**. They are not a fresh claim about today's pricing. The existing [accounting implementation](waiting-benchmark/accounting.py) applies the dated rate card consistently to both versions. No request here crossed its long-context pricing threshold.
+Dollar figures use the study's **September 14, 2026 Standard API rate card**, in USD per million tokens: ordinary input $10, cached reads $1, cache writes $12.50, output $50. These are valuations of reported subscription tokens, **not subscription charges or measured quota percentages**. They are not a fresh claim about today's pricing. The existing [accounting implementation](../waiting-benchmark/accounting.py) applies the dated rate card consistently to both versions. No request here crossed its long-context pricing threshold.
 
 Recorded cache-write counts are zero. The collector/runtime may normalize an absent upstream write field to zero, so these records do not establish that the service performed no cache writes. Cache warmness and scheduling were not controlled; a small dollar difference with unchanged response counts can reflect cache variation.
 
@@ -163,19 +163,19 @@ Successful automatic activation in these prompts does not guarantee selection in
 
 ## Files and reproduction
 
-Install the complete [current skill directory](../skills/codex-wait-efficiently/SKILL.md), following the [root README](../README.md#skill-alternative). Replace a prior copy of this skill; avoid loading duplicate waiting rules through both installation methods.
+Install the complete [current skill directory](../../skills/codex-wait-efficiently/SKILL.md), following the [root README](../../README.md#skill-alternative). Replace a prior copy of this skill; avoid loading duplicate waiting rules through both installation methods.
 
-See [evaluation commands and prerequisites](../skills/codex-wait-efficiently/evals/README.md) for replay. Fresh live runs consume normal account usage. Exported evidence contains selected calls, outputs, fixtures, and counters; authentication and complete private instruction/session logs are excluded.
+See [evaluation commands and prerequisites](../../skills/codex-wait-efficiently/evals/README.md) for replay. Fresh live runs consume normal account usage. Exported evidence contains selected calls, outputs, fixtures, and counters; authentication and complete private instruction/session logs are excluded.
 
 | Evidence | Purpose |
 | --- | --- |
-| [Final skill package validation](waiting-validation/skill-package-validation.json) | Exact v4 hash, structural validity, and actual CLI discovery. |
-| [Frozen versions and revision log](../skills/codex-wait-efficiently/evals/REVISIONS.md) | Every candidate and the evidence behind the changes. |
-| [Per-trial scores](../skills/codex-wait-efficiently/evals/results/final/SCORES.md) | Activation, failed checks, counts, API valuation, and latency. |
-| [Captured trial evidence](../skills/codex-wait-efficiently/evals/results/final/trial-evidence.json) | All 66 workloads, including rejected candidates and retained failures. |
-| [Integrity verification](../skills/codex-wait-efficiently/evals/results/final/validation.json) | Unique response IDs, reconciled counters, complete manifests, and unchanged AGENTS.md patch. |
-| [CI trace summary](../skills/codex-wait-efficiently/evals/results/final/ci-trace-summary.json) | Watcher call IDs, startup yields, actual query counts, and observation windows. |
-| [Original trace review](../skills/codex-wait-efficiently/evals/results/discovery-judge.json) | Independent rubric review with the original uncertainty preserved. |
-| [Final trace review](../skills/codex-wait-efficiently/evals/results/final-judge.json) | Independent review of the final complete suite. |
+| [Final skill package validation](../waiting-validation/skill-package-validation.json) | Exact v4 hash, structural validity, and actual CLI discovery. |
+| [Frozen versions and revision log](../../skills/codex-wait-efficiently/evals/REVISIONS.md) | Every candidate and the evidence behind the changes. |
+| [Per-trial scores](../../skills/codex-wait-efficiently/evals/results/final/SCORES.md) | Activation, failed checks, counts, API valuation, and latency. |
+| [Captured trial evidence](../../skills/codex-wait-efficiently/evals/results/final/trial-evidence.json) | All 66 workloads, including rejected candidates and retained failures. |
+| [Integrity verification](../../skills/codex-wait-efficiently/evals/results/final/validation.json) | Unique response IDs, reconciled counters, complete manifests, and unchanged AGENTS.md patch. |
+| [CI trace summary](../../skills/codex-wait-efficiently/evals/results/final/ci-trace-summary.json) | Watcher call IDs, startup yields, actual query counts, and observation windows. |
+| [Original trace review](../../skills/codex-wait-efficiently/evals/results/discovery-judge.json) | Independent rubric review with the original uncertainty preserved. |
+| [Final trace review](../../skills/codex-wait-efficiently/evals/results/final-judge.json) | Independent review of the final complete suite. |
 
 The final skill SHA-256 is `14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173`. Run `python3 skills/codex-wait-efficiently/evals/verify.py` to recheck the exported evidence without inference.

@@ -1,0 +1,125 @@
+{
+  "current_patch": "docs/guides/AGENTS.waiting-compatible.md",
+  "current_sha256": "882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411",
+  "note": "Archived patch contents are unchanged. Original paths are retained in frozen manifests and captured records; patch_paths.py resolves them for replay. The archived wording-no-pragma snapshot matches the current verified patch but is kept only as a benchmark input.",
+  "patches": [
+    {
+      "original_path": "docs/bundle_draft_v5/AGENTS.snippet.md",
+      "archived_path": "docs/archive/agents-patches/bundle_draft_v5/AGENTS.snippet.md",
+      "sha256": "fcc05705c9eb68cade6d415bd6cd29f3a08d95b7ecd591d93ef4239152a0eeb0"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/AGENTS.compact-final.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/AGENTS.compact-final.md",
+      "sha256": "a60d7f36e699d61a17abf4fafc46c9dcfe3195826d6e59e6546e39737b9ff2cf"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/AGENTS.initial.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/AGENTS.initial.md",
+      "sha256": "aaa53f014e986427bc67cc71b1f8d3e601501a6eb1232b42175ede988f59248b"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/AGENTS.tuned-v1.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/AGENTS.tuned-v1.md",
+      "sha256": "afaa25f938f88060ddf609b1854682676e20202146e882113c6d53e11c050b95"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/AGENTS.tuned-v2.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/AGENTS.tuned-v2.md",
+      "sha256": "8f50b8281aa5f135a687397493caca814a460545dd5148abd3049fb0f230b077"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/AGENTS.tuned-v3.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/AGENTS.tuned-v3.md",
+      "sha256": "9f9cd9529490cc3f4d93879ca8cd21e64449cb8d06b1c19c8dfacd9d323114e1"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/AGENTS.tuned-v4.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/AGENTS.tuned-v4.md",
+      "sha256": "ec30d18f752efd4dae9ac94ac08e25d52b1a525df8cefda5732c9758a6a7d764"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e0s0w0.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.e0s0w0.md",
+      "sha256": "116fc777c7e6f31da00a3e35d2006b7538e383fce98c76a0e78c171d663c7cf9"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e0s1w0.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.e0s1w0.md",
+      "sha256": "5428fe44e3bd57ec1f69e5f1b561ce67a18660828bcd3df59266a36ac6c06aa5"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s0w0.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s0w0.md",
+      "sha256": "a60d7f36e699d61a17abf4fafc46c9dcfe3195826d6e59e6546e39737b9ff2cf"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s0w1.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s0w1.md",
+      "sha256": "9b34892bb85b445fd0bacaa558ee89ea7c019ff6e8d019c56411f14e07a52f64"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s1w0.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s1w0.md",
+      "sha256": "0ca52213d67f4d5504a638ffaeec35ac67b1cd955c8732f158e8ac4531137cd8"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s1w1.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.e1s1w1.md",
+      "sha256": "afa943f32420d963abf47dfecb652f17110d3e5353fccc999462743a362ee12d"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.no-terminal.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.no-terminal.md",
+      "sha256": "245b8922e83cc0e85a84f7f0e5fb10d4617ae9da6806e61c1f4cf2425772ca71"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n0.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n0.md",
+      "sha256": "0354040c90ea9dc3ff4e573bd4a35db648a2fe3d6bcfb6393150c198afb54507"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n1.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o0n1.md",
+      "sha256": "ea0c5066304b7dfa6efaf5bbf534435f9dda0814b4154fbefb17f25cebd0f8b0"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o1n0.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o1n0.md",
+      "sha256": "116fc777c7e6f31da00a3e35d2006b7538e383fce98c76a0e78c171d663c7cf9"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o1n1.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.outer-o1n1.md",
+      "sha256": "593332888325c8dd8d37d66a227d0cea48b17f36cf91c0ea61b21ad010533ba2"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.wording-measured.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.wording-measured.md",
+      "sha256": "0354040c90ea9dc3ff4e573bd4a35db648a2fe3d6bcfb6393150c198afb54507"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.wording-no-pragma.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.wording-no-pragma.md",
+      "sha256": "882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411"
+    },
+    {
+      "original_path": "docs/waiting-benchmark/numeric-waits/prompts/AGENTS.wording-with-pragma.md",
+      "archived_path": "docs/archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.wording-with-pragma.md",
+      "sha256": "2f7e40817e85bc7b2ef7a9ab7027e7c7f13b2b69481e5be2f05a8dff62e06c5c"
+    },
+    {
+      "original_path": "docs/waiting-validation/AGENTS.waiting-candidate.md",
+      "archived_path": "docs/archive/agents-patches/waiting-validation/AGENTS.waiting-candidate.md",
+      "sha256": "bd52d45cb028ec1852572f7b779139a533a5291a0f5da018efea0e6465467256"
+    },
+    {
+      "original_path": "docs/waiting-validation/AGENTS.waiting-recommended.md",
+      "archived_path": "docs/archive/agents-patches/waiting-validation/AGENTS.waiting-recommended.md",
+      "sha256": "627c210e060f6e368350dbd1b0dfb0f9e761bfb48d3ee785cd03895050aef00c"
+    }
+  ],
+  "previous_current_paths": [
+    "docs/waiting-validation/AGENTS.waiting-compatible.md"
+  ]
+}

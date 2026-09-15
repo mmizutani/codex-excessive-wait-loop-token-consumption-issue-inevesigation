@@ -1,6 +1,8 @@
 # Waiting-validation evidence
 
-Companion to [the independent validation report](../CODEX_ASTRA_SOL_WAITING_INDEPENDENT_VALIDATION.md), September 14, 2026.
+**Use [AGENTS.waiting-compatible.md](../guides/AGENTS.waiting-compatible.md), the latest verified patch.** Its [Japanese explanation](../guides/AGENTS.waiting-explanation.ja.md) covers each rule. Earlier proposals and frozen benchmark copies are in the [patch archive](../archive/agents-patches/README.md).
+
+Companion to [the independent validation report](../reports/CODEX_ASTRA_SOL_WAITING_INDEPENDENT_VALIDATION.md), September 14, 2026.
 
 | File | Contents |
 |---|---|
@@ -14,13 +16,12 @@ Companion to [the independent validation report](../CODEX_ASTRA_SOL_WAITING_INDE
 | `live_prompt_probe.py` | Bounded real Astra/Sol inference through Codex with temporary global AGENTS.md instructions. Uses normal account usage. |
 | `analyze_live_probes.py` | Checks live trial completion, instruction loading, model identity, and distinct response accounting. |
 | `live-prompt-results.json` | Four matched-scenario live runs and two initial smoke tests, with selected tool calls and actual usage. |
-| `AGENTS.waiting-compatible.md` | Current qualitative waiting patch, matching frozen `AGENTS.wording-no-pragma.md`. Names the outer/inner tools and omits pragma syntax. In a [direct 18-trial comparison against no patch](../CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md), responses fell 98→47 and API valuation fell 42.31%; all nine patched trials completed and met the measured parent update cadence. The earlier [comparison between wordings](../CODEX_WAITING_PRAGMA_REMOVAL_BENCHMARK.md) remains separate. Also exported to the active workspace-specific `$CODEX_HOME/AGENTS.md`. |
-| [AGENTS.waiting-explanation.ja.md](AGENTS.waiting-explanation.ja.md) | Self-contained Japanese explanation of every final-patch instruction, its intended effect, measured tradeoffs, and application steps; includes the exact English patch. |
+| [AGENTS.waiting-compatible.md](../guides/AGENTS.waiting-compatible.md) | Current qualitative waiting patch, matching frozen `AGENTS.wording-no-pragma.md`. Names the outer/inner tools and omits pragma syntax. In a [direct 18-trial comparison against no patch](../reports/CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md), responses fell 98→47 and API valuation fell 42.31%; all nine patched trials completed and met the measured parent update cadence. The earlier [comparison between wordings](../reports/CODEX_WAITING_PRAGMA_REMOVAL_BENCHMARK.md) remains separate. Also exported to the active workspace-specific `$CODEX_HOME/AGENTS.md`. |
+| [AGENTS.waiting-explanation.ja.md](../guides/AGENTS.waiting-explanation.ja.md) | Self-contained Japanese explanation of every final-patch instruction, its intended effect, measured tradeoffs, and application steps; includes the exact English patch. |
 | [codex-wait-efficiently/SKILL.md](../../skills/codex-wait-efficiently/SKILL.md) | Evaluated v4 skill based on the final patch, with bounded-watcher clarification and explicit skill invocation in delegated waiting work. Install the complete skill directory; see the [root README](../../README.md#skill-alternative). |
-| [Skill evaluation report](../CODEX_WAITING_SKILL_EVALUATION.md) | Real runtime activation, outcome, process, token, and cost evaluation of both skill versions. The AGENTS.md patch remains unchanged. |
+| [Skill evaluation report](../reports/CODEX_WAITING_SKILL_EVALUATION.md) | Real runtime activation, outcome, process, token, and cost evaluation of both skill versions. The AGENTS.md patch remains unchanged. |
 | [skill-package-validation.json](skill-package-validation.json) | Current skill hash, structural validation, and CLI 0.154.0 `skills/list` discovery without a model turn. The [original package check](../../skills/codex-wait-efficiently/evals/results/v1-package-validation.json) is retained separately. |
-| `AGENTS.waiting-recommended.md` | Earlier tested prompt, retained unchanged for provenance despite its filename. Superseded as distribution guidance because the five-minute rule conflicts with required commentary. |
-| `AGENTS.waiting-candidate.md` | Earlier candidate retained for provenance of the smoke tests. Its external sleep interval was not reliably followed. |
+| [Archived proposals](../archive/agents-patches/README.md) | The earlier `AGENTS.waiting-recommended.md` was superseded because its five-minute rule conflicts with required commentary. The smoke-test `AGENTS.waiting-candidate.md` had an external sleep interval that was not reliably followed. Both are preserved unchanged in the archive. |
 
 Run from the repository root:
 
@@ -51,7 +52,7 @@ Example reproducing the earlier treatment (use `AGENTS.waiting-compatible.md` an
 python3 docs/waiting-validation/live_prompt_probe.py \
   --source-home "${CODEX_HOME:-$HOME/.codex}" --out tmp/live-wait-probes \
   --model gpt-6-astra --name astra-subagent-recommended-75 \
-  --prompt docs/waiting-validation/AGENTS.waiting-recommended.md \
+  --prompt docs/archive/agents-patches/waiting-validation/AGENTS.waiting-recommended.md \
   --scenario subagent --delay 75
 ```
 

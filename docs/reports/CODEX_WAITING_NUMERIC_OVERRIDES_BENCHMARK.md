@@ -14,14 +14,14 @@
 
 各試験で新しい一時 `CODEX_HOME` と作業ディレクトリを作り、同じモデルカタログと75秒のコマンドを使います。認証情報は一時ディレクトリ内に限定し、試験後に削除しています。モデル応答のモックは使っていません。
 
-条件を固定シードで並べ替え、各反復内で最大2件を並行実行しました。反復間は前の全試験が終わるまで待ちます。比較対象も今回新たに実行しており、以前の測定値は対照に流用していません。キャッシュの状態、バックエンド、通信やモデル応答の時間は完全には固定できません。[事前計画](waiting-benchmark/numeric-waits/PLAN.md)、[実行順序とプロンプトのハッシュ](waiting-benchmark/numeric-waits/isolated-manifest.json)
+条件を固定シードで並べ替え、各反復内で最大2件を並行実行しました。反復間は前の全試験が終わるまで待ちます。比較対象も今回新たに実行しており、以前の測定値は対照に流用していません。キャッシュの状態、バックエンド、通信やモデル応答の時間は完全には固定できません。[事前計画](../waiting-benchmark/numeric-waits/PLAN.md)、[実行順序とプロンプトのハッシュ](../waiting-benchmark/numeric-waits/isolated-manifest.json)
 
 | 比較 | 条件 | 反復数 | 試験数 |
 | --- | --- | ---: | ---: |
 | 通常のコマンド待機 | `exec_command` の30秒指定あり／なし × `write_stdin` の40秒指定あり／なし | 各3回 | 12 |
 | 実行中の Code Mode セルの再開 | `functions.wait` の45秒指定あり／なし。他の指示は旧対照版と同じ | 各3回 | 6 |
 
-`exec_command` の具体値を省く条件では、ツールの上限と報告期限に収まる長い待機を指示しました。`write_stdin` と `functions.wait` の具体値を省く条件は、現行パッチの定性的な待機指示です。数値を指定する条件でも、報告期限に合わせた短縮を許可しています。[比較した指示文](waiting-benchmark/numeric-waits/README.md)
+`exec_command` の具体値を省く条件では、ツールの上限と報告期限に収まる長い待機を指示しました。`write_stdin` と `functions.wait` の具体値を省く条件は、現行パッチの定性的な待機指示です。数値を指定する条件でも、報告期限に合わせた短縮を許可しています。[比較した指示文](../waiting-benchmark/numeric-waits/README.md)
 
 通常のコマンド待機では `functions.wait` が呼ばれないことがあるため、セル再開の試験では最初の `functions.exec` だけを1 msで返すよう指定しました。その内側では実際のコマンドを30秒待ち、実行中セルの結果を `functions.wait` で受け取ります。この初回コードは両条件で同じです。セルが実行中になる状況を意図的に作った診断であり、その状況が実務でどの程度発生するかは測っていません。
 
@@ -42,7 +42,7 @@
 
 ※書き込みはすべて記録上の0です。Codex は上流で値が未報告の場合も0で補うため、実際の書き込みが0だったかは判別できません。
 
-API単価換算額は、従来の比較と同じ2026年9月14日の Standard 単価を使っています。100万トークン当たり、通常入力 $10、キャッシュ読み出し $1、書き込み $12.50、出力 $50 です。各応答に長文入力の倍率適用条件も確認しています。サブスクリプションの実請求額との対応は測定していません。[換算方法と単価の根拠](CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md#token-categories-and-api-price-dollars)、[各試験の区分別トークン・金額](waiting-benchmark/numeric-waits/isolated-results/COUNTS.md)
+API単価換算額は、従来の比較と同じ2026年9月14日の Standard 単価を使っています。100万トークン当たり、通常入力 $10、キャッシュ読み出し $1、書き込み $12.50、出力 $50 です。各応答に長文入力の倍率適用条件も確認しています。サブスクリプションの実請求額との対応は測定していません。[換算方法と単価の根拠](CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md#token-categories-and-api-price-dollars)、[各試験の区分別トークン・金額](../waiting-benchmark/numeric-waits/isolated-results/COUNTS.md)
 
 18件の合計は、66応答、入力1,039,195トークン（通常148,315、キャッシュ読み出し890,880、記録上の書き込み0）、出力3,523トークン、API単価換算額 **$2.550180** でした。調査・レビュー用エージェントの使用量は、この試験合計に含めていません。
 
@@ -68,13 +68,13 @@ API単価換算額は、従来の比較と同じ2026年9月14日の Standard 単
 
 試験全体の合計応答数も13回・13回です。個別の反復では4回と5回が入れ替わっていますが、その差はセル再開後の `write_stdin` がコマンド完了直前で返ったかどうかによるものです。`functions.wait` の効率差には帰属できません。
 
-換算額は $0.425090・$0.607752 でした。入力合計と出力はほぼ同じで、金額差の大部分はキャッシュ読み出し割合の違いです。数値追加が高コスト化を引き起こしたという根拠にはなりません。追加効果が確認できなかったため、旧対照版の待機枠指定を維持します。[実際の引数と待機回数](waiting-benchmark/numeric-waits/isolated-results/COMPARISON.md)
+換算額は $0.425090・$0.607752 でした。入力合計と出力はほぼ同じで、金額差の大部分はキャッシュ読み出し割合の違いです。数値追加が高コスト化を引き起こしたという根拠にはなりません。追加効果が確認できなかったため、旧対照版の待機枠指定を維持します。[実際の引数と待機回数](../waiting-benchmark/numeric-waits/isolated-results/COMPARISON.md)
 
 上の3つの比較は、一部の試験を異なる観点で再集計しています。各比較の合計を足し合わせないでください。重複のない総計は18件の合計です。
 
 ## Terminal commands 節全体を削除する比較
 
-ユーザーから追加された問いに対応し、旧対照版と、この節だけを削除した版を比較しました。通常コマンド・CI監視・サブエージェントの各条件を2回ずつ実行する、別の12件です。数値比較の対照は流用せず、すべて新規に実行しました。[追加計画](waiting-benchmark/numeric-waits/PLAN.md#user-requested-extension-remove-the-entire-terminal-section)、[削除版](waiting-benchmark/numeric-waits/prompts/AGENTS.no-terminal.md)
+ユーザーから追加された問いに対応し、旧対照版と、この節だけを削除した版を比較しました。通常コマンド・CI監視・サブエージェントの各条件を2回ずつ実行する、別の12件です。数値比較の対照は流用せず、すべて新規に実行しました。[追加計画](../waiting-benchmark/numeric-waits/PLAN.md#user-requested-extension-remove-the-entire-terminal-section)、[削除版](../archive/agents-patches/waiting-benchmark/numeric-waits/prompts/AGENTS.no-terminal.md)
 
 削除版にも、共通ルールの「待機とラッパーは45秒以内」、サブエージェントの直接待機、CIの監視スクリプトなどの指示は残っています。削除により、初回30秒、短い予備確認の回避、外側の具体的な設定書式、セル再開の順序などがまとめてなくなります。
 
@@ -93,7 +93,7 @@ API単価換算額は、従来の比較と同じ2026年9月14日の Standard 単
 | **合計** | **旧対照版** | **33** | **521,179** | **49,755** | **471,424** | **0** | **2,457** | **$1.091824** | — |
 | **合計** | **削除** | **36** | **565,423** | **49,583** | **515,840** | **0** | **2,736** | **$1.148470** | — |
 
-※書き込みの観測上の制約は数値比較と同じです。各試験の区分別金額と親子別使用量は、[全カウンター表](waiting-benchmark/numeric-waits/section-results/COUNTS.md)に掲載しています。
+※書き込みの観測上の制約は数値比較と同じです。各試験の区分別金額と親子別使用量は、[全カウンター表](../waiting-benchmark/numeric-waits/section-results/COUNTS.md)に掲載しています。
 
 節の削除により、応答は9.09%、入力合計は8.49%、出力は11.36%、換算額は5.19%増えました。通常入力はほぼ変わらず、キャッシュ読み出しの計上が増えています。ここでは、金額差に加えて、実際の応答数と入力合計の増加も確認できます。
 
@@ -107,7 +107,7 @@ API単価換算額は、従来の比較と同じ2026年9月14日の Standard 単
 - CIでは、両条件とも上限のある監視処理を使い、2試験合計の実際の状態取得回数も9回ずつでした。モデル応答数が増えたのは、状態取得回数の増加とは別の問題です。予備確認に加え、旧対照版の1件は最初の状態取得と監視開始を同じコマンドにまとめ、削除版は別々に起動していました。CIの差すべてを待機時間だけに帰属することはできません。
 - サブエージェントでは、親が両条件とも `wait_agent: 45000` を使い、親8回・子8回で合計16応答でした。子のコマンドの待ち方は変わっても、今回の全体の応答数は変わりませんでした。削除版の1件は子へ渡す履歴を `fork_turns: "1"` とし、残り3件の `"all"` と異なります。小さなトークン・金額の減少を、待ち方だけの効果とは判断できません。
 
-[実際の引数一覧](waiting-benchmark/numeric-waits/section-results/COMPARISON.md)、[全呼び出しと出力](waiting-benchmark/numeric-waits/section-results/trial-evidence.json)
+[実際の引数一覧](../waiting-benchmark/numeric-waits/section-results/COMPARISON.md)、[全呼び出しと出力](../waiting-benchmark/numeric-waits/section-results/trial-evidence.json)
 
 ### 採用判断：節は残し、数値指定を増やさない
 
@@ -115,7 +115,7 @@ API単価換算額は、従来の比較と同じ2026年9月14日の Standard 単
 
 今回の結果では、節を削除すると短い予備確認が再発し、トークン削減にもつながりませんでした。**待機中の不要なモデル呼び出しを抑えるという目的に対して、旧対照版の節を残す判断です。** 差は小さく、各条件2回の結果から節内の全文章が不可欠とは言えません。旧対照版の継続待機も完了直前で返ることがあり、最小コストを保証する指示ではありません。
 
-数値の比較では `write_stdin: 40000` と `functions.wait: 45000` を追加する利点が確認できず、`exec_command: 30000` の明記にも応答削減効果が見られませんでした。外側の追加比較も経て、[現在の配布用パッチ](waiting-validation/AGENTS.waiting-compatible.md)では、節の待機条件を残しつつ個別の秒数を省いています。[最終選定の報告](CODEX_WAITING_OUTER_EXEC_BENCHMARK.md)と[日本語解説](waiting-validation/AGENTS.waiting-explanation.ja.md)に反映済みです。
+数値の比較では `write_stdin: 40000` と `functions.wait: 45000` を追加する利点が確認できず、`exec_command: 30000` の明記にも応答削減効果が見られませんでした。外側の追加比較も経て、[現在の配布用パッチ](../guides/AGENTS.waiting-compatible.md)では、節の待機条件を残しつつ個別の秒数を省いています。[最終選定の報告](CODEX_WAITING_OUTER_EXEC_BENCHMARK.md)と[日本語解説](../guides/AGENTS.waiting-explanation.ja.md)に反映済みです。
 
 ## 今回の測定総量
 
@@ -135,10 +135,10 @@ API単価換算額は、従来の比較と同じ2026年9月14日の Standard 単
 
 ## 再現と根拠
 
-- [実行方法・条件の対応表](waiting-benchmark/numeric-waits/README.md)
-- [数値比較の全トークン・金額](waiting-benchmark/numeric-waits/isolated-results/COUNTS.md)
-- [数値比較の集計JSON](waiting-benchmark/numeric-waits/isolated-results/comparison.json)
-- [全試験の呼び出し・出力・応答別使用量](waiting-benchmark/numeric-waits/isolated-results/trial-evidence.json)
-- [実際の引数・追加受入確認](waiting-benchmark/numeric-waits/isolated-results/argument-evidence.json)
-- [節削除比較の集計JSON](waiting-benchmark/numeric-waits/section-results/comparison.json)
-- [節削除比較の実際の引数・追加受入確認](waiting-benchmark/numeric-waits/section-results/argument-evidence.json)
+- [実行方法・条件の対応表](../waiting-benchmark/numeric-waits/README.md)
+- [数値比較の全トークン・金額](../waiting-benchmark/numeric-waits/isolated-results/COUNTS.md)
+- [数値比較の集計JSON](../waiting-benchmark/numeric-waits/isolated-results/comparison.json)
+- [全試験の呼び出し・出力・応答別使用量](../waiting-benchmark/numeric-waits/isolated-results/trial-evidence.json)
+- [実際の引数・追加受入確認](../waiting-benchmark/numeric-waits/isolated-results/argument-evidence.json)
+- [節削除比較の集計JSON](../waiting-benchmark/numeric-waits/section-results/comparison.json)
+- [節削除比較の実際の引数・追加受入確認](../waiting-benchmark/numeric-waits/section-results/argument-evidence.json)

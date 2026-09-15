@@ -1,6 +1,6 @@
 # Evaluate the waiting skill
 
-This directory contains the fixtures, frozen skill versions, graders, and selected execution evidence for [the skill evaluation report](../../../docs/CODEX_WAITING_SKILL_EVALUATION.md). The suite is bundled in the skill’s `evals/` directory. Normal use follows the parent `SKILL.md`, which does not load these evaluation files. Run the evaluation tools from this repository: they also use its benchmark collector and historical fixtures.
+This directory contains the fixtures, frozen skill versions, graders, and selected execution evidence for [the skill evaluation report](../../../docs/reports/CODEX_WAITING_SKILL_EVALUATION.md). The suite is bundled in the skill’s `evals/` directory. Normal use follows the parent `SKILL.md`, which does not load these evaluation files. Run the evaluation tools from this repository: they also use its benchmark collector and historical fixtures.
 
 Frozen versions use `versions/v*/SKILL.md.fixture`: Codex CLI 0.154.0 recursively discovers files named `SKILL.md`, so keeping that name for archived versions would expose duplicate skills when this package is installed. `run.py` restores the filename to `SKILL.md` in each isolated test home. Snapshot contents and recorded hashes are unchanged. The older package-validation records retain their original paths as historical evidence.
 

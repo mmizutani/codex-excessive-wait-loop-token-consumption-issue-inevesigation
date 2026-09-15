@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 from statistics import mean
 from accounting import price_response, RATES
+from patch_paths import resolve_patch_path
 
 def analyze(record):
     assert record['response_usage'], f"No model usage: {record['name']}"
@@ -21,7 +22,7 @@ def analyze(record):
             assert sum(u.get(key,0) for u in entries)==final.get(key,0), (record['name'],session,key)
     if record['patch_sha256']:
         assert record['prompt_loaded'], f"Patch was not loaded: {record['name']}"
-        assert hashlib.sha256(Path(record['patch_file']).read_bytes()).hexdigest() == record['patch_sha256']
+        assert hashlib.sha256(resolve_patch_path(record['patch_file']).read_bytes()).hexdigest() == record['patch_sha256']
     if record['success'] and record['scenario'] != 'ci':
         assert record['job_launches'] == 1, f"Duplicate job: {record['name']}"
     if record.get('skills_mode') == 'instructions_disabled':

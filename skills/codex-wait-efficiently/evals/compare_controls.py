@@ -64,7 +64,7 @@ def main():
     assert digest(HERE/'cases.json') == manifest['cases_sha256']
     final_hash = digest(ROOT/'skills/codex-wait-efficiently/SKILL.md')
     assert final_hash == manifest['versions']['v4'] == digest(HERE/'versions/v4/SKILL.md.fixture')
-    assert digest(ROOT/'docs/waiting-validation/AGENTS.waiting-compatible.md') == '882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411'
+    assert digest(ROOT/'docs/guides/AGENTS.waiting-compatible.md') == '882067320df757cc72afaf1fa542e9c476d0c445d4f52a0ea683eb38e2daa411'
     ids = [u['response_id'] for r in records for u in r['response_usage']]
     assert len(ids) == len(set(ids))
     instruction_hashes = {entry['sha256'] for r in records for entry in r['base_instruction_hashes']}

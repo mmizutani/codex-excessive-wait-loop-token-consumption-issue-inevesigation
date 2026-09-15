@@ -14,7 +14,7 @@ September 15, 2026 (JST). Codex CLI 0.154.0, GPT-6 Astra, low reasoning effort.
 
 The [earlier 66-trial evaluation](CODEX_WAITING_SKILL_EVALUATION.md) tested the original skill and three revisions, activation, task correctness, and waiting behavior. Its original-versus-final 12-case suites used 57 versus 58 responses and $1.856236 versus $1.945212 API equivalent. That comparison could not answer whether installing the final skill saves usage compared with having no skill.
 
-This new experiment compares **no skill** directly with the unchanged final **v4 skill**. The [plan](../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/PLAN.md) and [18-trial manifest](../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/skill-vs-none.json) were frozen before inference. The prior evidence, skill body, and AGENTS.md patch remain unchanged.
+This new experiment compares **no skill** directly with the unchanged final **v4 skill**. The [plan](../../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/PLAN.md) and [18-trial manifest](../../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/skill-vs-none.json) were frozen before inference. The prior evidence, skill body, and AGENTS.md patch remain unchanged.
 
 ## Conditions and method
 
@@ -59,7 +59,7 @@ Each column totals nine trials, including parent and child inference. Ordinary i
 
 Input fell by 518,956 tokens, while output increased by 599 tokens. The net API valuation fell by $0.755514. The complete comparison consumed **164 unique responses**, **2,576,140 input tokens**, **8,599 output tokens**, and **$4.654710 API equivalent**. These workload totals exclude the surrounding authoring conversation and documentation work. This additional comparison did not run a separate model-based trace judge.
 
-Prices use the original study's September 14, 2026 Standard API rate card: per million tokens, ordinary input $10, cached reads $1, recorded writes $12.50, and output $50. [The accounting implementation](waiting-benchmark/accounting.py) applies the same rates to every response. No request crossed the 272,000-input-token pricing threshold; the largest had 16,961 input tokens.
+Prices use the original study's September 14, 2026 Standard API rate card: per million tokens, ordinary input $10, cached reads $1, recorded writes $12.50, and output $50. [The accounting implementation](../waiting-benchmark/accounting.py) applies the same rates to every response. No request crossed the 272,000-input-token pricing threshold; the largest had 16,961 input tokens.
 
 These values price subscription-reported counters at API rates. **Actual subscription charges and quota changes are unmeasured.** The runtime can normalize an absent upstream cache-write field to zero; zero recorded writes do not prove the service performed no cache writes.
 
@@ -73,7 +73,7 @@ Each row contains three trials per condition. Delivery delay is measured from th
 | subagent | 49 → 30 | 757,371 → 478,523 | $1.428170 → $0.867522 | 4.420 s → 12.239 s |
 | ci | 24 → 21 | 370,608 → 342,678 | $0.596612 → $0.673380 | 5.805 s → 31.073 s |
 
-Terminal and subagent work had lower responses, input, and API valuation in every matched pair. Across all nine pairs, eight used fewer responses and input tokens, and seven had a lower API valuation. The third CI pair used the same number of responses and more input; the second and third CI pairs cost more. All pairs, including unfavorable ones, appear in [COUNTS.md](../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/COUNTS.md).
+Terminal and subagent work had lower responses, input, and API valuation in every matched pair. Across all nine pairs, eight used fewer responses and input tokens, and seven had a lower API valuation. The third CI pair used the same number of responses and more input; the second and third CI pairs cost more. All pairs, including unfavorable ones, appear in [COUNTS.md](../../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/COUNTS.md).
 
 ### Why CI cost more despite fewer responses
 
@@ -102,7 +102,7 @@ The three treatment children each read the skill, avoided short polls, and finis
 
 All 18 turns completed with the actual successful benchmark result and the expected job/child counts. None changed the protected fixtures. The terminal and subagent final answers were exactly `BENCH_RESULT_7391`; CI answers reported the same result and run identity. All response IDs were unique, and response-level input, cached-input, recorded-write, and output totals reconciled with cumulative counters for every parent and child session.
 
-The nine treatment trials passed every deterministic check. Six control trials failed short-poll or progress-cadence diagnostics while still completing their tasks correctly. These control process failures are retained in all totals. They measure the waiting behavior under comparison and are distinct from task-outcome failure. The [machine-readable comparison](../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/comparison.json) lists every retained failure.
+The nine treatment trials passed every deterministic check. Six control trials failed short-poll or progress-cadence diagnostics while still completing their tasks correctly. These control process failures are retained in all totals. They measure the waiting behavior under comparison and are distinct from task-outcome failure. The [machine-readable comparison](../../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/comparison.json) lists every retained failure.
 
 The analysis also checks complete manifest coverage, identical paired task prompts, frozen case and skill hashes, common base instructions, model/effort identity, absence of AGENTS.md in both conditions, and actual skill isolation. The original 66-trial export still regrades identically. The final skill SHA-256 remains `14bc9f85b382ba1bc313246b23dff2b6e205cc75d880ab8a9160e5fc8514f173`.
 
@@ -132,9 +132,9 @@ The task prompts and instruction-loading conditions differ between studies, and 
 
 ## Files and reproduction
 
-- [English skill README](../skills/codex-wait-efficiently/README.md) and [Japanese skill README](../skills/codex-wait-efficiently/README.ja.md): purpose, installation, benefits, and measured limitations.
-- [Plan](../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/PLAN.md) and [manifest](../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/skill-vs-none.json): inputs frozen before inference.
-- [Captured evidence](../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/trial-evidence.json), [per-trial scores](../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/SCORES.md), and [counts](../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/COUNTS.md): all 18 trials and parent/child accounting.
-- [Comparison verifier](../skills/codex-wait-efficiently/evals/compare_controls.py) and [reproduction instructions](../skills/codex-wait-efficiently/evals/README.md#final-skill-versus-no-skill): live execution and offline regrading.
+- [English skill README](../../skills/codex-wait-efficiently/README.md) and [Japanese skill README](../../skills/codex-wait-efficiently/README.ja.md): purpose, installation, benefits, and measured limitations.
+- [Plan](../../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/PLAN.md) and [manifest](../../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/skill-vs-none.json): inputs frozen before inference.
+- [Captured evidence](../../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/trial-evidence.json), [per-trial scores](../../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/SCORES.md), and [counts](../../skills/codex-wait-efficiently/evals/comparisons/skill-vs-none/COUNTS.md): all 18 trials and parent/child accounting.
+- [Comparison verifier](../../skills/codex-wait-efficiently/evals/compare_controls.py) and [reproduction instructions](../../skills/codex-wait-efficiently/evals/README.md#final-skill-versus-no-skill): live execution and offline regrading.
 
 Run `python3 skills/codex-wait-efficiently/evals/compare_controls.py` from the repository root to verify and regenerate the comparison without model calls or authentication. Live repetitions consume normal account usage. Published evidence contains selected synthetic workload records; authentication and full private session instructions are excluded.

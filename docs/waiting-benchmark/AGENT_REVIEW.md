@@ -7,7 +7,7 @@ The user authorized agent consultation and prompt tuning if the additional promp
 
 The first Astra pair was 8→7 responses (12.5%) and $0.291390→$0.280352 at Standard API rates applied to the reported counts (3.79%). The patch increased ordinary input and output slightly despite reducing cached reads. These observations did not meet the predeclared 20% response-count target. Both runs missed the nominal 60-second commentary cadence.
 
-[AGENTS.tuned-v1.md](AGENTS.tuned-v1.md) makes the wrapper-yield syntax explicit, avoids a preliminary short process poll, and budgets waits against the time since the last update. The supplied cache-TTL paragraph remains unchanged. The candidate must be evaluated in fresh trials; the original metrics do not validate it.
+[AGENTS.tuned-v1.md](../archive/agents-patches/waiting-benchmark/AGENTS.tuned-v1.md) makes the wrapper-yield syntax explicit, avoids a preliminary short process poll, and budgets waits against the time since the last update. The supplied cache-TTL paragraph remains unchanged. The candidate must be evaluated in fresh trials; the original metrics do not validate it.
 
 The methodological reviewer also suggested changing global response-ID deduplication to a composite key. The parent retained globally unique upstream response IDs to avoid counting replayed parent history as child inference; cross-source duplicate counts are checked for equality, and per-session totals are reconciled. No response-ID collision between independent completions has been observed.
 
@@ -19,7 +19,7 @@ The trace reviewer confirmed that parent subagent silence came from waits that d
 
 The shared monitoring skill was discovered in primary CI traces. Its interval guidance is a plausible contributor to long detection delays, but these trials do not isolate that cause. The clean phase removes its instruction catalog.
 
-The [v2 candidate](AGENTS.tuned-v2.md) adds an explicit 30,000ms initial terminal wait when waiting is the only task and explicitly bounds native agent waits by the remaining update budget. It removes the untested 25-minute checkpoint. The reviewer found the four rules coherent, with remaining risks in model compliance and CI backoff choices. V1 remains an untested intermediate draft.
+The [v2 candidate](../archive/agents-patches/waiting-benchmark/AGENTS.tuned-v2.md) adds an explicit 30,000ms initial terminal wait when waiting is the only task and explicitly bounds native agent waits by the remaining update budget. It removes the untested 25-minute checkpoint. The reviewer found the four rules coherent, with remaining risks in model compliance and CI backoff choices. V1 remains an untested intermediate draft.
 
 The accounting follow-up confirmed that a missing cache-write field makes API-dollar totals conditional valuations. If some input classified as ordinary is actually written to cache under API semantics, its listed price would be 25% higher. API cache-retention documentation does not establish the same behavior for Codex subscriptions. Neither a 25-minute checkpoint nor any cache-only wake-up savings was measured.
 

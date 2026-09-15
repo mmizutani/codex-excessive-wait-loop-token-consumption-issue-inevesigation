@@ -11,7 +11,7 @@
 - 現在の配布文面を維持します。**実装構文をプロンプトに重複させないという方針で使える文面ですが、使用量が変わらない、または最も安い文面として推奨できる結果ではありません。** 将来のランタイムでも同じ効果が続くことは未検証です。
 - この文面比較の18試験にはパッチなしの条件がありません。**その後、別の18試験で最新文面とパッチなしを直接比較し、応答98→47回、入力51.03%減、API単価換算額42.31%減を確認しました。** 以下の文面間の比較結果はそのまま保持しています。[最新文面の導入効果の直接比較](CODEX_WAITING_LATEST_VS_NO_PATCH_BENCHMARK.md)
 
-[配布用パッチ](waiting-validation/AGENTS.waiting-compatible.md)、[日本語解説](waiting-validation/AGENTS.waiting-explanation.ja.md)、[今回の文面・測定状態](waiting-benchmark/numeric-waits/wording-selection.json)
+[配布用パッチ](../guides/AGENTS.waiting-compatible.md)、[日本語解説](../guides/AGENTS.waiting-explanation.ja.md)、[今回の文面・測定状態](../waiting-benchmark/numeric-waits/wording-selection.json)
 
 ## 比較条件と集計方法
 
@@ -35,7 +35,7 @@ BとCで異なるのは、Code Mode の段落の第1文だけです。ただし�
 
 正しい結果、終了コード0、単一起動、子の数、実際のモデル・推論設定、fork設定、スキル未使用、待機引数、実行中セルの返却、親の報告間隔、結果通知の遅延も確認しました。待機引数は完全な呼び出し文を確認し、数字の抽出結果だけで判断していません。
 
-[事前計画](waiting-benchmark/numeric-waits/WORDING_PLAN.md)、[文面・ハッシュ・実行順序](waiting-benchmark/numeric-waits/wording-manifest.json)
+[事前計画](../waiting-benchmark/numeric-waits/WORDING_PLAN.md)、[文面・ハッシュ・実行順序](../waiting-benchmark/numeric-waits/wording-manifest.json)
 
 ## 3文面のトークンと金額
 
@@ -75,7 +75,7 @@ B→Cでは入力合計が63,835トークン増えています。一方、通常
 
 サブエージェントの親は全条件で計8応答です。子の応答がAで7回、Bで6回、Cで8回でした。B→Cで増えた4応答の内訳は、通常コマンドの親1回、CIの親1回、子エージェント2回です。6組の対応比較では4組でCが1応答多く、2組は同数でした。A→Cは2組でCが1応答多く、4組は同数です。
 
-[全18件の入力区分・親子別カウンター・金額](waiting-benchmark/numeric-waits/wording-results/COUNTS.md)、[対応する試験の差分](waiting-benchmark/numeric-waits/wording-results/comparison.json)
+[全18件の入力区分・親子別カウンター・金額](../waiting-benchmark/numeric-waits/wording-results/COUNTS.md)、[対応する試験の差分](../waiting-benchmark/numeric-waits/wording-results/comparison.json)
 
 ## 実際の待機から分かったこと
 
@@ -85,7 +85,7 @@ Cの通常コマンドと子エージェントでは、初回の内側30秒に�
 
 ただし、CのCI第1試験では、最初の状態取得と監視コマンドの起動で外側の設定が省略されました。特に後者は、内側30秒・外側は既定の30秒のままで、記録上は約30.2秒後にセルが完了しました。すべての呼び出しでモデルが明示的な余裕を設定した、と評価することはできません。
 
-v0.154.0 のソースを確認すると、Code Mode は10秒以上の yield に1秒の猶予を加え、その後にセッションの上限で制限します。既定30秒で約30.2秒の処理を収めた観測は、この実装と整合します。モデルがこの猶予を意識していたかは分かりません。この猶予で内側40秒を収められるわけではなく、継続待機では外側の調整が必要です。[リリースの実装](https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/code-mode-runtime/src/service.rs#L192-L207)、[既定値とソースの記録](waiting-benchmark/numeric-waits/wording-runtime-evidence.json)
+v0.154.0 のソースを確認すると、Code Mode は10秒以上の yield に1秒の猶予を加え、その後にセッションの上限で制限します。既定30秒で約30.2秒の処理を収めた観測は、この実装と整合します。モデルがこの猶予を意識していたかは分かりません。この猶予で内側40秒を収められるわけではなく、継続待機では外側の調整が必要です。[リリースの実装](https://github.com/openai/codex/blob/rust-v0.154.0/codex-rs/code-mode-runtime/src/service.rs#L192-L207)、[既定値とソースの記録](../waiting-benchmark/numeric-waits/wording-runtime-evidence.json)
 
 ### 追加応答は内側の待機終了で発生した
 
@@ -93,7 +93,7 @@ Cは通常コマンド・子エージェントの4件すべてで、継続待機
 
 Cの通常コマンド第2試験は同じ40秒でも追加待機なしで完了しています。Aの子エージェント第1試験にも、40秒の待機が約0.909秒前に返る例がありました。75秒のジョブでは、30秒＋40秒の待機に通信・モデルの応答時間を加えた長さが完了境界に近く、わずかな時間差で追加応答の有無が変わります。
 
-この結果は、文面による内側の時間選択の差を示します。構文の省略そのものが原因なのか、“long enough to cover” などの表現が時間選択を変えたのかは、この比較だけでは切り分けられません。外側が先に返って `functions.wait` を呼ぶ問題は全件で発生していません。[引数と返却時刻](waiting-benchmark/numeric-waits/wording-results/behavior.json)
+この結果は、文面による内側の時間選択の差を示します。構文の省略そのものが原因なのか、“long enough to cover” などの表現が時間選択を変えたのかは、この比較だけでは切り分けられません。外側が先に返って `functions.wait` を呼ぶ問題は全件で発生していません。[引数と返却時刻](../waiting-benchmark/numeric-waits/wording-results/behavior.json)
 
 ### CIは監視スクリプトの間隔にも左右される
 
@@ -126,4 +126,4 @@ Cの通常コマンド第2試験は同じ40秒でも追加待機なしで完了�
 - 自然な待機だけを測定し、実行中セルを強制発生させていません。全件でセルが直接完了したため、現在の文面による `functions.wait` の呼び分けは今回の実行では試されていません。
 - CIはローカルのシミュレーターです。実サービスの通知連携や障害処理、30分のキャッシュTTL境界、長期の `/goal` 待機、Sol、別の推論設定は対象外です。
 
-[集計と実際の待機引数](waiting-benchmark/numeric-waits/wording-results/COMPARISON.md)、[受入確認](waiting-benchmark/numeric-waits/wording-results/argument-evidence.json)、[収集した呼び出しと応答](waiting-benchmark/numeric-waits/wording-results/trial-evidence.json)
+[集計と実際の待機引数](../waiting-benchmark/numeric-waits/wording-results/COMPARISON.md)、[受入確認](../waiting-benchmark/numeric-waits/wording-results/argument-evidence.json)、[収集した呼び出しと応答](../waiting-benchmark/numeric-waits/wording-results/trial-evidence.json)

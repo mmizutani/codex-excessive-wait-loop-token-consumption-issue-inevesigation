@@ -15,11 +15,11 @@
 - **External dependencies and goals:** Native sleep does not guarantee wakeup on job completion. For prolonged external waits under `/goal`, use `/goal pause`, verify `paused`, and resume when action is possible. A “waiting” reply does not pause the goal.
 - **Arguments:** Use integer millisecond literals. Even `1.0` is rejected by the tested integer parsers.
 - **Prompt caching:** The current export omits the earlier 25-minute checkpoint. Cache-only keepalives have no measured savings here, and the API cache policy is not an independently verified subscription guarantee. Longer waits can still change cache costs.
-- **Rollout:** The subsequent 73-workload [benchmark](CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md) found substantial Astra benefits after tuning but no universal Sol savings. Six v3 trials met the recorded update cadence; two v4 CI trials validated explicit watcher limits/backoff. V4's unchanged command/subagent rules were tested under v3, not rerun as a complete v4 suite. The current [export](waiting-validation/AGENTS.waiting-compatible.md) is a compact rewrite of v4 tested in three additional clean Astra workloads: it reduced usage and API-rate equivalents but increased CI result delay. It remains a targeted pilot rather than a company-wide savings promise; the compact version has not been tested on Sol.
+- **Rollout:** The subsequent 73-workload [benchmark](CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md) found substantial Astra benefits after tuning but no universal Sol savings. Six v3 trials met the recorded update cadence; two v4 CI trials validated explicit watcher limits/backoff. V4's unchanged command/subagent rules were tested under v3, not rerun as a complete v4 suite. The current [export](../guides/AGENTS.waiting-compatible.md) is a compact rewrite of v4 tested in three additional clean Astra workloads: it reduced usage and API-rate equivalents but increased CI result delay. It remains a targeted pilot rather than a company-wide savings promise; the compact version has not been tested on Sol.
 
 ## Assessment
 
-**The repeated-inference mechanism is real and reproducible on the installed runtime. It is a family of waiting and continuation behaviors, not an established Astra-specific defect or a measured explanation of the company's usage increase.** The supplied [handoff](CODEX_ASTRA_SOL_WAITING_INVESTIGATION.md) is substantially sound about that distinction. Its strongest hypotheses now have runtime evidence, but model-selection causality and company savings remain unresolved.
+**The repeated-inference mechanism is real and reproducible on the installed runtime. It is a family of waiting and continuation behaviors, not an established Astra-specific defect or a measured explanation of the company's usage increase.** The supplied [handoff](../archive/investigation/CODEX_ASTRA_SOL_WAITING_INVESTIGATION.md) is substantially sound about that distinction. Its strongest hypotheses now have runtime evidence, but model-selection causality and company savings remain unresolved.
 
 The smallest defensible mitigation is to **reduce unnecessary returns to the model while retaining a reliable way to receive the result**. Which mechanism accomplishes this depends on what is pending:
 
@@ -58,7 +58,7 @@ The evidence has five distinct levels, including the subsequent live prompt comp
 | Live goal/subagents | No active investigation goal or child agents were created. Synthetic goals existed only in disposable test homes. |
 | Company sleep premise | The handoff assumes `always_on`. This session's local config did not itself contain that feature setting; native sleep was nevertheless exposed. Scripted tests explicitly enabled `always_on`. |
 
-The version and checkout are different facts. The newer checkout was inspected, not built or substituted for the installed binary. Its sleep and V2 wait handlers are byte-identical Git blobs to the release; other relevant files differ. See [source provenance](waiting-validation/source-provenance.json) and [release metadata and ancestry](waiting-validation/release-audit.json).
+The version and checkout are different facts. The newer checkout was inspected, not built or substituted for the installed binary. Its sleep and V2 wait handlers are byte-identical Git blobs to the release; other relevant files differ. See [source provenance](../waiting-validation/source-provenance.json) and [release metadata and ancestry](../waiting-validation/release-audit.json).
 
 ## The causal mechanism
 
@@ -92,7 +92,7 @@ Cached input still appears in request accounting. It need not be recomputed as u
 
 ### Live probes in this Astra session
 
-The selected calls, timestamps, outputs, and per-response usage are exported in [live-probes.json](waiting-validation/live-probes.json). Only diagnostic records are included; the conversation and credentials are not exported.
+The selected calls, timestamps, outputs, and per-response usage are exported in [live-probes.json](../waiting-validation/live-probes.json). Only diagnostic records are included; the conversation and credentials are not exported.
 
 | Probe | Observation | Conclusion |
 |---|---|---|
@@ -120,7 +120,7 @@ The background command completed at `03:59:41.793 UTC`, inside the native sleep 
 
 ### Deterministic installed-binary tests
 
-[runtime_probe.py](waiting-validation/runtime_probe.py) invokes the installed `codex app-server` with a separate temporary home and a scripted local provider. [verify_results.py](waiting-validation/verify_results.py) asserts the captured outcomes. **All 14 cases passed.** The compact results are in [runtime-results.json](waiting-validation/runtime-results.json).
+[runtime_probe.py](../waiting-validation/runtime_probe.py) invokes the installed `codex app-server` with a separate temporary home and a scripted local provider. [verify_results.py](../waiting-validation/verify_results.py) asserts the captured outcomes. **All 14 cases passed.** The compact results are in [runtime-results.json](../waiting-validation/runtime-results.json).
 
 | Case | Result |
 |---|---|
@@ -217,7 +217,7 @@ This investigation's own input context grew substantially as documents and sourc
 
 ## What has shipped, and what has not been established
 
-The following entries were verified against public PR merge SHAs and the installed tag's ancestry. “Present by 0.154.0” does not identify the first containing release. See the [machine-readable release audit](waiting-validation/release-audit.json).
+The following entries were verified against public PR merge SHAs and the installed tag's ancestry. “Present by 0.154.0” does not identify the first containing release. See the [machine-readable release audit](../waiting-validation/release-audit.json).
 
 | Change | In `0.154.0` | In supplied newer checkout | Implication |
 |---|---|---|---|
@@ -237,7 +237,7 @@ The release and checkout have identical wait/sleep handler blobs, including the 
 
 ## Critical review of the supplied reports and bundle
 
-The [handoff](CODEX_ASTRA_SOL_WAITING_INVESTIGATION.md) correctly keeps source facts, public reports, and hypotheses separate. Its warning about cumulative token counters and cache accounting should be retained. The main advances here are live reproduction, request counting, confirmed numeric errors, a shell-wakeup counterexample, effective goal pause, and release-ancestry verification.
+The [handoff](../archive/investigation/CODEX_ASTRA_SOL_WAITING_INVESTIGATION.md) correctly keeps source facts, public reports, and hypotheses separate. Its warning about cumulative token counters and cache accounting should be retained. The main advances here are live reproduction, request counting, confirmed numeric errors, a shell-wakeup counterexample, effective goal pause, and release-ancestry verification.
 
 The [Relux article][relux] and [Reddit post][reddit] were retrievable in this investigation. Relux reports private-session statistics and distinguishes subscription limits from API accounting; its source traces are unpublished. Its central reproduction used another model/provider. Reddit reports roughly 30% lower quota use after lengthening waits, without a matched dataset. These are firsthand reports worth testing, not independent proof of company impact. The Relux suggestion of Astra at “minimal” effort should also not be copied: the current official Astra guide directs users moving from `minimal` or `none` to start at `low`. [Official model guidance][model-guide]
 
@@ -261,7 +261,7 @@ The user's follow-up asked for a practical global AGENTS.md instruction and addi
 
 ### Should everyone enable `sleep_tool` with `always_on`?
 
-It is a sensible shared baseline for the stated Astra/Sol rollout, but is redundant for Astra under the checked defaults. Four additional installed-binary registration tests produced the following model-visible tool exposure. These used scripted responses, so they consumed no model inference. [Exposure evidence](waiting-validation/sleep-exposure-results.json)
+It is a sensible shared baseline for the stated Astra/Sol rollout, but is redundant for Astra under the checked defaults. Four additional installed-binary registration tests produced the following model-visible tool exposure. These used scripted responses, so they consumed no model inference. [Exposure evidence](../waiting-validation/sleep-exposure-results.json)
 
 | Model/settings | Native `clock.sleep` exposed? |
 |---|---|
@@ -281,7 +281,7 @@ The user's mode-only setting also works when the feature has not been disabled. 
 
 ### Measured effect of the earlier instruction
 
-Four fresh live runs compared the baseline with the exact [earlier instruction](waiting-validation/AGENTS.waiting-recommended.md), loaded from a temporary **global** `AGENTS.md`. Its filename is retained for test provenance; it is superseded as distribution guidance by the compatibility revision below. Each model was tested at `low` effort with `always_on` sleep enabled. The scenario explicitly supplied simulated healthy V2-subagent state, prohibited other work, and delivered its result through active-turn steering 75 seconds after waiting began. No real child agent was launched.
+Four fresh live runs compared the baseline with the exact [earlier instruction](../archive/agents-patches/waiting-validation/AGENTS.waiting-recommended.md), loaded from a temporary **global** `AGENTS.md`. Its filename is retained for test provenance; it is superseded as distribution guidance by the compatibility revision below. Each model was tested at `low` effort with `always_on` sleep enabled. The scenario explicitly supplied simulated healthy V2-subagent state, prohibited other work, and delivered its result through active-turn steering 75 seconds after waiting began. No real child agent was launched.
 
 | Model/condition | Selected waiting calls | Model responses, including final answer | Input tokens, including cached | Cached input tokens | Output tokens |
 |---|---|---:|---:|---:|---:|
@@ -290,7 +290,7 @@ Four fresh live runs compared the baseline with the exact [earlier instruction](
 | Sol baseline | One interruptible sleep with a 12-hour maximum | 2 | 34,068 | 23,168 | 51 |
 | Sol with instruction | One direct `wait_agent(300000)` | 2 | 34,593 | 16,896 | 73 |
 
-All four runs reported the correct delivered value. Responses arrived approximately 1.9–2.7 seconds after the driver sent the result. Both treatment waits remained suspended beyond 60 seconds and returned on the delivered event; no hard 60-second runtime cap appeared. Neither treatment produced an intermediate progress update during that wait. Runtime acceptance and instruction compatibility are separate questions. Global instruction loading and exact prompt hashes were verified from the saved records. [Selected calls and usage](waiting-validation/live-prompt-results.json)
+All four runs reported the correct delivered value. Responses arrived approximately 1.9–2.7 seconds after the driver sent the result. Both treatment waits remained suspended beyond 60 seconds and returned on the delivered event; no hard 60-second runtime cap appeared. Neither treatment produced an intermediate progress update during that wait. Runtime acceptance and instruction compatibility are separate questions. Global instruction loading and exact prompt hashes were verified from the saved records. [Selected calls and usage](../waiting-validation/live-prompt-results.json)
 
 The Astra baseline generated a “still waiting” message and a second sleep after its first timer expired. The instruction removed that extra model response in this scenario. **Sol was already efficient in the baseline, so the instruction did not reduce its response count and added some prompt overhead.** The long Sol sleep was interruptible and ended on the test event; it was not a twelve-hour delay.
 
@@ -309,9 +309,9 @@ An earlier live Astra smoke test used a draft prescribing 120–300-second sleep
 | 3: Sleep between external checks | Broadly compatible with its existing applicable-limits qualification. Tool availability varies by model/configuration. | Apply the shared constraint and use sleep only when available. |
 | 4: Goal pause and accurate completion | Pause is a user decision, and asking does not change goal state. Automatically stopping would conflict with persistence. | Ask once whether the user wants to pause when only prolonged external waiting remains; require verified state. |
 
-The frozen v4 text below incorporates the subsequent [measured tuning](CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md). The [current export](waiting-validation/AGENTS.waiting-compatible.md) is a later compact rewrite, reviewed for instruction coverage and subsequently tested in three clean Astra workloads. The 73-workload benchmark, including nine later Astra 0.153.1 trials and those three compact-patch trials, preserves the original prompt, intermediate revisions, and their actual counters. V4 changes only CI watcher limits/backoff from v3: six v3 workloads and two v4 CI workloads were executed, rather than a complete v4 rerun. The earlier measurements in this document remain historical results for their own prompt versions.
+The frozen v4 text below incorporates the subsequent [measured tuning](CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md). The [current export](../guides/AGENTS.waiting-compatible.md) is a later compact rewrite, reviewed for instruction coverage and subsequently tested in three clean Astra workloads. The 73-workload benchmark, including nine later Astra 0.153.1 trials and those three compact-patch trials, preserves the original prompt, intermediate revisions, and their actual counters. V4 changes only CI watcher limits/backoff from v3: six v3 workloads and two v4 CI workloads were executed, rather than a complete v4 rerun. The earlier measurements in this document remain historical results for their own prompt versions.
 
-For a pilot, add the chosen revision to `$CODEX_HOME/AGENTS.md`, defaulting to `~/.codex/AGENTS.md`, and start a fresh session. The active workspace-specific [global file](../.codex_home/AGENTS.md) now matches the compact export; the following block preserves the tested v4 wording. Existing `AGENTS.override.md` can take precedence over `AGENTS.md`. [Official instruction-loading documentation](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
+For a pilot, add the chosen revision to `$CODEX_HOME/AGENTS.md`, defaulting to `~/.codex/AGENTS.md`, and start a fresh session. The active workspace-specific [global file](../../.codex_home/AGENTS.md) now matches the compact export; the following block preserves the tested v4 wording. Existing `AGENTS.override.md` can take precedence over `AGENTS.md`. [Official instruction-loading documentation](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
 
 ```markdown
 ## Waiting for work
@@ -345,7 +345,7 @@ The subsequent benchmark measures all three workload types with real model infer
 
 ### Cache lifetime and the cost of long waits
 
-The current export retains cache awareness without prescribing a cache-only checkpoint. The earlier 25-minute proposal is frozen in [AGENTS.initial.md](waiting-benchmark/AGENTS.initial.md); its costs were measured only on 75-second workloads, not across cache expiry. The [subsequent benchmark](CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md) found that fewer responses and lower total input did not consistently mean lower API-rate dollar equivalents.
+The current export retains cache awareness without prescribing a cache-only checkpoint. The earlier 25-minute proposal is frozen in [AGENTS.initial.md](../archive/agents-patches/waiting-benchmark/AGENTS.initial.md); its costs were measured only on 75-second workloads, not across cache expiry. The [subsequent benchmark](CODEX_WAITING_RUNTIME_PROMPT_BENCHMARK.md) found that fewer responses and lower total input did not consistently mean lower API-rate dollar equivalents.
 
 The API guide describes a renewable minimum 30-minute lifetime and read/write prices of 0.1×/1.25× ordinary input for these generations. That does not establish the same lifetime or write billing for Codex subscriptions. All measured write counters were normalized zeros, which can also result from absent upstream fields. Actual writes were not separately recoverable. [Official API caching documentation](https://developers.openai.com/api/docs/guides/prompt-caching)
 
@@ -372,7 +372,7 @@ For maintainers who observe frequent omission of `timeout_ms`, the release suppo
 default_wait_timeout_ms = 300000
 ```
 
-This adjusts a default for V2 when that feature is enabled; it does not enable proactive delegation or override explicit shorter arguments. The harness verified default configuration changes and verified that an explicit ten-second call remains ten seconds with a five-minute default. [Configuration reader][config], [runtime evidence](waiting-validation/runtime-results.json)
+This adjusts a default for V2 when that feature is enabled; it does not enable proactive delegation or override explicit shorter arguments. The harness verified default configuration changes and verified that an explicit ten-second call remains ten seconds with a five-minute default. [Configuration reader][config], [runtime evidence](../waiting-validation/runtime-results.json)
 
 Do not initially raise `min_wait_timeout_ms` as a company-wide enforcement mechanism. It changes the semantics of every short call and needs separate responsiveness testing. Also avoid `usage_hint_enabled = false` as a remedy: the checked schema marks it deprecated and ignored. [Configuration schema][schema]
 
@@ -411,7 +411,7 @@ The original company incident cannot be apportioned from the supplied files: the
 
 ## Reproduction and evidence package
 
-See [the evidence README](waiting-validation/README.md). `runtime_probe.py` uses the installed executable and an isolated temporary Codex home, with no model calls to OpenAI. Its per-case deadlines and request cap bound the scripted cases. The separate `live_prompt_probe.py` uses real model inference and normal account usage. Neither probe installs the proposed instructions in the user's global configuration or modifies the source checkout. The later user-requested export writes the current revision to the active workspace-specific Codex home separately from these experiments.
+See [the evidence README](../waiting-validation/README.md). `runtime_probe.py` uses the installed executable and an isolated temporary Codex home, with no model calls to OpenAI. Its per-case deadlines and request cap bound the scripted cases. The separate `live_prompt_probe.py` uses real model inference and normal account usage. Neither probe installs the proposed instructions in the user's global configuration or modifies the source checkout. The later user-requested export writes the current revision to the active workspace-specific Codex home separately from these experiments.
 
 ```sh
 python3 docs/waiting-validation/runtime_probe.py --out tmp/wait-probes

@@ -15,6 +15,9 @@ BENCH = HERE.parent
 ROOT = BENCH.parents[1]
 sys.path.insert(0, str(BENCH))
 from benchmark import Trial, prompt_for
+from patch_paths import ARCHIVE, recorded_patch_path
+
+PROMPTS = ARCHIVE / 'waiting-benchmark/numeric-waits/prompts'
 
 MODEL = 'gpt-6-astra'
 SEED = 20260914
@@ -42,7 +45,7 @@ def write_once(path, text):
 
 
 def make_prompts():
-    base = (BENCH / 'AGENTS.compact-final.md').read_text()
+    base = (ARCHIVE / 'waiting-benchmark/AGENTS.compact-final.md').read_text()
     phrases = {
         'exec': ('with `yield_time_ms: 30000`, shortened to the budget',
                  'with a long `yield_time_ms` within tool limits and the budget'),
@@ -70,7 +73,7 @@ def make_prompts():
     result['e1s1w1'] = result['e1s1w0'].replace(wait_old, wait_new)
     paths = {}
     for name, text in result.items():
-        path = HERE / 'prompts' / f'AGENTS.{name}.md'
+        path = PROMPTS / f'AGENTS.{name}.md'
         write_once(path, text)
         paths[name] = path
     return paths
@@ -89,14 +92,14 @@ def make_outer_prompts(paths):
             if named:
                 clause = clause.replace('set first-line', 'set `functions.exec`\'s first-line', 1)
             name = f'outer-o{int(numeric)}n{int(named)}'
-            path = HERE / 'prompts' / f'AGENTS.{name}.md'
+            path = PROMPTS / f'AGENTS.{name}.md'
             write_once(path, base.replace(original, clause))
             paths[name] = path
     return paths
 
 
 def make_wording_prompts(paths):
-    current = (ROOT / 'docs/waiting-validation/AGENTS.waiting-compatible.md').read_text()
+    current = (ROOT / 'docs/guides/AGENTS.waiting-compatible.md').read_text()
     no_pragma = ('In Code Mode, set the outer `functions.exec` wait long enough to cover '
                  'the inner `exec_command` or `write_stdin` wait plus a small margin, '
                  'while staying within budget.')
@@ -110,7 +113,7 @@ def make_wording_prompts(paths):
         'wording-no-pragma': current,
     }
     for name, text in variants.items():
-        path = HERE / 'prompts' / f'AGENTS.{name}.md'
+        path = PROMPTS / f'AGENTS.{name}.md'
         write_once(path, text)
         paths[name] = path
     return paths
@@ -140,7 +143,7 @@ def main():
         base = paths['e1s0w0'].read_text()
         start = base.index('### Terminal commands\n')
         end = base.index('### CI and external work\n', start)
-        path = HERE / 'prompts' / 'AGENTS.no-terminal.md'
+        path = PROMPTS / 'AGENTS.no-terminal.md'
         write_once(path, base[:start] + base[end:])
         paths['no-terminal'] = path
     version = subprocess.check_output([str(args.binary), '--version'], text=True).strip()
@@ -178,7 +181,7 @@ def main():
                 'binary':str(args.binary.resolve()), 'catalog_sha256':hashlib.sha256(args.catalog.read_bytes()).hexdigest(),
                 'model':MODEL, 'effort':'low', 'delay_seconds':75, 'workers':args.workers,
                 'seed':phase_seed, 'blocks':blocks,
-                'prompts':{v:({'path':str(path.relative_to(ROOT)), 'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+                'prompts':{v:({'path':recorded_patch_path(path), 'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
                               if path is not None else {'path':None,'sha256':None,'installation':'AGENTS.md absent'})
                            for v,path in paths.items()},
                 'cell_prompt':CELL_PROMPT}
