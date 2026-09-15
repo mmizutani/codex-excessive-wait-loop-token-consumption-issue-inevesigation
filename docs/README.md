@@ -8,7 +8,7 @@ For skill-based installation, see the [English skill README](../skills/codex-wai
 
 | Location | Contents |
 | --- | --- |
-| [guides/](guides/) | The current verified patch and its explanation. |
+| [guides/](guides/) | The current verified patch, its explanation, and the rationale for waiting recommendations. |
 | [reports/](reports/README.md) | Conclusions, measured effects, and limitations, with a reading order. |
 | [waiting-benchmark/](waiting-benchmark/README.md) | Runtime and prompt benchmark scripts, study plans, token accounting, and captured results. |
 | [waiting-validation/](waiting-validation/README.md) | Runtime probes, source and release provenance, and initial validation evidence. |
@@ -23,6 +23,8 @@ The skill's evaluation scripts and evidence remain inside its package at [skills
 3. [Independent runtime validation](reports/CODEX_ASTRA_SOL_WAITING_INDEPENDENT_VALIDATION.md): waiting mechanisms, shipped fixes, and unresolved behavior.
 
 For earlier prompt experiments and skill revisions, use the [report index](reports/README.md). Each report identifies the version it measured. Archived filenames containing `recommended` or `final` are historical labels.
+
+Read [why we did not adopt blanket 10–25-minute waits](guides/long-wait-guidance-assessment.md) for the assessment of the popular AGENTS.md rule and Multi-Agent V2 timeout configuration, including what they get right and what remains unverified.
 
 ## Evidence and reproduction
 
